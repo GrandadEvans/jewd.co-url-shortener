@@ -1,0 +1,11 @@
+# Ignore the vim tamp file
+*.swp
+
+# Ignore log files except the error log
+*.log
+!error.log
+!errors.log
+*.xlsx
+
+# Ignore the config.php as this contains all the personal info
+config.php

@@ -1,0 +1,30 @@
+Options +FollowSymLinks -Indexes -MultiViews
+RewriteEngine on
+#
+# Internally rewrite shortened URL requests to de-shortened URL lookup script filepath plus query string
+
+# I want to do 3 things:
+#	1. If nothing is passed then I want index.php
+#	2. If there is a 4 char str passed after the TLD then I want to forward it to view.php
+#	3. If there is no file specified but there is a query str then I want to call api.php
+
+RewriteBase /
+
+# remove www from url
+RewriteCond %{HTTP_HOST}	^www.jewd.co$	[NC]
+RewriteRule	^(.*)$			http://jewd.co/$1		[R=301,L]
+
+# show index.php if nothing passed
+RewriteCond	%{REQUEST_URI}	^$
+RewriteCond %{QUERY_STRING}	^$
+RewriteRule ^$				index.php [L]
+
+# if there is a 4 char uri then send it as a short_url to view
+RewriteCond %{REQUEST_URI} ^/([a-z0-9]{4})$
+RewriteRule ^([a-z0-9]{4})$ view.php?short=$1 [L]
+
+# Send any query with no file to api
+RewriteCond %{REQUEST_URI}	!view.php
+RewriteCond %{QUERY_STRING} ^.+$
+RewriteCond %{QUERY_STRING}	!^long=
+RewriteRule ^ api.php?long=%0 [L]

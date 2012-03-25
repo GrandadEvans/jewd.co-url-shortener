@@ -1,0 +1,78 @@
+html {
+	background-color: #191919;
+	background-image: url('../images/bg.jpg');
+	background-size: cover;
+	margin:  0;
+	padding: 0;
+}
+div {
+	margin: 5% auto;
+	width: 50em;
+	padding: 1em;
+	background-color: black;
+	background-color: rgba(0,0,0,0.95);
+	border-radius: 0.25em;
+	border: 3px solid #999999;
+}
+
+h1 {
+	text-align: center;
+}
+
+h1 a {
+	text-decoration: none;
+}
+
+.shortened, .shortened a {
+	background-color: #ffffcc;
+	color: #191919;
+}
+
+.shortened {
+	border: 1px solid #191919;
+}
+
+.shortened a {
+}
+
+fieldset {
+border: none;
+}
+
+label, input {
+	float: left;
+	display: block;
+	width: 13em
+}
+
+label {
+	color: #ffffcc;
+}
+
+input[type="url"] {
+	width: 25em;
+	margin-right: 3em;
+}
+
+input[type="submit"] {
+	width: 10em;
+}
+
+.submit {
+	clear: right;
+}
+
+a {
+	color: #ffffcc;
+	text-decoration: underline;
+	display: inline-block;
+}
+
+p a {
+	margin: 1em;
+}
+footer a {
+	width: 33%;
+	text-align: center;
+	margin-bottom: 1em;
+}
