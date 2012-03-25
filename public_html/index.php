@@ -19,6 +19,9 @@ if ((isset($_POST['input_long']) && strlen($_POST['input_long']) > 1)) {
 
 	<body>
 		<div class="content">
+			<div class="ribbon">
+				<div class="ribbon-content"><a href="http://jewd.co/fa7a" title="View this project on github">Folk me on Github</a></div>
+			</div>
 			<h1><a href="<?php echo SERVER; ?>" title="Home Page"><abbr title="John Evans Web Design">jewd</abbr>.co</a></h1>
 
 			<?php
