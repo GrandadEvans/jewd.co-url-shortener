@@ -1,0 +1,49 @@
+Hi All,
+
+This is my first github project.
+
+It is a url shortener that can be used on your domain. I initially created 
+it so that I could keep track of any links that I posted with regards to a 
+history of links and their click count. I know that there are other services 
+about that do the same but I like to have my own projects.
+
+If you are using it the first thing you need to so is rename the 
+config.default.php to config.php and customise it. There are options 
+available for both local and remote databases.
+
+However, this is still a learning curve for me and I don't even know 
+how to do pulls as yet so please be gentle. If you are going to folk 
+and request a pull then please explain why so that I can see how my code 
+is being improved and understand the improvements that are being made instead 
+of simply implementing them. 
+
+This is my list of To Dos:
+    1.  I need to figure out the returned url feature. At the moment I have 
+	    it returning the shortened URL when the full version is presented 
+		but this does not work in tweetdeck (I am using an old version 
+		though). I have had a look at a few other services and I see that 
+		bit.ly returns a JSON and others return the shortened url as I do.
+	
+	2.  I need to work on the UI, I am not a designer and so this is also 
+	    a learning curve for me. It was only on my last project that the 
+		concept of colour and space were introduced to me (thanks to all the 
+		helpers at forrst). 
+
+	3.  I need to update/create things like:
+	          - Privacy Policy (I saw a site the other day which used icons 
+			    and I intend to implement this in a popup).
+			  - Dedicated contact page instead of being diverted to my 
+			    own contact page
+			  - A couple of ribbons (maybe) to link to "Hire Me" and 
+			    "Folk me on Github"
+			  - I am going to implement Javascript (using jQuery) to do 
+			    quite a bit of the functionality:
+				   -  popups for contact; privacy; copyright; credits etc
+				   -  return the shortened URL using ajax when using the UI
+			       -  Make the UI more relevant: Do not load a 170k background 
+				      image if the UI is unable to display it. e.g. mobile. 
+					  The background image will be loaded by jQuery on load 
+					  if certain conditions are met, by default a simple 
+					  texture background will be loaded.
+Ok, that is about for now: If anybody has any feedback then please feel free.
+
