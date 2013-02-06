@@ -21,9 +21,9 @@ class email {
 		$this->to_name = 'John Evans';
 		$this->from_address = 'john@jewd.co.uk';
 		$this->from_name = 'jewd Scripts';
-        $this->smtp_user = 'john+jewd.co.uk';
-	    $this->smtp_pass = '$zhjR4V4';
-    	$this->smtp_host = 'c0691037.myzen.co.uk';
+        $this->smtp_user = '';
+	    $this->smtp_pass = '';
+    	$this->smtp_host = '';
 	}
 	//Create the Transport
     function send() {
