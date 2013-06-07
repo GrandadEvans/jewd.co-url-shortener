@@ -37,21 +37,21 @@ if (isset($_GET['long']))
 
 // Right, is the URL a URL?
 // Make sure we account for both with & without http://
-if (is_long_valid($dirty['input_long']) || 
-    is_long_valid('http://' . $dirty['input_long'])) {
-	
+if ((is_long_valid($dirty['input_long']) ||
+    is_long_valid('http://' . $dirty['input_long'])) || (strstr($dirty['input_long'], 'http://www.avon.uk.com/PRSuite/eBrochure.page'))) {
+
 	// We have test the URL & it's clean
 	$clean['long'] = $dirty['input_long'];
 
 	// Is the clean URL in the db already?
-	
+
 	// Search for the long URL in the db
 	$sth = $DBH->prepare("SELECT `short`
-	                      FROM `links` 
-						  WHERE `long` 
-						  LIKE :long 
+	                      FROM `links`
+						  WHERE `long`
+						  LIKE :long
 						  LIMIT 1");
-	
+
 	// Bind the params
 	$sth->bindParam(':long', $clean['long'], PDO::PARAM_STR);
 
@@ -89,7 +89,7 @@ if (is_long_valid($dirty['input_long']) ||
 
 		// id is now created
 		// now enter the details into the db
-		$sth = $DBH->prepare("INSERT INTO `links` 
+		$sth = $DBH->prepare("INSERT INTO `links`
 		                      SET `short`=:short, `long`=:long, `created`=NOW()");
 
 		// assigned the params
@@ -132,10 +132,10 @@ function does_short_exist($short) {
 	include('class.db.inc');
 
 	// Search for the short URL in the db
-	$sth = $DBH->prepare("SELECT `short` 
-	                      FROM `links` 
-						  WHERE `short` 
-						  LIKE :short 
+	$sth = $DBH->prepare("SELECT `short`
+	                      FROM `links`
+						  WHERE `short`
+						  LIKE :short
 						  LIMIT 1");
 
 	// Assign the params
@@ -163,7 +163,7 @@ function send_packing($short = false) {
 		// Set the server variable to the short URL
 		$_SESSION['short_url'] = $short;
 
-		// There is no need to exit as this is a require 
+		// There is no need to exit as this is a require
 		// or an include so the caller script will carry on
 	}
 }

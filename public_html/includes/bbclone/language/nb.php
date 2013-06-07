@@ -1,15 +1,19 @@
 <?php
 /* This file is part of BBClone (The PHP web counter on steroids)
  *
- * $Header: /cvs/bbclone/language/nb.php,v 1.31 2009/06/21 07:33:09 joku Exp $
+ * CVS File $Id: nb.php,v 1.44 2011/12/30 23:03:24 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  *
@@ -17,27 +21,15 @@
  * updated 28.02.2005 for BBClone 0.4.6e and latest 05.03.2007 for BBClone 0.4.9a
  */
 
-// The main array ($_ is for doing short in its call)
-$_ = array(
-// Specific charset
-"global_charset" => "iso-8859-15",
+// The DNS Extensions array
+$extensions = array(
+"travel" => "Travel",
+"asia" => "Asia-Pacific",
+"jobs" => "Employment",
+"mobi" => "Mobiles",
+"cat" => "Catalan",
+"tel" => "Contacts",
 
-// Date format (used with date() )
-"global_date_format" => "d-m-Y",
-
-// Global translation
-"global_bbclone_copyright" => "BBClone-laget - lisensiert under ",
-"global_last_reset" => "Statistikk sist nullstilt p&aring;",
-"global_yes" => "ja",
-"global_no" => "nei",
-
-// The error messages
-"error_cannot_see_config" =>
-"Du har ikke tillatelse til &aring; se BBClone konfigurasjonen p&aring; denne tjeneren.",
-"error_cannot_see_development" =>
-"Du har ikke tillatelse til &aring; se BBClone utviklingsverkt&oslash;y p&aring; denne tjeneren.",
-
-// Address Extensions
 "ac" => "Ascenci&oacute;n",
 "ad" => "Andorra",
 "ae" => "De forente arabiske emirater",
@@ -68,6 +60,7 @@ $_ = array(
 "bi" => "Burundi",
 "biz" => "Business",
 "bj" => "Benin",
+"bl" => "Saint-BarthÃ©lemy",
 "bm" => "Bermuda",
 "bn" => "Brunei",
 "bo" => "Bolivia",
@@ -153,7 +146,7 @@ $_ = array(
 "in" => "India",
 "info" => "Informasjon",
 "int" => "Internasjonale organisajoner",
-"io" => "Det britiske området i Indiahavet",
+"io" => "Det britiske omrÃ¥det i Indiahavet",
 "iq" => "Irak",
 "ir" => "Iran",
 "is" => "Island",
@@ -188,6 +181,7 @@ $_ = array(
 "mc" => "Monaco",
 "md" => "Moldova",
 "me" => "Montenegro",
+"mf" => "Saint-Martin",
 "mg" => "Madagaskar",
 "mh" => "Marshall&oslash;yene",
 "mil" => "De forente staters milit&aelig;re",
@@ -307,6 +301,31 @@ $_ = array(
 "zm" => "Zambia",
 "zr" => "Zaire",
 "zw" => "Zimbabwe",
+);
+
+// The main Translation array
+$translation = array(
+// Specific charset
+"global_charset" => "utf-8",
+
+// Date format (used with date())
+"global_time_format" => "M jS, H:i:s",
+"global_day_format" => "l F jS, Y",
+"global_hours_format" => "l F jS, G:00",
+"global_month_format" => "F Y",
+
+// Global translation
+"global_titlebar"=> "Statistics for %SERVER generated on %DATE",
+"global_bbclone_copyright" => "BBClone-laget - lisensiert under ",
+"global_last_reset" => "Statistikk sist nullstilt p&aring;",
+"global_yes" => "ja",
+"global_no" => "nei",
+
+// The error messages
+"error_cannot_see_config" =>
+"Du har ikke tillatelse til &aring; se BBClone konfigurasjonen p&aring; denne tjeneren.",
+"error_cannot_see_development" =>
+"Du har ikke tillatelse til &aring; se BBClone utviklingsverkt&oslash;y p&aring; denne tjeneren.",
 
 // Miscellaneoux translations
 "misc_other" => "Andre",
@@ -315,11 +334,13 @@ $_ = array(
 "misc_ignored" => "Ignorert",
 
 // The Navigation Bar
-"navbar_Main_Site" => "Hovedside",
-"navbar_Configuration" => "Konfigurasjon",
-"navbar_Global_Stats" => "Generell statistikk",
-"navbar_Detailed_Stats" => "Detaljert statistikk",
-"navbar_Time_Stats" => "Historikk",
+"navbar_main_site" => "Hovedside",
+"navbar_configuration" => "Konfigurasjon",
+"navbar_global_stats" => "Generell statistikk",
+"navbar_detailed_stats" => "Detaljert statistikk",
+"navbar_time_stats" => "Historikk",
+"navbar_language" => "Language",
+"navbar_go" => "Go",
 
 // Detailed stats words
 "dstat_id" => "ID",
@@ -335,7 +356,7 @@ $_ = array(
 "dstat_blue_rows" => "bl&aring; rekker",
 "dstat_red_rows" => "r&oslash;de rekker",
 "dstat_orange_rows" => "oransje rekker",
-"dstat_search" => "Søk",
+"dstat_search" => "SÃ¸k",
 "dstat_last_page" => "Siste side",
 "dstat_last_visit" => "seneste bes&oslash;k",
 "dstat_robots" => "roboter",
@@ -348,55 +369,82 @@ $_ = array(
 "dstat_pages" => "Sider",
 "dstat_visit_length" => "Bes&oslash;klengde",
 "dstat_reloads" => "Oppdateringer",
+"dstat_whois_information" => "Look up information on this IP Adress",
 
 // Global stats words
-"gstat_Accesses" => "Bes&oslash;kende",
-"gstat_Total_visits" => "Samlede treff",
-"gstat_Total_unique" => "Samlede unike treff",
-"gstat_Operating_systems" => "Topp %d operativsystem",
-"gstat_Browsers" => "Topp %d nettlesere",
+"gstat_accesses" => "Bes&oslash;kende",
+"gstat_total_visits" => "Samlede treff",
+"gstat_total_unique" => "Samlede unike treff",
+"gstat_operating_systems" => "Topp %d operativsystem",
+"gstat_browsers" => "Topp %d nettlesere",
 "gstat_extensions" => "Topp %d toppdomener",
-"gstat_Robots" => "Topp %d roboter",
+"gstat_robots" => "Topp %d roboter",
 "gstat_pages" => "Topp %d bes&oslash;kte sider",
 "gstat_origins" => "Topp %d opprinnelser",
 "gstat_hosts" => "Topp %d tjenere",
 "gstat_keys" => "Topp %d n&oslash;kkelord",
-"gstat_Total" => "I alt",
-"gstat_Not_specified" => "Ikke spesifisert",
+"gstat_total" => "I alt",
+"gstat_not_specified" => "Ikke spesifisert",
 
 // Time stats words
-"tstat_Su" => "S&oslash;n",
-"tstat_Mo" => "Man",
-"tstat_Tu" => "Tir",
-"tstat_We" => "Ons",
-"tstat_Th" => "Tor",
-"tstat_Fr" => "Fri",
-"tstat_Sa" => "L&oslash;r",
+"tstat_su" => "S&oslash;n",
+"tstat_mo" => "Man",
+"tstat_tu" => "Tir",
+"tstat_we" => "Ons",
+"tstat_th" => "Tor",
+"tstat_fr" => "Fri",
+"tstat_sa" => "L&oslash;r",
 
-"tstat_Jan" => "Jan",
-"tstat_Feb" => "Feb",
-"tstat_Mar" => "Mar",
-"tstat_Apr" => "Apr",
-"tstat_May" => "Mai",
-"tstat_Jun" => "Jun",
-"tstat_Jul" => "Jul",
-"tstat_Aug" => "Aug",
-"tstat_Sep" => "Sep",
-"tstat_Oct" => "Okt",
-"tstat_Nov" => "Nov",
-"tstat_Dec" => "Des",
+"tstat_full_su" => "Sunday",
+"tstat_full_mo" => "Monday",
+"tstat_full_tu" => "Tuesday",
+"tstat_full_we" => "Wednesday",
+"tstat_full_th" => "Thursday",
+"tstat_full_fr" => "Friday",
+"tstat_full_sa" => "Saturday",
+
+"tstat_jan" => "Jan",
+"tstat_feb" => "Feb",
+"tstat_mar" => "Mar",
+"tstat_apr" => "Apr",
+"tstat_may" => "Mai",
+"tstat_jun" => "Jun",
+"tstat_jul" => "Jul",
+"tstat_aug" => "Aug",
+"tstat_sep" => "Sep",
+"tstat_oct" => "Okt",
+"tstat_nov" => "Nov",
+"tstat_dec" => "Des",
+
+"tstat_full_jan" => "January",
+"tstat_full_feb" => "February",
+"tstat_full_mar" => "March",
+"tstat_full_apr" => "April",
+"tstat_full_may" => "May",
+"tstat_full_jun" => "June",
+"tstat_full_jul" => "July",
+"tstat_full_aug" => "August",
+"tstat_full_sep" => "September",
+"tstat_full_oct" => "October",
+"tstat_full_nov" => "November",
+"tstat_full_dec" => "December",
 
 "tstat_last_day" => "Siste d&oslash;gn",
 "tstat_last_week" => "Siste uke",
 "tstat_last_month" => "Siste m&aring;ned",
 "tstat_last_year" => "Siste &aring;r",
+"tstat_average" => "Average",
+
+// Loadtime notice
+"generated" => "page generated in ",
+"seconds" => " seconds",
 
 // Configuration page words and sentences
-"config_Variable_name" => "Variabelnavn",
-"config_Variable_value" => "Variabelverdi",
-"config_Explanations" => "Forklaring",
+"config_variable_name" => "Variabelnavn",
+"config_variable_value" => "Variabelverdi",
+"config_explanations" => "Forklaring",
 
-"config_bbc_mainsite" =>
+"config_BBC_MAINSITE" =>
 "Hvis denne variablen er satt, vil en lenke til den oppgitte siden bli generert.
 Standardverdien er foreldrekategorien. Hvis din hovedside er plassert et annet sted,
 s&aring; vil du sannsynligvis justere verdien.<br />
@@ -405,14 +453,14 @@ Eksempler:<br />
 \$BBC_MAINSITE = &quot;..&quot;<br />
 \$BBC_MAINSITE = &quot;&quot;;",
 
-"config_bbc_show_config" =>
+"config_BBC_SHOW_CONFIG" =>
 "BBClone tillater visning av innstillinger som standard. I tilfellet dette ikke er
 &oslash;nsket, kan du hindre visning ved &aring; sl&aring; av denne opsjonen.<br />
 Eksempler:<br />
 \$BBC_SHOW_CONFIG = 1;<br />
 \$BBC_SHOW_CONFIG = &quot;&quot;;",
 
-"config_bbc_titlebar" =>
+"config_BBC_TITLEBAR" =>
 "Tittelen p&aring; alle BBClone sidene.<br />
 F&oslash;lgende makroer kan brukes:<br />
 <ul>
@@ -424,13 +472,13 @@ Eksempler:<br />
 \$BBC_TITLEBAR = &quot;Statistics for %SERVER generated the %DATE&quot;;<br />
 \$BBC_TITLEBAR = &quot;My Statistics from %DATE look like this:&quot;;<br />",
 
-"config_bbc_language" =>
+"config_BBC_LANGUAGE" =>
 "Standard spr&aring;k i BBclone, hvis det ikke har blitt spesifisert av nettleseren.
 F&oslash;lgende spr&aring;k er st&oslash;ttet:
 <p>ar, bg, bs, ca, cs, da, de, el, en, es, fi, fr, hu, it, ja, ko, lt, mk, nb, nl, pl, pt-br, ro,
 ru, sk, sl, sv, th, tr, zh-cn og zh-tw</p>",
 
-"config_bbc_maxtime" =>
+"config_BBC_MAXTIME" =>
 "Denne variabelen definerer varigheten for et unikt bes&oslash;k i sekunder.
 Hvert treff fra den samme bes&oslash;kende vil bli betraktet som et
 bes&oslash;k s&aring; lenge perioden mellom to p&aring;f&oslash;lgende treff
@@ -441,13 +489,13 @@ Eksempler:<br />
 \$BBC_MAXTIME = 0;<br />
 \$BBC_MAXTIME = 1800;",
 
-"config_bbc_maxvisible" =>
+"config_BBC_MAXVISIBLE" =>
 "Hvor mange oppf&oslash;ringer du vil ha listet i den detaljerte statistikken.
 Standardverdien er 100. Det er ikke anbefalt &aring; sette verdien
 h&oslash;yere enn 500 for &aring; unng&aring; for tung last p&aring;
 netttjeneren.",
 
-"config_bbc_detailed_stat_fields" =>
+"config_BBC_DETAILED_STAT_FIELDS" =>
 "Variablen \$BBC_DETAILED_STAT_FIELDS bestemmer hvilke kolonner som skal
 vises i den detaljerte statistikken. Mulige kolonner er:
 
@@ -470,7 +518,7 @@ Eksempler:<br />
 <br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;date, ext, browser, os, ip&quot;;<br />",
 
-"config_bbc_time_offset" =>
+"config_BBC_TIME_OFFSET" =>
 "I tilfellet tjeneren ikke har samme tidssone som deg, kan du tilpasse tiden i
 minutter ved hjelp av denne opsjonen. Negative verdier vil stille tiden tilbake,
 positive vil stille den frem.<br />
@@ -479,7 +527,7 @@ Eksempler:<br />
 \$BBC_TIME_OFFSET = -300;<br />
 \$BBC_TIME_OFFSET = 0;",
 
-"config_bbc_no_dns" =>
+"config_BBC_NO_DNS" =>
 "Denne opsjonen bestemmer om tjenernavnet for IP-adresser skal finnes eller ei.
 Tjenernavn forteller mye mer om den bes&oslash;kende, men leting etter
 tjenernavn kan senke hastigheten p&aring; nettstedet ditt hvis DNS-tjenerne som
@@ -489,7 +537,7 @@ Eksempler:<br />
 \$BBC_NO_DNS = 1;<br />
 \$BBC_NO_DNS = &quot;&quot;;",
 
-"config_bbc_no_hits" =>
+"config_BBC_NO_HITS" =>
 "BBClone sin standard er &aring; vise treff i tidsstatistikken fordi det gir en
 ganske god formening om den faktiske lasten p&aring; tjeneren. Hvis du heller
 fortrekker &aring; bruke unike treff som basis for din tidsstatistikken, kan du
@@ -498,7 +546,7 @@ Eksempler:<br />
 \$BBC_NO_HITS = 1;<br />
 \$BBC_NO_HITS = &quot;&quot;;",
 
-"config_bbc_ignore_ip" =>
+"config_BBC_IGNORE_IP" =>
 "Denne opsjonen kan brukes til &aring; ekskludere enkelte IP-adresser eller
 adresseomr&aring;der fra &aring; bli telt. Du kan legge til flere uttrykk ved
 &aring; bruke komma som skilletegn.<br />
@@ -506,7 +554,7 @@ Eksempler:<br />
 \$BBC_IGNORE_IP = &quot;127., 192.168.&quot;;<br />
 \$BBC_IGNORE_IP = &quot;&quot;;",
 
-"config_bbc_ignore_refer" =>
+"config_BBC_IGNORE_REFER" =>
 "Hvis du ikke vil at enkelte referrers fra dine bes&oslash;kende skal listes i
 rankingen eller den detaljerte statistikken, kan du oppgi en eller flere
 n&oslash;kkelord brukt for &aring; blokkere referrers som inneholder
@@ -515,7 +563,7 @@ Eksempler:<br />
 \$BBC_IGNORE_REFER = &quot;spambot.org, .escort.&quot;;<br />
 \$BBC_IGNORE_REFER = &quot;&quot;;",
 
-"config_bbc_ignore_bots" =>
+"config_BBC_IGNORE_BOTS" =>
 "Du kan bruke denne opsjonen til &aring; bestemme behandling av roboter.
 Standardvalg er &aring; eksludere tjenernavn fra roboter i din
 tjener-ranking, men &aring; ta det med i alle andre statistikker. (Dette er opsjon
@@ -526,7 +574,7 @@ Eksempler:<br />
 \$BBC_IGNORE_BOTS = 1;<br />
 \$BBC_IGNORE_BOTS = &quot;&quot;;",
 
-"config_bbc_ignore_agent" =>
+"config_BBC_IGNORE_AGENT" =>
 "Denne opsjonen bestemmer hvordan BBClone skiller en bes&oslash;kende fra en
 annen. Standard er &aring; bruke IP-adressen som gir realistiske tall i de
 fleste tilfeller. Hvis dine bes&oslash;kende often er gjemt bak proxytjenere,
@@ -537,7 +585,7 @@ Eksempler:<br />
 \$BBC_IGNORE_AGENT = 1;<br />
 \$BBC_IGNORE_AGENT = &quot;&quot;;",
 
-"config_bbc_kill_stats" =>
+"config_BBC_KILL_STATS" =>
 "Sl&aring; p&aring; denne opsjonen for &aring; nullstille dine statistikker.
 Ikke glem &aring; sl&aring; den av igjen etterp&aring; hvis ikke vil du
 sannsynligvis oppleve uvanlig liten trafikk ;).<br />
@@ -545,7 +593,7 @@ Eksempler:<br />
 \$BBC_KILL_STATS = 1;<br />
 \$BBC_KILL_STATS = &quot;&quot;;",
 
-"config_bbc_purge_single" =>
+"config_BBC_PURGE_SINGLE" =>
 "Tjener og referrer statistikk kan generere store mengder data - vanligvis
 for&aring;rsaket av engangsbes&oslash;kende. Ved &aring; sl&aring; p&aring;
 denne opsjonen kan du slette disse oppf&oslash;ringene og vesentlig redusere

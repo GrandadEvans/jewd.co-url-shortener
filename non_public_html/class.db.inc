@@ -5,7 +5,7 @@ try {
 	$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 } catch(PDOException $e) {
 	// Unable to connect to the db so send an email
-	echo "Unable to connect to Database";
+	//echo "Unable to connect to Database";
 	require_once('class.email.inc');
 	$email = new email;
 	$email->body = ";
@@ -17,5 +17,3 @@ try {
     $email->send();
 	file_put_contents('PDOErrors.log', html($e->getMessage()), FILE_APPEND);
 }
-?>
-

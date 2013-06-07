@@ -1,0 +1,32 @@
+body {
+}
+
+#contentWrap {
+	font-size: 1.5em;
+
+}
+
+dt:after {
+	content:':';
+}
+
+dt {
+	font-size: 1.5em;
+	float:left;
+	width: 10em;
+	display: block;
+	margin: .5em;
+	clear: left;
+}
+dd {
+	font-size: 1.5em;
+	float: left;
+	margin: .5em;
+	width: 15em;
+	display: block;
+	clear: right;
+
+}
+
+
+

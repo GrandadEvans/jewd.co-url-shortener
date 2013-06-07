@@ -1,40 +1,32 @@
 <?php
 /* This file is part of BBClone (The PHP web counter on steroids)
  *
- * $Header: /cvs/bbclone/language/et.php,v 1.1 2009/06/21 07:46:06 joku Exp $
+ * CVS File $Id: et.php,v 1.15 2011/12/30 23:03:24 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  */
 
-// The main array ($_ is for doing short in its call)
-$_ = array(
-// Specific charset
-"global_charset" => "iso-8859-1",
+// The DNS Extensions array
+$extensions = array(
+"travel" => "Travel",
+"asia" => "Asia-Pacific",
+"jobs" => "Employment",
+"mobi" => "Mobiles",
+"cat" => "Catalan",
+"tel" => "Contacts",
 
-// Date format (used with date())
-"global_date_format" => "Y/m/d",
-
-// Global translation
-"global_bbclone_copyright" => "The BBClone team - Licensed under the",
-"global_last_reset" => "Statistika viimati nullitud",
-"global_yes" => "Jah",
-"global_no" => "Ei",
-
-// The error messages
-"error_cannot_see_config" =>
-"Sul ei ole lubatud näha BBClone konfiguratsiooni selles serveris.",
-"error_cannot_see_development" =>
-"Sul ei ole lubatud näha BBClone regressioone selles serveris.",
-
-// Address Extensions
 "ac" => "Ascension Island",
 "ad" => "Andorra",
 "ae" => "United Arab Emirates",
@@ -65,6 +57,7 @@ $_ = array(
 "bi" => "Burundi",
 "biz" => "Business",
 "bj" => "Benin",
+"bl" => "Saint-BarthÃ©lemy",
 "bm" => "Bermuda",
 "bn" => "Brunei",
 "bo" => "Bolivia",
@@ -185,6 +178,7 @@ $_ = array(
 "mc" => "Monaco",
 "md" => "Moldova",
 "me" => "Montenegro",
+"mf" => "Saint-Martin",
 "mg" => "Madagascar",
 "mh" => "Marshall Islands",
 "mil" => "US Military",
@@ -304,6 +298,31 @@ $_ = array(
 "zm" => "Zambia",
 "zr" => "Zaire",
 "zw" => "Zimbabwe",
+);
+
+// The main Translation array
+$translation = array(
+// Specific charset
+"global_charset" => "utf-8",
+
+// Date format (used with date())
+"global_time_format" => "M jS, H:i:s",
+"global_day_format" => "l F jS, Y",
+"global_hours_format" => "l F jS, G:00",
+"global_month_format" => "F Y",
+
+// Global translation
+"global_titlebar"=> "Statistics for %SERVER generated on %DATE",
+"global_bbclone_copyright" => "The BBClone team - Licensed under the",
+"global_last_reset" => "Statistika viimati nullitud",
+"global_yes" => "Jah",
+"global_no" => "Ei",
+
+// The error messages
+"error_cannot_see_config" =>
+"Sul ei ole lubatud nÃ¤ha BBClone konfiguratsiooni selles serveris.",
+"error_cannot_see_development" =>
+"Sul ei ole lubatud nÃ¤ha BBClone regressioone selles serveris.",
 
 // Miscellaneous translations
 "misc_other" => "Muu",
@@ -312,238 +331,267 @@ $_ = array(
 "misc_ignored" => "Ignoreeritud",
 
 // The Navigation Bar
-"navbar_Main_Site" => "Põhisait",
-"navbar_Configuration" => "Konfiguratsioon",
-"navbar_Global_Stats" => "Üldine statistika",
-"navbar_Detailed_Stats" => "Detailne statistika",
-"navbar_Time_Stats" => "Ajaline statistika",
+"navbar_main_site" => "PÃµhisait",
+"navbar_configuration" => "Konfiguratsioon",
+"navbar_global_stats" => "Ãœldine statistika",
+"navbar_detailed_stats" => "Detailne statistika",
+"navbar_time_stats" => "Ajaline statistika",
+"navbar_language" => "Language",
+"navbar_go" => "Go",
 
 // Detailed stats words
 "dstat_id" => "ID",
 "dstat_time" => "Aeg",
-"dstat_visits" => "Külastusi",
+"dstat_visits" => "KÃ¼lastusi",
 "dstat_extension" => "Riik",
 "dstat_dns" => "Hostinimi",
 "dstat_from" => "Tuldud rada",
-"dstat_os" => "Operatsioonisüsteem",
+"dstat_os" => "OperatsioonisÃ¼steem",
 "dstat_browser" => "Brauser",
-"dstat_visible_rows" => "Nähtavaid ridu",
+"dstat_visible_rows" => "NÃ¤htavaid ridu",
 "dstat_green_rows" => "rohelised read",
 "dstat_blue_rows" => "sinised read",
 "dstat_red_rows" => "punased read",
 "dstat_orange_rows" => "oranzid read",
 "dstat_search" => "Otsing",
-"dstat_last_page" => "Viimane lehekülg",
-"dstat_last_visit" => "viimane külastus",
+"dstat_last_page" => "Viimane lehekÃ¼lg",
+"dstat_last_visit" => "viimane kÃ¼lastus",
 "dstat_robots" => "Robotid",
-"dstat_my_visit" => "Külastused sinu IP-aadressilt",
+"dstat_my_visit" => "KÃ¼lastused sinu IP-aadressilt",
 "dstat_no_data" => "Andmed puuduvad",
 "dstat_prx" => "Proxy server",
 "dstat_ip" => "IP-aadress",
 "dstat_user_agent" => "Kasutajaagent(User Agent)",
 "dstat_nr" => "Nr",
-"dstat_pages" => "leheküljed",
-"dstat_visit_length" => "Külastuse pikkus",
+"dstat_pages" => "lehekÃ¼ljed",
+"dstat_visit_length" => "KÃ¼lastuse pikkus",
 "dstat_reloads" => "Uuestilaadimisi",
+"dstat_whois_information" => "Look up information on this IP Adress",
 
 // Global stats words
-"gstat_Accesses" => "Summaarne ülevaade",
-"gstat_Total_visits" => "Külastusi kokku",
-"gstat_Total_unique" => "Unikaalseid kokku",
-"gstat_Operating_systems" => "Top %d Operatsioonisüsteemid",
-"gstat_Browsers" => "Top %d Brauserid",
+"gstat_accesses" => "Summaarne Ã¼levaade",
+"gstat_total_visits" => "KÃ¼lastusi kokku",
+"gstat_total_unique" => "Unikaalseid kokku",
+"gstat_operating_systems" => "Top %d OperatsioonisÃ¼steemid",
+"gstat_browsers" => "Top %d Brauserid",
 "gstat_extensions" => "Top %d Riigid",
-"gstat_Robots" => "Top %d Robotid",
-"gstat_pages" => "Top %d Külastatud leheküljed",
+"gstat_robots" => "Top %d Robotid",
+"gstat_pages" => "Top %d KÃ¼lastatud lehekÃ¼ljed",
 "gstat_origins" => "Top %d Rajad",
 "gstat_hosts" => "Top %d Hostid",
-"gstat_keys" => "Top %d Märksõnad",
-"gstat_Total" => "Kokku",
-"gstat_Not_specified" => "Pole täpsustatud",
+"gstat_keys" => "Top %d MÃ¤rksÃµnad",
+"gstat_total" => "Kokku",
+"gstat_not_specified" => "Pole tÃ¤psustatud",
 
 // Time stats words
-"tstat_Su" => "P",
-"tstat_Mo" => "E",
-"tstat_Tu" => "T",
-"tstat_We" => "K",
-"tstat_Th" => "N",
-"tstat_Fr" => "R",
-"tstat_Sa" => "L",
+"tstat_su" => "P",
+"tstat_mo" => "E",
+"tstat_tu" => "T",
+"tstat_we" => "K",
+"tstat_th" => "N",
+"tstat_fr" => "R",
+"tstat_sa" => "L",
 
-"tstat_Jan" => "Jaan",
-"tstat_Feb" => "Veebr",
-"tstat_Mar" => "Märts",
-"tstat_Apr" => "Apr",
-"tstat_May" => "Mai",
-"tstat_Jun" => "Juuni",
-"tstat_Jul" => "Juuli",
-"tstat_Aug" => "Aug",
-"tstat_Sep" => "Sept",
-"tstat_Oct" => "Okt",
-"tstat_Nov" => "Nov",
-"tstat_Dec" => "Dets",
+"tstat_full_su" => "Sunday",
+"tstat_full_mo" => "Monday",
+"tstat_full_tu" => "Tuesday",
+"tstat_full_we" => "Wednesday",
+"tstat_full_th" => "Thursday",
+"tstat_full_fr" => "Friday",
+"tstat_full_sa" => "Saturday",
 
-"tstat_last_day" => "Möödunud päev",
-"tstat_last_week" => "Möödunud nädal",
-"tstat_last_month" => "Möödunud kuu",
-"tstat_last_year" => "Möödunud aasta",
+"tstat_jan" => "Jaan",
+"tstat_feb" => "Veebr",
+"tstat_mar" => "MÃ¤rts",
+"tstat_apr" => "Apr",
+"tstat_may" => "Mai",
+"tstat_jun" => "Juuni",
+"tstat_jul" => "Juuli",
+"tstat_aug" => "Aug",
+"tstat_sep" => "Sept",
+"tstat_oct" => "Okt",
+"tstat_nov" => "Nov",
+"tstat_dec" => "Dets",
+
+"tstat_full_jan" => "January",
+"tstat_full_feb" => "February",
+"tstat_full_mar" => "March",
+"tstat_full_apr" => "April",
+"tstat_full_may" => "May",
+"tstat_full_jun" => "June",
+"tstat_full_jul" => "July",
+"tstat_full_aug" => "August",
+"tstat_full_sep" => "September",
+"tstat_full_oct" => "October",
+"tstat_full_nov" => "November",
+"tstat_full_dec" => "December",
+
+"tstat_last_day" => "MÃ¶Ã¶dunud pÃ¤ev",
+"tstat_last_week" => "MÃ¶Ã¶dunud nÃ¤dal",
+"tstat_last_month" => "MÃ¶Ã¶dunud kuu",
+"tstat_last_year" => "MÃ¶Ã¶dunud aasta",
+"tstat_average" => "Average",
+
+// Loadtime notice
+"generated" => "page generated in ",
+"seconds" => " seconds",
 
 // Configuration page words and sentences
-"config_Variable_name" => "Muutuja nimi",
-"config_Variable_value" => "Muutuja väärtus",
-"config_Explanations" => "Selgitus",
+"config_variable_name" => "Muutuja nimi",
+"config_variable_value" => "Muutuja vÃ¤Ã¤rtus",
+"config_explanations" => "Selgitus",
 
-"config_bbc_mainsite" =>
-"Kui see muutuja on määratud, tekkib link ette antud asukohta.
-Vaikeväärtus suunab emakataloogile. Juhul kui teie põhiveeb asub
-mujal, siis tõenäoliselt soovite kohandada väärtust vastavalt enda vajadustele.<br />
-Näited:<br />
+"config_BBC_MAINSITE" =>
+"Kui see muutuja on mÃ¤Ã¤ratud, tekkib link ette antud asukohta.
+VaikevÃ¤Ã¤rtus suunab emakataloogile. Juhul kui teie pÃµhiveeb asub
+mujal, siis tÃµenÃ¤oliselt soovite kohandada vÃ¤Ã¤rtust vastavalt enda vajadustele.<br />
+NÃ¤ited:<br />
 \$BBC_MAINSITE = &quot;http://www.minudomeen.com/&quot;<br />
 \$BBC_MAINSITE = &quot;..&quot;<br />
 \$BBC_MAINSITE = &quot;&quot;;",
 
-"config_bbc_show_config" =>
+"config_BBC_SHOW_CONFIG" =>
 "BBClone vaikimisi paljastab statistika seaded. Juhul kui see on probleemiks,
-saate juurdepääsu keelata deaktiveerides valiku.<br />
-Näited:<br />
+saate juurdepÃ¤Ã¤su keelata deaktiveerides valiku.<br />
+NÃ¤ited:<br />
 \$BBC_SHOW_CONFIG = 1;<br />
 \$BBC_SHOW_CONFIG = &quot;&quot;;",
 
-"config_bbc_titlebar" =>
-"Pealkiri teie statistika lehekülgedel.<br />
-Seda kuvatakse navigeerimisribal kõigi BBClone'i lehekülgedel<br />
-Järgnevad makrod on ära tuntavad:<br />
+"config_BBC_TITLEBAR" =>
+"Pealkiri teie statistika lehekÃ¼lgedel.<br />
+Seda kuvatakse navigeerimisribal kÃµigi BBClone'i lehekÃ¼lgedel<br />
+JÃ¤rgnevad makrod on Ã¤ra tuntavad:<br />
 <ul>
 <li>%SERVER: domeeni nimi,</li>
-<li>%DATE: tänane kuupäev.</li>
+<li>%DATE: tÃ¤nane kuupÃ¤ev.</li>
 </ul>
 HTML koodid on lubatud.<br />
-Näited:<br />
+NÃ¤ited:<br />
 \$BBC_TITLEBAR = &quot;Statistics for %SERVER generated the %DATE&quot;;<br />
 \$BBC_TITLEBAR = &quot;My stats from %DATE look like this:&quot;;
 <br />",
 
-"config_bbc_language" =>
-"BBClone'i vaikimisi keel, kui see ei ole täpsustatud brauserist.
-Järgnevad keeled on toetatud:
+"config_BBC_LANGUAGE" =>
+"BBClone'i vaikimisi keel, kui see ei ole tÃ¤psustatud brauserist.
+JÃ¤rgnevad keeled on toetatud:
 <p>ar, bg, bs, ca, cs, da, de, el, en, es, et, fi, fr, hu, id, it, ja, ko, lt, mk, nb, nl, pl, pt, pt-br, ro, ru,
 sk, sl, sv, th, tr, ua, zh-cn and zh-tw</p>",
 
-"config_bbc_maxtime" =>
-"See muutuja piirab unikaalse külastuse kestvuse sekundites. Sellel perioodil
-loetakse iga klikk samalt külastajalt üheks külastuseks, tingimusel kui kaks
-järjestikkust klikki ei ületa kindlaksmääratud limiiti. Vaikimisi on de facto
-web standard 30 minutit (1800 sekundit), kuid sõltuvalt teie vajadustele võite
-anda teistsuguse väärtuse.<br />
-Näited:<br />
+"config_BBC_MAXTIME" =>
+"See muutuja piirab unikaalse kÃ¼lastuse kestvuse sekundites. Sellel perioodil
+loetakse iga klikk samalt kÃ¼lastajalt Ã¼heks kÃ¼lastuseks, tingimusel kui kaks
+jÃ¤rjestikkust klikki ei Ã¼leta kindlaksmÃ¤Ã¤ratud limiiti. Vaikimisi on de facto
+web standard 30 minutit (1800 sekundit), kuid sÃµltuvalt teie vajadustele vÃµite
+anda teistsuguse vÃ¤Ã¤rtuse.<br />
+NÃ¤ited:<br />
 \$BBC_MAXTIME = 0;<br />
 \$BBC_MAXTIME = 1800;",
 
-"config_bbc_maxvisible" =>
-"Kui palju sissekandeid te soovite kuvada üksikasjaliku statistika(detailne statistika)
-loetellus? Vaikimisi väärtus on 100. On soovitatav mitte kehtestada seda suuremaks
-kui 500, et vältida ülekoormust.",
+"config_BBC_MAXVISIBLE" =>
+"Kui palju sissekandeid te soovite kuvada Ã¼ksikasjaliku statistika(detailne statistika)
+loetellus? Vaikimisi vÃ¤Ã¤rtus on 100. On soovitatav mitte kehtestada seda suuremaks
+kui 500, et vÃ¤ltida Ã¼lekoormust.",
 
-"config_bbc_detailed_stat_fields" =>
-"Muutuja \$BBC_DETAILED_STAT_FIELDS määrab veerud mida kuvada üksikasjaliku
-statistikas. Võimalikud veerud on:
+"config_BBC_DETAILED_STAT_FIELDS" =>
+"Muutuja \$BBC_DETAILED_STAT_FIELDS mÃ¤Ã¤rab veerud mida kuvada Ã¼ksikasjaliku
+statistikas. VÃµimalikud veerud on:
 <ul>
-<li>id&nbsp;=&gt;&nbsp;X-nes külastaja alates mil alustasite loendamist</li>
+<li>id&nbsp;=&gt;&nbsp;X-nes kÃ¼lastaja alates mil alustasite loendamist</li>
 <li>time&nbsp;=&gt;&nbsp;Aeg, millal viimane klikk registreeriti</li>
-<li>visits&nbsp;=&gt;&nbsp;Unikaalse külastaja klikid</li>
-<li>dns&nbsp;=&gt;&nbsp;Külastaja hostinimi</li>
-<li>ip&nbsp;=&gt;&nbsp;Külastaja IP-aadress</li>
-<li>os&nbsp;=&gt;&nbsp;Operatsioonisüsteem (kui on kättesaadav ja/või robot)</li>
-<li>browser&nbsp;=&gt;&nbsp;Tarkvara, mida kasutati ühenduse loomiseks</li>
-<li>ext&nbsp;=&gt;&nbsp;Külastaja riik või laiendus</li>
-<li>referer&nbsp;=&gt;&nbsp;Lehekülje link kust külastaja tuli (kui see on olemas)</li>
-<li>page&nbsp;=&gt;&nbsp;Viimati külastatud leht</li>
-<li>search&nbsp;=&gt;&nbsp;Otsingupäring mida külastaja kasutas (kui on teada)</li>
+<li>visits&nbsp;=&gt;&nbsp;Unikaalse kÃ¼lastaja klikid</li>
+<li>dns&nbsp;=&gt;&nbsp;KÃ¼lastaja hostinimi</li>
+<li>ip&nbsp;=&gt;&nbsp;KÃ¼lastaja IP-aadress</li>
+<li>os&nbsp;=&gt;&nbsp;OperatsioonisÃ¼steem (kui on kÃ¤ttesaadav ja/vÃµi robot)</li>
+<li>browser&nbsp;=&gt;&nbsp;Tarkvara, mida kasutati Ã¼henduse loomiseks</li>
+<li>ext&nbsp;=&gt;&nbsp;KÃ¼lastaja riik vÃµi laiendus</li>
+<li>referer&nbsp;=&gt;&nbsp;LehekÃ¼lje link kust kÃ¼lastaja tuli (kui see on olemas)</li>
+<li>page&nbsp;=&gt;&nbsp;Viimati kÃ¼lastatud leht</li>
+<li>search&nbsp;=&gt;&nbsp;OtsingupÃ¤ring mida kÃ¼lastaja kasutas (kui on teada)</li>
 </ul>
-Sama järjekorda kuidas teie kirjutasite, kasutatakse veergude kuvamisel.<br />
-Näited:<br />
+Sama jÃ¤rjekorda kuidas teie kirjutasite, kasutatakse veergude kuvamisel.<br />
+NÃ¤ited:<br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;id, time, visits, ip, ext, os, browser&quot;;
 <br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;date, ext, browser, os, ip&quot;;<br />",
 
-"config_bbc_time_offset" =>
+"config_BBC_TIME_OFFSET" =>
 "Juhul kui serveri aeg ei sobi teie kohalikku ajatsooni, saate reguleerida aega
-minutites kasutades seda lülitit. Negatiivsed väärtused keeravad aega tagasi,
+minutites kasutades seda lÃ¼litit. Negatiivsed vÃ¤Ã¤rtused keeravad aega tagasi,
 positiivsed keeravad ettepoole.<br />
-Näited:<br />
+NÃ¤ited:<br />
 \$BBC_TIME_OFFSET = 300;<br />
 \$BBC_TIME_OFFSET = -300;<br />
 \$BBC_TIME_OFFSET = 0;",
 
-"config_bbc_no_dns" =>
-"See valik määrab, kas IP-aadressid peaks lahendama hostinimedeks või mitte.
-Kuigi hostinimed ütlevad palju rohkem külastaja kohta, võib nende lahendamine
-märgatavalt aeglustada teie saiti, kui kasutatavad DNS serverid on aeglased,
-piiratud võimsusega või muidu ebalojaalsed. Seadistades seda muutujat võib
+"config_BBC_NO_DNS" =>
+"See valik mÃ¤Ã¤rab, kas IP-aadressid peaks lahendama hostinimedeks vÃµi mitte.
+Kuigi hostinimed Ã¼tlevad palju rohkem kÃ¼lastaja kohta, vÃµib nende lahendamine
+mÃ¤rgatavalt aeglustada teie saiti, kui kasutatavad DNS serverid on aeglased,
+piiratud vÃµimsusega vÃµi muidu ebalojaalsed. Seadistades seda muutujat vÃµib
 lahendada probleemi.<br />
-Näited:<br />
+NÃ¤ited:<br />
 \$BBC_NO_DNS = 1;<br />
 \$BBC_NO_DNS = &quot;&quot;;",
 
-"config_bbc_no_hits" =>
-"BBClone vaikimisi näitab klikke ajalises statistikas, sest see koormab
-serverit vähem. Kui aga soovite kasutada unikaalseid külastusi oma ajalises
+"config_BBC_NO_HITS" =>
+"BBClone vaikimisi nÃ¤itab klikke ajalises statistikas, sest see koormab
+serverit vÃ¤hem. Kui aga soovite kasutada unikaalseid kÃ¼lastusi oma ajalises
 statistikas, saate muuta loendusmeetodit seadistades seda muutujat.<br />
-Näited:<br />
+NÃ¤ited:<br />
 \$BBC_NO_HITS = 1;<br />
 \$BBC_NO_HITS = &quot;&quot;;",
 
-"config_bbc_ignore_ip" =>
-"Seda võimalust saab kasutada, et välistada teatud IP-aadressid või aadressi vahemikud
+"config_BBC_IGNORE_IP" =>
+"Seda vÃµimalust saab kasutada, et vÃ¤listada teatud IP-aadressid vÃµi aadressi vahemikud
 loendamisest. Kui soovite lisada mitu kasuta koma eraldajana.<br />
-Näited:<br />
+NÃ¤ited:<br />
 \$BBC_IGNORE_IP = &quot;127., 192.168.&quot;;<br />
 \$BBC_IGNORE_IP = &quot;&quot;;",
 
-"config_bbc_ignore_refer" =>
-"Juhul kui te ei taha üksikasjalikke viiteid oma külastajatelt kuvada pingeritta
-või detailsesse statistikasse, saate määrata ühe või mitu märksõna mida kasutatakse
-blokeerimiseks kui viide ühtib uuesti nendega. Kui te kasutate rohkem märksõnu,
+"config_BBC_IGNORE_REFER" =>
+"Juhul kui te ei taha Ã¼ksikasjalikke viiteid oma kÃ¼lastajatelt kuvada pingeritta
+vÃµi detailsesse statistikasse, saate mÃ¤Ã¤rata Ã¼he vÃµi mitu mÃ¤rksÃµna mida kasutatakse
+blokeerimiseks kui viide Ã¼htib uuesti nendega. Kui te kasutate rohkem mÃ¤rksÃµnu,
 palun kasuta koma eraldajana.<br />
-Näited:<br />
+NÃ¤ited:<br />
 \$BBC_IGNORE_REFER = &quot;spambot.org, .escort.&quot;;<br />
 \$BBC_IGNORE_REFER = &quot;&quot;;",
 
-"config_bbc_ignore_bots" =>
-"Võite kasutada seda võimalust, et piirata robotite käsitlemine. Vaikimisi
-eiratakse neid hostide pingereas, kuid ülejäänud statistikasse jäävad alles.
-Kui te ei soovi näha mitte ühtegi robotit, saate määrata selle valiku
-&quot;2&quot;, siis ainult inimese külastusi võetakse arvesse.<br />
-Näited:<br />
+"config_BBC_IGNORE_BOTS" =>
+"VÃµite kasutada seda vÃµimalust, et piirata robotite kÃ¤sitlemine. Vaikimisi
+eiratakse neid hostide pingereas, kuid Ã¼lejÃ¤Ã¤nud statistikasse jÃ¤Ã¤vad alles.
+Kui te ei soovi nÃ¤ha mitte Ã¼htegi robotit, saate mÃ¤Ã¤rata selle valiku
+&quot;2&quot;, siis ainult inimese kÃ¼lastusi vÃµetakse arvesse.<br />
+NÃ¤ited:<br />
 \$BBC_IGNORE_BOTS = 2;<br />
 \$BBC_IGNORE_BOTS = 1;<br />
 \$BBC_IGNORE_BOTS = &quot;&quot;;",
 
-"config_bbc_ignore_agent" =>
-"See valik määrab, kuidas BBClone vahet teeb ühel külastajal teisest. Vaikimisi on
-kasutusel IP-aadress ainult, mis näeb ette, realistlik enamikul juhtudel. Kuid
-siiski sinu külastajad on sageli varjatud proxy serverite taga, selle võimaluse
+"config_BBC_IGNORE_AGENT" =>
+"See valik mÃ¤Ã¤rab, kuidas BBClone vahet teeb Ã¼hel kÃ¼lastajal teisest. Vaikimisi on
+kasutusel IP-aadress ainult, mis nÃ¤eb ette, realistlik enamikul juhtudel. Kuid
+siiski sinu kÃ¼lastajad on sageli varjatud proxy serverite taga, selle vÃµimaluse
 deaktiveerimine suudab kindlustada rohkem realistlike tulemusi, alates uuest
-külastajast saab tõena võtta mil kasutajaagent on muutunud.<br />
-Näited:<br />
+kÃ¼lastajast saab tÃµena vÃµtta mil kasutajaagent on muutunud.<br />
+NÃ¤ited:<br />
 \$BBC_IGNORE_AGENT = 1;<br />
 \$BBC_IGNORE_AGENT = &quot;&quot;;",
 
-"config_bbc_kill_stats" =>
-"Kui te soovite nullida oma statistika saate aktiveerida selle lüliti siit ja
-kustutada need järgmisel visiidil. Ära unusta deaktiveerimast pärast, muidu
-on teil tõenäoliselt ebaharilikult väike liiklus ;).<br />
-Näited:<br />
+"config_BBC_KILL_STATS" =>
+"Kui te soovite nullida oma statistika saate aktiveerida selle lÃ¼liti siit ja
+kustutada need jÃ¤rgmisel visiidil. Ã„ra unusta deaktiveerimast pÃ¤rast, muidu
+on teil tÃµenÃ¤oliselt ebaharilikult vÃ¤ike liiklus ;).<br />
+NÃ¤ited:<br />
 \$BBC_KILL_STATS = 1;<br />
 \$BBC_KILL_STATS = &quot;&quot;;",
 
-"config_bbc_purge_single" =>
-"Hosti ja viite statistikad võivad luua tohutu hulga andmeid, mis on enamasti
-põhjustatud ühekorra külastajatest. Võimaldades seda lülitit saab puhastada neid
-sissekandeid ja märkimisväärselt kahaneb access.php oma suurusest ilma et see
-mõjutaks tegelikku nähtavat hosti ja viite pingerida. Klikkide summa on lisatud
-&quot;not_specified&quot; sissekanneteks säilitamaks üldise skoori puutumatust.<br />
-Näited:<br />
+"config_BBC_PURGE_SINGLE" =>
+"Hosti ja viite statistikad vÃµivad luua tohutu hulga andmeid, mis on enamasti
+pÃµhjustatud Ã¼hekorra kÃ¼lastajatest. VÃµimaldades seda lÃ¼litit saab puhastada neid
+sissekandeid ja mÃ¤rkimisvÃ¤Ã¤rselt kahaneb access.php oma suurusest ilma et see
+mÃµjutaks tegelikku nÃ¤htavat hosti ja viite pingerida. Klikkide summa on lisatud
+&quot;not_specified&quot; sissekanneteks sÃ¤ilitamaks Ã¼ldise skoori puutumatust.<br />
+NÃ¤ited:<br />
 \$BBC_PURGE_SINGLE = 1;<br />
 \$BBC_PURGE_SINGLE = &quot;&quot;;"
 

@@ -1,43 +1,37 @@
 <?php
 /* This file is part of BBClone (The PHP web counter on steroids)
  *
- * $Header: /cvs/bbclone/language/tr.php,v 1.39 2009/06/21 07:33:09 joku Exp $
+ * CVS File $Id: tr.php,v 1.55 2011/12/30 23:03:24 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  *
  * Translated by: Serkan Sisman, fatcoins@yahoo.com
  */
 
-// The main array ($_ is for doing short in its call)
-$_ = array(
-// Specific charset
-"global_charset" => "windows-1254",
+// The DNS Extensions array
+$extensions = array(
+"travel" => "Travel",
+"asia" => "Asia-Pacific",
+"jobs" => "Employment",
+"mobi" => "Mobiles",
+"cat" => "Catalan",
+"tel" => "Contacts",
 
-// Date format (used with date() )
-"global_date_format" => "d-m-Y",
-
-// Global translation
-"global_bbclone_copyright" => "BBClone takýmý adýna Lisanslýdýr.",
-"global_last_reset" => "Statistics last reset on",
-"global_yes" => "evet",
-"global_no" => "hayýr",
-
-// The error messages
-"error_cannot_see_config" =>
-"Server'daki BBClone ayarlarýnýn doðru olmadýðý için bu sayfayý göremiyorsunuz.",
-
-// Address Extensions
-"ac" => "Yükselme Adasý",
-"ad" => "Andor Prensliði",
-"ae" => "Birleþik Arap Emirlikleri",
+"ac" => "YÃ¼kselme AdasÄ±",
+"ad" => "Andor PrensliÄŸi",
+"ae" => "BirleÅŸik Arap Emirlikleri",
 "aero" => "Aero",
 "af" => "Afganistan",
 "ag" => "Antigua ve Barbuda",
@@ -53,48 +47,50 @@ $_ = array(
 "at" => "Avusturya",
 "au" => "Avusturalya",
 "aw" => "Aruba",
+"ax" => "Ã…land",
 "az" => "Azerbaycan",
 "ba" => "Bosna Hersek",
 "bb" => "Barbados",
-"bd" => "Bangladeþ",
-"be" => "Belçika",
+"bd" => "BangladeÅŸ",
+"be" => "BelÃ§ika",
 "bf" => "Burkina Faso",
 "bg" => "Bulgaristan",
 "bh" => "Bahreyn",
 "bi" => "Burundi",
-"biz" => "Ýþ",
+"biz" => "Ä°ÅŸ",
 "bj" => "Benin",
+"bl" => "Saint BarthÃ©lemy",
 "bm" => "Bermuda",
 "bn" => "Brunei",
 "bo" => "Bolivya",
 "br" => "Brezilya",
 "bs" => "Bahama",
 "bt" => "Butan",
-"bv" => "Bouvet Adasý",
+"bv" => "Bouvet AdasÄ±",
 "bw" => "Botsvana",
 "by" => "Beyaz Rusya",
 "bz" => "Beliz",
 "ca" => "Kanada",
-"cc" => "Kokos Adalarý",
+"cc" => "Kokos AdalarÄ±",
 "cd" => "Kongo Demoktarik Cum.",
 "cf" => "Orta Afrika Cumhuriyeti",
 "cg" => "Kongo",
-"ch" => "Ýsviçre",
-"ci" => "Fildiþi Sahilleri",
-"ck" => "Yemek Adalarý",
-"cl" => "Þili",
+"ch" => "Ä°sviÃ§re",
+"ci" => "FildiÅŸi Sahilleri",
+"ck" => "Yemek AdalarÄ±",
+"cl" => "Åžili",
 "cm" => "Kamerun",
-"cn" => "Çin",
+"cn" => "Ã‡in",
 "co" => "Kolombiya",
 "com" => "Ticari",
 "coop" => "Coop",
 "cr" => "Kosta Rika",
 "cs" => "Serbia and Montenegro",
-"cu" => "Küba",
+"cu" => "KÃ¼ba",
 "cv" => "Cabo Verde",
-"cx" => "Noel Adasý",
-"cy" => "Güney Kýbrýs",
-"cz" => "Çek Cumhuriyeti",
+"cx" => "Noel AdasÄ±",
+"cy" => "GÃ¼ney KÄ±brÄ±s",
+"cz" => "Ã‡ek Cumhuriyeti",
 "de" => "Almanya",
 "dj" => "Djiboti",
 "dk" => "Danimarka",
@@ -102,96 +98,98 @@ $_ = array(
 "do" => "Dominik Cumhuriyeti",
 "dz" => "Cezayir",
 "ec" => "Ekvator",
-"edu" => "Eðitimsel",
+"edu" => "EÄŸitimsel",
 "ee" => "Estonya",
-"eg" => "Mýsýr",
+"eg" => "MÄ±sÄ±r",
 "eh" => "Western Sahara",
 "er" => "Eritre",
-"es" => "Ýspanya",
+"es" => "Ä°spanya",
 "et" => "Etiyopya",
 "eu" => "European Union",
 "fi" => "Finlandiya",
 "fj" => "Fiji",
-"fk" => "Falkland Adalarý",
+"fk" => "Falkland AdalarÄ±",
 "fm" => "Mikronezya",
-"fo" => "Faroe Adalarý",
+"fo" => "Faroe AdalarÄ±",
 "fr" => "Fransa",
 "ga" => "Gabon",
-"gb" => "Ýngiltere",
+"gb" => "Ä°ngiltere",
 "gd" => "Grenada",
-"ge" => "Gürcistan",
-"gf" => "Fransýz Guyanasý",
+"ge" => "GÃ¼rcistan",
+"gf" => "FransÄ±z GuyanasÄ±",
 "gg" => "Guernsey",
 "gh" => "Gana",
-"gi" => "Cebelitarýk",
-"gl" => "Grönland Adasý",
+"gi" => "CebelitarÄ±k",
+"gl" => "GrÃ¶nland AdasÄ±",
 "gm" => "Gambiya",
 "gn" => "Gine",
-"gov" => "Hükümet",
+"gov" => "HÃ¼kÃ¼met",
 "gp" => "Guadeloupe",
 "gq" => "Ekvatoryal Gine",
 "gr" => "Yunanistan",
-"gs" => "Güney Gürcistan ve Güney Sandviç Adalarý",
+"gs" => "GÃ¼ney GÃ¼rcistan ve GÃ¼ney SandviÃ§ AdalarÄ±",
 "gt" => "Guatemala",
 "gu" => "Guam",
 "gw" => "Gine-Bisav",
 "gy" => "Guyana",
 "hk" => "Honk Hong",
-"hm" => "Heard ve Mc Donald Adalarý",
+"hm" => "Heard ve Mc Donald AdalarÄ±",
 "hn" => "Honduras",
-"hr" => "Hýrvatistan",
+"hr" => "HÄ±rvatistan",
 "ht" => "Haiti",
 "hu" => "Macaristan",
 "id" => "Endonezya",
-"ie" => "Ýrlanda",
-"il" => "Ýsrail",
-"im" => "Adam Adasý",
+"ie" => "Ä°rlanda",
+"il" => "Ä°srail",
+"im" => "Adam AdasÄ±",
 "in" => "Hindistan",
 "info" => "Bilgi",
-"int" => "Uluslararasý Kuruluþlar",
-"io" => "Ýngiliz Hint Okyanusu Bölgesi",
+"int" => "UluslararasÄ± KuruluÅŸlar",
+"io" => "Ä°ngiliz Hint Okyanusu BÃ¶lgesi",
 "iq" => "Irak",
-"ir" => "Ýran",
-"is" => "Ýzlanda",
-"it" => "Ýtalya",
-"je" => "Jerse Adasý",
+"ir" => "Ä°ran",
+"is" => "Ä°zlanda",
+"it" => "Ä°talya",
+"je" => "Jerse AdasÄ±",
 "jm" => "Jamaika",
-"jo" => "Ürdün",
+"jo" => "ÃœrdÃ¼n",
 "jp" => "Japonya",
 "ke" => "Kenya",
-"kg" => "Kýrgýzistan",
-"kh" => "Kamboçya",
+"kg" => "KÄ±rgÄ±zistan",
+"kh" => "KamboÃ§ya",
 "ki" => "Kiribati",
-"km" => "Komor Adalarý",
+"km" => "Komor AdalarÄ±",
 "kn" => "Aziz Kitts ve Nevis",
 "kp" => "North Korea",
 "kr" => "Kore",
 "kw" => "Kuveyt",
-"ky" => "Seymen Adalarý",
+"ky" => "Seymen AdalarÄ±",
 "kz" => "Kazakistan",
 "la" => "Laos",
-"lb" => "Lübnan",
+"lb" => "LÃ¼bnan",
 "lc" => "Aziz Lucia",
-"li" => "Lihtenþtayn",
+"li" => "LihtenÅŸtayn",
 "lk" => "Sri Lanka",
 "lr" => "Liberya",
 "ls" => "Lesoto",
 "lt" => "Litvanya",
-"lu" => "Lüksemburg",
+"lu" => "LÃ¼ksemburg",
 "lv" => "Letonya",
 "ly" => "Libya",
 "ma" => "Fas",
 "mc" => "Monako",
 "md" => "Moldova",
+"me" => "KaradaÄŸ",
+"mf" => "ErmiÅŸ Martin",
 "mg" => "Madagaskar",
-"mh" => "Marþal Adalarý",
+"mh" => "MarÅŸal AdalarÄ±",
 "mil" => "A.B.D Askeri",
 "mk" => "Makedonya",
 "ml" => "Mali",
 "mm" => "Miyanmar",
-"mn" => "Moðolistan",
+"mn" => "MoÄŸolistan",
 "mo" => "Makao",
-"mp" => "Kuzey Mariana Adalarý",
+"mp" => "Kuzey Mariana AdalarÄ±",
 "mq" => "Martinik",
 "mr" => "Moritanya",
 "ms" => "Montserrat",
@@ -207,28 +205,28 @@ $_ = array(
 "name" => "Personal",
 "nc" => "Yeni Kaledonya",
 "ne" => "Nijer",
-"net" => "Net Aðý",
-"nf" => "Norfolk Adasý",
+"net" => "Net AÄŸÄ±",
+"nf" => "Norfolk AdasÄ±",
 "ng" => "Nijerya",
 "ni" => "Nikaragua",
 "nl" => "Hollanda",
-"no" => "Norveç",
+"no" => "NorveÃ§",
 "np" => "Nepal",
 "nr" => "Nauru",
 "nu" => "Niue",
-"numeric" => "Sayýsal",
+"numeric" => "SayÄ±sal",
 "nz" => "Yeni Zellanda",
 "om" => "Umman",
-"org" => "Kuruluþlar",
+"org" => "KuruluÅŸlar",
 "pa" => "Panama",
 "pe" => "Peru",
-"pf" => "Fransýz Polonezyasý",
+"pf" => "FransÄ±z PolonezyasÄ±",
 "pg" => "Papua Yeni Gine",
 "ph" => "Filipinler",
 "pk" => "Pakistan",
 "pl" => "Polonya",
 "pm" => "Aziz Pierre ve Miquelon",
-"pn" => "Pitcairn Adalarý",
+"pn" => "Pitcairn AdalarÄ±",
 "pr" => "Porto Riko",
 "pro" => "Professional",
 "ps" => "Palestina",
@@ -236,19 +234,20 @@ $_ = array(
 "pw" => "Palau",
 "py" => "Paraguay",
 "qa" => "Katar",
-"re" => "Birleþme",
+"re" => "BirleÅŸme",
 "ro" => "Romanya",
+"rs" => "SÄ±rbistan",
 "ru" => "Rusya",
 "rw" => "Ruanda",
 "sa" => "Suudi Arabistan",
-"sb" => "Solomon Adalarý",
-"sc" => "Seyþeller",
+"sb" => "Solomon AdalarÄ±",
+"sc" => "SeyÅŸeller",
 "sd" => "Sudan",
-"se" => "Isveç",
+"se" => "IsveÃ§",
 "sg" => "Singapur",
 "sh" => "Aziz Helena",
 "si" => "Slovenya",
-"sj" => "Svalbard ve Jan Mayen Adalarý",
+"sj" => "Svalbard ve Jan Mayen AdalarÄ±",
 "sk" => "Slovakya",
 "sl" => "Siera Leon",
 "sm" => "San Marino",
@@ -256,82 +255,108 @@ $_ = array(
 "so" => "Somali",
 "sr" => "Surinam",
 "st" => "Sao Tome ve Principe",
-"su" => "Sovyetler Birliði",
+"su" => "Sovyetler BirliÄŸi",
 "sv" => "El Salvador",
 "sy" => "Suriye",
 "sz" => "Svaziland",
-"tc" => "Turks ve Caicos Adalarý",
-"td" => "Çad",
-"tf" => "Fransýz Güney Bölgeleri",
+"tc" => "Turks ve Caicos AdalarÄ±",
+"td" => "Ã‡ad",
+"tf" => "FransÄ±z GÃ¼ney BÃ¶lgeleri",
 "tg" => "Togo",
 "th" => "Tayland",
 "tj" => "Tacikistan",
 "tk" => "Tokelau",
-"tl" => "Doðu Timor",
-"tm" => "Türkmenistan",
+"tl" => "DoÄŸu Timor",
+"tm" => "TÃ¼rkmenistan",
 "tn" => "Tunus",
 "to" => "Tonga",
-"tp" => "Doðu Timor",
-"tr" => "Türkýye",
+"tp" => "DoÄŸu Timor",
+"tr" => "TÃ¼rkÄ±ye",
 "tt" => "Trinidad ve Tobago",
 "tv" => "Tuvalu",
 "tw" => "Tayvan",
 "tz" => "Tanzanya",
 "ua" => "Ukrayna",
 "ug" => "Uganda",
-"uk" => "Ýngiltere",
-"um" => "A.B.D Küçük Uzak Adalarý",
+"uk" => "Ä°ngiltere",
+"um" => "A.B.D KÃ¼Ã§Ã¼k Uzak AdalarÄ±",
 "unknown" => "Bilinmeyen",
 "us" => "A.B.D",
 "uy" => "Uruguay",
-"uz" => "Özbekistan",
+"uz" => "Ã–zbekistan",
 "va" => "Vatikan",
 "vc" => "Aziz Vincent ve the Grenadines",
 "ve" => "Venezuella",
-"vg" => "Bakire Adalarý (UK)",
-"vi" => "Bakire Adalarý (A.B.D)",
+"vg" => "Bakire AdalarÄ± (UK)",
+"vi" => "Bakire AdalarÄ± (A.B.D)",
 "vn" => "Vietnam",
 "vu" => "Vanuatu",
-"wf" => "Wallis ve Futuna Adalarý",
+"wf" => "Wallis ve Futuna AdalarÄ±",
 "ws" => "Samoa",
 "ye" => "Yemen",
 "yt" => "Mayotte",
 "yu" => "Serbia and Montenegro",
-"za" => "Güney Afrika",
+"za" => "GÃ¼ney Afrika",
 "zm" => "Zambiya",
 "zr" => "Zaire Cumhuriyeti",
 "zw" => "Zimbabve",
+);
+
+// The main Translation array
+$translation = array(
+// Specific charset
+"global_charset" => "utf-8",
+
+// Date format (used with date())
+"global_time_format" => "M jS, H:i:s",
+"global_day_format" => "l F jS, Y",
+"global_hours_format" => "l F jS, G:00",
+"global_month_format" => "F Y",
+
+// Global translation
+"global_titlebar"=> "Statistics for %SERVER generated on %DATE",
+"global_bbclone_copyright" => "BBClone takÄ±mÄ± adÄ±na LisanslÄ±dÄ±r.",
+"global_last_reset" => "Statistics last reset on",
+"global_yes" => "evet",
+"global_no" => "hayÄ±r",
+
+// The error messages
+"error_cannot_see_config" =>
+"Server'daki BBClone ayarlarÄ±nÄ±n doÄŸru olmadÄ±ÄŸÄ± iÃ§in bu sayfayÄ± gÃ¶remiyorsunuz.",
 
 // Miscellaneous translations
-"misc_other" => "Diðer",
+"misc_other" => "DiÄŸer",
 "misc_unknown" => "Bilinmeyen",
 "misc_second_unit" => "s",
 "misc_ignored" => "Ignored",
 
 // The Navigation Bar
-"navbar_Main_Site" => "Ana Sayfa",
-"navbar_Configuration" => "Biçim",
-"navbar_Global_Stats" => "Kapsamlý Ýstatistikler",
-"navbar_Detailed_Stats" => "Ayrýntýlý Ýstatistikler",
-"navbar_Time_Stats" => "Zaman Ýstatistikleri",
+"navbar_main_site" => "Ana Sayfa",
+"navbar_configuration" => "BiÃ§im",
+"navbar_global_stats" => "KapsamlÄ± Ä°statistikler",
+"navbar_detailed_stats" => "AyrÄ±ntÄ±lÄ± Ä°statistikler",
+"navbar_time_stats" => "Zaman Ä°statistikleri",
+"navbar_language" => "Language",
+"navbar_go" => "Go",
 
 // Detailed stats words
 "dstat_id" => "ID",
 "dstat_time" => "Zaman",
 "dstat_visits" => "Ziyaretler",
-"dstat_extension" => "Uzantý",
-"dstat_dns" => "Sunucu Adý",
+"dstat_extension" => "UzantÄ±",
+"dstat_dns" => "Sunucu AdÄ±",
 "dstat_from" => "Nereden",
-"dstat_os" => "Ýþletim Sistemi",
-"dstat_browser" => "Tarayýcý",
-"dstat_visible_rows" => "Görünür giriþler",
-"dstat_green_rows" => "yeþil satýrlar",
-"dstat_blue_rows" => "mavi satýrlar",
-"dstat_red_rows" => "kýrmýzý satýrlar",
+"dstat_os" => "Ä°ÅŸletim Sistemi",
+"dstat_browser" => "TarayÄ±cÄ±",
+"dstat_visible_rows" => "GÃ¶rÃ¼nÃ¼r giriÅŸler",
+"dstat_green_rows" => "yeÅŸil satÄ±rlar",
+"dstat_blue_rows" => "mavi satÄ±rlar",
+"dstat_red_rows" => "kÄ±rmÄ±zÄ± satÄ±rlar",
 "dstat_search" => "Search",
 "dstat_last_page" => "Last Page",
 "dstat_last_visit" => "son ziyaret",
 "dstat_robots" => "robotlar",
+"dstat_my_visit" => "Visits from your IP",
 "dstat_no_data" => "No data available",
 "dstat_prx" => "Proxy Server",
 "dstat_ip" => "IP Address",
@@ -340,55 +365,82 @@ $_ = array(
 "dstat_pages" => "Pages",
 "dstat_visit_length" => "Visit Length",
 "dstat_reloads" => "Reloads",
+"dstat_whois_information" => "Look up information on this IP Adress",
 
 // Global stats words
-"gstat_Accesses" => "Giriþler",
-"gstat_Total_visits" => "Toplam Ziyaretler",
-"gstat_Total_unique" => "Toplam Tekil Ziyaretler",
-"gstat_Operating_systems" => "En yüksek %d Ýþletim Sistemi",
-"gstat_Browsers" => "En yüksek %d Tarayýcý",
-"gstat_extensions" => "En yüksek %d Uzantý",
-"gstat_Robots" => "En yüksek %d Robot",
-"gstat_pages" => "En yüksek %d Ziyaret Edilen Sayfalar",
-"gstat_origins" => "En yüksek %d Kaynak",
+"gstat_accesses" => "GiriÅŸler",
+"gstat_total_visits" => "Toplam Ziyaretler",
+"gstat_total_unique" => "Toplam Tekil Ziyaretler",
+"gstat_operating_systems" => "En yÃ¼ksek %d Ä°ÅŸletim Sistemi",
+"gstat_browsers" => "En yÃ¼ksek %d TarayÄ±cÄ±",
+"gstat_extensions" => "En yÃ¼ksek %d UzantÄ±",
+"gstat_robots" => "En yÃ¼ksek %d Robot",
+"gstat_pages" => "En yÃ¼ksek %d Ziyaret Edilen Sayfalar",
+"gstat_origins" => "En yÃ¼ksek %d Kaynak",
 "gstat_hosts" => "Top %d Hosts",
 "gstat_keys" => "Top %d Keywords",
-"gstat_Total" => "Toplam",
-"gstat_Not_specified" => "Belirlenmemiþ",
+"gstat_total" => "Toplam",
+"gstat_not_specified" => "BelirlenmemiÅŸ",
 
 // Time stats words
-"tstat_Su" => "Paz",
-"tstat_Mo" => "Pzt",
-"tstat_Tu" => "Sal",
-"tstat_We" => "Çar",
-"tstat_Th" => "Per",
-"tstat_Fr" => "Cum",
-"tstat_Sa" => "Cmt",
+"tstat_su" => "Paz",
+"tstat_mo" => "Pzt",
+"tstat_tu" => "Sal",
+"tstat_we" => "Ã‡ar",
+"tstat_th" => "Per",
+"tstat_fr" => "Cum",
+"tstat_sa" => "Cmt",
 
-"tstat_Jan" => "Oca",
-"tstat_Feb" => "Þub",
-"tstat_Mar" => "Mar",
-"tstat_Apr" => "Nis",
-"tstat_May" => "May",
-"tstat_Jun" => "Haz",
-"tstat_Jul" => "Tem",
-"tstat_Aug" => "Agu",
-"tstat_Sep" => "Eyl",
-"tstat_Oct" => "Eki",
-"tstat_Nov" => "Kas",
-"tstat_Dec" => "Ara",
+"tstat_full_su" => "Sunday",
+"tstat_full_mo" => "Monday",
+"tstat_full_tu" => "Tuesday",
+"tstat_full_we" => "Wednesday",
+"tstat_full_th" => "Thursday",
+"tstat_full_fr" => "Friday",
+"tstat_full_sa" => "Saturday",
 
-"tstat_last_day" => "Þimdiki gün",
-"tstat_last_week" => "Þimdiki hafta",
-"tstat_last_month" => "Þimdiki ay",
-"tstat_last_year" => "Þimdiki yýl",
+"tstat_jan" => "Oca",
+"tstat_feb" => "Åžub",
+"tstat_mar" => "Mar",
+"tstat_apr" => "Nis",
+"tstat_may" => "May",
+"tstat_jun" => "Haz",
+"tstat_jul" => "Tem",
+"tstat_aug" => "Agu",
+"tstat_sep" => "Eyl",
+"tstat_oct" => "Eki",
+"tstat_nov" => "Kas",
+"tstat_dec" => "Ara",
+
+"tstat_full_jan" => "January",
+"tstat_full_feb" => "February",
+"tstat_full_mar" => "March",
+"tstat_full_apr" => "April",
+"tstat_full_may" => "May",
+"tstat_full_jun" => "June",
+"tstat_full_jul" => "July",
+"tstat_full_aug" => "August",
+"tstat_full_sep" => "September",
+"tstat_full_oct" => "October",
+"tstat_full_nov" => "November",
+"tstat_full_dec" => "December",
+
+"tstat_last_day" => "Åžimdiki gÃ¼n",
+"tstat_last_week" => "Åžimdiki hafta",
+"tstat_last_month" => "Åžimdiki ay",
+"tstat_last_year" => "Åžimdiki yÄ±l",
+"tstat_average" => "Average",
+
+// Loadtime notice
+"generated" => "page generated in ",
+"seconds" => " seconds",
 
 // Configuration page words and sentences
-"config_Variable_name" => "Deðiþken adý",
-"config_Variable_value" => "Deðiþken deðeri",
-"config_Explanations" => "Açýklama",
+"config_variable_name" => "DeÄŸiÅŸken adÄ±",
+"config_variable_value" => "DeÄŸiÅŸken deÄŸeri",
+"config_explanations" => "AÃ§Ä±klama",
 
-"config_bbc_mainsite" =>
+"config_BBC_MAINSITE" =>
 "If this variable has been set, a link to the specified location will be
 generated. The default value is pointing to the parent directory. In case your
 main site is located elsewhere, you probably want to adjust the value to suit
@@ -398,33 +450,33 @@ Examples:<br />
 \$BBC_MAINSITE = &quot;..&quot;<br />
 \$BBC_MAINSITE = &quot;&quot;;",
 
-"config_bbc_show_config" =>
+"config_BBC_SHOW_CONFIG" =>
 "BBClone defaults to revealing the stats' settings. In case this behavior isn't
 desired you can deny access to it by deactivating the option.<br />
 Examples:<br />
 \$BBC_SHOW_CONFIG = 1;<br />
 \$BBC_SHOW_CONFIG = &quot;&quot;;",
 
-"config_bbc_titlebar" =>
-"Burdaki baþlýk bütün BBClone sayfalarýnda görünecek.<br />
+"config_BBC_TITLEBAR" =>
+"Burdaki baÅŸlÄ±k bÃ¼tÃ¼n BBClone sayfalarÄ±nda gÃ¶rÃ¼necek.<br />
 The following macros are recognized:<br />
 <ul>
-<li>%SERVER: server adý,</li>
-<li>%DATE: þu anki tarih.</li>
+<li>%SERVER: server adÄ±,</li>
+<li>%DATE: ÅŸu anki tarih.</li>
 </ul>
-HTML etiketinin izin verdiði gibi.<br />
+HTML etiketinin izin verdiÄŸi gibi.<br />
 Examples:<br />
 \$BBC_TITLEBAR = &quot;Statistics for %SERVER generated the %DATE&quot;;<br />
 \$BBC_TITLEBAR = &quot;My stats from %DATE look like this:&quot;;
 <br />",
 
-"config_bbc_language" =>
+"config_BBC_LANGUAGE" =>
 "BBClone's default language, in case it hasn't been specified by the browser.
 The following languages are supported:
 <p>ar, bg, bs, ca, cs, da, de, el, en, es, fi, fr, hu, id, it, ja, ko, lt, mk, nb, nl, pl, pt, pt-br, ro, ru,
 sk, sl, sv, th, tr, ua, zh-cn and zh-tw</p>",
 
-"config_bbc_maxtime" =>
+"config_BBC_MAXTIME" =>
 "This variable defines the length of an unique visit in seconds. Each hit from
 the same visitor within this period will be considered as one visit, as long as
 two successive hits don't exceed the specified limit. Default is the de facto
@@ -434,12 +486,12 @@ Examples:<br />
 \$BBC_MAXTIME = 0;<br />
 \$BBC_MAXTIME = 1800;",
 
-"config_bbc_maxvisible" =>
+"config_BBC_MAXVISIBLE" =>
 "How many entries you want to have listed in the detailed stats? The default
 value is 100. It's recommended not to set it higher than 500 to avoid too heavy
 load.",
 
-"config_bbc_detailed_stat_fields" =>
+"config_BBC_DETAILED_STAT_FIELDS" =>
 "The variable \$BBC_DETAILED_STAT_FIELDS determines the columns to be displayed
 in the detailed statistics. Possible columns are:
 <ul>
@@ -463,7 +515,7 @@ Examples:<br />
 <br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;date, ext, browser, os, ip&quot;;<br />",
 
-"config_bbc_time_offset" =>
+"config_BBC_TIME_OFFSET" =>
 "In case the server time doesn't match your local timezone, you can adjust the
 time in minutes by using this switch. Negative values will set back the time,
 positive ones will set it forth.<br />
@@ -472,7 +524,7 @@ Examples:<br />
 \$BBC_TIME_OFFSET = -300;<br />
 \$BBC_TIME_OFFSET = 0;",
 
-"config_bbc_no_dns" =>
+"config_BBC_NO_DNS" =>
 "This options defines, whether IP addresses should be resolved to hostnames or
 not. While hostnames tell a lot more about the visitor, resolving them may
 considerably slow down your site, if the DNS servers used are slow, limited in
@@ -482,7 +534,7 @@ Examples:<br />
 \$BBC_NO_DNS = 1;<br />
 \$BBC_NO_DNS = &quot;&quot;;",
 
-"config_bbc_no_hits" =>
+"config_BBC_NO_HITS" =>
 "BBClone's default is to show hits in the time stats, because it gives a quite
 useful Impression from the actual server load. If, however, you prefer to use
 unique visits as base for your time stats, you can change the way of counting
@@ -491,7 +543,7 @@ Examples:<br />
 \$BBC_NO_HITS = 1;<br />
 \$BBC_NO_HITS = &quot;&quot;;",
 
-"config_bbc_ignore_ip" =>
+"config_BBC_IGNORE_IP" =>
 "This option can be used to exclude particular IP addresses or address ranges
 from counting. In case you want to add several expressions use a comma as
 separator.<br />
@@ -499,7 +551,7 @@ Examples:<br />
 \$BBC_IGNORE_IP = &quot;127., 192.168.&quot;;<br />
 \$BBC_IGNORE_IP = &quot;&quot;;",
 
-"config_bbc_ignore_refer" =>
+"config_BBC_IGNORE_REFER" =>
 "In case you don't want to have particular referrers from your visitors listed
 in your ranking or detailed stats, you can specify one or more keywords used
 for blocking if a referrer matches up against them. If you use more keywords,
@@ -508,7 +560,7 @@ Examples:<br />
 \$BBC_IGNORE_REFER = &quot;spambot.org, .escort.&quot;;<br />
 \$BBC_IGNORE_REFER = &quot;&quot;;",
 
-"config_bbc_ignore_bots" =>
+"config_BBC_IGNORE_BOTS" =>
 "You can use this option to determine the treatment of robots. The default is
 to ignore them in the top hosts ranking but leave them in the remaining
 stats. If you don't want to see any robots at all you can set this option to
@@ -518,7 +570,7 @@ Examples:<br />
 \$BBC_IGNORE_BOTS = 1;<br />
 \$BBC_IGNORE_BOTS = &quot;&quot;;",
 
-"config_bbc_ignore_agent" =>
+"config_BBC_IGNORE_AGENT" =>
 "This option defines how BBClone tells one visitor from another. Default is to
 use the IP address only, which provides realistic figures in most cases. If,
 however, your visitors often are hidden behind proxy servers, deactivation of
@@ -528,7 +580,7 @@ Examples:<br />
 \$BBC_IGNORE_AGENT = 1;<br />
 \$BBC_IGNORE_AGENT = &quot;&quot;;",
 
-"config_bbc_kill_stats" =>
+"config_BBC_KILL_STATS" =>
 "Whenever you wish to reset your stats you can activate this switch and have
 them deleted by the next visit. Don't forget to deactivate it afterwards, else
 you'll probably experience unusually low traffic ;).<br />
@@ -536,7 +588,7 @@ Examples:<br />
 \$BBC_KILL_STATS = 1;<br />
 \$BBC_KILL_STATS = &quot;&quot;;",
 
-"config_bbc_purge_single" =>
+"config_BBC_PURGE_SINGLE" =>
 "Host and referrer stats can generate a huge amount of data, however mostly
 caused by one time visitors. By enabling this switch you can purge these
 entries and considerably shrink access.php in its size without affecting your

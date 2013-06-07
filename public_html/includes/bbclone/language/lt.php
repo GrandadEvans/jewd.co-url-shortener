@@ -1,51 +1,45 @@
 <?php
 /* This file is part of BBClone (The PHP web counter on steroids)
  *
- * $Header: /cvs/bbclone/language/lt.php,v 1.49 2009/06/21 07:33:09 joku Exp $
+ * CVS File $Id: lt.php,v 1.64 2011/12/30 23:03:24 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  *
  * Translated by: Vilius Simonaitis <maumas98@yahoo.com>
- * Corrected by: Viaèeslav Giedroit <slv@baltas.net>
+ * Corrected by: ViaÄeslav Giedroit <slv@baltas.net>
  */
 
-// The main array ($_ is for doing short in its call)
-$_ = array(
-// Specific charset
-"global_charset" => "windows-1257",
+// The DNS Extensions array
+$extensions = array(
+"travel" => "Travel",
+"asia" => "Asia-Pacific",
+"jobs" => "Employment",
+"mobi" => "Mobiles",
+"cat" => "Catalan",
+"tel" => "Contacts",
 
-// Date format (used with date() )
-"global_date_format" => "Y-m-d",
-
-// Global translation
-"global_bbclone_copyright" => "BBClone komanda - Licenzijuota pagal",
-"global_last_reset" => "Statistics last reset on",
-"global_yes" => "taip",
-"global_no" => "ne",
-
-// The error messages
-"error_cannot_see_config" =>
-"Jums nëra leista matyti BBClone konfigûracijos ğiame serveryje.",
-
-// Address Extensions
-"ac" => "Prisikëlimo Sala",
+"ac" => "PrisikÄ—limo Sala",
 "ad" => "Andora",
-"ae" => "Jungtiniai arabø emiratai",
+"ae" => "Jungtiniai arabÅ³ emiratai",
 "aero" => "Aero",
 "af" => "Afghanistanas",
 "ag" => "Antigva ir Barbuda",
 "ai" => "Angila",
 "al" => "Albanija",
 "am" => "Armenija",
-"an" => "Skandinavø Antilai",
+"an" => "SkandinavÅ³ Antilai",
 "ao" => "Angola",
 "aq" => "Antarktika",
 "ar" => "Argentina",
@@ -54,10 +48,11 @@ $_ = array(
 "at" => "Austrija",
 "au" => "Australija",
 "aw" => "Aruba",
-"az" => "Azerbaidşianas",
+"ax" => "Alandai",
+"az" => "AzerbaidÅ¾ianas",
 "ba" => "Bosnija and Hercogovina",
 "bb" => "Barbadosas",
-"bd" => "Bangladeğas",
+"bd" => "BangladeÅ¡as",
 "be" => "Belgija",
 "bf" => "Burkina Faso",
 "bg" => "Bulgarija",
@@ -65,8 +60,9 @@ $_ = array(
 "bi" => "Burundi",
 "biz" => "Verslas",
 "bj" => "Beninas",
+"bl" => "Å v. BartolomÄ—jaus sala",
 "bm" => "Bermudai",
-"bn" => "Brunëjus",
+"bn" => "BrunÄ—jus",
 "bo" => "Bolivija",
 "br" => "Brazilija",
 "bs" => "Bahamai",
@@ -74,17 +70,17 @@ $_ = array(
 "bv" => "Bouvet Island",
 "bw" => "Botsvana",
 "by" => "Belarus",
-"bz" => "Belizë",
+"bz" => "BelizÄ—",
 "ca" => "Kanada",
 "cc" => "Kokoso Salos",
 "cd" => "Kongas",
-"cf" => "Centrinës Afrikos Respublika",
+"cf" => "CentrinÄ—s Afrikos Respublika",
 "cg" => "Kongas",
-"ch" => "Ğveicarija",
+"ch" => "Å veicarija",
 "ci" => "Ivory Coast",
-"ck" => "Gegutës Salos",
-"cl" => "Èilë",
-"cm" => "Kamerûnas",
+"ck" => "GegutÄ—s Salos",
+"cl" => "ÄŒilÄ—",
+"cm" => "KamerÅ«nas",
 "cn" => "Kinija",
 "co" => "Kolombija",
 "com" => ".com",
@@ -93,9 +89,9 @@ $_ = array(
 "cs" => "Serbia and Montenegro",
 "cu" => "Kuba",
 "cv" => "Cape Verde",
-"cx" => "Kalëdø Salos",
+"cx" => "KalÄ—dÅ³ Salos",
 "cy" => "Kipras",
-"cz" => "Èekijos respublika",
+"cz" => "ÄŒekijos respublika",
 "de" => "Vokietija",
 "dj" => "Djibouti",
 "dk" => "Danija",
@@ -112,30 +108,30 @@ $_ = array(
 "et" => "Etiopija",
 "eu" => "European Union",
 "fi" => "Suomija",
-"fj" => "Fidşi",
+"fj" => "FidÅ¾i",
 "fk" => "Folklando Salos",
 "fm" => "Mikronezija",
-"fo" => "Faraonø Salos",
-"fr" => "Prancûzija",
+"fo" => "FaraonÅ³ Salos",
+"fr" => "PrancÅ«zija",
 "ga" => "Gabonas",
-"gb" => "Jungtinës Karalystës",
+"gb" => "JungtinÄ—s KaralystÄ—s",
 "gd" => "Grenada",
 "ge" => "Georgija",
-"gf" => "Prancûzø Gujana",
+"gf" => "PrancÅ«zÅ³ Gujana",
 "gg" => "Guernsey",
 "gh" => "Gana",
 "gi" => "Gibraltaras",
 "gl" => "Greenland'as",
 "gm" => "Gambija",
-"gn" => "Gvinëja",
-"gov" => "Vyriausybë (.gov)",
-"gp" => "Gvadelupë",
-"gq" => "Ekvatorinë Gvinëja",
+"gn" => "GvinÄ—ja",
+"gov" => "VyriausybÄ— (.gov)",
+"gp" => "GvadelupÄ—",
+"gq" => "EkvatorinÄ— GvinÄ—ja",
 "gr" => "Graikija",
-"gs" => "Pietø Georgija ir Pietø Buterbrodo Salos",
+"gs" => "PietÅ³ Georgija ir PietÅ³ Buterbrodo Salos",
 "gt" => "Gvatemala",
 "gu" => "Guama",
-"gw" => "Gvinëja-Bissau",
+"gw" => "GvinÄ—ja-Bissau",
 "gy" => "Gujana",
 "hk" => "Hong-Kongas",
 "hm" => "Heard ir Mc Donald Salos",
@@ -148,33 +144,33 @@ $_ = array(
 "il" => "Izraelis",
 "im" => "Vyro sala",
 "in" => "Indija",
-"info" => "Informacinës Tarnybos",
-"int" => "Tarptautinës Organizacijos",
-"io" => "Britø Indijos Vandenyno teritorijos",
+"info" => "InformacinÄ—s Tarnybos",
+"int" => "TarptautinÄ—s Organizacijos",
+"io" => "BritÅ³ Indijos Vandenyno teritorijos",
 "iq" => "Irakas",
 "ir" => "Iranas",
 "is" => "Islandija",
 "it" => "Italija",
-"je" => "Dşersis",
+"je" => "DÅ¾ersis",
 "jm" => "Jamaika",
 "jo" => "Jordanija",
 "jp" => "Japonija",
 "ke" => "Kenia",
 "kg" => "Kirgistanas",
-"kh" => "Cambodşa",
+"kh" => "CambodÅ¾a",
 "ki" => "Kiribati",
 "km" => "Komorosas",
 "kn" => "Saint Kitts and Nevis",
 "kp" => "North Korea",
-"kr" => "Korëja",
+"kr" => "KorÄ—ja",
 "kw" => "Kuveitas",
-"ky" => "Caimanø Salos",
+"ky" => "CaimanÅ³ Salos",
 "kz" => "Kazakstanas",
 "la" => "Laosas",
 "lb" => "Lebanonas",
-"lc" => "Ğventoji Liucija",
-"li" => "Liechtenğteinas",
-"lk" => "Ğri Lanka",
+"lc" => "Å ventoji Liucija",
+"li" => "LiechtenÅ¡teinas",
+"lk" => "Å ri Lanka",
 "lr" => "Liberija",
 "ls" => "Lesotas",
 "lt" => "Lietuva",
@@ -184,15 +180,17 @@ $_ = array(
 "ma" => "Marokas",
 "mc" => "Monakas",
 "md" => "Moldova",
+"me" => "Juodkalnija",
+"mf" => "San Martenas",
 "mg" => "Madagaskaras",
-"mh" => "Marğalo Salos",
-"mil" => "Jungtiniø Tautø karinë tarnyba",
+"mh" => "MarÅ¡alo Salos",
+"mil" => "JungtiniÅ³ TautÅ³ karinÄ— tarnyba",
 "mk" => "Makedonija",
 "ml" => "Mali",
 "mm" => "Myanmar",
 "mn" => "Mongolija",
 "mo" => "Makau",
-"mp" => "Ğiaurinës Marijanos Salos",
+"mp" => "Å iaurinÄ—s Marijanos Salos",
 "mq" => "Martinika",
 "mr" => "Mauritanija",
 "ms" => "Montserrat",
@@ -223,12 +221,12 @@ $_ = array(
 "org" => ".org",
 "pa" => "Panama",
 "pe" => "Peru",
-"pf" => "Prancûzø Polinezija",
-"pg" => "Papua Naujoji Gvinëja",
+"pf" => "PrancÅ«zÅ³ Polinezija",
+"pg" => "Papua Naujoji GvinÄ—ja",
 "ph" => "Filipinai",
 "pk" => "Pakistanas",
 "pl" => "Lenkija",
-"pm" => "Ğv. Pierre ir Miquelon",
+"pm" => "Å v. Pierre ir Miquelon",
 "pn" => "Pitcairn",
 "pr" => "Puerto Rikas",
 "pro" => "Professional",
@@ -239,16 +237,17 @@ $_ = array(
 "qa" => "Qatar",
 "re" => "Reunion",
 "ro" => "Rumunija",
+"rs" => "Serbija",
 "ru" => "Rusijos federacija",
 "rw" => "Rovanda",
 "sa" => "Saudo Arabija",
 "sb" => "Saliamono Salos",
-"sc" => "Seiğeliai",
+"sc" => "SeiÅ¡eliai",
 "sd" => "Sudanas",
-"se" => "Ğvedija",
-"sg" => "Singapûras",
-"sh" => "Ğv. Helena",
-"si" => "Slovënija",
+"se" => "Å vedija",
+"sg" => "SingapÅ«ras",
+"sh" => "Å v. Helena",
+"si" => "SlovÄ—nija",
 "sj" => "Svalbard and Jan Mayen Islands",
 "sk" => "Slovakija",
 "sl" => "Siera Leonas",
@@ -257,22 +256,22 @@ $_ = array(
 "so" => "Somalia",
 "sr" => "Surinamas",
 "st" => "Sao Tome and Principe",
-"su" => "Savietø Sàjunga",
+"su" => "SavietÅ³ SÄ…junga",
 "sv" => "El Salvadoras",
 "sy" => "Sirija",
 "sz" => "Swaziland'as",
 "tc" => "Turks and Caicos Islands",
-"td" => "Èiadas",
-"tf" => "Prancûzø Pietø teritorijos",
+"td" => "ÄŒiadas",
+"tf" => "PrancÅ«zÅ³ PietÅ³ teritorijos",
 "tg" => "Togo",
 "th" => "Tailandas",
 "tj" => "Taikistanas",
 "tk" => "Tokelau",
-"tl" => "Rytø Timûras",
+"tl" => "RytÅ³ TimÅ«ras",
 "tm" => "Turkmenistanas",
 "tn" => "Tunisija",
 "to" => "Tongas",
-"tp" => "Rytø Timûras",
+"tp" => "RytÅ³ TimÅ«ras",
 "tr" => "Turkija",
 "tt" => "Trinidadas ir Tobagas",
 "tv" => "Tuvalu",
@@ -280,14 +279,14 @@ $_ = array(
 "tz" => "Tanzanija",
 "ua" => "Ukraina",
 "ug" => "Uganda",
-"uk" => "Jungtinës Karalystës",
+"uk" => "JungtinÄ—s KaralystÄ—s",
 "um" => "US Minor Outlying Islands",
-"unknown" => "Neşinoma",
+"unknown" => "NeÅ¾inoma",
 "us" => "JAV",
 "uy" => "Urugvajus",
 "uz" => "Uzbekistanas",
 "va" => "Vatikanas",
-"vc" => "Ğv. Vincent ir Grenadines",
+"vc" => "Å v. Vincent ir Grenadines",
 "ve" => "Venesuela",
 "vg" => "Virginijos Salos (UK)",
 "vi" => "Virginijos Salos (US)",
@@ -298,256 +297,309 @@ $_ = array(
 "ye" => "Jemenas",
 "yt" => "Majotas",
 "yu" => "Serbia and Montenegro",
-"za" => "Pietø Afrika",
+"za" => "PietÅ³ Afrika",
 "zm" => "Zambija",
 "zr" => "Zairas",
-"zw" => "Zimbabvë",
+"zw" => "ZimbabvÄ—",
+);
+
+// The main Translation array
+$translation = array(
+// Specific charset
+"global_charset" => "utf-8",
+
+// Date format (used with date())
+"global_time_format" => "M jS, H:i:s",
+"global_day_format" => "l F jS, Y",
+"global_hours_format" => "l F jS, G:00",
+"global_month_format" => "F Y",
+
+// Global translation
+"global_titlebar"=> "Statistics for %SERVER generated on %DATE",
+"global_bbclone_copyright" => "BBClone komanda - Licenzijuota pagal",
+"global_last_reset" => "Statistics last reset on",
+"global_yes" => "taip",
+"global_no" => "ne",
+
+// The error messages
+"error_cannot_see_config" =>
+"Jums nÄ—ra leista matyti BBClone konfigÅ«racijos Å¡iame serveryje.",
 
 // Miscellaneoux translations
 "misc_other" => "Kita",
-"misc_unknown" => "Neşinoma",
+"misc_unknown" => "NeÅ¾inoma",
 "misc_second_unit" => "s",
 "misc_ignored" => "Ignored",
 
 // The Navigation Bar
-"navbar_Main_Site" => "Titulinis",
-"navbar_Configuration" => "Konfigûracija",
-"navbar_Global_Stats" => "Globali Statistika",
-"navbar_Detailed_Stats" => "Detali Statistika",
-"navbar_Time_Stats" => "Laikmatis",
+"navbar_main_site" => "Titulinis",
+"navbar_configuration" => "KonfigÅ«racija",
+"navbar_global_stats" => "Globali Statistika",
+"navbar_detailed_stats" => "Detali Statistika",
+"navbar_time_stats" => "Laikmatis",
+"navbar_language" => "Language",
+"navbar_go" => "Go",
 
 // Detailed stats words
 "dstat_id" => "ID",
 "dstat_time" => "Laikas",
 "dstat_visits" => "Apsilankymai",
-"dstat_extension" => "Iğplëtimas",
+"dstat_extension" => "IÅ¡plÄ—timas",
 "dstat_dns" => "Hostname'as",
-"dstat_from" => "Iğ kur",
+"dstat_from" => "IÅ¡ kur",
 "dstat_os" => "OS",
-"dstat_browser" => "Narğyklë",
-"dstat_visible_rows" => "Matoma uşklausø",
-"dstat_green_rows" => "şalios eilutës",
-"dstat_blue_rows" => "mëlynos eilutës",
-"dstat_red_rows" => "raudonos eilutës",
+"dstat_browser" => "NarÅ¡yklÄ—",
+"dstat_visible_rows" => "Matoma uÅ¾klausÅ³",
+"dstat_green_rows" => "Å¾alios eilutÄ—s",
+"dstat_blue_rows" => "mÄ—lynos eilutÄ—s",
+"dstat_red_rows" => "raudonos eilutÄ—s",
 "dstat_search" => "Search",
 "dstat_last_page" => "Last Page",
 "dstat_last_visit" => "paskutinis apsilankymas",
-"dstat_robots" => "paieğkos sistemos",
-"dstat_no_data" => "Nëra duomenø",
+"dstat_robots" => "paieÅ¡kos sistemos",
+"dstat_my_visit" => "Visits from your IP",
+"dstat_no_data" => "NÄ—ra duomenÅ³",
 "dstat_prx" => "Proxy Serveris",
 "dstat_ip" => "IP Addresas",
 "dstat_user_agent" => "User Agent",
 "dstat_nr" => "Nr",
 "dstat_pages" => "Puslapiai",
-"dstat_visit_length" => "Apsilankymo trukmë",
+"dstat_visit_length" => "Apsilankymo trukmÄ—",
 "dstat_reloads" => "Perkrovimai",
+"dstat_whois_information" => "Look up information on this IP Adress",
 
 // Global stats words
-"gstat_Accesses" => "Uşklausos",
-"gstat_Total_visits" => "Viso apsilankymø",
-"gstat_Total_unique" => "Viso unikaliø",
-"gstat_Operating_systems" => "Operacinës sistemos",
-"gstat_Browsers" => "Narğyklës",
-"gstat_extensions" => "%d pirmø plëtiniø",
-"gstat_Robots" => "Paieğkos sistemos",
-"gstat_pages" => "%d pirmø puslapiø",
-"gstat_origins" => "%d pirmø nuorodø",
-"gstat_hosts" => "%d pirmø Hostø",
-"gstat_keys" => "%d pirmø raktaşodşiø",
-"gstat_Total" => "Viso",
-"gstat_Not_specified" => "Nenurodyta",
+"gstat_accesses" => "UÅ¾klausos",
+"gstat_total_visits" => "Viso apsilankymÅ³",
+"gstat_total_unique" => "Viso unikaliÅ³",
+"gstat_operating_systems" => "OperacinÄ—s sistemos",
+"gstat_browsers" => "NarÅ¡yklÄ—s",
+"gstat_extensions" => "%d pirmÅ³ plÄ—tiniÅ³",
+"gstat_robots" => "PaieÅ¡kos sistemos",
+"gstat_pages" => "%d pirmÅ³ puslapiÅ³",
+"gstat_origins" => "%d pirmÅ³ nuorodÅ³",
+"gstat_hosts" => "%d pirmÅ³ HostÅ³",
+"gstat_keys" => "%d pirmÅ³ raktaÅ¾odÅ¾iÅ³",
+"gstat_total" => "Viso",
+"gstat_not_specified" => "Nenurodyta",
 
 // Time stats words
-"tstat_Su" => "Sek",
-"tstat_Mo" => "Pir",
-"tstat_Tu" => "Ant",
-"tstat_We" => "Tre",
-"tstat_Th" => "Ket",
-"tstat_Fr" => "Pen",
-"tstat_Sa" => "Ğeğ",
+"tstat_su" => "Sek",
+"tstat_mo" => "Pir",
+"tstat_tu" => "Ant",
+"tstat_we" => "Tre",
+"tstat_th" => "Ket",
+"tstat_fr" => "Pen",
+"tstat_sa" => "Å eÅ¡",
 
-"tstat_Jan" => "Sau",
-"tstat_Feb" => "Vas",
-"tstat_Mar" => "Kov",
-"tstat_Apr" => "Bal",
-"tstat_May" => "Geg",
-"tstat_Jun" => "Bir",
-"tstat_Jul" => "Lie",
-"tstat_Aug" => "Rugp",
-"tstat_Sep" => "Rugs",
-"tstat_Oct" => "Spa",
-"tstat_Nov" => "Lap",
-"tstat_Dec" => "Gruo",
+"tstat_full_su" => "Sunday",
+"tstat_full_mo" => "Monday",
+"tstat_full_tu" => "Tuesday",
+"tstat_full_we" => "Wednesday",
+"tstat_full_th" => "Thursday",
+"tstat_full_fr" => "Friday",
+"tstat_full_sa" => "Saturday",
 
-"tstat_last_day" => "Pastarajà dienà",
-"tstat_last_week" => "Pastarajà savaitæ",
-"tstat_last_month" => "Pastarajá menësá",
+"tstat_jan" => "Sau",
+"tstat_feb" => "Vas",
+"tstat_mar" => "Kov",
+"tstat_apr" => "Bal",
+"tstat_may" => "Geg",
+"tstat_jun" => "Bir",
+"tstat_jul" => "Lie",
+"tstat_aug" => "Rugp",
+"tstat_sep" => "Rugs",
+"tstat_oct" => "Spa",
+"tstat_nov" => "Lap",
+"tstat_dec" => "Gruo",
+
+"tstat_full_jan" => "January",
+"tstat_full_feb" => "February",
+"tstat_full_mar" => "March",
+"tstat_full_apr" => "April",
+"tstat_full_may" => "May",
+"tstat_full_jun" => "June",
+"tstat_full_jul" => "July",
+"tstat_full_aug" => "August",
+"tstat_full_sep" => "September",
+"tstat_full_oct" => "October",
+"tstat_full_nov" => "November",
+"tstat_full_dec" => "December",
+
+"tstat_last_day" => "PastarajÄ… dienÄ…",
+"tstat_last_week" => "PastarajÄ… savaitÄ™",
+"tstat_last_month" => "PastarajÄ¯ menÄ—sÄ¯",
 "tstat_last_year" => "Pastaraisiais metais",
+"tstat_average" => "Average",
+
+// Loadtime notice
+"generated" => "page generated in ",
+"seconds" => " seconds",
 
 // Configuration page words and sentences
-"config_Variable_name" => "Kintamojo vardas",
-"config_Variable_value" => "Kintamojo reikğmë",
-"config_Explanations" => "Paaiğkinimas",
+"config_variable_name" => "Kintamojo vardas",
+"config_variable_value" => "Kintamojo reikÅ¡mÄ—",
+"config_explanations" => "PaaiÅ¡kinimas",
 
-"config_bbc_mainsite" =>
-"Ğis kintamasis nusako nuorodà á svetainæ. Pagal nutylëjimà, svetainës
-adresu laikoma aukğtesnë direktorija. Jei Jûsø svetainë yra kur nors kitur,
-galite pritakyti ğià nuorodà savo reikmëms.<br />
-Pavyzdşiai:<br />
+"config_BBC_MAINSITE" =>
+"Å is kintamasis nusako nuorodÄ… Ä¯ svetainÄ™. Pagal nutylÄ—jimÄ…, svetainÄ—s
+adresu laikoma aukÅ¡tesnÄ— direktorija. Jei JÅ«sÅ³ svetainÄ— yra kur nors kitur,
+galite pritakyti Å¡iÄ… nuorodÄ… savo reikmÄ—ms.<br />
+PavyzdÅ¾iai:<br />
 \$BBC_MAINSITE = &quot;http://www.svetaine.lt/&quot;<br />
 \$BBC_MAINSITE = &quot;..&quot;<br />
 \$BBC_MAINSITE = &quot;&quot;;",
 
-"config_bbc_show_config" =>
-"BBClone statistikos' nustatymø perşiûra. Ğiuo kintamuoju galite
-uşdrausti jø perşiûrà.<br />
-Pavyzdşiai:<br />
+"config_BBC_SHOW_CONFIG" =>
+"BBClone statistikos' nustatymÅ³ perÅ¾iÅ«ra. Å iuo kintamuoju galite
+uÅ¾drausti jÅ³ perÅ¾iÅ«rÄ….<br />
+PavyzdÅ¾iai:<br />
 \$BBC_SHOW_CONFIG = 1;<br />
 \$BBC_SHOW_CONFIG = &quot;&quot;;",
 
-"config_bbc_titlebar" =>
-"Tekstas, atsirandantis antrağtëje, visuose BBClone puslapiuose.<br />
+"config_BBC_TITLEBAR" =>
+"Tekstas, atsirandantis antraÅ¡tÄ—je, visuose BBClone puslapiuose.<br />
 Galima naudoti tokius kintamuosius:<br />
 <ul>
 <li>%SERVER: serverio adresas,</li>
-<li>%DATE: dabartinë data.</li>
+<li>%DATE: dabartinÄ— data.</li>
 </ul>
 Taip pat galima naudoti ir HTML.<br />
-Pavyzdşiai:<br />
+PavyzdÅ¾iai:<br />
 \$BBC_TITLEBAR = &quot;%SERVER statistika sugeneruota %DATE&quot;;<br />
 \$BBC_TITLEBAR = &quot;Mano statistika %DATE buvo tokia:&quot;;
 <br />",
 
-"config_bbc_language" =>
-"BBClone kalba pagal nutylëjimà, nustatoma tam atvejui, jei narğylë nepateikë pagedautinos kalbos.
-Galima naudoti ğias kalbas:
+"config_BBC_LANGUAGE" =>
+"BBClone kalba pagal nutylÄ—jimÄ…, nustatoma tam atvejui, jei narÅ¡ylÄ— nepateikÄ— pagedautinos kalbos.
+Galima naudoti Å¡ias kalbas:
 <p>ar, bg, bs, ca, cs, da, de, el, en, es, fi, fr, hu, id, it, ja, ko, lt, mk, nb, nl, pl, pt, pt-br, ro, ru,
 sk, sl, sv, th, tr, zh-cn ir zh-tw</p>",
 
-"config_bbc_maxtime" =>
-"Ğis kintamasis nusako unikalaus apsilankymo tarpsná sekundëmis. Kiekvienas
-to paties lankytojo paspaudimas per ğá periodà bus laikomas kaip vienas apsilankymas,
-kadangi du gretimi paspaudimai nevirğyja ğio laiko limito. Pagal nutylëjimà
-yra laikomas defacto web standartas - 30 minuèiø (1800 sekundşiø), nors, esant porekiui,
-galite priskirti savo pageidaujamà reikğmæ.<br />
-Pavyzdşiai:<br />
+"config_BBC_MAXTIME" =>
+"Å is kintamasis nusako unikalaus apsilankymo tarpsnÄ¯ sekundÄ—mis. Kiekvienas
+to paties lankytojo paspaudimas per Å¡Ä¯ periodÄ… bus laikomas kaip vienas apsilankymas,
+kadangi du gretimi paspaudimai nevirÅ¡yja Å¡io laiko limito. Pagal nutylÄ—jimÄ…
+yra laikomas defacto web standartas - 30 minuÄiÅ³ (1800 sekundÅ¾iÅ³), nors, esant porekiui,
+galite priskirti savo pageidaujamÄ… reikÅ¡mÄ™.<br />
+PavyzdÅ¾iai:<br />
 \$BBC_MAXTIME = 0;<br />
 \$BBC_MAXTIME = 1800;",
 
-"config_bbc_maxvisible" =>
-"Kiek árağø norite matyti Detaliame apsilankymø sàrağe? Pagal nutylëjimà,
-ğio kintamojo reikğmë yra 100. Yra rekomenduotina nenaudoti daugiau nei
-500 árağø. Didesnis árağø kiekis gali sukelti nağumo problemø.",
+"config_BBC_MAXVISIBLE" =>
+"Kiek Ä¯raÅ¡Å³ norite matyti Detaliame apsilankymÅ³ sÄ…raÅ¡e? Pagal nutylÄ—jimÄ…,
+Å¡io kintamojo reikÅ¡mÄ— yra 100. Yra rekomenduotina nenaudoti daugiau nei
+500 Ä¯raÅ¡Å³. Didesnis Ä¯raÅ¡Å³ kiekis gali sukelti naÅ¡umo problemÅ³.",
 
-"config_bbc_detailed_stat_fields" =>
-"Kintamasis \$BBC_DETAILED_STAT_FIELDS nusako stulpelius detaliame apsilankymø sàrağe.
-Galimi ğie stulpeliai:
+"config_BBC_DETAILED_STAT_FIELDS" =>
+"Kintamasis \$BBC_DETAILED_STAT_FIELDS nusako stulpelius detaliame apsilankymÅ³ sÄ…raÅ¡e.
+Galimi Å¡ie stulpeliai:
 <ul>
-<li>id&nbsp;=&gt;&nbsp;n-tasis lankytojas nuo statistikos vedimo pradğios</li>
+<li>id&nbsp;=&gt;&nbsp;n-tasis lankytojas nuo statistikos vedimo pradÅ¡ios</li>
 <li>time&nbsp;=&gt;&nbsp;Paskutinio paspaudimo laikas</li>
 <li>visits&nbsp;=&gt;&nbsp;Unikalaus lankytojo paspaudimai</li>
 <li>dns&nbsp;=&gt;&nbsp;Lankytojo hostname'as</li>
 <li>ip&nbsp;=&gt;&nbsp;Lankytojo IP adresas</li>
-<li>os&nbsp;=&gt;&nbsp;Operacinë sistema (arba, jei ámanoma nustatyti, paieğkos robotas)</li>
-<li>browser&nbsp;=&gt;&nbsp;Narğyklë</li>
-<li>ext&nbsp;=&gt;&nbsp;Lankytojo ğalis arba plëtinys</li>
-<li>referer&nbsp;=&gt;&nbsp;Nuoroda, iğ kurios lankytojas atëjo á Jûsø svetainæ (jei ámanoma nustatyti)
+<li>os&nbsp;=&gt;&nbsp;OperacinÄ— sistema (arba, jei Ä¯manoma nustatyti, paieÅ¡kos robotas)</li>
+<li>browser&nbsp;=&gt;&nbsp;NarÅ¡yklÄ—</li>
+<li>ext&nbsp;=&gt;&nbsp;Lankytojo Å¡alis arba plÄ—tinys</li>
+<li>referer&nbsp;=&gt;&nbsp;Nuoroda, iÅ¡ kurios lankytojas atÄ—jo Ä¯ JÅ«sÅ³ svetainÄ™ (jei Ä¯manoma nustatyti)
 </li>
 <li>page&nbsp;=&gt;&nbsp;The last visited page</li>
 <li>search&nbsp;=&gt;&nbsp;The search query a visitor used (if available)</li>
 </ul>
-Stulpeliai bus iğdëstyti tokia tvarka, kokia Jûs nurodysit.<br />
-Pavyzdşiai:<br />
+Stulpeliai bus iÅ¡dÄ—styti tokia tvarka, kokia JÅ«s nurodysit.<br />
+PavyzdÅ¾iai:<br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;id, time, visits, ip, ext, os, browser&quot;;
 <br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;date, ext, browser, os, ip&quot;;<br />",
 
-"config_bbc_time_offset" =>
-"Tam atvejui, jei Jûsø virtualaus serverio laikas nesutampa su Jûsø laiko juosta,
-ğiuo kintamuoju galite sureguliuoti laikà. Neigiama reikğmë nustatys laikà atgal.<br />
+"config_BBC_TIME_OFFSET" =>
+"Tam atvejui, jei JÅ«sÅ³ virtualaus serverio laikas nesutampa su JÅ«sÅ³ laiko juosta,
+Å¡iuo kintamuoju galite sureguliuoti laikÄ…. Neigiama reikÅ¡mÄ— nustatys laikÄ… atgal.<br />
 Pavyzdys:<br />
 \$BBC_TIME_OFFSET = 300;<br />
 \$BBC_TIME_OFFSET = -300;<br />
 \$BBC_TIME_OFFSET = 0;",
 
-"config_bbc_no_dns" =>
-"Ği opcija nusako ar IP adresà reikia bandyti konvertuoti á hostname'à.
-Nors hostname'ai pasako daug daugiau apie lankytojà, jø nustatymas gali
-smarkiai sulëtinti svetainës darbà, ypaè jei Jûsø serverio ryğys su
-DNS serveriu yra lëtas ar nepatikimas. Ğios opcijos iğjungimas gali iğspræsti
-susidariusias nağumo problemas.<br />
-Pavyzdşiai:<br />
+"config_BBC_NO_DNS" =>
+"Å i opcija nusako ar IP adresÄ… reikia bandyti konvertuoti Ä¯ hostname'Ä….
+Nors hostname'ai pasako daug daugiau apie lankytojÄ…, jÅ³ nustatymas gali
+smarkiai sulÄ—tinti svetainÄ—s darbÄ…, ypaÄ jei JÅ«sÅ³ serverio ryÅ¡ys su
+DNS serveriu yra lÄ—tas ar nepatikimas. Å ios opcijos iÅ¡jungimas gali iÅ¡sprÄ™sti
+susidariusias naÅ¡umo problemas.<br />
+PavyzdÅ¾iai:<br />
 \$BBC_NO_DNS = 1;<br />
 \$BBC_NO_DNS = &quot;&quot;;",
 
-"config_bbc_no_string" => "Pagal nutylëjimà, BBClone iğveda komentarus, nusakanèius
-statistikos veikimo bûsenà, á svetainës HTML kodà. Ğis iğvedimas gali neigiamai paveikti
-kai kuriuos forumus ar turinio valdymo sistemas. Jei jums iğvedamas tuğèias puslapis
-ar susiduriate su &quot;headers already sent by&quot; praneğimais, galite atjungti
-ğiuos komentarus.<br />
-Pavyzdşiai:<br />
+"config_BBC_NO_STRING" => "Pagal nutylÄ—jimÄ…, BBClone iÅ¡veda komentarus, nusakanÄius
+statistikos veikimo bÅ«senÄ…, Ä¯ svetainÄ—s HTML kodÄ…. Å is iÅ¡vedimas gali neigiamai paveikti
+kai kuriuos forumus ar turinio valdymo sistemas. Jei jums iÅ¡vedamas tuÅ¡Äias puslapis
+ar susiduriate su &quot;headers already sent by&quot; praneÅ¡imais, galite atjungti
+Å¡iuos komentarus.<br />
+PavyzdÅ¾iai:<br />
 \$BBC_NO_STRING = 1;<br />
 \$BBC_NO_STRING = &quot;&quot;;",
 
-"config_bbc_no_hits" =>
-"Pagal nutylëjimà BBClone laikmatyje rodo lankytojø paspaudimus, kadangi tai
-gerai atspindi tikràjá svetainës apkrovimà. Jei Jûs, dël tam tikrø prieşasèiø
-pageidaujate matyti unikalius apsilankymus, pakeiskite ğio kintamojo reikğmæ.<br />
-Pavyzdşiai:<br />
+"config_BBC_NO_HITS" =>
+"Pagal nutylÄ—jimÄ… BBClone laikmatyje rodo lankytojÅ³ paspaudimus, kadangi tai
+gerai atspindi tikrÄ…jÄ¯ svetainÄ—s apkrovimÄ…. Jei JÅ«s, dÄ—l tam tikrÅ³ prieÅ¾asÄiÅ³
+pageidaujate matyti unikalius apsilankymus, pakeiskite Å¡io kintamojo reikÅ¡mÄ™.<br />
+PavyzdÅ¾iai:<br />
 \$BBC_NO_HITS = 1;<br />
 \$BBC_NO_HITS = &quot;&quot;;",
 
-"config_bbc_ignore_ip" =>
-"Ğia opcija galite nustatyti neregistruotinus lankytojø IP adresus.
-Norëdami naudoti kelias iğraiğkas, skirtuku naudokite kablelá.<br />
-Pavyzdşiai:<br />
+"config_BBC_IGNORE_IP" =>
+"Å ia opcija galite nustatyti neregistruotinus lankytojÅ³ IP adresus.
+NorÄ—dami naudoti kelias iÅ¡raiÅ¡kas, skirtuku naudokite kablelÄ¯.<br />
+PavyzdÅ¾iai:<br />
 \$BBC_IGNORE_IP = &quot;127., 192.168.&quot;;<br />
 \$BBC_IGNORE_IP = &quot;&quot;;",
 
-"config_bbc_ignore_refer" =>
-"Tuo atveju, jei norite ignoruoti tam tikras nuorodas, vedanèias á Jûsø svetainæ,
-galite ávesti vienà ar daugiau raktaşodşiø, blokuosianèiø ğias nuorodas.
-Norëdami naudoti kelias iğraiğkas, skirtuku naudokite kablelá.<br />
-Pavyzdşiai:<br />
+"config_BBC_IGNORE_REFER" =>
+"Tuo atveju, jei norite ignoruoti tam tikras nuorodas, vedanÄias Ä¯ JÅ«sÅ³ svetainÄ™,
+galite Ä¯vesti vienÄ… ar daugiau raktaÅ¾odÅ¾iÅ³, blokuosianÄiÅ³ Å¡ias nuorodas.
+NorÄ—dami naudoti kelias iÅ¡raiÅ¡kas, skirtuku naudokite kablelÄ¯.<br />
+PavyzdÅ¾iai:<br />
 \$BBC_IGNORE_REFER = &quot;spambot.org, .escort.&quot;;<br />
 \$BBC_IGNORE_REFER = &quot;&quot;;",
 
-"config_bbc_ignore_bots" =>
-"Èia galite nurodyti elgsenà su paieğkos robotais. Pagal nurylëjimà jie yra
+"config_BBC_IGNORE_BOTS" =>
+"ÄŒia galite nurodyti elgsenÄ… su paieÅ¡kos robotais. Pagal nurylÄ—jimÄ… jie yra
 ignoruojami lankomiausiuose host'uose, bet registruojami kiruose rodikliuose.
-Jei apskritai nenorite matyti paieğkos robotø, galite nustatyti ğá kintamàjá
-á &quot;2&quot;. Tokiu atveju bus registruojami tik tikrieji lankytojai.<br />
-Pavyzdşiai:<br />
+Jei apskritai nenorite matyti paieÅ¡kos robotÅ³, galite nustatyti Å¡Ä¯ kintamÄ…jÄ¯
+Ä¯ &quot;2&quot;. Tokiu atveju bus registruojami tik tikrieji lankytojai.<br />
+PavyzdÅ¾iai:<br />
 \$BBC_IGNORE_BOTS = 2;<br />
 \$BBC_IGNORE_BOTS = 1;<br />
 \$BBC_IGNORE_BOTS = &quot;&quot;;",
 
-"config_bbc_ignore_agent" =>
-"Ği opcija nusako kaip BBClone skiria vienus lankytojus nuo kitø. Paga nutylëjimà
-yra naudojamas ti IP adresas, kuris daşniausiai duoda tikriausius lankomumo duomenis.
-Taèiau jei lankytojus daşnai dengia proxy serveriai, ğios opcijos deaktyvavimas
-gali duoti tikresnius duomenis, kadangi lankytojai bus atpaşystami pagal narğyklës
-parağà (user-agent).<br />
-Pavyzdşiai:<br />
+"config_BBC_IGNORE_AGENT" =>
+"Å i opcija nusako kaip BBClone skiria vienus lankytojus nuo kitÅ³. Paga nutylÄ—jimÄ…
+yra naudojamas ti IP adresas, kuris daÅ¾niausiai duoda tikriausius lankomumo duomenis.
+TaÄiau jei lankytojus daÅ¾nai dengia proxy serveriai, Å¡ios opcijos deaktyvavimas
+gali duoti tikresnius duomenis, kadangi lankytojai bus atpaÅ¾ystami pagal narÅ¡yklÄ—s
+paraÅ¡Ä… (user-agent).<br />
+PavyzdÅ¾iai:<br />
 \$BBC_IGNORE_AGENT = 1;<br />
 \$BBC_IGNORE_AGENT = &quot;&quot;;",
 
-"config_bbc_kill_stats" =>
-"Jei norite iğvalyti visà svetainës statistikà, aktyvuokite ğià parinktá.
-Sekantis apsilankymas iğvalys visus duomenis. Nepamirğkite vëliau deaktyvuoti
-ğià parinktá. Prieğingu atveju galite bûti nustebintas itin silpnu svetainës
+"config_BBC_KILL_STATS" =>
+"Jei norite iÅ¡valyti visÄ… svetainÄ—s statistikÄ…, aktyvuokite Å¡iÄ… parinktÄ¯.
+Sekantis apsilankymas iÅ¡valys visus duomenis. NepamirÅ¡kite vÄ—liau deaktyvuoti
+Å¡iÄ… parinktÄ¯. PrieÅ¡ingu atveju galite bÅ«ti nustebintas itin silpnu svetainÄ—s
 lankomumu ;).<br />
-Pavyzdşiai:<br />
+PavyzdÅ¾iai:<br />
 \$BBC_KILL_STATS = 1;<br />
 \$BBC_KILL_STATS = &quot;&quot;;",
 
-"config_bbc_purge_single" =>
-"Hostø ir Refereriø statistika gali genruoti didelius duomenø kiekius, sukuriamus
-vienkartiniø lankytojø. Ğios opcijos ájungimas gali ryğkiai sumaşinti duomenø
-apimtis bei access.php failà neprarandant visø matomø hostø ir refereriø sàrağo.
-Paspaudimø kiekis bus pridëtas prie &quot;Nenurodyta&quot; şymës ir neátakos
-bendro paspaudimø skatliuko.<br />
-Pavyzdşiai:<br />
+"config_BBC_PURGE_SINGLE" =>
+"HostÅ³ ir RefereriÅ³ statistika gali genruoti didelius duomenÅ³ kiekius, sukuriamus
+vienkartiniÅ³ lankytojÅ³. Å ios opcijos Ä¯jungimas gali ryÅ¡kiai sumaÅ¾inti duomenÅ³
+apimtis bei access.php failÄ… neprarandant visÅ³ matomÅ³ hostÅ³ ir refereriÅ³ sÄ…raÅ¡o.
+PaspaudimÅ³ kiekis bus pridÄ—tas prie &quot;Nenurodyta&quot; Å¾ymÄ—s ir neÄ¯takos
+bendro paspaudimÅ³ skatliuko.<br />
+PavyzdÅ¾iai:<br />
 \$BBC_PURGE_SINGLE = 1;<br />
 \$BBC_PURGE_SINGLE = &quot;&quot;;"
 

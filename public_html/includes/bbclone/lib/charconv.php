@@ -1,18 +1,26 @@
 <?php
-/* This file is part of BBClone (The PHP web counter on steroids)
+/* This file is part of BBClone (A PHP based Web Counter on Steroids)
+ * 
+ * CVS FILE $Id: charconv.php,v 1.21 2011/12/30 23:03:47 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * $Header: /cvs/bbclone/lib/charconv.php,v 1.18 2009/06/21 07:33:09 joku Exp $
- *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  */
+
+//////////////////////////////
+// Character set conversion //
+//////////////////////////////
 
 function bbc_get_encoding($str) {
   global $BBC_LANGUAGE;
@@ -31,7 +39,7 @@ function bbc_get_encoding($str) {
       return mb_detect_encoding($str, "UTF-8, EUC-KR, ISO-2022-KR");
 
     default:
-      // note that iso-8859-1 is only a placeholder. The focus lies on detecting UTF-8...
+      // Note that iso-8859-1 is only a placeholder, the focus lies on detecting UTF-8...
       return (mb_detect_encoding($str, "UTF-8, iso-8859-1") == "UTF-8") ? "UTF-8" : false;
   }
 }
@@ -43,14 +51,11 @@ function bbc_convert_keys($str, $from, $to) {
   }
   elseif (($from !== false) && defined("_BBC_ICONV")) return iconv($from, $to."//TRANSLIT", $str);
   elseif (defined("_BBC_RECODE")) return recode_string($to, $str);
-  // bail out with unmodified string
+
   else return $str;
 }
 
-// Note: A custom charset will overwrite the specified default. So you need not
-// worry about your personal UTF-8 or whatever language file and change
-// anything here. Just specify $BBC_CUSTOM_CHARSET and everything will be
-// alright
+// Note: Specify $BBC_CUSTOM_CHARSET to overwrite the default character set.
 function bbc_convert_lang($str, $from, $char) {
   global $BBC_LANGUAGE;
 
@@ -75,7 +80,7 @@ function bbc_convert_lang($str, $from, $char) {
     case "sl":
       return bbc_convert_keys($str, $from, "iso-8859-2");
 
-// various encodings
+// Various encodings
     case "ar":
       return bbc_convert_keys($str, $from, "Windows-1256");
 

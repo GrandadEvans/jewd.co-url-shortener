@@ -1,37 +1,32 @@
 <?php
 /* This file is part of BBClone (The PHP web counter on steroids)
  *
- * $Header: /cvs/bbclone/language/th.php,v 1.4 2009/06/21 07:33:09 joku Exp $
+ * CVS File $Id: th.php,v 1.18 2011/12/30 23:03:24 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  */
 
-// The main array ($_ is for doing short in its call)
-$_ = array(
-// Specific charset
-"global_charset" => "tis-620",
+// The DNS Extensions array
+$extensions = array(
+"travel" => "Travel",
+"asia" => "Asia-Pacific",
+"jobs" => "Employment",
+"mobi" => "Mobiles",
+"cat" => "Catalan",
+"tel" => "Contacts",
 
-// Date format (used with date())
-"global_date_format" => "d/m/Y",
-
-// Global translation
-"global_bbclone_copyright" => "The BBClone team - ���ѭ��͹حҵẺ",
-"global_last_reset" => "������ѺʶԵ������:",
-"global_yes" => "yes",
-"global_no" => "no",
-
-// The error messages
-"error_cannot_see_config" => "�س������Է���㹡�ô١�õ�駤�Ңͧ BBClone �������������",
-
-// Address Extensions
 "ac" => "Ascension Island",
 "ad" => "Andorra",
 "ae" => "United Arab Emirates",
@@ -50,6 +45,7 @@ $_ = array(
 "at" => "Austria",
 "au" => "Australia",
 "aw" => "Aruba",
+"ax" => "หมู่เกาะโอลันด์",
 "az" => "Azerbaijan",
 "ba" => "Bosnia and Herzegovina",
 "bb" => "Barbados",
@@ -61,6 +57,7 @@ $_ = array(
 "bi" => "Burundi",
 "biz" => "Business",
 "bj" => "Benin",
+"bl" => "แซ็งบาร์เตเลอมี",
 "bm" => "Bermuda",
 "bn" => "Brunei",
 "bo" => "Bolivia",
@@ -180,6 +177,8 @@ $_ = array(
 "ma" => "Morocco",
 "mc" => "Monaco",
 "md" => "Moldova",
+"me" => "ประเทศมอนเตเนโกร",
+"mf" => "Saint Martin",
 "mg" => "Madagascar",
 "mh" => "Marshall Islands",
 "mil" => "US Military",
@@ -235,6 +234,7 @@ $_ = array(
 "qa" => "Qatar",
 "re" => "Reunion",
 "ro" => "Romania",
+"rs" => "ประเทศเซอร์เบีย",
 "ru" => "Russia",
 "rw" => "Rwanda",
 "sa" => "Saudi Arabia",
@@ -261,7 +261,7 @@ $_ = array(
 "td" => "Chad",
 "tf" => "French Southern Territories",
 "tg" => "Togo",
-"th" => "�������",
+"th" => "ประเทศไทย",
 "tj" => "Tajikistan",
 "tk" => "Tokelau",
 "tl" => "East Timor",
@@ -278,7 +278,7 @@ $_ = array(
 "ug" => "Uganda",
 "uk" => "United Kingdom",
 "um" => "US Minor Outlying Islands",
-"unknown" => "����բ�����",
+"unknown" => "ไม่มีข้อมูล",
 "us" => "United States",
 "uy" => "Uruguay",
 "uz" => "Uzbekistan",
@@ -298,94 +298,147 @@ $_ = array(
 "zm" => "Zambia",
 "zr" => "Zaire",
 "zw" => "Zimbabwe",
+);
+
+// The main Translation array
+$translation = array(
+
+// Specific charset
+"global_charset" => "utf-8",
+
+// Date format (used with date())
+"global_time_format" => "M jS, H:i:s",
+"global_day_format" => "l F jS, Y",
+"global_hours_format" => "l F jS, G:00",
+"global_month_format" => "F Y",
+
+// Global translation
+"global_titlebar"=> "Statistics for %SERVER generated on %DATE",
+"global_bbclone_copyright" => "The BBClone team - ใช้สัญญาอนุญาตแบบ",
+"global_last_reset" => "เริ่มนับสถิติเมื่อ:",
+"global_yes" => "yes",
+"global_no" => "no",
+
+// The error messages
+"error_cannot_see_config" => "คุณไม่มีสิทธิ์ในการดูการตั้งค่าของ BBClone บนเซิร์ฟเวอร์นี้",
 
 // Miscellaneous translations
-"misc_other" => "����",
-"misc_unknown" => "����բ�����",
-"misc_second_unit" => "�Թҷ�",
+"misc_other" => "อื่นๆ",
+"misc_unknown" => "ไม่มีข้อมูล",
+"misc_second_unit" => "วินาที",
 "misc_ignored" => "Ignored",
 
 // The Navigation Bar
-"navbar_Main_Site" => "�����ѡ",
-"navbar_Configuration" => "��駤��",
-"navbar_Global_Stats" => "ʶԵ����",
-"navbar_Detailed_Stats" => "ʶԵ������´",
-"navbar_Time_Stats" => "ʶԵ� (�¡�������)",
+"navbar_main_site" => "เว็บหลัก",
+"navbar_configuration" => "ตั้งค่า",
+"navbar_global_stats" => "สถิติรวม",
+"navbar_detailed_stats" => "สถิติละเอียด",
+"navbar_time_stats" => "สถิติ (แยกตามเวลา)",
+"navbar_language" => "Language",
+"navbar_go" => "Go",
 
 // Detailed stats words
 "dstat_id" => "ID",
-"dstat_time" => "����",
-"dstat_visits" => "�ӹǹ����",
-"dstat_extension" => "����ȷ����",
-"dstat_dns" => "������ʵ�",
-"dstat_from" => "�ԧ���Ҩҡ",
-"dstat_os" => "�к���Ժѵԡ��",
-"dstat_browser" => "���������",
-"dstat_visible_rows" => "�ӹǹ����ʴ�",
-"dstat_green_rows" => "��������",
-"dstat_blue_rows" => "���չ���Թ",
-"dstat_red_rows" => "����ᴧ",
-"dstat_search" => "����",
-"dstat_last_page" => "˹���ش���·�����",
-"dstat_last_visit" => "��Ҥ�������ش�������",
+"dstat_time" => "เวลา",
+"dstat_visits" => "จำนวนครั้ง",
+"dstat_extension" => "ประเทศที่มา",
+"dstat_dns" => "ชื่อโฮสต์",
+"dstat_from" => "ลิงก์มาจาก",
+"dstat_os" => "ระบบปฏิบัติการ",
+"dstat_browser" => "เบราว์เซอร์",
+"dstat_visible_rows" => "จำนวนที่แสดง",
+"dstat_green_rows" => "แถวสีเขียว",
+"dstat_blue_rows" => "แถวสีน้ำเงิน",
+"dstat_red_rows" => "แถวสีแดง",
+"dstat_search" => "ค้นหา",
+"dstat_last_page" => "หน้าสุดท้ายที่เข้า",
+"dstat_last_visit" => "เข้าครั้งล่าสุดใช้เมื่อ",
 "dstat_robots" => "Robots",
-"dstat_no_data" => "����բ�����",
+"dstat_my_visit" => "Visits from your IP",
+"dstat_no_data" => "ไม่มีข้อมูล",
 "dstat_prx" => "Proxy Server",
-"dstat_ip" => "�����Ţ IP",
+"dstat_ip" => "หมายเลข IP",
 "dstat_user_agent" => "User Agent",
 "dstat_nr" => "Nr",
 "dstat_pages" => "Pages",
-"dstat_visit_length" => "��ǧ����㹡�����",
+"dstat_visit_length" => "ช่วงเวลาในการเข้า",
 "dstat_reloads" => "Reloads",
+"dstat_whois_information" => "Look up information on this IP Adress",
 
 // Global stats words
-"gstat_Accesses" => "Accesses",
-"gstat_Total_visits" => "�ӹǹ�����ҷ�����",
-"gstat_Total_unique" => "�ӹǹ�����ҷ����� (���Ѻ���)",
-"gstat_Operating_systems" => "�к���Ժѵԡ�� %d �ѹ�Ѻ�٧�ش",
-"gstat_Browsers" => "����������� %d �ѹ�Ѻ�٧�ش",
-"gstat_extensions" => "����ȷ���� %d �ѹ�Ѻ�٧�ش",
-"gstat_Robots" => "Robots %d �ѹ�Ѻ�٧�ش",
-"gstat_pages" => "˹�ҷ����� %d �ѹ�Ѻ�٧�ش",
-"gstat_origins" => "�ԧ������ %d �ѹ�Ѻ�٧�ش",
-"gstat_hosts" => "��ʵ� %d �ѹ�Ѻ�٧�ش",
-"gstat_keys" => "��������� %d �ѹ�Ѻ�٧�ش",
-"gstat_Total" => "���",
-"gstat_Not_specified" => "����к�",
+"gstat_accesses" => "Accesses",
+"gstat_total_visits" => "จำนวนการเข้าทั้งหมด",
+"gstat_total_unique" => "จำนวนการเข้าทั้งหมด (ไม่นับซ้ำ)",
+"gstat_operating_systems" => "ระบบปฏิบัติการ %d อันดับสูงสุด",
+"gstat_browsers" => "เว็บเบราวเซอร์ %d อันดับสูงสุด",
+"gstat_extensions" => "ประเทศที่มา %d อันดับสูงสุด",
+"gstat_robots" => "Robots %d อันดับสูงสุด",
+"gstat_pages" => "หน้าที่เข้า %d อันดับสูงสุด",
+"gstat_origins" => "ลิงก์ที่มา %d อันดับสูงสุด",
+"gstat_hosts" => "โฮสต์ %d อันดับสูงสุด",
+"gstat_keys" => "คีย์เวิร์ด %d อันดับสูงสุด",
+"gstat_total" => "รวม",
+"gstat_not_specified" => "ไม่ระบุ",
 
 // Time stats words
-"tstat_Su" => "��",
-"tstat_Mo" => "�",
-"tstat_Tu" => "�",
-"tstat_We" => "�",
-"tstat_Th" => "��",
-"tstat_Fr" => "�",
-"tstat_Sa" => "�",
+"tstat_su" => "อา",
+"tstat_mo" => "จ",
+"tstat_tu" => "อ",
+"tstat_we" => "พ",
+"tstat_th" => "พฤ",
+"tstat_fr" => "ศ",
+"tstat_sa" => "ส",
 
-"tstat_Jan" => "�.�.",
-"tstat_Feb" => "�.�.",
-"tstat_Mar" => "��.�.",
-"tstat_Apr" => "��.�.",
-"tstat_May" => "�.�.",
-"tstat_Jun" => "��.�.",
-"tstat_Jul" => "�.�.",
-"tstat_Aug" => "�.�.",
-"tstat_Sep" => "�.�.",
-"tstat_Oct" => "�.�.",
-"tstat_Nov" => "�.�.",
-"tstat_Dec" => "�.�.",
+"tstat_full_su" => "Sunday",
+"tstat_full_mo" => "Monday",
+"tstat_full_tu" => "Tuesday",
+"tstat_full_we" => "Wednesday",
+"tstat_full_th" => "Thursday",
+"tstat_full_fr" => "Friday",
+"tstat_full_sa" => "Saturday",
 
-"tstat_last_day" => "�ͺ�ѹ���",
-"tstat_last_week" => "�ͺ�ѻ������",
-"tstat_last_month" => "�ͺ��͹���",
-"tstat_last_year" => "�ͺ�չ��",
+"tstat_jan" => "ม.ค.",
+"tstat_feb" => "ก.พ.",
+"tstat_mar" => "มี.ค.",
+"tstat_apr" => "เม.ย.",
+"tstat_may" => "พ.ค.",
+"tstat_jun" => "มิ.ย.",
+"tstat_jul" => "ก.ค.",
+"tstat_aug" => "ส.ค.",
+"tstat_sep" => "ก.ย.",
+"tstat_oct" => "ต.ค.",
+"tstat_nov" => "พ.ย.",
+"tstat_dec" => "ธ.ค.",
+
+"tstat_full_jan" => "January",
+"tstat_full_feb" => "February",
+"tstat_full_mar" => "March",
+"tstat_full_apr" => "April",
+"tstat_full_may" => "May",
+"tstat_full_jun" => "June",
+"tstat_full_jul" => "July",
+"tstat_full_aug" => "August",
+"tstat_full_sep" => "September",
+"tstat_full_oct" => "October",
+"tstat_full_nov" => "November",
+"tstat_full_dec" => "December",
+
+"tstat_last_day" => "รอบวันนี้",
+"tstat_last_week" => "รอบสัปดาห์นี้",
+"tstat_last_month" => "รอบเดือนนี้",
+"tstat_last_year" => "รอบปีนี้",
+"tstat_average" => "Average",
+
+// Loadtime notice
+"generated" => "page generated in ",
+"seconds" => " seconds",
 
 // Configuration page words and sentences
-"config_Variable_name" => "���͵����",
-"config_Variable_value" => "��ҵ����",
-"config_Explanations" => "��͸Ժ��",
+"config_variable_name" => "ชื่อตัวแปร",
+"config_variable_value" => "ค่าตัวแปร",
+"config_explanations" => "คำอธิบาย",
 
-"config_bbc_mainsite" =>
+"config_BBC_MAINSITE" =>
 "If this variable has been set, a link to the specified location will be
 generated. The default value is pointing to the parent directory. In case your
 main site is located elsewhere, you probably want to adjust the value to suit
@@ -395,14 +448,14 @@ Examples:<br />
 \$BBC_MAINSITE = &quot;..&quot;<br />
 \$BBC_MAINSITE = &quot;&quot;;",
 
-"config_bbc_show_config" =>
+"config_BBC_SHOW_CONFIG" =>
 "BBClone defaults to revealing the stats' settings. In case this behavior isn't
 desired you can deny access to it by deactivating the option.<br />
 Examples:<br />
 \$BBC_SHOW_CONFIG = 1;<br />
 \$BBC_SHOW_CONFIG = &quot;&quot;;",
 
-"config_bbc_titlebar" =>
+"config_BBC_TITLEBAR" =>
 "The title of your stats pages.<br />
 It will be displayed in the navigation bar of all BBClone pages<br />
 The following macros are recognised:<br />
@@ -416,13 +469,13 @@ Examples:<br />
 \$BBC_TITLEBAR = &quot;My stats from %DATE look like this:&quot;;
 <br />",
 
-"config_bbc_language" =>
+"config_BBC_LANGUAGE" =>
 "BBClone's default language, in case it hasn't been specified by the browser.
 The following languages are supported:
 <p>ar, bg, bs, ca, cs, da, de, el, en, es, fi, fr, hu, id, it, ja, ko, lt, mk, nb, nl, pl, pt, pt-br, ro, ru,
 sk, sl, sv, th, tr, ua, zh-cn and zh-tw</p>",
 
-"config_bbc_maxtime" =>
+"config_BBC_MAXTIME" =>
 "This variable defines the length of an unique visit in seconds. Each hit from
 the same visitor within this period will be considered as one visit, as long as
 two successive hits don't exceed the specified limit. Default is the de facto
@@ -432,12 +485,12 @@ Examples:<br />
 \$BBC_MAXTIME = 0;<br />
 \$BBC_MAXTIME = 1800;",
 
-"config_bbc_maxvisible" =>
+"config_BBC_MAXVISIBLE" =>
 "How many entries you want to have listed in the detailed stats? The default
 value is 100. It's recommended not to set it higher than 500 to avoid too heavy
 load.",
 
-"config_bbc_detailed_stat_fields" =>
+"config_BBC_DETAILED_STAT_FIELDS" =>
 "The variable \$BBC_DETAILED_STAT_FIELDS determines the columns to be displayed
 in the detailed statistics. Possible columns are:
 <ul>
@@ -461,7 +514,7 @@ Examples:<br />
 <br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;date, ext, browser, os, ip&quot;;<br />",
 
-"config_bbc_time_offset" =>
+"config_BBC_TIME_OFFSET" =>
 "In case the server time doesn't match your local timezone, you can adjust the
 time in minutes by using this switch. Negative values will set back the time,
 positive ones will set it forth.<br />
@@ -470,7 +523,7 @@ Examples:<br />
 \$BBC_TIME_OFFSET = -300;<br />
 \$BBC_TIME_OFFSET = 0;",
 
-"config_bbc_no_dns" =>
+"config_BBC_NO_DNS" =>
 "This options defines, whether IP addresses should be resolved to hostnames or
 not. While hostnames tell a lot more about the visitor, resolving them may
 considerably slow down your site, if the DNS servers used are slow, limited in
@@ -480,7 +533,7 @@ Examples:<br />
 \$BBC_NO_DNS = 1;<br />
 \$BBC_NO_DNS = &quot;&quot;;",
 
-"config_bbc_no_hits" =>
+"config_BBC_NO_HITS" =>
 "BBClone's default is to show hits in the time stats, because it gives a quite
 useful Impression from the actual server load. If, however, you prefer to use
 unique visits as base for your time stats, you can change the way of counting
@@ -489,7 +542,7 @@ Examples:<br />
 \$BBC_NO_HITS = 1;<br />
 \$BBC_NO_HITS = &quot;&quot;;",
 
-"config_bbc_ignore_ip" =>
+"config_BBC_IGNORE_IP" =>
 "This option can be used to exclude particular IP addresses or address ranges
 from counting. In case you want to add several expressions use a comma as
 separator.<br />
@@ -497,7 +550,7 @@ Examples:<br />
 \$BBC_IGNORE_IP = &quot;127., 192.168.&quot;;<br />
 \$BBC_IGNORE_IP = &quot;&quot;;",
 
-"config_bbc_ignore_refer" =>
+"config_BBC_IGNORE_REFER" =>
 "In case you don't want to have particular referrers from your visitors listed
 in your ranking or detailed stats, you can specify one or more keywords used
 for blocking if a referrer matches up against them. If you use more keywords,
@@ -506,7 +559,7 @@ Examples:<br />
 \$BBC_IGNORE_REFER = &quot;spambot.org, .escort.&quot;;<br />
 \$BBC_IGNORE_REFER = &quot;&quot;;",
 
-"config_bbc_ignore_bots" =>
+"config_BBC_IGNORE_BOTS" =>
 "You can use this option to determine the treatment of robots. The default is
 to ignore them in the top hosts ranking but leave them in the remaining
 stats. If you don't want to see any robots at all you can set this option to
@@ -516,7 +569,7 @@ Examples:<br />
 \$BBC_IGNORE_BOTS = 1;<br />
 \$BBC_IGNORE_BOTS = &quot;&quot;;",
 
-"config_bbc_ignore_agent" =>
+"config_BBC_IGNORE_AGENT" =>
 "This option defines how BBClone tells one visitor from another. Default is to
 use the IP address only, which provides realistic figures in most cases. If,
 however, your visitors often are hidden behind proxy servers, deactivation of
@@ -526,7 +579,7 @@ Examples:<br />
 \$BBC_IGNORE_AGENT = 1;<br />
 \$BBC_IGNORE_AGENT = &quot;&quot;;",
 
-"config_bbc_kill_stats" =>
+"config_BBC_KILL_STATS" =>
 "Whenever you wish to reset your stats you can activate this switch and have
 them deleted by the next visit. Don't forget to deactivate it afterwards, else
 you'll probably experience unusually low traffic ;).<br />
@@ -534,7 +587,7 @@ Examples:<br />
 \$BBC_KILL_STATS = 1;<br />
 \$BBC_KILL_STATS = &quot;&quot;;",
 
-"config_bbc_purge_single" =>
+"config_BBC_PURGE_SINGLE" =>
 "Host and referrer stats can generate a huge amount of data, however mostly
 caused by one time visitors. By enabling this switch you can purge these
 entries and considerably shrink access.php in its size without affecting your

@@ -1,338 +1,360 @@
 <?php
 /* This file is part of BBClone (The PHP web counter on steroids)
  *
- * $Header: /cvs/bbclone/language/zh-cn.php,v 1.48 2009/06/21 07:33:09 joku Exp $
+ * CVS File $Id: zh-cn.php,v 1.63 2011/12/30 23:03:24 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  *
  * Translated by: Hu ChangSong <gugong_2002@yahoo.com.cn>
  */
 
-// The main array ($_ is for doing short in its call)
-$_ = array(
+// The DNS Extensions array
+$extensions = array(
+"travel" => "Travel",
+"asia" => "Asia-Pacific",
+"jobs" => "Employment",
+"mobi" => "Mobiles",
+"cat" => "Catalan",
+"tel" => "Contacts",
+
+"ac" => "Ascension Island",
+"ad" => "å®‰é“å°”",
+"ae" => "é˜¿è”é…‹",
+"aero" => "Aero",
+"af" => "é˜¿å¯Œæ±—",
+"ag" => "å®‰æç“œå’Œå·´å¸ƒè¾¾",
+"ai" => "å®‰æ ¼æ‹‰",
+"al" => "é˜¿å°”å·´å°¼äºš",
+"am" => "äºšç¾å°¼äºš",
+"an" => "è·å…°å±åœ°",
+"ao" => "å®‰å“¥æ‹‰",
+"aq" => "å—ææ´²",
+"ar" => "é˜¿æ ¹å»·",
+"arpa" => "Arpa",
+"as" => "ä¸œè¨æ‘©äºš",
+"at" => "å¥¥åœ°åˆ©",
+"au" => "æ¾³å¤§åˆ©äºš",
+"aw" => "é˜¿é²å·´",
+"az" => "é˜¿å¡æ‹œç–†",
+"ba" => "æ³¢é»‘",
+"bb" => "å·´å·´å¤šæ–¯",
+"bd" => "å­ŸåŠ æ‹‰å›½",
+"be" => "æ¯”åˆ©æ—¶",
+"bf" => "å¸ƒåŸºçº³æ³•ç´¢",
+"bg" => "ä¿åŠ åˆ©äºš",
+"bh" => "å·´æ—",
+"bi" => "å¸ƒéš†è¿ª",
+"biz" => "Business",
+"bj" => "è´å®",
+"bl" => "è–å·´æ³°å‹’ç±³å³¶",
+"bm" => "ç™¾æ…•å¤§",
+"bn" => "æ–‡è±è¾¾é²è¨å…°å›½",
+"bo" => "ç»åˆ©ç»´äºš",
+"br" => "å·´è¥¿",
+"bs" => "å·´å“ˆé©¬",
+"bt" => "ä¸ä¸¹",
+"bv" => "å¸ƒéŸ¦ç¾¤å²›",
+"bw" => "ä¼¯å…¹ç“¦çº³",
+"by" => "ç™½ä¿„ç½—æ–¯",
+"bz" => "ä¼¯åˆ©å…¹",
+"ca" => "åŠ æ‹¿å¤§",
+"cc" => "ç§‘ç§‘æ–¯ç¾¤å²›",
+"cd" => "Congo",
+"cf" => "ä¸­éå…±å’Œå›½",
+"cg" => "åˆšæœ",
+"ch" => "ç‘å£«",
+"ci" => "è±¡ç‰™æµ·å²¸",
+"ck" => "åº“å…‹ç¾¤å²›",
+"cl" => "æ™ºåˆ©",
+"cm" => "å–€éº¦éš†",
+"cn" => "ä¸­å›½",
+"co" => "å“¥ä¼¦æ¯”äºš",
+"com" => "Commercial",
+"coop" => "Coop",
+"cr" => "å“¥æ–¯è¾¾é»åŠ ",
+"cs" => "Serbia and Montenegro",
+"cu" => "å¤å·´",
+"cv" => "ä½›å¾—è§’",
+"cx" => "åœ£è¯å²›ï¼ˆè‹±å±ï¼‰",
+"cy" => "å¡æµ¦è·¯æ–¯",
+"cz" => "æ·å…‹å…±å’Œå›½",
+"de" => "å¾·å›½",
+"dj" => "å‰å¸ƒæ",
+"dk" => "ä¸¹éº¦",
+"dm" => "å¤šç±³å°¼åŠ è”é‚¦",
+"do" => "å¤šç±³å°¼åŠ å…±å’Œå›½",
+"dz" => "é˜¿å°”åŠåˆ©äºš",
+"ec" => "å„ç“œå¤šå°”",
+"edu" => "Educational",
+"ee" => "çˆ±æ²™å°¼äºš",
+"eg" => "åŸƒåŠ",
+"eh" => "è¥¿è¨æ‘©äºš",
+"er" => "Eritrea",
+"es" => "è¥¿ç­ç‰™",
+"et" => "åŸƒå¡ä¿„æ¯”äºš",
+"eu" => "European Union",
+"ev" => "è¨å°”ç“¦å¤š",
+"fi" => "èŠ¬å…°",
+"fj" => "æ–æµ",
+"fk" => "ç¦å…‹å…°ç¾¤å²›",
+"fm" => "å¯†å…‹ç½—å°¼è¥¿äºš",
+"fo" => "æ³•ç½—ç¾¤å²›",
+"fr" => "æ³•å›½",
+"ga" => "åŠ è“¬",
+"gb" => "å¤§ä¸åˆ—é¢ è”åˆç‹å›½",
+"gd" => "æ ¼æ—çº³è¾¾",
+"ge" => "æ ¼é²å‰äºš",
+"gf" => "æ³•å±åœ­äºšé‚£",
+"gg" => "Guernsey",
+"gh" => "åŠ çº³",
+"gi" => "ç›´å¸ƒç½—é™€",
+"gl" => "æ ¼é™µå…°ç¾¤å²›",
+"gm" => "å†ˆæ¯”äºš",
+"gn" => "å‡ å†…äºš",
+"gov" => "US Government",
+"gp" => "ç“œå¾·ç½—æ™®å²›ï¼ˆæ³•å±ï¼‰",
+"gq" => "èµ¤é“å‡ å†…äºš",
+"gr" => "å¸Œè…Š",
+"gs" => "South Georgia and the South Sandwich Islands",
+"gt" => "å±åœ°é©¬æ‹‰",
+"gu" => "å…³å²›",
+"gw" => "å‡ å†…äºšæ¯”ç»",
+"gy" => "åœ­äºšé‚£",
+"hk" => "é¦™æ¸¯",
+"hm" => "èµ«ç‰¹ä¸éº¦å…‹å”çº³ç¾¤å²›",
+"hn" => "æ´ªéƒ½æ‹‰æ–¯",
+"hr" => "å…‹ç½—è’‚äºš",
+"ht" => "æµ·åœ°",
+"hu" => "åŒˆç‰™åˆ©",
+"id" => "å°åº¦å°¼è¥¿äºš",
+"ie" => "çˆ±å°”å…°å…±å’Œå›½",
+"il" => "ä»¥è‰²åˆ—",
+"im" => "Isle of Man",
+"in" => "å°åº¦",
+"info" => "Information",
+"int" => "International Organizations",
+"io" => "è‹±å±å°åº¦æ´‹é¢†åœ°",
+"iq" => "ä¼Šæ‹‰å…‹",
+"ir" => "ä¼Šæœ—",
+"is" => "å†°å²›",
+"it" => "æ„å¤§åˆ©",
+"je" => "Jersey",
+"jm" => "ç‰™ä¹°åŠ ",
+"jo" => "çº¦æ—¦",
+"jp" => "æ—¥æœ¬",
+"ke" => "è‚¯å°¼äºš",
+"kg" => "å‰å°”å‰æ–¯æ–¯å¦",
+"kh" => "æŸ¬åŸ”å¡",
+"ki" => "åŸºé‡Œå·´æ–¯",
+"km" => "ç§‘æ‘©ç½—",
+"kn" => "åœ£èŒ¨å’Œå°¼ç»´æ–¯",
+"kp" => "åŒ—æœé²œ",
+"kr" => "å—æœé²œ",
+"kw" => "ç§‘å¨ç‰¹",
+"ky" => "å¼€æ›¼ç¾¤å²›ï¼ˆè‹±å±ï¼‰",
+"kz" => "å“ˆè¨å…‹æ–¯å¦",
+"la" => "è€æŒäººæ°‘å…±å’Œå›½",
+"lb" => "é»å·´å«©",
+"lc" => "åœ£éœ²è¥¿äºšå²›",
+"li" => "åˆ—æ”¯æ•¦å£«ç™»",
+"lk" => "æ–¯é‡Œå…°å¡",
+"lr" => "åˆ©æ¯”é‡Œäºš",
+"ls" => "è±ç´¢æ‰˜",
+"lt" => "ç«‹é™¶å®›",
+"lu" => "å¢æ£®å ¡",
+"lv" => "æ‹‰è„±ç»´äºš",
+"ly" => "åˆ©æ¯”äºš",
+"ma" => "æ‘©æ´›å“¥",
+"mc" => "æ‘©çº³å“¥",
+"md" => "æ‘©å°”å¤šç“¦",
+"mf" => "åœ£é©¬ä¸å²›",
+"mg" => "é©¬è¾¾åŠ æ–¯åŠ ",
+"mh" => "é©¬ç»å°”ç¾¤å²›",
+"mil" => "US Military",
+"mk" => "Macedonia",
+"ml" => "é©¬é‡Œ",
+"mm" => "ç¼…ç”¸",
+"mn" => "è’™å¤",
+"mo" => "æ¾³é—¨",
+"mp" => "åŒ—é©¬é‡Œäºšçº³ç¾¤å²›",
+"mq" => "é©¬æå°¼å…‹å²›ï¼ˆæ³•å±ï¼‰",
+"mr" => "æ¯›é‡Œå¡”å°¼äºš",
+"ms" => "è’™å¡æ‹‰ç‰¹å²›",
+"mt" => "é©¬å°”ä»–",
+"mu" => "Mauritius",
+"museum" => "Museum",
+"mv" => "é©¬å°”ä»£å¤«",
+"mw" => "é©¬æ‹‰ç»´",
+"mx" => "å¢¨è¥¿å“¥",
+"my" => "é©¬æ¥è¥¿äºš",
+"mz" => "è«æ¡‘æ¯”å…‹",
+"na" => "çº³ç±³æ¯”äºš",
+"name" => "Personal",
+"nc" => "æ–°å–€é‡Œå¤šå°¼äºš",
+"ne" => "å°¼æ—¥å°”",
+"net" => "Networks",
+"nf" => "è¯ºç¦å…‹å²›",
+"ng" => "å°¼æ—¥åˆ©äºš",
+"ni" => "å°¼åŠ æ‹‰ç“œ",
+"nl" => "è·å…°",
+"no" => "æŒªå¨",
+"np" => "å°¼æ³Šå°”",
+"nr" => "ç‘™é²",
+"nu" => "çº½åŸƒ",
+"numeric" => "Numeric",
+"nz" => "æ–°è¥¿å…°",
+"om" => "é˜¿æ›¼",
+"org" => "Organizations",
+"pa" => "å·´æ‹¿é©¬",
+"pe" => "ç§˜é²",
+"pf" => "æ³•å±ç»åˆ©å°¼è¥¿äºš",
+"pg" => "å·´å¸ƒäºšæ–°å‡ å†…äºš",
+"ph" => "è²å¾‹å®¾",
+"pk" => "å·´åŸºæ–¯å¦",
+"pl" => "æ³¢å…°",
+"pm" => "åœ£çš®åŸƒå°”å’Œå¯†å…‹éš†å²›",
+"pn" => "çš®ç‰¹å…‹æ©å²›",
+"pr" => "æ³¢å¤šé»å„",
+"pro" => "Professional",
+"ps" => "Palestina",
+"pt" => "è‘¡è„ç‰™",
+"pw" => "å¸•åŠ³",
+"py" => "å·´æ‹‰åœ­",
+"qa" => "å¡å¡”å°”",
+"re" => "ç•™å°¼æ±ªå²›ï¼ˆæ³•å±ï¼‰",
+"ro" => "ç½—é©¬å°¼äºš",
+"ru" => "ä¿„ç½—æ–¯è”é‚¦",
+"rw" => "å¢æ—ºè¾¾",
+"sa" => "æ²™ç‰¹é˜¿æ‹‰ä¼¯",
+"sb" => "æ‰€ç½—é—¨ç¾¤å²›",
+"sc" => "å¡èˆŒå°”",
+"sd" => "è‹æ—¦",
+"se" => "ç‘å…¸",
+"sg" => "æ–°åŠ å¡",
+"sh" => "æµ·ä¼¦å¨œ",
+"si" => "æ–¯æ´›æ–‡å°¼äºš",
+"sj" => "æ–¯é©¬å°”å·´ç‰¹å’Œæ‰¬é©¬å»¶å²›",
+"sk" => "æ–¯æ´›ä¼å…‹",
+"sl" => "å¡æ‹‰åˆ©æ˜‚",
+"sm" => "åœ£é©¬åŠ›è¯º",
+"sn" => "å¡å†…åŠ å°”",
+"so" => "ç´¢é©¬é‡Œ",
+"sr" => "è‹é‡Œå—",
+"st" => "åœ£å¤šç¾å’Œæ™®æ—è¥¿æ¯”",
+"su" => "è‹è”",
+"sv" => "El Salvador",
+"sy" => "å™åˆ©äºš",
+"sz" => "æ–¯å¨å£«å…°",
+"tc" => "ç‰¹å…‹æ–¯ç¾¤å²›ä¸å‡¯ç§‘æ–¯ç¾¤å²›",
+"td" => "ä¹å¾—",
+"tf" => "æ³•å±å—åŠçƒé¢†åœ°",
+"tg" => "å¤šå“¥",
+"th" => "æ³°å›½",
+"tj" => "å¡”å‰å…‹æ–¯å¦",
+"tk" => "æ‰˜å…‹åŠ³ç¾¤å²›",
+"tl" => "ä¸œå¸æ±¶",
+"tm" => "åœŸåº“æ›¼æ–¯å¦",
+"tn" => "çªå°¼æ–¯",
+"to" => "æ±¤åŠ ",
+"tp" => "ä¸œå¸æ±¶",
+"tr" => "åœŸè€³å…¶",
+"tt" => "ç‰¹ç«‹å°¼å’Œå¤šå·´å“¥",
+"tv" => "å›¾ç“¦é²",
+"tw" => "å°æ¹¾",
+"tz" => "å¦æ¡‘å°¼äºš",
+"ua" => "ä¹Œå…‹å…°",
+"ug" => "ä¹Œå¹²è¾¾",
+"uk" => "è‹±å›½",
+"um" => "US Minor Outlying Islands",
+"unknown" => "æœªçŸ¥",
+"us" => "ç¾å›½",
+"uy" => "ä¹Œæ‹‰åœ­",
+"uz" => "Uzbekistan",
+"va" => "æ¢µåœ°å†ˆ",
+"vc" => "åœ£æ–‡æ£®ç‰¹å’Œæ ¼æ—çº³ä¸æ–¯",
+"ve" => "å§”å†…ç‘æ‹‰",
+"vg" => "ç»´äº¬ç¾¤å²›",
+"vi" => "Virgin Islands (US)",
+"vn" => "è¶Šå—",
+"vu" => "ç“¦åŠªé˜¿å›¾",
+"wf" => "ç“¦åˆ©æ–¯å’Œå¯Œå›¾çº³ç¾¤å²›",
+"ws" => "ä¸œè¨æ‘©äºš",
+"ye" => "ä¹Ÿé—¨",
+"yt" => "Mayotte",
+"yu" => "å—æ–¯æ‹‰å¤«",
+"za" => "å—é",
+"zm" => "èµæ¯”äºš",
+"zr" => "æ‰ä¼Šå°”",
+"zw" => "æ´¥å·´å¸ƒéŸ¦",
+);
+
+// The main Translation array
+$translation = array(
 // Specific charset
-"global_charset" => "gb2312",
+"global_charset" => "utf-8",
 
 // Date format (used with date())
-"global_date_format" => "¹«Ôª20yÄêmÔÂdÈÕ",
+"global_time_format" => "M jS, H:i:s",
+"global_day_format" => "l F jS, Y",
+"global_hours_format" => "l F jS, G:00",
+"global_month_format" => "F Y",
 
 // Global translation
-"global_bbclone_copyright" => "The BBClone ÍÅ¶Ó -- Ğí¿É×ñ´Ó:",
+"global_titlebar"=> "Statistics for %SERVER generated on %DATE",
+"global_bbclone_copyright" => "The BBClone å›¢é˜Ÿ -- è®¸å¯éµä»:",
 "global_last_reset" => "Statistics last reset on",
-"global_yes" => "ÊÇ",
-"global_no" => "·ñ",
+"global_yes" => "æ˜¯",
+"global_no" => "å¦",
 
 // The error messages
 "error_cannot_see_config" =>
-"ÕâÀï²»ÔÊĞí²é¿´±¾·şÎñÆ÷µÄ BBClone ÅäÖÃ¡£",
-
-// Address Extensions
-"ac" => "Ascension Island",
-"ad" => "°²µÀ¶û",
-"ae" => "°¢ÁªÇõ",
-"aero" => "Aero",
-"af" => "°¢¸»º¹",
-"ag" => "°²Ìá¹ÏºÍ°Í²¼´ï",
-"ai" => "°²¸ñÀ­",
-"al" => "°¢¶û°ÍÄáÑÇ",
-"am" => "ÑÇÃÀÄáÑÇ",
-"an" => "ºÉÀ¼ÊôµØ",
-"ao" => "°²¸çÀ­",
-"aq" => "ÄÏ¼«ÖŞ",
-"ar" => "°¢¸ùÍ¢",
-"arpa" => "Arpa",
-"as" => "¶«ÈøÄ¦ÑÇ",
-"at" => "°ÂµØÀû",
-"au" => "°Ä´óÀûÑÇ",
-"aw" => "°¢Â³°Í",
-"az" => "°¢Èû°İ½®",
-"ba" => "²¨ºÚ",
-"bb" => "°Í°Í¶àË¹",
-"bd" => "ÃÏ¼ÓÀ­¹ú",
-"be" => "±ÈÀûÊ±",
-"bf" => "²¼»ùÄÉ·¨Ë÷",
-"bg" => "±£¼ÓÀûÑÇ",
-"bh" => "°ÍÁÖ",
-"bi" => "²¼Â¡µÏ",
-"biz" => "Business",
-"bj" => "±´Äş",
-"bm" => "°ÙÄ½´ó",
-"bn" => "ÎÄÀ³´ïÂ³ÈøÀ¼¹ú",
-"bo" => "²£ÀûÎ¬ÑÇ",
-"br" => "°ÍÎ÷",
-"bs" => "°Í¹şÂí",
-"bt" => "²»µ¤",
-"bv" => "²¼Î¤Èºµº",
-"bw" => "²®×ÈÍßÄÉ",
-"by" => "°×¶íÂŞË¹",
-"bz" => "²®Àû×È",
-"ca" => "¼ÓÄÃ´ó",
-"cc" => "¿Æ¿ÆË¹Èºµº",
-"cd" => "Congo",
-"cf" => "ÖĞ·Ç¹²ºÍ¹ú",
-"cg" => "¸Õ¹û",
-"ch" => "ÈğÊ¿",
-"ci" => "ÏóÑÀº£°¶",
-"ck" => "¿â¿ËÈºµº",
-"cl" => "ÖÇÀû",
-"cm" => "¿¦ÂóÂ¡",
-"cn" => "ÖĞ¹ú",
-"co" => "¸çÂ×±ÈÑÇ",
-"com" => "Commercial",
-"coop" => "Coop",
-"cr" => "¸çË¹´ïÀè¼Ó",
-"cs" => "Serbia and Montenegro",
-"cu" => "¹Å°Í",
-"cv" => "·ğµÃ½Ç",
-"cx" => "Ê¥µ®µº£¨Ó¢Êô£©",
-"cy" => "ÈûÆÖÂ·Ë¹",
-"cz" => "½İ¿Ë¹²ºÍ¹ú",
-"de" => "µÂ¹ú",
-"dj" => "¼ª²¼Ìá",
-"dk" => "µ¤Âó",
-"dm" => "¶àÃ×Äá¼ÓÁª°î",
-"do" => "¶àÃ×Äá¼Ó¹²ºÍ¹ú",
-"dz" => "°¢¶û¼°ÀûÑÇ",
-"ec" => "¶ò¹Ï¶à¶û",
-"edu" => "Educational",
-"ee" => "°®É³ÄáÑÇ",
-"eg" => "°£¼°",
-"eh" => "Î÷ÈøÄ¦ÑÇ",
-"er" => "Eritrea",
-"es" => "Î÷°àÑÀ",
-"et" => "°£Èû¶í±ÈÑÇ",
-"eu" => "European Union",
-"ev" => "Èø¶ûÍß¶à",
-"fi" => "·ÒÀ¼",
-"fj" => "ì³¼Ã",
-"fk" => "¸£¿ËÀ¼Èºµº",
-"fm" => "ÃÜ¿ËÂŞÄáÎ÷ÑÇ",
-"fo" => "·¨ÂŞÈºµº",
-"fr" => "·¨¹ú",
-"ga" => "¼ÓÅî",
-"gb" => "´ó²»ÁĞµßÁªºÏÍõ¹ú",
-"gd" => "¸ñÁÖÄÉ´ï",
-"ge" => "¸ñÂ³¼ªÑÇ",
-"gf" => "·¨Êô¹çÑÇÄÇ",
-"gg" => "Guernsey",
-"gh" => "¼ÓÄÉ",
-"gi" => "Ö±²¼ÂŞÍÓ",
-"gl" => "¸ñÁêÀ¼Èºµº",
-"gm" => "¸Ô±ÈÑÇ",
-"gn" => "¼¸ÄÚÑÇ",
-"gov" => "US Government",
-"gp" => "¹ÏµÂÂŞÆÕµº£¨·¨Êô£©",
-"gq" => "³àµÀ¼¸ÄÚÑÇ",
-"gr" => "Ï£À°",
-"gs" => "South Georgia and the South Sandwich Islands",
-"gt" => "Î£µØÂíÀ­",
-"gu" => "¹Øµº",
-"gw" => "¼¸ÄÚÑÇ±ÈÉÜ",
-"gy" => "¹çÑÇÄÇ",
-"hk" => "Ïã¸Û",
-"hm" => "ºÕÌØÓëÂó¿ËÌÆÄÉÈºµº",
-"hn" => "ºé¶¼À­Ë¹",
-"hr" => "¿ËÂŞµÙÑÇ",
-"ht" => "º£µØ",
-"hu" => "ĞÙÑÀÀû",
-"id" => "Ó¡¶ÈÄáÎ÷ÑÇ",
-"ie" => "°®¶ûÀ¼¹²ºÍ¹ú",
-"il" => "ÒÔÉ«ÁĞ",
-"im" => "Isle of Man",
-"in" => "Ó¡¶È",
-"info" => "Information",
-"int" => "International Organizations",
-"io" => "Ó¢ÊôÓ¡¶ÈÑóÁìµØ",
-"iq" => "ÒÁÀ­¿Ë",
-"ir" => "ÒÁÀÊ",
-"is" => "±ùµº",
-"it" => "Òâ´óÀû",
-"je" => "Jersey",
-"jm" => "ÑÀÂò¼Ó",
-"jo" => "Ô¼µ©",
-"jp" => "ÈÕ±¾",
-"ke" => "¿ÏÄáÑÇ",
-"kg" => "¼ª¶û¼ªË¹Ë¹Ì¹",
-"kh" => "¼íÆÒÈû",
-"ki" => "»ùÀï°ÍË¹",
-"km" => "¿ÆÄ¦ÂŞ",
-"kn" => "Ê¥´ÄºÍÄáÎ¬Ë¹",
-"kp" => "±±³¯ÏÊ",
-"kr" => "ÄÏ³¯ÏÊ",
-"kw" => "¿ÆÍşÌØ",
-"ky" => "¿ªÂüÈºµº£¨Ó¢Êô£©",
-"kz" => "¹şÈø¿ËË¹Ì¹",
-"la" => "ÀÏÎÎÈËÃñ¹²ºÍ¹ú",
-"lb" => "Àè°ÍÄÛ",
-"lc" => "Ê¥Â¶Î÷ÑÇµº",
-"li" => "ÁĞÖ§¶ØÊ¿µÇ",
-"lk" => "Ë¹ÀïÀ¼¿¨",
-"lr" => "Àû±ÈÀïÑÇ",
-"ls" => "À³Ë÷ÍĞ",
-"lt" => "Á¢ÌÕÍğ",
-"lu" => "Â¬É­±¤",
-"lv" => "À­ÍÑÎ¬ÑÇ",
-"ly" => "Àû±ÈÑÇ",
-"ma" => "Ä¦Âå¸ç",
-"mc" => "Ä¦ÄÉ¸ç",
-"md" => "Ä¦¶û¶àÍß",
-"mg" => "Âí´ï¼ÓË¹¼Ó",
-"mh" => "ÂíÉÜ¶ûÈºµº",
-"mil" => "US Military",
-"mk" => "Macedonia",
-"ml" => "ÂíÀï",
-"mm" => "Ãåµé",
-"mn" => "ÃÉ¹Å",
-"mo" => "°ÄÃÅ",
-"mp" => "±±ÂíÀïÑÇÄÉÈºµº",
-"mq" => "ÂíÌáÄá¿Ëµº£¨·¨Êô£©",
-"mr" => "Ã«ÀïËşÄáÑÇ",
-"ms" => "ÃÉÈûÀ­ÌØµº",
-"mt" => "Âí¶ûËû",
-"mu" => "Mauritius",
-"museum" => "Museum",
-"mv" => "Âí¶û´ú·ò",
-"mw" => "ÂíÀ­Î¬",
-"mx" => "Ä«Î÷¸ç",
-"my" => "ÂíÀ´Î÷ÑÇ",
-"mz" => "ÄªÉ£±È¿Ë",
-"na" => "ÄÉÃ×±ÈÑÇ",
-"name" => "Personal",
-"nc" => "ĞÂ¿¦Àï¶àÄáÑÇ",
-"ne" => "ÄáÈÕ¶û",
-"net" => "Networks",
-"nf" => "Åµ¸£¿Ëµº",
-"ng" => "ÄáÈÕÀûÑÇ",
-"ni" => "Äá¼ÓÀ­¹Ï",
-"nl" => "ºÉÀ¼",
-"no" => "Å²Íş",
-"np" => "Äá²´¶û",
-"nr" => "è§Â³",
-"nu" => "Å¦°£",
-"numeric" => "Numeric",
-"nz" => "ĞÂÎ÷À¼",
-"om" => "°¢Âü",
-"org" => "Organizations",
-"pa" => "°ÍÄÃÂí",
-"pe" => "ÃØÂ³",
-"pf" => "·¨Êô²£ÀûÄáÎ÷ÑÇ",
-"pg" => "°Í²¼ÑÇĞÂ¼¸ÄÚÑÇ",
-"ph" => "·ÆÂÉ±ö",
-"pk" => "°Í»ùË¹Ì¹",
-"pl" => "²¨À¼",
-"pm" => "Ê¥Æ¤°£¶ûºÍÃÜ¿ËÂ¡µº",
-"pn" => "Æ¤ÌØ¿Ë¶÷µº",
-"pr" => "²¨¶àÀè¸÷",
-"pro" => "Professional",
-"ps" => "Palestina",
-"pt" => "ÆÏÌÑÑÀ",
-"pw" => "ÅÁÀÍ",
-"py" => "°ÍÀ­¹ç",
-"qa" => "¿¨Ëş¶û",
-"re" => "ÁôÄáÍôµº£¨·¨Êô£©",
-"ro" => "ÂŞÂíÄáÑÇ",
-"ru" => "¶íÂŞË¹Áª°î",
-"rw" => "Â¬Íú´ï",
-"sa" => "É³ÌØ°¢À­²®",
-"sb" => "ËùÂŞÃÅÈºµº",
-"sc" => "ÈûÉà¶û",
-"sd" => "ËÕµ©",
-"se" => "Èğµä",
-"sg" => "ĞÂ¼ÓÆÂ",
-"sh" => "º£Â×ÄÈ",
-"si" => "Ë¹ÂåÎÄÄáÑÇ",
-"sj" => "Ë¹Âí¶û°ÍÌØºÍÑïÂíÑÓµº",
-"sk" => "Ë¹Âå·¥¿Ë",
-"sl" => "ÈûÀ­Àû°º",
-"sm" => "Ê¥ÂíÁ¦Åµ",
-"sn" => "ÈûÄÚ¼Ó¶û",
-"so" => "Ë÷ÂíÀï",
-"sr" => "ËÕÀïÄÏ",
-"st" => "Ê¥¶àÃÀºÍÆÕÁÖÎ÷±È",
-"su" => "ËÕÁª",
-"sv" => "El Salvador",
-"sy" => "ĞğÀûÑÇ",
-"sz" => "Ë¹ÍşÊ¿À¼",
-"tc" => "ÌØ¿ËË¹ÈºµºÓë¿­¿ÆË¹Èºµº",
-"td" => "Õ§µÃ",
-"tf" => "·¨ÊôÄÏ°ëÇòÁìµØ",
-"tg" => "¶à¸ç",
-"th" => "Ì©¹ú",
-"tj" => "Ëş¼ª¿ËË¹Ì¹",
-"tk" => "ÍĞ¿ËÀÍÈºµº",
-"tl" => "¶«µÛãë",
-"tm" => "ÍÁ¿âÂüË¹Ì¹",
-"tn" => "Í»ÄáË¹",
-"to" => "ÌÀ¼Ó",
-"tp" => "¶«µÛãë",
-"tr" => "ÍÁ¶úÆä",
-"tt" => "ÌØÁ¢ÄáºÍ¶à°Í¸ç",
-"tv" => "Í¼ÍßÂ³",
-"tw" => "Ì¨Íå",
-"tz" => "Ì¹É£ÄáÑÇ",
-"ua" => "ÎÚ¿ËÀ¼",
-"ug" => "ÎÚ¸É´ï",
-"uk" => "Ó¢¹ú",
-"um" => "US Minor Outlying Islands",
-"unknown" => "Î´Öª",
-"us" => "ÃÀ¹ú",
-"uy" => "ÎÚÀ­¹ç",
-"uz" => "Uzbekistan",
-"va" => "èóµØ¸Ô",
-"vc" => "Ê¥ÎÄÉ­ÌØºÍ¸ñÁÖÄÉ¶¡Ë¹",
-"ve" => "Î¯ÄÚÈğÀ­",
-"vg" => "Î¬¾©Èºµº",
-"vi" => "Virgin Islands (US)",
-"vn" => "Ô½ÄÏ",
-"vu" => "ÍßÅ¬°¢Í¼",
-"wf" => "ÍßÀûË¹ºÍ¸»Í¼ÄÉÈºµº",
-"ws" => "¶«ÈøÄ¦ÑÇ",
-"ye" => "Ò²ÃÅ",
-"yt" => "Mayotte",
-"yu" => "ÄÏË¹À­·ò",
-"za" => "ÄÏ·Ç",
-"zm" => "ÔŞ±ÈÑÇ",
-"zr" => "ÔúÒÁ¶û",
-"zw" => "½ò°Í²¼Î¤",
+"è¿™é‡Œä¸å…è®¸æŸ¥çœ‹æœ¬æœåŠ¡å™¨çš„ BBClone é…ç½®ã€‚",
 
 // Miscellaneous translations
-"misc_other" => "Æä Ëû",
-"misc_unknown" => "Î´ Öª",
-"misc_second_unit" => "Ãë",
+"misc_other" => "å…¶ ä»–",
+"misc_unknown" => "æœª çŸ¥",
+"misc_second_unit" => "ç§’",
 "misc_ignored" => "Ignored",
 
 // The Navigation Bar
-"navbar_Main_Site" => "ÎÒµÄÕ¾µã",
-"navbar_Configuration" => "ÅäÖÃÎÄ¼ş",
-"navbar_Global_Stats" => "È« Ãæ",
-"navbar_Detailed_Stats" => "Ï¸ ½Ú",
-"navbar_Time_Stats" => "Ê± ¼ä",
+"navbar_main_site" => "æˆ‘çš„ç«™ç‚¹",
+"navbar_configuration" => "é…ç½®æ–‡ä»¶",
+"navbar_global_stats" => "å…¨ é¢",
+"navbar_detailed_stats" => "ç»† èŠ‚",
+"navbar_time_stats" => "æ—¶ é—´",
+"navbar_language" => "Language",
+"navbar_go" => "Go",
 
 // Detailed stats words
-"dstat_id" => "ºÅÂë",
-"dstat_time" => "Ê± ¼ä",
-"dstat_visits" => "ä¯ÀÀ",
-"dstat_extension" => "À© Õ¹",
-"dstat_dns" => "IP µØ Ö·",
-"dstat_from" => "×ª ×Ô£¨Óò Ãû£©",
-"dstat_os" => "²Ù ×÷ Ïµ Í³",
-"dstat_browser" => "ä¯ ÀÀ Æ÷",
-"dstat_visible_rows" => "µ±Ç°¿ÉÒÔ²é¿´µÄ·ÃÎÊÊı",
-"dstat_green_rows" => "ÂÌÉ«ĞĞ",
-"dstat_blue_rows" => "À¶É«ĞĞ",
-"dstat_red_rows" => "ºìÉ«ĞĞ",
+"dstat_id" => "å·ç ",
+"dstat_time" => "æ—¶ é—´",
+"dstat_visits" => "æµè§ˆ",
+"dstat_extension" => "æ‰© å±•",
+"dstat_dns" => "IP åœ° å€",
+"dstat_from" => "è½¬ è‡ªï¼ˆåŸŸ åï¼‰",
+"dstat_os" => "æ“ ä½œ ç³» ç»Ÿ",
+"dstat_browser" => "æµ è§ˆ å™¨",
+"dstat_visible_rows" => "å½“å‰å¯ä»¥æŸ¥çœ‹çš„è®¿é—®æ•°",
+"dstat_green_rows" => "ç»¿è‰²è¡Œ",
+"dstat_blue_rows" => "è“è‰²è¡Œ",
+"dstat_red_rows" => "çº¢è‰²è¡Œ",
 "dstat_search" => "Search",
 "dstat_last_page" => "Last Page",
-"dstat_last_visit" => "×îºóµÄ·ÃÎÊÊ±¼ä",
+"dstat_last_visit" => "æœ€åçš„è®¿é—®æ—¶é—´",
 "dstat_robots" => "robots",
+"dstat_my_visit" => "Visits from your IP",
 "dstat_no_data" => "No data available",
 "dstat_prx" => "Proxy Server",
 "dstat_ip" => "IP Address",
@@ -341,55 +363,82 @@ $_ = array(
 "dstat_pages" => "Pages",
 "dstat_visit_length" => "Visit Length",
 "dstat_reloads" => "Reloads",
+"dstat_whois_information" => "Look up information on this IP Adress",
 
 // Global stats words
-"gstat_Accesses" => "´æ È¡ ¼Ç Â¼",
-"gstat_Total_visits" => "·ÃÎÊ×ÜÊı",
-"gstat_Total_unique" => "×ÜµÄÎ¨Ò»µÄ",
-"gstat_Operating_systems" => "²Ù ×÷ Ïµ Í³",
-"gstat_Browsers" => "ä¯ ÀÀ Æ÷",
-"gstat_extensions" => "Ê× %d ·¶Î§ÅÅÁĞ",
-"gstat_Robots" => "Robots",
-"gstat_pages" => "Ê× %d Ò³ÃæÅÅÁĞ",
-"gstat_origins" => "Ê× %d À´Ô´ÅÅÁĞ",
+"gstat_accesses" => "å­˜ å– è®° å½•",
+"gstat_total_visits" => "è®¿é—®æ€»æ•°",
+"gstat_total_unique" => "æ€»çš„å”¯ä¸€çš„",
+"gstat_operating_systems" => "æ“ ä½œ ç³» ç»Ÿ",
+"gstat_browsers" => "æµ è§ˆ å™¨",
+"gstat_extensions" => "é¦– %d èŒƒå›´æ’åˆ—",
+"gstat_robots" => "Robots",
+"gstat_pages" => "é¦– %d é¡µé¢æ’åˆ—",
+"gstat_origins" => "é¦– %d æ¥æºæ’åˆ—",
 "gstat_hosts" => "Top %d Hosts",
 "gstat_keys" => "Top %d Keywords",
-"gstat_Total" => "ºÏ ¼Æ",
-"gstat_Not_specified" => "Ã»ÓĞÏêÏ¸ËµÃ÷",
+"gstat_total" => "åˆ è®¡",
+"gstat_not_specified" => "æ²¡æœ‰è¯¦ç»†è¯´æ˜",
 
 // Time stats words
-"tstat_Su" => "ĞÇÆÚÌì",
-"tstat_Mo" => "ĞÇÆÚÒ»",
-"tstat_Tu" => "ĞÇÆÚ¶ş",
-"tstat_We" => "ĞÇÆÚÈı",
-"tstat_Th" => "ĞÇÆÚËÄ",
-"tstat_Fr" => "ĞÇÆÚÎå",
-"tstat_Sa" => "ĞÇÆÚÁù",
+"tstat_su" => "æ˜ŸæœŸå¤©",
+"tstat_mo" => "æ˜ŸæœŸä¸€",
+"tstat_tu" => "æ˜ŸæœŸäºŒ",
+"tstat_we" => "æ˜ŸæœŸä¸‰",
+"tstat_th" => "æ˜ŸæœŸå››",
+"tstat_fr" => "æ˜ŸæœŸäº”",
+"tstat_sa" => "æ˜ŸæœŸå…­",
 
-"tstat_Jan" => "Ò»ÔÂ",
-"tstat_Feb" => "¶şÔÂ",
-"tstat_Mar" => "ÈıÔÂ",
-"tstat_Apr" => "ËÄÔÂ",
-"tstat_May" => "ÎåÔÂ",
-"tstat_Jun" => "ÁùÔÂ",
-"tstat_Jul" => "ÆßÔÂ",
-"tstat_Aug" => "°ËÔÂ",
-"tstat_Sep" => "¾ÅÔÂ",
-"tstat_Oct" => "Ê®ÔÂ",
-"tstat_Nov" => "Ê®Ò»",
-"tstat_Dec" => "Ê®¶ş",
+"tstat_full_su" => "Sunday",
+"tstat_full_mo" => "Monday",
+"tstat_full_tu" => "Tuesday",
+"tstat_full_we" => "Wednesday",
+"tstat_full_th" => "Thursday",
+"tstat_full_fr" => "Friday",
+"tstat_full_sa" => "Saturday",
 
-"tstat_last_day" => "ÕâÒ»Ìì",
-"tstat_last_week" => "ÕâÒ»ÖÜ",
-"tstat_last_month" => "ÕâÒ»¸öÔÂ",
-"tstat_last_year" => "ÕâÒ»Äê",
+"tstat_jan" => "ä¸€æœˆ",
+"tstat_feb" => "äºŒæœˆ",
+"tstat_mar" => "ä¸‰æœˆ",
+"tstat_apr" => "å››æœˆ",
+"tstat_may" => "äº”æœˆ",
+"tstat_jun" => "å…­æœˆ",
+"tstat_jul" => "ä¸ƒæœˆ",
+"tstat_aug" => "å…«æœˆ",
+"tstat_sep" => "ä¹æœˆ",
+"tstat_oct" => "åæœˆ",
+"tstat_nov" => "åä¸€",
+"tstat_dec" => "åäºŒ",
+
+"tstat_full_jan" => "January",
+"tstat_full_feb" => "February",
+"tstat_full_mar" => "March",
+"tstat_full_apr" => "April",
+"tstat_full_may" => "May",
+"tstat_full_jun" => "June",
+"tstat_full_jul" => "July",
+"tstat_full_aug" => "August",
+"tstat_full_sep" => "September",
+"tstat_full_oct" => "October",
+"tstat_full_nov" => "November",
+"tstat_full_dec" => "December",
+
+"tstat_last_day" => "è¿™ä¸€å¤©",
+"tstat_last_week" => "è¿™ä¸€å‘¨",
+"tstat_last_month" => "è¿™ä¸€ä¸ªæœˆ",
+"tstat_last_year" => "è¿™ä¸€å¹´",
+"tstat_average" => "Average",
+
+// Loadtime notice
+"generated" => "page generated in ",
+"seconds" => " seconds",
 
 // Configuration page words and sentences
-"config_Variable_name" => "±ä Á¿ Ãû ³Æ",
-"config_Variable_value" => "±ä Á¿ Öµ",
-"config_Explanations" => "Ïê Ï¸ ½â ÊÍ",
+"config_variable_name" => "å˜ é‡ å ç§°",
+"config_variable_value" => "å˜ é‡ å€¼",
+"config_explanations" => "è¯¦ ç»† è§£ é‡Š",
 
-"config_bbc_mainsite" =>
+"config_BBC_MAINSITE" =>
 "If this variable has been set, a link to the specified location will be
 generated. The default value is pointing to the parent directory. In case your
 main site is located elsewhere, you probably want to adjust the value to suit
@@ -399,33 +448,33 @@ Examples:<br />
 \$BBC_MAINSITE = &quot;..&quot;<br />
 \$BBC_MAINSITE = &quot;&quot;;",
 
-"config_bbc_show_config" =>
+"config_BBC_SHOW_CONFIG" =>
 "BBClone defaults to revealing the stats' settings. In case this behavior isn't
 desired you can deny access to it by deactivating the option.<br />
 Examples:<br />
 \$BBC_SHOW_CONFIG = 1;<br />
 \$BBC_SHOW_CONFIG = &quot;&quot;;",
 
-"config_bbc_titlebar" =>
-"Õâ¸ö±êÌâµÄÄÚÈİ»áÔÚËùÓĞ BBClone Ò³ÃæµÄ±êÌâÀ¸ÏÔÊ¾³öÀ´¡£<br />
-¿ÉÒÔÀí½âµÄºêÓĞ£º<br />
+"config_BBC_TITLEBAR" =>
+"è¿™ä¸ªæ ‡é¢˜çš„å†…å®¹ä¼šåœ¨æ‰€æœ‰ BBClone é¡µé¢çš„æ ‡é¢˜æ æ˜¾ç¤ºå‡ºæ¥ã€‚<br />
+å¯ä»¥ç†è§£çš„å®æœ‰ï¼š<br />
 <ul>
-<li>%SERVER: ·şÎñÆ÷Ãû×Ö£»</li>
-<li>%DATE: µ±Ç°Ê±¼ä¡£</li>
+<li>%SERVER: æœåŠ¡å™¨åå­—ï¼›</li>
+<li>%DATE: å½“å‰æ—¶é—´ã€‚</li>
 </ul>
-ÔÊĞí HTML ±êÇ©¡£<br />
+å…è®¸ HTML æ ‡ç­¾ã€‚<br />
 Examples:<br />
 \$BBC_TITLEBAR = &quot;Statistics for %SERVER generated the %DATE&quot;;<br />
 \$BBC_TITLEBAR = &quot;My stats from %DATE look like this:&quot;;
 <br />",
 
-"config_bbc_language" =>
+"config_BBC_LANGUAGE" =>
 "BBClone's default language, in case it hasn't been specified by the browser.
 The following languages are supported:
 <p>ar, bg, bs, ca, cs, da, de, el, en, es, fi, fr, hu, id, it, ja, ko, lt, mk, nb, nl, pl, pt, pt-br, ro, ru,
 sk, sl, sv, th, tr, ua, zh-cn and zh-tw</p>",
 
-"config_bbc_maxtime" =>
+"config_BBC_MAXTIME" =>
 "This variable defines the length of an unique visit in seconds. Each hit from
 the same visitor within this period will be considered as one visit, as long as
 two successive hits don't exceed the specified limit. Default is the de facto
@@ -435,12 +484,12 @@ Examples:<br />
 \$BBC_MAXTIME = 0;<br />
 \$BBC_MAXTIME = 1800;",
 
-"config_bbc_maxvisible" =>
+"config_BBC_MAXVISIBLE" =>
 "How many entries you want to have listed in the detailed stats? The default
 value is 100. It's recommended not to set it higher than 500 to avoid too heavy
 load.",
 
-"config_bbc_detailed_stat_fields" =>
+"config_BBC_DETAILED_STAT_FIELDS" =>
 "The variable \$BBC_DETAILED_STAT_FIELDS determines the columns to be displayed
 in the detailed statistics. Possible columns are:
 <ul>
@@ -464,7 +513,7 @@ Examples:<br />
 <br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;date, ext, browser, os, ip&quot;;<br />",
 
-"config_bbc_time_offset" =>
+"config_BBC_TIME_OFFSET" =>
 "In case the server time doesn't match your local timezone, you can adjust the
 time in minutes by using this switch. Negative values will set back the time,
 positive ones will set it forth.<br />
@@ -473,7 +522,7 @@ Examples:<br />
 \$BBC_TIME_OFFSET = -300;<br />
 \$BBC_TIME_OFFSET = 0;",
 
-"config_bbc_no_dns" =>
+"config_BBC_NO_DNS" =>
 "This options defines, whether IP addresses should be resolved to hostnames or
 not. While hostnames tell a lot more about the visitor, resolving them may
 considerably slow down your site, if the DNS servers used are slow, limited in
@@ -483,7 +532,7 @@ Examples:<br />
 \$BBC_NO_DNS = 1;<br />
 \$BBC_NO_DNS = &quot;&quot;;",
 
-"config_bbc_no_hits" =>
+"config_BBC_NO_HITS" =>
 "BBClone's default is to show hits in the time stats, because it gives a quite
 useful Impression from the actual server load. If, however, you prefer to use
 unique visits as base for your time stats, you can change the way of counting
@@ -492,7 +541,7 @@ Examples:<br />
 \$BBC_NO_HITS = 1;<br />
 \$BBC_NO_HITS = &quot;&quot;;",
 
-"config_bbc_ignore_ip" =>
+"config_BBC_IGNORE_IP" =>
 "This option can be used to exclude particular IP addresses or address ranges
 from counting. In case you want to add several expressions use a comma as
 separator.<br />
@@ -500,7 +549,7 @@ Examples:<br />
 \$BBC_IGNORE_IP = &quot;127., 192.168.&quot;;<br />
 \$BBC_IGNORE_IP = &quot;&quot;;",
 
-"config_bbc_ignore_refer" =>
+"config_BBC_IGNORE_REFER" =>
 "In case you don't want to have particular referrers from your visitors listed
 in your ranking or detailed stats, you can specify one or more keywords used
 for blocking if a referrer matches up against them. If you use more keywords,
@@ -509,7 +558,7 @@ Examples:<br />
 \$BBC_IGNORE_REFER = &quot;spambot.org, .escort.&quot;;<br />
 \$BBC_IGNORE_REFER = &quot;&quot;;",
 
-"config_bbc_ignore_bots" =>
+"config_BBC_IGNORE_BOTS" =>
 "You can use this option to determine the treatment of robots. The default is
 to ignore them in the top hosts ranking but leave them in the remaining
 stats. If you don't want to see any robots at all you can set this option to
@@ -519,7 +568,7 @@ Examples:<br />
 \$BBC_IGNORE_BOTS = 1;<br />
 \$BBC_IGNORE_BOTS = &quot;&quot;;",
 
-"config_bbc_ignore_agent" =>
+"config_BBC_IGNORE_AGENT" =>
 "This option defines how BBClone tells one visitor from another. Default is to
 use the IP address only, which provides realistic figures in most cases. If,
 however, your visitors often are hidden behind proxy servers, deactivation of
@@ -529,7 +578,7 @@ Examples:<br />
 \$BBC_IGNORE_AGENT = 1;<br />
 \$BBC_IGNORE_AGENT = &quot;&quot;;",
 
-"config_bbc_kill_stats" =>
+"config_BBC_KILL_STATS" =>
 "Whenever you wish to reset your stats you can activate this switch and have
 them deleted by the next visit. Don't forget to deactivate it afterwards, else
 you'll probably experience unusually low traffic ;).<br />
@@ -537,7 +586,7 @@ Examples:<br />
 \$BBC_KILL_STATS = 1;<br />
 \$BBC_KILL_STATS = &quot;&quot;;",
 
-"config_bbc_purge_single" =>
+"config_BBC_PURGE_SINGLE" =>
 "Host and referrer stats can generate a huge amount of data, however mostly
 caused by one time visitors. By enabling this switch you can purge these
 entries and considerably shrink access.php in its size without affecting your

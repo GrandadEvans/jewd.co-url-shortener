@@ -1,18 +1,26 @@
 <?php
-/* This file is part of BBClone (The PHP web counter on steroids)
+/* This file is part of BBClone (A PHP based Web Counter on Steroids)
+ * 
+ * CVS FILE $Id: log_processor.php,v 1.115 2011/12/30 23:02:10 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * $Header: /cvs/bbclone/log_processor.php,v 1.112 2009/06/21 07:33:07 joku Exp $
- *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  */
+
+///////////////////
+// Log Processes //
+///////////////////
 
 // Checking where we came from
 if (!defined("_MARK_PAGE")) return;
@@ -41,7 +49,10 @@ function bbc_purge_single() {
     reset($access[$cat]);
 
     while (list($key, $score) = each($access[$cat])) {
-      if ($score == 1) unset($access[$cat][$key]);
+      if ($score == 1) {
+        unset($access[$cat][$key]);
+        ($cat == "referer") ? ++$access[$cat]['not_specified'] : "";
+      }
     }
   }
 }
@@ -79,12 +90,14 @@ function bbc_update_host_stat($client) {
 function bbc_update_visits($time, $page, $nr) {
   global $BBC_MAXVISIBLE, $last;
 
-  if ((empty($last['traffic'][$nr]['views'])) || (!is_array($last['traffic'][$nr]['views']))) return;
-
   $lv = count($last['traffic'][$nr]['views']) - 1;
+  $last_time = substr($last['traffic'][$nr]['views'][$lv], 0, strpos($last['traffic'][$nr]['views'][$lv], "|"));
+  $last_cnt = substr($last['traffic'][$nr]['views'][$lv], (strrpos($last['traffic'][$nr]['views'][$lv], "|") + 1));
+  $last_page = substr($last['traffic'][$nr]['views'][$lv], (strpos($last['traffic'][$nr]['views'][$lv], "|") + 1));
+  $last_page = substr($last_page, 0, strpos($last_page, "|"));
   $last['traffic'][$nr]['off'] = !empty($last['traffic'][$nr]['off']) ? $last['traffic'][$nr]['off'] : 0;
 
-  list($last_time, $last_page, $last_cnt) = explode("|", $last['traffic'][$nr]['views'][$lv]);
+  if ((empty($last['traffic'][$nr]['views'])) || (!is_array($last['traffic'][$nr]['views']))) return;
 
   if (intval($last_page) === intval($page)) {
     $last['traffic'][$nr]['views'][$lv] = "$last_time|$last_page|".++$last_cnt;
@@ -102,20 +115,12 @@ function bbc_update_visits($time, $page, $nr) {
 }
 
 // The most visited pages ranking
-function bbc_update_page_stats($connect, $char) {
+function bbc_update_page_stats($connect) {
   global $access, $last;
 
   $long_page = $connect['page'];
-  $char = $char ? $char : (defined("_BBC_MBSTRING") ? bbc_get_encoding($long_page) : false);
-
-  // unfortunately big5 is unsupported as internal charset for mbstring operations
-  if (defined("_BBC_MBSTRING") && (stristr("UTF", $char) || stristr("EUC-JP", $char) || stristr("gb2312", $char))) {
-    mb_internal_encoding($char);
-  }
-
-  $over_60 = ((defined("_BBC_MBSTRING") ? mb_strlen($long_page) : strlen($long_page)) > 60) ? 1 : 0;
-  $connect['page'] = $over_60 ? "...".(defined("_BBC_MBSTRING") ? mb_substr($long_page, -57) :
-                     substr($long_page, -57)) : $long_page;
+  $over_60 = (strlen($long_page) > 60) ? 1 : 0;
+  $connect['page'] = $over_60 ? "...".substr($long_page, -57) : $long_page;
 
   // Fix oversized page titles
   if (($over_60) && (isset($access['page'][$long_page]['count']))) {
@@ -123,6 +128,7 @@ function bbc_update_page_stats($connect, $char) {
     $access['page'][($connect['page'])]['uri'] = $access['page'][$long_page]['uri'];
     unset($access['page'][$long_page]);
   }
+
 
   if (!isset($access['page'][($connect['page'])]['count'])) {
     $access['page'][($connect['page'])]['count'] = 0;
@@ -147,16 +153,38 @@ function bbc_update_page_stats($connect, $char) {
 
 // Transfer the raw data from the main counters of var into $last.
 // Any new data (more recent than $BBC_MAXTIME) is used in the global stats
-function bbc_add_new_connections($new_access) {
-  global $BBC_CUSTOM_CHARSET, $BBC_IGNORE_AGENT, $BBC_IGNORE_BOTS, $BBC_MAXTIME, $BBC_MAXVISIBLE, $BBC_NO_DNS,
-         $BBC_NO_HITS, $access, $last;
+function bbc_add_new_connections_to_old() {
+  global $BBC_IGNORE_AGENT, $BBC_IGNORE_BOTS, $BBC_MAXTIME, $BBC_MAXVISIBLE, $BBC_NO_DNS, $BBC_NO_HITS,
+         $BBC_PURGE_SINGLE, $access, $last;
+         
+  // Checking whether we have new connections
+  if (!$new_access = bbc_counter_to_array()) return false;
 
-  if (_BBC_PHP < 410) global $HTTP_COOKIE_VARS;
+  // cleanup if requested
+  !empty($BBC_PURGE_SINGLE) ? bbc_purge_single() : "";
 
-  $is_same = false;
-  $char = !empty($BBC_CUSTOM_CHARSET) ? $BBC_CUSTOM_CHARSET : false;
-  $new_cnt = (!empty($new_access) && is_array($new_access)) ? count($new_access) : 0;
-  $old_cnt = (!empty($last['traffic']) && is_array($last['traffic'])) ? count($last['traffic']) : 0;
+  ((!empty($access['time'])) && (is_array($access['time']))) ? bbc_time_offset() : "";
+
+  // Upgrade from older versions. We need to erase the "last" data.
+  if (isset($access['last'])) unset($access['last']);
+
+  //check for broken 0.4.2 referrer counting and apply fix if necessary
+  if (isset($access) && !isset($access['bugs']['ref_fix']) && isset($access['referer']['not_specified'])) {
+    bbc_fix_refer_stat(array_sum($access['referer']));
+  }
+
+  // fix wrong browser assignments
+  foreach (array("java", "wwwc", "libwww") as $what) {
+    if (isset($access) && isset($access['stat']['browser'][$what])) {
+      $access['stat']['robot'][$what] = $access['stat']['browser'][$what];
+      $access['stat']['os']['other'] -= $access['stat']['robot'][$what];
+
+      unset($access['stat']['browser'][$what]);
+    }
+  }
+
+  $nb_new_access = (!empty($new_access) && is_array($new_access)) ? count($new_access) : 0;
+  $nb_last_access = (!empty($last['traffic']) && is_array($last['traffic'])) ? count($last['traffic']) : 0;
 
   foreach ($new_access as $connect) {
     $connect = bbc_update_connect($connect);
@@ -167,12 +195,12 @@ function bbc_add_new_connections($new_access) {
     }
 
     // Stop processing if bots are completely ignored
-    if (!empty($BBC_IGNORE_BOTS) && ($BBC_IGNORE_BOTS == 2) && !empty($connect['robot'])) {
-      --$new_cnt;
-      continue;
+    if ((!empty($BBC_IGNORE_BOTS)) && ($BBC_IGNORE_BOTS == 2)) {
+      if (!empty($connect['robot'])) {
+        --$nb_new_access;
+        continue;
+      }
     }
-
-    $connect['visits'] = 1;
     // Omit referrers coming from robots
     $connect['referer'] = !empty($connect['robot']) ? "unknown" : $connect['referer'];
 
@@ -183,44 +211,22 @@ function bbc_add_new_connections($new_access) {
     if (empty($BBC_NO_HITS)) bbc_update_time_stat($this_connect, $last_connect);
 
     // The script viewed
-    $connect = isset($connect['page']) ? bbc_update_page_stats($connect, $char) : $connect;
+    $connect = isset($connect['page']) ? bbc_update_page_stats($connect) : $connect;
     $prev_recorded = 0;
 
     // Check if a similar connection has been recorded yet
-    for ($l = $old_cnt - 1; ($l >= 0) && (($connect['time'] - $last['traffic'][$l]['time']) < $BBC_MAXTIME); $l--) {
+    for($l = $nb_last_access - 1; ($l >= 0) && (($connect['time'] - $last['traffic'][$l]['time']) < $BBC_MAXTIME);
+        $l--) {
       if (!empty($BBC_IGNORE_AGENT) ? ($connect['ip'] == $last['traffic'][$l]['ip']) :
-         ($connect['ip'] == $last['traffic'][$l]['ip']) &&
-         ($is_same = bbc_same_agent($connect, $last['traffic'][$l]))) {
-        $last['traffic'][$l] = bbc_update_detect($connect, $last['traffic'][$l], $is_same);
+          (($connect['ip'] == $last['traffic'][$l]['ip']) && ($connect['agent'] == $last['traffic'][$l]['agent']))) {
         $last['traffic'][$l]['page'] = $connect['page'];
         $last['traffic'][$l]['time'] = $this_connect;
         $last['traffic'][$l]['visits']++;
-
-        // New referrer entry if it differs from the previous one
-        if (isset($connect['referer']) && ($connect['referer'] != "unknown")) {
-          $last['traffic'][$l] = bbc_ref_cmp($last['traffic'][$l], $connect, $char);
-        }
+        $access['stat']['totalvisits']++;
 
         ($BBC_MAXVISIBLE > 0) ? bbc_update_visits($connect['time'], $connect['page'], $l) : "";
-        // permanent data
-        $access['stat']['totalvisits']++;
+
         $prev_recorded = 1;
-
-        // browser page dimensions
-        if (!isset($last['traffic'][$l]['screen_res'])) {
-          if (_BBC_PHP < 410) {
-            if (isset($HTTP_COOKIE_VARS['screen_res'])) {
-              $screen_res = $HTTP_COOKIE_VARS['screen_res'];
-              $last['traffic'][$l]['screen_res'] = $screen_res;
-            }
-          } else {
-            if (isset($_COOKIE['screen_res'])) {
-              $screen_res = $_COOKIE['screen_res'];
-              $last['traffic'][$l]['screen_res'] = $screen_res;
-            }
-          }
-		}
-
         break;
       }
     }
@@ -233,40 +239,38 @@ function bbc_add_new_connections($new_access) {
       $connect['dns'] = !empty($BBC_NO_DNS) ? $connect['ip'] : bbc_clean(gethostbyaddr($connect['ip']));
       $connect['ext'] = bbc_get_extension($connect['dns'], $connect['ip']);
 
-      $last['traffic'][$old_cnt] = bbc_update_access($connect);
+      $last['traffic'][$nb_last_access] = bbc_update_access($connect);
       // Visit stats
-      $last['traffic'][$old_cnt]['views'][] = $last['traffic'][$old_cnt]['time']."|"
-                                             .$last['traffic'][$old_cnt]['page']."|1";
+      $last['traffic'][$nb_last_access]['views'][] = $last['traffic'][$nb_last_access]['time']."|"
+                                                    .$last['traffic'][$nb_last_access]['page']."|1";
 
       // Unique visits as base for time stats if desired
       if (!empty($BBC_NO_HITS)) bbc_update_time_stat($this_connect, $last_connect);
 
       // Referrers collection will be updated all along with the keywords if available
-      if (isset($connect['referer']) && ($connect['referer'] != "unknown")) {
-        bbc_update_referer_stat(bbc_parse_ref($connect['referer']));
-
-        // Search engine keywords in detailed stats
-        $flt_search = bbc_get_keywords($connect['referer'], $char);
-        $last['traffic'][$old_cnt]['search'] = ($flt_search !== false) ? implode(" ", $flt_search) : "-";
-
-        // Search engine keywords in global stats
-        if ($flt_search !== false) bbc_update_key_stats($flt_search);
+      if (isset($connect['referer'])) {
+        bbc_update_referer_stat($connect['referer']);
+        $flt_search = bbc_get_keywords($connect['referer']);
       }
+      // The search as a whole in $last
+      $last['traffic'][$nb_last_access]['search'] = ($flt_search !== false) ? implode(" ", $flt_search) : "-";
 
       // The host listing
-      if (isset($connect['dns']) && isset($connect['ip'])) bbc_update_host_stat($last['traffic'][$old_cnt]);
+      if ((isset($connect['dns'])) && (isset($connect['ip']))) {
+        bbc_update_host_stat($last['traffic'][$nb_last_access]);
+      }
 
       $access['stat']['totalvisits']++;
       $access['stat']['totalcount']++;
-      $old_cnt++;
+      $nb_last_access++;
     }
   }
-  return true;
+  return $nb_new_access;
 }
 
 // Remove unnecessary connections from $last, that either exceed the $BBC_MAXVISIBLE limit or are
 // older than time() - $BBC_MAXTIME.
-function bbc_update_last() {
+function bbc_update_last_access() {
   global $last, $BBC_MAXTIME, $BBC_MAXVISIBLE, $BBC_TIMESTAMP, $BBC_TIME_OFFSET;
 
   if (($BBC_MAXVISIBLE <= 0) || (empty($last['traffic'])) || (!is_array($last['traffic']))) {
@@ -274,70 +278,13 @@ function bbc_update_last() {
     return;
   }
   else {
-    $cnt = count($last['traffic']);
+    $nb_connect = count($last['traffic']);
     $ctime = $BBC_TIMESTAMP + ($BBC_TIME_OFFSET * 60);
 
-    for ($k = $cnt - 1 - $BBC_MAXVISIBLE; $k >= 0; $k--) {
+    for ($k = $nb_connect - 1 - $BBC_MAXVISIBLE; $k >= 0; $k--) {
       if (($ctime - $last['traffic'][$k]['time']) > $BBC_MAXTIME) unset($last['traffic'][$k]);
     }
     usort($last['traffic'],"bbc_sort_time_sc");
   }
-}
-
-// Update stats to latest version
-function bbc_update() {
-  global $access;
-
-  // Upgrade from older versions.
-  foreach (array("bbc046c", "bbc048", "bugs", "last", "refclean", "uaclean") as $i) {
-    if (isset($access[$i])) unset($access[$i]);
-  }
-
-  // referrer cleanup
-  if (isset($access['referer'])) {
-    if (isset($access['referer']['not_specified'])) unset($access['referer']['not_specified']);
-
-    $access['referer'] = bbc_sum_ref($access['referer']);
-  }
-
-  // delete old "ignored" entries. They're no longer needed
-  if (isset($access['referer']['ignored'])) unset($access['referer']['ignored']);
-
-  // fixed counting of empty keywords
-  if (isset($access['key']) && isset($access['key'][''])) unset($access['key']['']);
-
-  if (isset($access['stat']['browser'])) {
-    // fix browsers with capital letters (must be lowercase)
-    foreach (array("Elinks", "Epiphany") as $i) {
-      if (isset($access['stat']['browser'][$i])) {
-        $access['stat']['browser'][strtolower($i)] = $access['stat']['browser'][$i];
-
-        unset($access['stat']['browser'][$i]);
-      }
-    }
-
-    // fix wrong browser assignments
-    foreach (array("java", "wwwc", "libwww") as $i) {
-      if (isset($access['stat']['browser'][$i])) {
-        $access['stat']['robot'][$i] = $access['stat']['browser'][$i];
-        $access['stat']['os']['other'] -= $access['stat']['robot'][$i];
-
-        unset($access['stat']['browser'][$i]);
-      }
-    }
-  }
-
-  if (isset($access['stat']['robot'])) {
-    // fix browsers with capital letters (must be lowercase)
-    foreach (array("MyRSS", "PhpDig") as $i) {
-      if (isset($access['stat']['robot'][$i])) {
-        $access['stat']['robot'][strtolower($i)] = $access['stat']['robot'][$i];
-
-        unset($access['stat']['robot'][$i]);
-      }
-    }
-  }
-  // no more happy cycling ;-)
-  $access['bbc048b'] = 1;
 }
 ?>

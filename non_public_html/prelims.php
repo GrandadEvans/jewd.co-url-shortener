@@ -17,11 +17,12 @@ define("HTTP_HOST", filter_var($_SERVER['HTTP_HOST'], FILTER_SANITIZE_STRING));
 define("DIR", "../non_public_html/");
 
 /*   Configure the files we need to include   */
-define("FILE_CONFIG", DIR . "config.php");
-define("FILE_EMAIL", DIR . "class.email.inc");
+define("FILE_CONFIG",    DIR . "config.php");
+define("FILE_EMAIL",     DIR . "class.email.inc");
 define("FILE_FUNCTIONS", DIR . "functions.php");
-define("FILE_DB", DIR . "class.db.inc");
-define("FILE_FIREPHP", DIR . "includes/firePHP/FirePHP.class.php");
+define("FILE_DB",        DIR . "class.db.inc");
+define("FILE_FIREPHP",   DIR . "includes/firePHP/FirePHP.class.php");
+define("FILE_PAGE",      DIR . "class.page.php");
 
 /* define variables */
 $clean = array();
@@ -31,7 +32,8 @@ $html = array();
 if (file_exists(FILE_CONFIG) &&
     file_exists(FILE_FUNCTIONS) &&
     file_exists(FILE_EMAIL) &&
-    file_exists(FILE_DB)) {
+    file_exists(FILE_DB) &&
+    file_exists(FILE_PAGE)) {
 		
 	// The config file is essential
 	require_once(FILE_CONFIG);
@@ -47,6 +49,10 @@ if (file_exists(FILE_CONFIG) &&
 
 	// Include email class for sendinf SMTP mail
 	require_once(FILE_EMAIL);
+
+
+	// include the page class if it i not already included
+	require_once(FILE_PAGE);
 } else {
 	// One of the files cannot be found so do not proceed
 	trigger_error("One of the required files could not be found", 

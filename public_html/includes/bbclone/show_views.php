@@ -1,25 +1,38 @@
 <?php
-/* This file is part of BBClone (The PHP web counter on steroids)
+/* This file is part of BBClone (A PHP based Web Counter on Steroids)
+ * 
+ * CVS FILE $Id: show_views.php,v 1.45 2011/12/30 23:02:10 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * $Header: /cvs/bbclone/show_views.php,v 1.37 2009/09/09 22:30:19 joku Exp $
- *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  */
+if(!defined("_BBC_PAGE_NAME")){define("_BBC_PAGE_NAME", "Show Views");}
+//////////////////////
+// Show Views Stats //
+//////////////////////
 
-// Check for PHP 4.0.3 or older
-if (!function_exists("array_sum")) exit("<hr /><b>Error:</b> PHP ".PHP_VERSION." is too old for BBClone.");
-elseif (is_readable("constants.php")) require_once("constants.php");
-else return;
+// START Time Measuring, load-time of the page (see config)
+$time = microtime();
+$time = explode(' ', $time);
+$time = $time[1] + $time[0];
+$start = $time;
 
-foreach (array($BBC_CONFIG_FILE, $BBC_LIB_PATH."html.php", $BBC_LIB_PATH."selectlang.php", $BBC_LAST_FILE) as $i) {
+// Read constants
+if (is_readable("constants.php")) require_once("constants.php");
+else exit("ERROR: Unable to open constants.php");
+
+foreach (array($BBC_CONFIG_FILE, $BBC_LIB_PATH."selectlang.php", $BBC_LAST_FILE) as $i) {
   if (is_readable($i)) require_once($i);
   else exit(bbc_msg($i));
 }
@@ -42,140 +55,116 @@ function bbc_visit_time($this_time, $next_time, $nr = 0) {
   else return (($diff < 10) ? "0".$diff : $diff)."&nbsp;s";
 }
 
-function bbc_which_whois($addr) {
-  // look up whether an address is registerred
-  global $BBC_IP2EXT_PATH;
-
-  $long = sprintf("%u", ip2long($addr));
-  $file = $BBC_IP2EXT_PATH."whois.inc";
-
-  if (!is_readable($file)) return false;
-
-  $fp = fopen($file, "rb");
-
-  while (($range = fgetcsv($fp, 64, "|")) !== false) {
-    if (($long >= $range[1]) && ($long < ($range[1] + $range[2]))) {
-      switch($range[0]) {
-        case "af":
-          $url = "www.afrinic.net/cgi-bin/whois?searchtext=$addr";
-          break;
-
-        case "ap":
-          $url = "www.apnic.net/apnic-bin/whois.pl?searchtext=$addr";
-          break;
-
-        case "la":
-          $url = "lacnic.net/cgi-bin/lacnic/whois?query=$addr";
-          break;
-
-        case "ri":
-          $url = "www.ripe.net/fcgi-bin/whois?searchtext=$addr";
-          break;
-
-        // Don't return whois link for private or reserved ranges
-        default:
-          return false;
-      }
-    }
-  }
-  fclose($fp);
-
-  # Use ARIN as catch up for anything left
-  return "<script type=\"text/javascript\">\n"
-        ."<!--\n"
-        ."document.write('&#040;<a href=\"http://"
-        .(empty($url) ? "ws.arin.net/cgi-bin/whois.pl?queryinput=$addr" : $url)
-        ."\" rel=\"nofollow\" title=\"Whois\">Whois<\/a>&#041;');\n"
-        ."-->\n"
-        ."</script>\n"
-        ."<noscript>&nbsp;</noscript>\n"
-        ."&nbsp;\n";
-}
-
 function bbc_list_visits() {
+  global $BBC_MAXVISIBLE, $BBC_HTML, $translation, $last;
   if (_BBC_PHP < 410) global $HTTP_GET_VARS;
+  
+  $fields_title = array(
+    "id"			=> $translation['dstat_id'],
+    "prx_ip" 		=> $translation['dstat_prx'],
+    "ip" 			=> $translation['dstat_ip'],
+    "user_agent"	=> $translation['dstat_user_agent'],
+    "nr" 			=> $translation['dstat_nr'],
+    "pages" 		=> $translation['dstat_pages'],
+    "visit_length" 	=> $translation['dstat_visit_length'],
+    "reloads" 		=> $translation['dstat_reloads'],
+  );
 
-  global $bbc_html, $last, $_, $BBC_MAXVISIBLE;
+  $str = "<tr>\n";
+
+  foreach (array_keys($fields_title) as $val) $str .= "<td class=\"label\">".$fields_title[$val]."</td>\n";
+
+  $str .= "</tr>\n";
+
 
   $is_id = 0;
 
   if (((_BBC_PHP < 410) ? !isset($HTTP_GET_VARS['id']) : !isset($_GET['id'])) ||
       !preg_match(":^[\d]+$:", ((_BBC_PHP < 410) ? $HTTP_GET_VARS['id'] : $_GET['id'])) ||
       !is_array($last['traffic']) || empty($last['traffic'])) {
-    return $_['dstat_no_data'].".";
+    return $translation['dstat_no_data'].".";
   }
 
   reset($last['traffic']);
 
+  // Search for traffic row with selected id, result in $connect
   while (list(, $connect) = each($last['traffic'])) {
     if ((isset($connect['id'])) && ($connect['id'] == ((_BBC_PHP < 410) ? $HTTP_GET_VARS['id'] : $_GET['id']))) {
       $is_id = 1;
       break;
     }
   }
-  if (!$is_id) return $_['dstat_no_data'].".";
+  if (!$is_id) {
+  	$str .= "<tr><td colspan=8>" . $translation['dstat_no_data'].".</td></tr>";
+  	return $str;
+  }
 
-  $prx_ip = (($connect['prx_ip'] == "unknown") || ($connect['prx_ip'] == $connect['ip'])) ? $_['global_no'] :
-            $connect['prx_ip'];
-  $off = $connect['visits'] - ($BBC_MAXVISIBLE + (isset($connect['off']) ? $connect['off'] : 0));
-  $ip_whois = bbc_which_whois($connect['ip']);
-  $prx_whois = ($prx_ip == $_['global_no']) ? false : bbc_which_whois($prx_ip);
+  $prx_ip = (($connect['prx_ip'] == "unknown") || ($connect['prx_ip'] == $connect['ip'])) ? $translation['global_no'] : $connect['prx_ip'];
+  $previous_visit_count = $connect['visits'] - ($BBC_MAXVISIBLE + (isset($connect['off']) ? $connect['off'] : 0));
 
-  // hexcolor depending on the age of the selected connection
-  $hex = $bbc_html->connect_code_color($connect);
+  $viewcount = count($connect['views']);
+  
+  $style_class = $BBC_HTML->connect_color_class($connect);
 
-  $str = "<table class=\"collapse\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\" width=\"100%\">\n"
-        ."<tr>\n"
-        ."<td class=\"head\">&nbsp;".$_['dstat_id']."</td>\n"
-        ."<td class=\"head\">&nbsp;".$_['dstat_prx']."</td>\n"
-        ."<td class=\"head\">&nbsp;".$_['dstat_ip']."</td>\n"
-        ."<td class=\"head\">&nbsp;".$_['dstat_user_agent']."</td>\n"
-        ."<td class=\"head\">&nbsp;".$_['dstat_nr']."</td>\n"
-        ."<td class=\"head\">&nbsp;".$_['dstat_pages']."</td>\n"
-        ."<td class=\"head\">&nbsp;".$_['dstat_visit_length']."</td>\n"
-        ."<td class=\"head\">&nbsp;".$_['dstat_reloads']."</td>\n"
-        ."</tr>\n"
-        ."<tr style=\"background-color: $hex\">\n";
-
-  for ($i = 0, $k = count($connect['views']); $i < $k; $i++) {
+  $str .= "<tr class=\"$style_class\">\n";
+  $str .= "<td class=\"cell valigntop\" align=\"center\" rowspan=\"$viewcount\">".$connect['id']."</td>\n"
+         ."<td class=\"cell valigntop\" align=\"center\" rowspan=\"$viewcount\">".$prx_ip."</td>\n"
+         ."<td class=\"cell valigntop\" align=\"center\" rowspan=\"$viewcount\">".$connect['ip']."</td>\n"
+         ."<td class=\"cell valigntop\" align=\"left\" rowspan=\"$viewcount\">&nbsp;"
+         .(($connect['agent'] == "unknown") ? $translation['unknown'] : $connect['agent'])."</td>\n";
+  
+  for ($i = 0; $i < $viewcount; $i++) {
+	if ($i != 0) {
+		$str .= "<tr class=\"$style_class\">";
+	}
+	
     $page = substr($connect['views'][$i], (strpos($connect['views'][$i], "|") + 1));
     $page = substr($page, 0, strpos($page, "|"));
-    $page = ($last['pages'][$page] == "index") ? $_['navbar_Main_Site'] : $last['pages'][$page];
-    $cnt = substr($connect['views'][$i], (strrpos($connect['views'][$i], "|") + 1)) - 1;
+    $page = ($last['pages'][$page] == "index") ? $translation['navbar_main_site'] : $last['pages'][$page];
+    $reload = substr($connect['views'][$i], (strrpos($connect['views'][$i], "|") + 1)) - 1;
     $this_time = substr($connect['views'][$i], 0, strpos($connect['views'][$i], "|"));
     $next_time = !isset($connect['views'][($i + 1)]) ? $connect['time'] :
                  substr($connect['views'][($i + 1)], 0, strpos($connect['views'][($i + 1)], "|"));
     $length = bbc_visit_time($this_time, $next_time, $i);
-    $length = (($i + 1 !== $k) && ($length === false)) ? "00&nbsp;s" : $length;
+    $length = (($i + 1 !== $viewcount) && ($length === false)) ? "00&nbsp;s" : $length;
+    $visit_count = ($i + (($previous_visit_count > 0) ? ($previous_visit_count + 1) : 1));
 
-    if ($i === 0) {
-      $str .= "<td class=\"rows\" align=\"right\" rowspan=\"$k\">".$connect['id']."&nbsp;</td>\n"
-             ."<td class=\"rows\" align=\"right\" rowspan=\"$k\">$prx_ip&nbsp;$prx_whois</td>\n"
-             ."<td class=\"rows\" align=\"right\" rowspan=\"$k\">".$connect['ip']."&nbsp;$ip_whois</td>\n"
-             ."<td class=\"rows\" align=\"left\" rowspan=\"$k\">&nbsp;"
-             .(($connect['agent'] == "unknown") ? "&nbsp;" : $connect['agent'])."</td>\n";
-    }
-
-    $str .= "<td class=\"rows\" align=\"right\">".($i + (($off > 0) ? ($off + 1) : 1))."&nbsp;</td>\n"
-           ."<td class=\"rows\" align=\"left\">&nbsp;$page</td>"
-           ."<td class=\"rows\" align=\"right\">".$length."&nbsp;</td>\n"
-           ."<td class=\"rows\" align=\"right\">".(($cnt > 0) ? $cnt : "")."&nbsp;</td>"
-           ."</tr>\n"
-           .(($i + 1 === $k) ? "</table>\n" : "<tr style=\"background-color: $hex\">\n");
+    $str .= "<td class=\"cell\" align=\"center\">".$visit_count."</td>\n"
+           ."<td class=\"cell\" align=\"left\">&nbsp;".$page."</td>"
+           ."<td class=\"cell\" align=\"right\">".$length."&nbsp;</td>\n"
+           ."<td class=\"cell\" align=\"center\">".(($reload > 0) ? $reload : "")."</td>"
+           ."</tr>\n";
   }
+  
+  $str .= "</table>";
+  
   return $str;
 }
 
-// Main
-echo $bbc_html->html_begin()
-    .$bbc_html->topbar(0, 0)
-    .$bbc_html->color_explain()
-    ."<table align=\"center\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\" width=\"100%\">"
-    ."<tr>\n"
-    ."<td class=\"detbox\" align=\"center\" valign=\"middle\">".bbc_list_visits()."</td>\n"
-    ."</tr>\n"
-    ."</table>\n"
-    .$bbc_html->copyright()
-    .$bbc_html->topbar(0, 1)
-    .$bbc_html->html_end();
+// Generate page (with use of the functions above)
+echo $BBC_HTML->html_begin()
+    .$BBC_HTML->topbar()
+    .$BBC_HTML->color_explain()
+    ."<table class=\"centerdata\">\n"
+    ."<tr><td class=\"labelbox\">\n"
+    ."<table class=\"centerdata\">\n"
+    .bbc_list_visits()
+    ."</td></tr></table>\n"
+    .$BBC_HTML->copyright()
+    .$BBC_HTML->topbar(0, 1);
+
+// END + DISPLAY Time Measuring, load-time of the page (see config)
+global $BBC_LOADTIME;
+
+if (!empty($BBC_LOADTIME)) {
+	$time = microtime();
+	$time = explode(' ', $time);
+	$time = $time[1] + $time[0];
+	$finish = $time;
+	$total_time = round(($finish - $start), 4);
+	echo "<div class=\"loadtime\">".$translation['generated'].$total_time.$translation['seconds']."</div>\n";
+}
+
+// End of HTML
+echo $BBC_HTML->html_end()
 ?>

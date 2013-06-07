@@ -1,60 +1,55 @@
 <?php
 /* This file is part of BBClone (The PHP web counter on steroids)
  *
- * $Header: /cvs/bbclone/language/cs.php,v 1.47 2009/06/21 07:33:08 joku Exp $
+ * CVS File $Id: cs.php,v 1.64 2011/12/30 23:03:24 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  */
 
-// The main array ($_ is for doing short in its call)
-$_ = array(
-// Specific charset
-"global_charset" => "iso-8859-2",
+// The DNS Extensions array
+$extensions = array(
+"travel" => "Travel",
+"asia" => "Asia-Pacific",
+"jobs" => "Employment",
+"mobi" => "Mobiles",
+"cat" => "Catalan",
+"tel" => "Contacts",
 
-// Date format (used with date())
-"global_date_format" => "d.m.Y",
-
-// Global translation
-"global_bbclone_copyright" => "BBClone tım - ©íøeno pod licencí",
-"global_last_reset" => "Statistiky naposledy vynulovány",
-"global_yes" => "ano",
-"global_no" => "ne",
-
-// The error messages
-"error_cannot_see_config" =>
-"Nemáte oprávnìní k prohlí¾ení konfiguraèního souboru BBClone.",
-
-// Address Extensions
 "ac" => "Ascension",
 "ad" => "Andorra",
-"ae" => "Spojené arabské emiráty",
+"ae" => "SpojenÃ© arabskÃ© emirÃ¡ty",
 "aero" => "Aero",
-"af" => "Afghanistán",
+"af" => "AfghanistÃ¡n",
 "ag" => "Antigua a Barbuda",
 "ai" => "Anguilla",
-"al" => "Albánie",
-"am" => "Arménie",
-"an" => "Nizozemské Antily",
+"al" => "AlbÃ¡nie",
+"am" => "ArmÃ©nie",
+"an" => "NizozemskÃ© Antily",
 "ao" => "Angola",
 "aq" => "Antarktida",
 "ar" => "Argentina",
 "arpa" => "Arpa",
-"as" => "Americká Samoa",
+"as" => "AmerickÃ¡ Samoa",
 "at" => "Rakousko",
-"au" => "Austrálie",
+"au" => "AustrÃ¡lie",
 "aw" => "Aruba",
-"az" => "Azerbajd¾án",
+"ax" => "Ã…landy",
+"az" => "AzerbajdÅ¾Ã¡n",
 "ba" => "Bosna a Hercegovina",
 "bb" => "Barbados",
-"bd" => "Bangladé¹",
+"bd" => "BangladÃ©Å¡",
 "be" => "Belgie",
 "bf" => "Burkina Faso",
 "bg" => "Bulharsko",
@@ -62,74 +57,75 @@ $_ = array(
 "bi" => "Burundi",
 "biz" => "Business",
 "bj" => "Benin",
+"bl" => "Saint-BarthÃ©lemy",
 "bm" => "Bermudy",
 "bn" => "Brunej",
-"bo" => "Bolívie",
-"br" => "Brazílie",
+"bo" => "BolÃ­vie",
+"br" => "BrazÃ­lie",
 "bs" => "Bahamy",
-"bt" => "Bhútán",
+"bt" => "BhÃºtÃ¡n",
 "bv" => "Bouvet",
 "bw" => "Botswana",
-"by" => "Bìlorusko",
+"by" => "BÄ›lorusko",
 "bz" => "Belize",
 "ca" => "Kanada",
-"cc" => "Kokosové ostrovy",
-"cd" => "Kongo, Demokratická republika",
-"cf" => "Støedoafrická republika",
+"cc" => "KokosovÃ© ostrovy",
+"cd" => "Kongo, DemokratickÃ¡ republika",
+"cf" => "StÅ™edoafrickÃ¡ republika",
 "cg" => "Kongo",
-"ch" => "©vıcarsko",
-"ci" => "Pobøe¾í slonoviny",
+"ch" => "Å vÃ½carsko",
+"ci" => "PobÅ™eÅ¾Ã­ slonoviny",
 "ck" => "Cookovy ostrovy",
 "cl" => "Chile",
 "cm" => "Kamerun",
-"cn" => "Èína",
+"cn" => "ÄŒÃ­na",
 "co" => "Kolumbie",
-"com" => "Komerèní servery",
+"com" => "KomerÄnÃ­ servery",
 "coop" => "Coop",
 "cr" => "Kostarika",
 "cs" => "Serbia and Montenegro",
 "cu" => "Kuba",
 "cv" => "Kapverdy",
-"cx" => "Vánoèní ostrov",
+"cx" => "VÃ¡noÄnÃ­ ostrov",
 "cy" => "Kypr",
-"cz" => "Èeská republika",
-"de" => "Nìmecko",
-"dj" => "D¾ibuti",
-"dk" => "Dánsko",
+"cz" => "ÄŒeskÃ¡ republika",
+"de" => "NÄ›mecko",
+"dj" => "DÅ¾ibuti",
+"dk" => "DÃ¡nsko",
 "dm" => "Dominika",
-"do" => "Dominikánská republika",
-"dz" => "Al¾írsko",
-"ec" => "Ekvádor",
-"edu" => "©kolství",
+"do" => "DominikÃ¡nskÃ¡ republika",
+"dz" => "AlÅ¾Ã­rsko",
+"ec" => "EkvÃ¡dor",
+"edu" => "Å kolstvÃ­",
 "ee" => "Estonsko",
 "eg" => "Egypt",
-"eh" => "Západní Sahara",
+"eh" => "ZÃ¡padnÃ­ Sahara",
 "er" => "Eritrea",
-"es" => "©panìlsko",
+"es" => "Å panÄ›lsko",
 "et" => "Etiopie",
-"eu" => "Evropská unie",
+"eu" => "EvropskÃ¡ unie",
 "fi" => "Finsko",
-"fj" => "Fid¾i",
+"fj" => "FidÅ¾i",
 "fk" => "Falklandy",
-"fm" => "Mikronésie",
-"fo" => "Faerské ostrovy",
+"fm" => "MikronÃ©sie",
+"fo" => "FaerskÃ© ostrovy",
 "fr" => "Francie",
 "ga" => "Gabun",
-"gb" => "Velká Británie",
+"gb" => "VelkÃ¡ BritÃ¡nie",
 "gd" => "Grenada",
 "ge" => "Georgie",
-"gf" => "Francouzská Guyana",
+"gf" => "FrancouzskÃ¡ Guyana",
 "gg" => "Guernsey",
 "gh" => "Ghana",
 "gi" => "Gibraltar",
-"gl" => "Grónsko",
+"gl" => "GrÃ³nsko",
 "gm" => "Gambie",
 "gn" => "Guinea",
-"gov" => "Vládní servery USA",
+"gov" => "VlÃ¡dnÃ­ servery USA",
 "gp" => "Guadeloupe",
-"gq" => "Rovníková Guinea",
-"gr" => "Øecko",
-"gs" => "Ji¾ní Georgie a Ji¾ní Sandwichovy ostrovy",
+"gq" => "RovnÃ­kovÃ¡ Guinea",
+"gr" => "Å˜ecko",
+"gs" => "JiÅ¾nÃ­ Georgie a JiÅ¾nÃ­ Sandwichovy ostrovy",
 "gt" => "Guatemala",
 "gu" => "Guam",
 "gw" => "Guinea-Bissau",
@@ -139,59 +135,61 @@ $_ = array(
 "hn" => "Honduras",
 "hr" => "Chorvatsko",
 "ht" => "Haiti",
-"hu" => "Maïarsko",
-"id" => "Indonézie",
+"hu" => "MaÄarsko",
+"id" => "IndonÃ©zie",
 "ie" => "Irsko",
 "il" => "Izrael",
 "im" => "Ostrov Man",
 "in" => "Indie",
-"info" => "Informaèní",
-"int" => "Mezinárodní organizace",
-"io" => "Britské indickooceánské teritorium",
-"iq" => "Irák",
-"ir" => "Irán",
+"info" => "InformaÄnÃ­",
+"int" => "MezinÃ¡rodnÃ­ organizace",
+"io" => "BritskÃ© indickooceÃ¡nskÃ© teritorium",
+"iq" => "IrÃ¡k",
+"ir" => "IrÃ¡n",
 "is" => "Island",
-"it" => "Itálie",
+"it" => "ItÃ¡lie",
 "je" => "Jersey",
 "jm" => "Jamajka",
-"jo" => "Jordánsko",
+"jo" => "JordÃ¡nsko",
 "jp" => "Japonsko",
-"ke" => "Keòa",
+"ke" => "KeÅˆa",
 "kg" => "Kyrgyzsko",
-"kh" => "Kambod¾a",
+"kh" => "KambodÅ¾a",
 "ki" => "Kiribati",
 "km" => "Komory",
-"kn" => "Svatı Kitts a Nevis",
-"kp" => "Severní Korea",
+"kn" => "SvatÃ½ Kitts a Nevis",
+"kp" => "SevernÃ­ Korea",
 "kr" => "Korea",
 "kw" => "Kuvajt",
-"ky" => "Kajmanské ostrovy",
-"kz" => "Kazachstán",
+"ky" => "KajmanskÃ© ostrovy",
+"kz" => "KazachstÃ¡n",
 "la" => "Laos",
 "lb" => "Libanon",
-"lc" => "Svatá Lucie",
-"li" => "Lichten¹tejnsko",
-"lk" => "Srí Lanka",
-"lr" => "Libérie",
+"lc" => "SvatÃ¡ Lucie",
+"li" => "LichtenÅ¡tejnsko",
+"lk" => "SrÃ­ Lanka",
+"lr" => "LibÃ©rie",
 "ls" => "Lesotho",
-"lt" => "Loty¹sko",
+"lt" => "LotyÅ¡sko",
 "lu" => "Lucembursko",
 "lv" => "Litva",
 "ly" => "Libye",
 "ma" => "Maroko",
 "mc" => "Monako",
-"md" => "Moldávie",
+"md" => "MoldÃ¡vie",
+"me" => "ÄŒernÃ¡ Hora",
+"mf" => "Saint-Martin",
 "mg" => "Madagaskar",
 "mh" => "Marshallovy ostrovy",
-"mil" => "Vojenské servery USA",
+"mil" => "VojenskÃ© servery USA",
 "mk" => "Makedonie",
 "ml" => "Mali",
 "mm" => "Barma (Myanmar)",
 "mn" => "Mongolsko",
 "mo" => "Macao",
-"mp" => "Severní Mariany",
+"mp" => "SevernÃ­ Mariany",
 "mq" => "Martinik",
-"mr" => "Mauretánie",
+"mr" => "MauretÃ¡nie",
 "ms" => "Montserrat",
 "mt" => "Malta",
 "mu" => "Mauritius",
@@ -203,29 +201,29 @@ $_ = array(
 "mz" => "Mozambik",
 "na" => "Namibie",
 "name" => "Personal",
-"nc" => "Nová Kaledonie",
+"nc" => "NovÃ¡ Kaledonie",
 "ne" => "Niger",
-"net" => "Sí»ová infrastruktura",
+"net" => "SÃ­Å¥ovÃ¡ infrastruktura",
 "nf" => "Norfolk",
-"ng" => "Nigérie",
+"ng" => "NigÃ©rie",
 "ni" => "Nikaragua",
 "nl" => "Holandsko",
 "no" => "Norsko",
-"np" => "Nepál",
+"np" => "NepÃ¡l",
 "nr" => "Nauru",
 "nu" => "Niue",
-"numeric" => "Èíselná",
-"nz" => "Novı Zéland",
-"om" => "Omán",
-"org" => "Nevládní organizace",
+"numeric" => "ÄŒÃ­selnÃ¡",
+"nz" => "NovÃ½ ZÃ©land",
+"om" => "OmÃ¡n",
+"org" => "NevlÃ¡dnÃ­ organizace",
 "pa" => "Panama",
 "pe" => "Peru",
-"pf" => "Francouzská Polynésie",
-"pg" => "Papua - Nová Guinea",
-"ph" => "Filipíny",
-"pk" => "Pákistán",
+"pf" => "FrancouzskÃ¡ PolynÃ©sie",
+"pg" => "Papua - NovÃ¡ Guinea",
+"ph" => "FilipÃ­ny",
+"pk" => "PÃ¡kistÃ¡n",
 "pl" => "Polsko",
-"pm" => "Svatı Pierre a Miquelon",
+"pm" => "SvatÃ½ Pierre a Miquelon",
 "pn" => "Pitcairn",
 "pr" => "Portoriko",
 "pro" => "Professional",
@@ -234,60 +232,61 @@ $_ = array(
 "pw" => "Palau",
 "py" => "Paraguay",
 "qa" => "Katar",
-"re" => "Réunion",
+"re" => "RÃ©union",
 "ro" => "Rumunsko",
+"rs" => "Srbsko",
 "ru" => "Rusko",
 "rw" => "Rwanda",
-"sa" => "Saudská Arábie",
-"sb" => "©alamounovy ostrovy",
+"sa" => "SaudskÃ¡ ArÃ¡bie",
+"sb" => "Å alamounovy ostrovy",
 "sc" => "Seychely",
-"sd" => "Súdán",
-"se" => "©védsko",
+"sd" => "SÃºdÃ¡n",
+"se" => "Å vÃ©dsko",
 "sg" => "Singapur",
-"sh" => "Svatá Helena",
+"sh" => "SvatÃ¡ Helena",
 "si" => "Slovinsko",
 "sj" => "Ostrovy Svalbard a Jan Mayen",
 "sk" => "Slovensko",
 "sl" => "Sierra Leone",
 "sm" => "San Marino",
 "sn" => "Senegal",
-"so" => "Somálsko",
+"so" => "SomÃ¡lsko",
 "sr" => "Surinam",
-"st" => "Svatı Tomá¹ a Princùv ostrov",
-"su" => "Sovìtskı svaz",
+"st" => "SvatÃ½ TomÃ¡Å¡ a PrincÅ¯v ostrov",
+"su" => "SovÄ›tskÃ½ svaz",
 "sv" => "Salvador",
-"sy" => "Sırie",
+"sy" => "SÃ½rie",
 "sz" => "Svazijsko",
 "tc" => "Ostrovy Turks a Caicos",
-"td" => "Èad",
-"tf" => "Francouzská ji¾ní teritoria",
+"td" => "ÄŒad",
+"tf" => "FrancouzskÃ¡ jiÅ¾nÃ­ teritoria",
 "tg" => "Togo",
 "th" => "Thajsko",
-"tj" => "Tád¾ikistán",
+"tj" => "TÃ¡dÅ¾ikistÃ¡n",
 "tk" => "Tokelau",
-"tl" => "Vıchodní Timor",
-"tm" => "Turkmenistán",
+"tl" => "VÃ½chodnÃ­ Timor",
+"tm" => "TurkmenistÃ¡n",
 "tn" => "Tunisko",
 "to" => "Tonga",
-"tp" => "Vıchodní Timor",
+"tp" => "VÃ½chodnÃ­ Timor",
 "tr" => "Turecko",
 "tt" => "Trinidad a Tobago",
 "tv" => "Tuvalu",
 "tw" => "Tchajwan",
-"tz" => "Tanzánie",
+"tz" => "TanzÃ¡nie",
 "ua" => "Ukrajina",
 "ug" => "Uganda",
-"uk" => "Spojené království",
-"um" => "Malé odlehlé ostrovy patøící USA",
-"unknown" => "Neznámı",
+"uk" => "SpojenÃ© krÃ¡lovstvÃ­",
+"um" => "MalÃ© odlehlÃ© ostrovy patÅ™Ã­cÃ­ USA",
+"unknown" => "NeznÃ¡mÃ½",
 "us" => "USA",
 "uy" => "Uruguay",
-"uz" => "Uzbekistán",
-"va" => "Vatikán",
-"vc" => "Svatı Vincenc a Grenadiny",
+"uz" => "UzbekistÃ¡n",
+"va" => "VatikÃ¡n",
+"vc" => "SvatÃ½ Vincenc a Grenadiny",
 "ve" => "Venezuela",
-"vg" => "Britské Panenské ostrovy",
-"vi" => "Americké Panenské ostrovy",
+"vg" => "BritskÃ© PanenskÃ© ostrovy",
+"vi" => "AmerickÃ© PanenskÃ© ostrovy",
 "vn" => "Vietnam",
 "vu" => "Vanuatu",
 "wf" => "Ostrovy Wallis a Futuna",
@@ -295,251 +294,302 @@ $_ = array(
 "ye" => "Jemen",
 "yt" => "Mayotte",
 "yu" => "Serbia and Montenegro",
-"za" => "Ji¾ní Afrika",
+"za" => "JiÅ¾nÃ­ Afrika",
 "zm" => "Zambie",
 "zr" => "Zair",
 "zw" => "Zimbabwe",
+);
+
+// The main Translation array
+$translation = array(
+// Specific charset
+"global_charset" => "utf-8",
+
+// Date format (used with date())
+"global_time_format" => "M jS, H:i:s",
+"global_day_format" => "l F jS, Y",
+"global_hours_format" => "l F jS, G:00",
+"global_month_format" => "F Y",
+
+// Global translation
+"global_titlebar"=> "Statistics for %SERVER generated on %DATE",
+"global_bbclone_copyright" => "BBClone tÃ½m - Å Ã­Å™eno pod licencÃ­",
+"global_last_reset" => "Statistiky naposledy vynulovÃ¡ny",
+"global_yes" => "ano",
+"global_no" => "ne",
+
+// The error messages
+"error_cannot_see_config" =>
+"NemÃ¡te oprÃ¡vnÄ›nÃ­ k prohlÃ­Å¾enÃ­ konfiguraÄnÃ­ho souboru BBClone.",
 
 // Miscellaneous translations
-"misc_other" => "Jinı",
-"misc_unknown" => "Neznámı",
+"misc_other" => "JinÃ½",
+"misc_unknown" => "NeznÃ¡mÃ½",
 "misc_second_unit" => "s",
-"misc_ignored" => "Ignorovanı",
+"misc_ignored" => "IgnorovanÃ½",
 
 // The Navigation Bar
-"navbar_Main_Site" => "Hlavní stránka",
-"navbar_Configuration" => "Konfigurace",
-"navbar_Global_Stats" => "Souhrnná statistika",
-"navbar_Detailed_Stats" => "Podrobná statistika",
-"navbar_Time_Stats" => "Historie",
+"navbar_main_site" => "HlavnÃ­ strÃ¡nka",
+"navbar_configuration" => "Konfigurace",
+"navbar_global_stats" => "SouhrnnÃ¡ statistika",
+"navbar_detailed_stats" => "PodrobnÃ¡ statistika",
+"navbar_time_stats" => "Historie",
+"navbar_language" => "Language",
+"navbar_go" => "Go",
 
 // Detailed stats words
 "dstat_id" => "ID",
-"dstat_time" => "Èas",
-"dstat_visits" => "Shlédnuto",
-"dstat_extension" => "Doména",
-"dstat_dns" => "Jméno poèítaèe",
+"dstat_time" => "ÄŒas",
+"dstat_visits" => "ShlÃ©dnuto",
+"dstat_extension" => "DomÃ©na",
+"dstat_dns" => "JmÃ©no poÄÃ­taÄe",
 "dstat_from" => "Odkud",
 "dstat_os" => "OS",
-"dstat_browser" => "Prohlí¾eè",
-"dstat_visible_rows" => "Zobrazenıch záznamù",
-"dstat_green_rows" => "zelenı øádek",
-"dstat_blue_rows" => "modrı øádek",
-"dstat_red_rows" => "èervenı øádek",
-"dstat_search" => "Hledáno",
-"dstat_last_page" => "poslední strana",
-"dstat_last_visit" => "poslední náv¹tìva",
+"dstat_browser" => "ProhlÃ­Å¾eÄ",
+"dstat_visible_rows" => "ZobrazenÃ½ch zÃ¡znamÅ¯",
+"dstat_green_rows" => "zelenÃ½ Å™Ã¡dek",
+"dstat_blue_rows" => "modrÃ½ Å™Ã¡dek",
+"dstat_red_rows" => "ÄervenÃ½ Å™Ã¡dek",
+"dstat_search" => "HledÃ¡no",
+"dstat_last_page" => "poslednÃ­ strana",
+"dstat_last_visit" => "poslednÃ­ nÃ¡vÅ¡tÄ›va",
 "dstat_robots" => "roboti",
+"dstat_my_visit" => "Visits from your IP",
 "dstat_no_data" => "Informace nejsou k dispozici",
 "dstat_prx" => "Proxy server",
 "dstat_ip" => "IP Adresa",
-"dstat_user_agent" => "Prohlí¾eè",
-"dstat_nr" => "è.",
-"dstat_pages" => "Stránky",
-"dstat_visit_length" => "Délka náv¹tìvy",
-"dstat_reloads" => "Obnovení",
+"dstat_user_agent" => "ProhlÃ­Å¾eÄ",
+"dstat_nr" => "Ä.",
+"dstat_pages" => "StrÃ¡nky",
+"dstat_visit_length" => "DÃ©lka nÃ¡vÅ¡tÄ›vy",
+"dstat_reloads" => "ObnovenÃ­",
+"dstat_whois_information" => "Look up information on this IP Adress",
 
 // Global stats words
-"gstat_Accesses" => "Pøístupy",
-"gstat_Total_visits" => "Celkem shlédnuto",
-"gstat_Total_unique" => "Celkem unikátních hostù",
-"gstat_Operating_systems" => "Top %d operaèních systémù",
-"gstat_Browsers" => "Top %d prohlí¾eèù",
-"gstat_extensions" => "Top %d domén",
-"gstat_Robots" => "Top %d robotù",
-"gstat_pages" => "Top %d nav¹tívenıch stránek",
-"gstat_origins" => "Top %d zdrojù",
-"gstat_hosts" => "Top %d náv¹tìv",
-"gstat_keys" => "Top %d hledanıch slov",
-"gstat_Total" => "Celkem",
-"gstat_Not_specified" => "Neurèeno",
+"gstat_accesses" => "PÅ™Ã­stupy",
+"gstat_total_visits" => "Celkem shlÃ©dnuto",
+"gstat_total_unique" => "Celkem unikÃ¡tnÃ­ch hostÅ¯",
+"gstat_operating_systems" => "Top %d operaÄnÃ­ch systÃ©mÅ¯",
+"gstat_browsers" => "Top %d prohlÃ­Å¾eÄÅ¯",
+"gstat_extensions" => "Top %d domÃ©n",
+"gstat_robots" => "Top %d robotÅ¯",
+"gstat_pages" => "Top %d navÅ¡tÃ­venÃ½ch strÃ¡nek",
+"gstat_origins" => "Top %d zdrojÅ¯",
+"gstat_hosts" => "Top %d nÃ¡vÅ¡tÄ›v",
+"gstat_keys" => "Top %d hledanÃ½ch slov",
+"gstat_total" => "Celkem",
+"gstat_not_specified" => "NeurÄeno",
 
 // Time stats words
-"tstat_Su" => "Ne",
-"tstat_Mo" => "Po",
-"tstat_Tu" => "Út",
-"tstat_We" => "St",
-"tstat_Th" => "Èt",
-"tstat_Fr" => "Pá",
-"tstat_Sa" => "So",
+"tstat_su" => "Ne",
+"tstat_mo" => "Po",
+"tstat_tu" => "Ãšt",
+"tstat_we" => "St",
+"tstat_th" => "ÄŒt",
+"tstat_fr" => "PÃ¡",
+"tstat_sa" => "So",
+"tstat_full_su" => "Sunday",
+"tstat_full_mo" => "Monday",
+"tstat_full_tu" => "Tuesday",
+"tstat_full_we" => "Wednesday",
+"tstat_full_th" => "Thursday",
+"tstat_full_fr" => "Friday",
+"tstat_full_sa" => "Saturday",
 
-"tstat_Jan" => "Led",
-"tstat_Feb" => "Úno",
-"tstat_Mar" => "Bøe",
-"tstat_Apr" => "Dub",
-"tstat_May" => "Kvì",
-"tstat_Jun" => "Èer",
-"tstat_Jul" => "Èec",
-"tstat_Aug" => "Srp",
-"tstat_Sep" => "Záø",
-"tstat_Oct" => "Øíj",
-"tstat_Nov" => "Lis",
-"tstat_Dec" => "Pro",
+"tstat_jan" => "Led",
+"tstat_feb" => "Ãšno",
+"tstat_mar" => "BÅ™e",
+"tstat_apr" => "Dub",
+"tstat_may" => "KvÄ›",
+"tstat_jun" => "ÄŒer",
+"tstat_jul" => "ÄŒec",
+"tstat_aug" => "Srp",
+"tstat_sep" => "ZÃ¡Å™",
+"tstat_oct" => "Å˜Ã­j",
+"tstat_nov" => "Lis",
+"tstat_dec" => "Pro",
+"tstat_full_jan" => "January",
+"tstat_full_feb" => "February",
+"tstat_full_mar" => "March",
+"tstat_full_apr" => "April",
+"tstat_full_may" => "May",
+"tstat_full_jun" => "June",
+"tstat_full_jul" => "July",
+"tstat_full_aug" => "August",
+"tstat_full_sep" => "September",
+"tstat_full_oct" => "October",
+"tstat_full_nov" => "November",
+"tstat_full_dec" => "December",
 
-"tstat_last_day" => "Poslední den",
-"tstat_last_week" => "Poslední tıden",
-"tstat_last_month" => "Poslední mìsíc",
-"tstat_last_year" => "Poslední rok",
+"tstat_last_day" => "PoslednÃ­ den",
+"tstat_last_week" => "PoslednÃ­ tÃ½den",
+"tstat_last_month" => "PoslednÃ­ mÄ›sÃ­c",
+"tstat_last_year" => "PoslednÃ­ rok",
+"tstat_average" => "Average",
+
+// Loadtime notice
+"generated" => "page generated in ",
+"seconds" => " seconds",
 
 // Configuration page words and sentences
-"config_Variable_name" => "Název promìnné",
-"config_Variable_value" => "Hodnota promìnné",
-"config_Explanations" => "Vysvìtlivky",
+"config_variable_name" => "NÃ¡zev promÄ›nnÃ©",
+"config_variable_value" => "Hodnota promÄ›nnÃ©",
+"config_explanations" => "VysvÄ›tlivky",
 
-"config_bbc_mainsite" =>
-"Jestli¾e byla nastavena tato promìnná, bude vytvoøen odkaz na Vámi zvolené umístìní.
-Pøednastavená hodnota odkazuje na nadøazenı adresáø. V pøípadì, ¾e je Va¹e
-hlavní stránka umístìna na jiném místì, budete si chtít pravdìpodobnì tuto
-hodnotu zmìnit.<br />
-Pøíklady:<br />
+"config_BBC_MAINSITE" =>
+"JestliÅ¾e byla nastavena tato promÄ›nnÃ¡, bude vytvoÅ™en odkaz na VÃ¡mi zvolenÃ© umÃ­stÄ›nÃ­.
+PÅ™ednastavenÃ¡ hodnota odkazuje na nadÅ™azenÃ½ adresÃ¡Å™. V pÅ™Ã­padÄ›, Å¾e je VaÅ¡e
+hlavnÃ­ strÃ¡nka umÃ­stÄ›na na jinÃ©m mÃ­stÄ›, budete si chtÃ­t pravdÄ›podobnÄ› tuto
+hodnotu zmÄ›nit.<br />
+PÅ™Ã­klady:<br />
 \$BBC_MAINSITE = &quot;http://www.myserver.com/&quot;<br />
 \$BBC_MAINSITE = &quot;..&quot;<br />
 \$BBC_MAINSITE = &quot;&quot;;",
 
-"config_bbc_show_config" =>
-"BBClone má pøednastaveno zobrazení &quot;Konfigurace&quot; nahoøe v hlavní nabídce.
-V pøípadì, ¾e si nepøejete konfiguraci zobrazovat, nechte tuto hodnotu prázdnou.
+"config_BBC_SHOW_CONFIG" =>
+"BBClone mÃ¡ pÅ™ednastaveno zobrazenÃ­ &quot;Konfigurace&quot; nahoÅ™e v hlavnÃ­ nabÃ­dce.
+V pÅ™Ã­padÄ›, Å¾e si nepÅ™ejete konfiguraci zobrazovat, nechte tuto hodnotu prÃ¡zdnou.
 <br />
-Pøiklady:<br />
+PÅ™iklady:<br />
 \$BBC_SHOW_CONFIG = 1;<br />
 \$BBC_SHOW_CONFIG = &quot;&quot;;",
 
-"config_bbc_titlebar" =>
-"Titulek stránek se statistikou. <br />
-Tento titulek bude zobrazen v navigaèním panelu na v¹ech BBClone stránkách.<br />
-K dispozici jsou následující hodnoty:<br />
+"config_BBC_TITLEBAR" =>
+"Titulek strÃ¡nek se statistikou. <br />
+Tento titulek bude zobrazen v navigaÄnÃ­m panelu na vÅ¡ech BBClone strÃ¡nkÃ¡ch.<br />
+K dispozici jsou nÃ¡sledujÃ­cÃ­ hodnoty:<br />
 <ul>
-<li>%SERVER: jméno serveru,</li>
-<li>%DATE: aktuální datum.</li>
+<li>%SERVER: jmÃ©no serveru,</li>
+<li>%DATE: aktuÃ¡lnÃ­ datum.</li>
 </ul>
 HTML tagy jsou povoleny.<br />
-Pøíklady:<br />
-\$BBC_TITLEBAR = &quot;Statistiky pro %SERVER vytvoøeny %DATE&quot;;<br />
-\$BBC_TITLEBAR = &quot;Moje statistiky od %DATE vypadají takto:&quot;;<br />",
+PÅ™Ã­klady:<br />
+\$BBC_TITLEBAR = &quot;Statistiky pro %SERVER vytvoÅ™eny %DATE&quot;;<br />
+\$BBC_TITLEBAR = &quot;Moje statistiky od %DATE vypadajÃ­ takto:&quot;;<br />",
 
-"config_bbc_language" =>
-"Pøednastavenı jazyk pro BBClone. Bere se v potaz pokud není nastaven pomocí prohlí¾eèe.
-Podporovány jsou následující jazyky:
+"config_BBC_LANGUAGE" =>
+"PÅ™ednastavenÃ½ jazyk pro BBClone. Bere se v potaz pokud nenÃ­ nastaven pomocÃ­ prohlÃ­Å¾eÄe.
+PodporovÃ¡ny jsou nÃ¡sledujÃ­cÃ­ jazyky:
 <p>ar, bg, bs, ca, cs, da, de, el, en, es, fi, fr, hu, id, it, ja, ko, lt, mk, nb, nl, pl, pt, pt-br, ro, ru,
 sk, sl, sv, th, tr, ua, zh-cn and zh-tw</p>",
 
-"config_bbc_maxtime" =>
-"Tato promìnná stanovuje délku unikátní návìtìvy v sekundách. Ka¾dı pøístup od stejného
-náv¹tìvníka v tomto intervalu bude poèítán jako jedna náv¹tìva. Pøednastavená hodnota
-je de facto webovı standard, a to 30 minut (1800 sekund), ale zále¾í pouze na Vás, jakou
-hodnotu si nastavíte.<br />
-Pøíklady:<br />
+"config_BBC_MAXTIME" =>
+"Tato promÄ›nnÃ¡ stanovuje dÃ©lku unikÃ¡tnÃ­ nÃ¡vÄ›tÄ›vy v sekundÃ¡ch. KaÅ¾dÃ½ pÅ™Ã­stup od stejnÃ©ho
+nÃ¡vÅ¡tÄ›vnÃ­ka v tomto intervalu bude poÄÃ­tÃ¡n jako jedna nÃ¡vÅ¡tÄ›va. PÅ™ednastavenÃ¡ hodnota
+je de facto webovÃ½ standard, a to 30 minut (1800 sekund), ale zÃ¡leÅ¾Ã­ pouze na VÃ¡s, jakou
+hodnotu si nastavÃ­te.<br />
+PÅ™Ã­klady:<br />
 \$BBC_MAXTIME = 0;<br />
 \$BBC_MAXTIME = 1800;",
 
-"config_bbc_maxvisible" =>
-"Kolik chcete mít záznamù v podrobné statistice? Pøednastaveno je 100 záznamù.
-Doporuèuje se nenastavovat hodnotu vìt¹í ne¾ 500 v dùsledku zamezení dlouhého
-naèítání.",
+"config_BBC_MAXVISIBLE" =>
+"Kolik chcete mÃ­t zÃ¡znamÅ¯ v podrobnÃ© statistice? PÅ™ednastaveno je 100 zÃ¡znamÅ¯.
+DoporuÄuje se nenastavovat hodnotu vÄ›tÅ¡Ã­ neÅ¾ 500 v dÅ¯sledku zamezenÃ­ dlouhÃ©ho
+naÄÃ­tÃ¡nÃ­.",
 
-"config_bbc_detailed_stat_fields" =>
-"Promìnná \$BBC_DETAILED_STAT_FIELDS urèuje sloupce, které mají bıt zobrazeny
-v podrobné statistice. Mo¾nosti jsou:
+"config_BBC_DETAILED_STAT_FIELDS" =>
+"PromÄ›nnÃ¡ \$BBC_DETAILED_STAT_FIELDS urÄuje sloupce, kterÃ© majÃ­ bÃ½t zobrazeny
+v podrobnÃ© statistice. MoÅ¾nosti jsou:
 <ul>
-<li>id&nbsp;=&gt;&nbsp;X-tı náv¹tìvník od doby vynulování statistiky</li>
-<li>time&nbsp;=&gt;&nbsp;Èas, kdy byl zaznamenán poslední klik</li>
-<li>visits&nbsp;=&gt;&nbsp;Poèet zobrazení unikátního náv¹tìvníka</li>
-<li>dns&nbsp;=&gt;&nbsp;Hostitelské jméno náv¹tìvníka</li>
-<li>ip&nbsp;=&gt;&nbsp;IP adresa náv¹tìvníka</li>
-<li>os&nbsp;=&gt;&nbsp;Operaèní systém náv¹tìvníka (jestli¾e je k dispozici a není robot)</li>
-<li>browser&nbsp;=&gt;&nbsp;Prohlí¾eè náv¹tìvníka</li>
-<li>ext&nbsp;=&gt;&nbsp;Zemì náv¹tìvníka</li>
-<li>referer&nbsp;=&gt;&nbsp;Stránka, ze které náv¹tìvník pøi¹el (jestli¾e je k dispozici)</li>
-<li>page&nbsp;=&gt;&nbsp;Poslední prohlí¾ená stránka</li>
-<li>search&nbsp;=&gt;&nbsp;Jaká slova hledal náv¹tìvník ve vyhledávaèi (jestli¾e je k dispozici)</li>
+<li>id&nbsp;=&gt;&nbsp;X-tÃ½ nÃ¡vÅ¡tÄ›vnÃ­k od doby vynulovÃ¡nÃ­ statistiky</li>
+<li>time&nbsp;=&gt;&nbsp;ÄŒas, kdy byl zaznamenÃ¡n poslednÃ­ klik</li>
+<li>visits&nbsp;=&gt;&nbsp;PoÄet zobrazenÃ­ unikÃ¡tnÃ­ho nÃ¡vÅ¡tÄ›vnÃ­ka</li>
+<li>dns&nbsp;=&gt;&nbsp;HostitelskÃ© jmÃ©no nÃ¡vÅ¡tÄ›vnÃ­ka</li>
+<li>ip&nbsp;=&gt;&nbsp;IP adresa nÃ¡vÅ¡tÄ›vnÃ­ka</li>
+<li>os&nbsp;=&gt;&nbsp;OperaÄnÃ­ systÃ©m nÃ¡vÅ¡tÄ›vnÃ­ka (jestliÅ¾e je k dispozici a nenÃ­ robot)</li>
+<li>browser&nbsp;=&gt;&nbsp;ProhlÃ­Å¾eÄ nÃ¡vÅ¡tÄ›vnÃ­ka</li>
+<li>ext&nbsp;=&gt;&nbsp;ZemÄ› nÃ¡vÅ¡tÄ›vnÃ­ka</li>
+<li>referer&nbsp;=&gt;&nbsp;StrÃ¡nka, ze kterÃ© nÃ¡vÅ¡tÄ›vnÃ­k pÅ™iÅ¡el (jestliÅ¾e je k dispozici)</li>
+<li>page&nbsp;=&gt;&nbsp;PoslednÃ­ prohlÃ­Å¾enÃ¡ strÃ¡nka</li>
+<li>search&nbsp;=&gt;&nbsp;JakÃ¡ slova hledal nÃ¡vÅ¡tÄ›vnÃ­k ve vyhledÃ¡vaÄi (jestliÅ¾e je k dispozici)</li>
 </ul>
-Sloupce s po¾adovanımi informacemi budou zobrazeny v poøadí, v jakém jste je zadali.<br />
-Pøíklady:<br />
+Sloupce s poÅ¾adovanÃ½mi informacemi budou zobrazeny v poÅ™adÃ­, v jakÃ©m jste je zadali.<br />
+PÅ™Ã­klady:<br />
 
 \$BBC_DETAILED_STAT_FIELDS = &quot;id, time, visits, ip, ext, os, browser&quot;;
 <br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;date, ext, browser, os, ip&quot;;<br />",
 
-"config_bbc_time_offset" =>
-"V pøípadì, ¾e èas serveru nesouhlasí s Va¹ím èasovım pásmem, mù¾ete èas zmìnit.
-Záporné hodnoty nastaví èas zpìt, kladné jej posunou dopøedu.<br />
-Pøíklady:<br />
+"config_BBC_TIME_OFFSET" =>
+"V pÅ™Ã­padÄ›, Å¾e Äas serveru nesouhlasÃ­ s VaÅ¡Ã­m ÄasovÃ½m pÃ¡smem, mÅ¯Å¾ete Äas zmÄ›nit.
+ZÃ¡pornÃ© hodnoty nastavÃ­ Äas zpÄ›t, kladnÃ© jej posunou dopÅ™edu.<br />
+PÅ™Ã­klady:<br />
 
-\$BBC_TIME_OFFSET = 300; (èas +300 minut)<br />
-\$BBC_TIME_OFFSET = -300; (èas -300 minut)<br />
+\$BBC_TIME_OFFSET = 300; (Äas +300 minut)<br />
+\$BBC_TIME_OFFSET = -300; (Äas -300 minut)<br />
 \$BBC_TIME_OFFSET = 0;",
 
-"config_bbc_no_dns" =>
-"Toto nastavnení definuje, zda IP adresy mají bıt pøekládány na hostitelské jméno.
-Hostitelské jméno Vám øekne mnohem více o náv¹tìvníkovi, jejich zji¹tování v¹ak
-mù¾e znaènì zpomalit Va¹i stránku. To je zpùsobeno tím, ¾e pou¾ité DNS servery
-jsou pomalé, mají omezenou kapacitu nebo jsou nevìrohodné. Zmìnou této hodnoty
-mù¾ete problém vyøe¹it.<br />
-Pøíklady:<br />
+"config_BBC_NO_DNS" =>
+"Toto nastavnenÃ­ definuje, zda IP adresy majÃ­ bÃ½t pÅ™eklÃ¡dÃ¡ny na hostitelskÃ© jmÃ©no.
+HostitelskÃ© jmÃ©no VÃ¡m Å™ekne mnohem vÃ­ce o nÃ¡vÅ¡tÄ›vnÃ­kovi, jejich zjiÅ¡tovÃ¡nÃ­ vÅ¡ak
+mÅ¯Å¾e znaÄnÄ› zpomalit VaÅ¡i strÃ¡nku. To je zpÅ¯sobeno tÃ­m, Å¾e pouÅ¾itÃ© DNS servery
+jsou pomalÃ©, majÃ­ omezenou kapacitu nebo jsou nevÄ›rohodnÃ©. ZmÄ›nou tÃ©to hodnoty
+mÅ¯Å¾ete problÃ©m vyÅ™eÅ¡it.<br />
+PÅ™Ã­klady:<br />
 \$BBC_NO_DNS = 1;<br />
 \$BBC_NO_DNS = &quot;&quot;;",
 
-"config_bbc_no_hits" =>
-"BBClone je pøednastaveno aby ukazovalo celková zobrazení (reloady/hity) v historii,
-proto¾e dává u¾iteèné informace o zátì¾i serveru. Jestli¾e si ale pøejete
-pou¾ívat unikatní zobrazení v historii, mù¾ete zmìnit zpùsob poèítání
-nastavením této promìnné.<br />
-Pøíklady:<br />
+"config_BBC_NO_HITS" =>
+"BBClone je pÅ™ednastaveno aby ukazovalo celkovÃ¡ zobrazenÃ­ (reloady/hity) v historii,
+protoÅ¾e dÃ¡vÃ¡ uÅ¾iteÄnÃ© informace o zÃ¡tÄ›Å¾i serveru. JestliÅ¾e si ale pÅ™ejete
+pouÅ¾Ã­vat unikatnÃ­ zobrazenÃ­ v historii, mÅ¯Å¾ete zmÄ›nit zpÅ¯sob poÄÃ­tÃ¡nÃ­
+nastavenÃ­m tÃ©to promÄ›nnÃ©.<br />
+PÅ™Ã­klady:<br />
 \$BBC_NO_HITS = 1;<br />
 \$BBC_NO_HITS = &quot;&quot;;",
 
-"config_bbc_ignore_ip" =>
-"Tato mo¾nost mù¾e bıt pou¾ita pro vylouèení konkrétních IP adres, pøípadnì i
-jejich rozsahù od zapoèítávání. V pøípadì, ¾e chcete pøidat více adres,
-pou¾ijte èárku jako oddìlovaè.<br />
-Pøíklady:<br />
+"config_BBC_IGNORE_IP" =>
+"Tato moÅ¾nost mÅ¯Å¾e bÃ½t pouÅ¾ita pro vylouÄenÃ­ konkrÃ©tnÃ­ch IP adres, pÅ™Ã­padnÄ› i
+jejich rozsahÅ¯ od zapoÄÃ­tÃ¡vÃ¡nÃ­. V pÅ™Ã­padÄ›, Å¾e chcete pÅ™idat vÃ­ce adres,
+pouÅ¾ijte ÄÃ¡rku jako oddÄ›lovaÄ.<br />
+PÅ™Ã­klady:<br />
 \$BBC_IGNORE_IP = &quot;127., 192.168.&quot;;<br />
 \$BBC_IGNORE_IP = &quot;&quot;;",
 
-"config_bbc_ignore_refer" =>
-"V pøípadì, ¾e nechcete mít ve statistikách nìkteré odkazy na stránky, ze
-kterıch náv¹tìvnící pøistupují, mù¾ete specifikovat jedno nebo více slov, které
-jsou obsa¾eny v jejich odkazu. Tím zabráníte jejich zobrazení. Chcete-li
-pøidat více slov, pou¾ijte èárku jako oddìlovaè.<br />
-Pøíklady:<br />
+"config_BBC_IGNORE_REFER" =>
+"V pÅ™Ã­padÄ›, Å¾e nechcete mÃ­t ve statistikÃ¡ch nÄ›kterÃ© odkazy na strÃ¡nky, ze
+kterÃ½ch nÃ¡vÅ¡tÄ›vnÃ­cÃ­ pÅ™istupujÃ­, mÅ¯Å¾ete specifikovat jedno nebo vÃ­ce slov, kterÃ©
+jsou obsaÅ¾eny v jejich odkazu. TÃ­m zabrÃ¡nÃ­te jejich zobrazenÃ­. Chcete-li
+pÅ™idat vÃ­ce slov, pouÅ¾ijte ÄÃ¡rku jako oddÄ›lovaÄ.<br />
+PÅ™Ã­klady:<br />
 \$BBC_IGNORE_REFER = &quot;spambot.org, .escort.&quot;;<br />
 \$BBC_IGNORE_REFER = &quot;&quot;;",
 
-"config_bbc_ignore_bots" =>
-"Toto nastavení slou¾í ke zmìnì zapoèítávání robotù. Pøednastaveno je ignorovat
-roboty v souhrnıch statistikách a ponechat je v ostatních. Pokud si pøejete
-nezobrazovat roboty ve v¹ech statistikách, nastavte hodnotu na &quot;2&quot;, pak budou
-zapoèítávány pouze pøístupy jednotlivıch náv¹tìvníkù.<br />
-Pøíklady:<br />
+"config_BBC_IGNORE_BOTS" =>
+"Toto nastavenÃ­ slouÅ¾Ã­ ke zmÄ›nÄ› zapoÄÃ­tÃ¡vÃ¡nÃ­ robotÅ¯. PÅ™ednastaveno je ignorovat
+roboty v souhrnÃ½ch statistikÃ¡ch a ponechat je v ostatnÃ­ch. Pokud si pÅ™ejete
+nezobrazovat roboty ve vÅ¡ech statistikÃ¡ch, nastavte hodnotu na &quot;2&quot;, pak budou
+zapoÄÃ­tÃ¡vÃ¡ny pouze pÅ™Ã­stupy jednotlivÃ½ch nÃ¡vÅ¡tÄ›vnÃ­kÅ¯.<br />
+PÅ™Ã­klady:<br />
 \$BBC_IGNORE_BOTS = 2;<br />
 \$BBC_IGNORE_BOTS = 1;<br />
 \$BBC_IGNORE_BOTS = &quot;&quot;;",
 
-"config_bbc_ignore_agent" =>
-"V tomto nastavení definujete, jak BBClone rozpozná jednoho u¾ivatele od druhého.
-Defaultnì se pou¾ívá jen IP adresa, která poskytuje reálné èísla ve vìt¹inì
-pøípadù. Jestli¾e jsou ale Va¹i náv¹tìvníci èasto skryti za proxy serverem,
-mù¾e vypnutím této mo¾noti dosáhnout reálnìj¹ích èísel. O tom, ¾e se
-jedná o nového nav¹tìvníka se rozhodne podle zmìny hodnoty hlavièky user agent.<br />
-Pøíklady:<br />
+"config_BBC_IGNORE_AGENT" =>
+"V tomto nastavenÃ­ definujete, jak BBClone rozpoznÃ¡ jednoho uÅ¾ivatele od druhÃ©ho.
+DefaultnÄ› se pouÅ¾Ã­vÃ¡ jen IP adresa, kterÃ¡ poskytuje reÃ¡lnÃ© ÄÃ­sla ve vÄ›tÅ¡inÄ›
+pÅ™Ã­padÅ¯. JestliÅ¾e jsou ale VaÅ¡i nÃ¡vÅ¡tÄ›vnÃ­ci Äasto skryti za proxy serverem,
+mÅ¯Å¾e vypnutÃ­m tÃ©to moÅ¾noti dosÃ¡hnout reÃ¡lnÄ›jÅ¡Ã­ch ÄÃ­sel. O tom, Å¾e se
+jednÃ¡ o novÃ©ho navÅ¡tÄ›vnÃ­ka se rozhodne podle zmÄ›ny hodnoty hlaviÄky user agent.<br />
+PÅ™Ã­klady:<br />
 \$BBC_IGNORE_AGENT = 1;<br />
 \$BBC_IGNORE_AGENT = &quot;&quot;;",
 
-"config_bbc_kill_stats" =>
-"Kdykoliv si pøejete vymazat Va¹e statistiky, mù¾ete aktivovat tuto pøomìnou
-a pøí¹tí náv¹tìvou je vymazat. Nezapomeòte ji zase poté deaktivovat, jinak
-pravdìpodobnì pocítíte neobvykle nízkou náv¹tìvnost ;)<br />
-Pøíklady:<br />
+"config_BBC_KILL_STATS" =>
+"Kdykoliv si pÅ™ejete vymazat VaÅ¡e statistiky, mÅ¯Å¾ete aktivovat tuto pÅ™omÄ›nou
+a pÅ™Ã­Å¡tÃ­ nÃ¡vÅ¡tÄ›vou je vymazat. NezapomeÅˆte ji zase potÃ© deaktivovat, jinak
+pravdÄ›podobnÄ› pocÃ­tÃ­te neobvykle nÃ­zkou nÃ¡vÅ¡tÄ›vnost ;)<br />
+PÅ™Ã­klady:<br />
 \$BBC_KILL_STATS = 1;<br />
 \$BBC_KILL_STATS = &quot;&quot;;",
 
-"config_bbc_purge_single" =>
-"Statistiky hostu a odkazujících stránek mohou vytváøet velké objemy dat, vìt¹inou
-v¹ak tvoøené jednorázovımi náv¹tìvníky. Zapnutím této volby mù¾ete odstranit
-záznamy a znatelnì zmen¹it access.php bez ovlivnìní zìbøíèku pøístupù a
-odkazujících stránek. Mno¾ství zobrazení bude pøidáno do &quot;nespecifikovanıch&quot;
-záznamù, aby byly zachováno celkové skóre.<br />
-Pøíklady:<br />
+"config_BBC_PURGE_SINGLE" =>
+"Statistiky hostu a odkazujÃ­cÃ­ch strÃ¡nek mohou vytvÃ¡Å™et velkÃ© objemy dat, vÄ›tÅ¡inou
+vÅ¡ak tvoÅ™enÃ© jednorÃ¡zovÃ½mi nÃ¡vÅ¡tÄ›vnÃ­ky. ZapnutÃ­m tÃ©to volby mÅ¯Å¾ete odstranit
+zÃ¡znamy a znatelnÄ› zmenÅ¡it access.php bez ovlivnÄ›nÃ­ zÄ›bÅ™Ã­Äku pÅ™Ã­stupÅ¯ a
+odkazujÃ­cÃ­ch strÃ¡nek. MnoÅ¾stvÃ­ zobrazenÃ­ bude pÅ™idÃ¡no do &quot;nespecifikovanÃ½ch&quot;
+zÃ¡znamÅ¯, aby byly zachovÃ¡no celkovÃ© skÃ³re.<br />
+PÅ™Ã­klady:<br />
 \$BBC_PURGE_SINGLE = 1;<br />
 \$BBC_PURGE_SINGLE = &quot;&quot;;"
 

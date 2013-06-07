@@ -1,30 +1,320 @@
 <?php
 /* This file is part of BBClone (The PHP web counter on steroids)
  *
- * $Header: /cvs/bbclone/language/ko.php,v 1.4 2009/06/21 07:33:09 joku Exp $
+ * CVS File $Id: ko.php,v 1.20 2011/12/30 23:03:24 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  *
  * Korean added by firejune(http://www.firejune.com) 2005.04.26 (to@firejune.com)
  */
 
-// The main array ($_ is for doing short in its call)
-$_ = array(
-// Specific charset
-"global_charset" => "euc-kr",
+// The DNS Extensions array
+$extensions = array(
+"travel" => "Travel",
+"asia" => "Asia-Pacific",
+"jobs" => "Employment",
+"mobi" => "Mobiles",
+"cat" => "Catalan",
+"tel" => "Contacts",
 
-// Date format (used with date() )
-"global_date_format" => "Y/m/d",
+"ac" => "ì•„ì„¼ì…˜ì„¬",
+"ad" => "ì•ˆë„ë¼",
+"ae" => "ì•„ëž ì—ë¯¸ë¦¬íŠ¸ ì—°ë°©",
+"aero" => "Aero",
+"af" => "ì•„í”„ê°€ë‹ˆìŠ¤íƒ„",
+"ag" => "ì•¤í‹°ê°€ ë°”ë¶€ë‹¤",
+"ai" => "ì•ˆê·¤ë¼",
+"al" => "ì•Œë°”ë‹ˆì•„",
+"am" => "ì•„ë¥´ë©”ë‹ˆì•„",
+"an" => "ë„¤ëœëž€ë“œë ¹ ì•ˆí‹°ë¥´",
+"ao" => "ì•™ê³¨ë¼",
+"aq" => "ë‚¨ê·¹ ëŒ€ë¥™",
+"ar" => "ì•„ë¥´í—¨í‹°ë‚˜",
+"arpa" => "ë¯¸êµ­ë°© ì²¨ë‹¨ì‚¬ì—… ì—°êµ¬êµ­",
+"as" => "ì•„ë©”ë¦¬ì¹´ë ¹ ì‚¬ëª¨ì•„",
+"at" => "ì˜¤ìŠ¤íŠ¸ë¦¬ì•„",
+"au" => "ì˜¤ìŠ¤íŠ¸ë ˆì¼ë¦¬ì•„",
+"aw" => "ì•„ë¥´ë°”",
+"ax" => "ì˜¬ëž€ë“œ ì œë„",
+"az" => "ì•„ì œë¥´ë°”ì´ìž”",
+"ba" => "ë³´ìŠ¤ë‹ˆì•„ í—¤ë¥´ì²´ê³ ë¹„ë‚˜",
+"bb" => "ë°”ë² ì´ë„ìŠ¤",
+"bd" => "ë°©ê¸€ë¼ë°ì‹œ",
+"be" => "ë²¨ê¸°ì—",
+"bf" => "ë¶€ë¥´í‚¤ë‚˜ íŒŒì†Œ",
+"bg" => "ë¶ˆê°€ë¦¬ì•„",
+"bh" => "ë°”ë ˆì¸",
+"bi" => "ë°”ë£¬ë””",
+"biz" => "ë¹„ì§€ë‹ˆìŠ¤",
+"bj" => "ë² ëƒ‰",
+"bl" => "ìƒë°”ë¥´í…”ë ˆë¯¸",
+"bm" => "ë²„ë®¤ë‹¤",
+"bn" => "ë¸Œë£¨ë‚˜ì´",
+"bo" => "ë³¼ë¦¬ë¹„ì•„",
+"br" => "ë¸Œë¼ì§ˆ",
+"bs" => "ë°”í•˜ë§ˆ",
+"bt" => "ë¶€íƒ„",
+"bv" => "ë¸Œë² ì„¬",
+"bw" => "ë³´ì¸ ì™€ë‚˜",
+"by" => "ë²¨ë¡œë£¨ì‹œ",
+"bz" => "ë²¨ë¦¬ì¦ˆ",
+"ca" => "ìºë‚˜ë‹¤",
+"cc" => "ì½”ì½”ìŠ¤ ì œë„",
+"cd" => "ì½©ê³ ",
+"cf" => "ì¤‘ì•™ì•„í”„ë¦¬ì¹´ ê³µí™”êµ­",
+"cg" => "ì½©ê³ ",
+"ch" => "ìŠ¤ìœ„ìŠ¤",
+"ci" => "ì½”íŠ¸ë””ë¶€ì•„ë¥´",
+"ck" => "Cook Islands",
+"cl" => "ì¹ ë ˆ",
+"cm" => "ì¹´ë©”ë¡ ",
+"cn" => "ì¤‘êµ­",
+"co" => "ì½œë¡¬ë¹„ì•„",
+"com" => "ê¸°ì—…",
+"coop" => "Coop",
+"cr" => "ì½”ìŠ¤íƒ€ë¦¬ì¹´",
+"cs" => "ì„¸ë¥´ë¹„ì•„Â·ëª¬í…Œë„¤ê·¸ë¡œ",
+"cu" => "ì¿ ë°”",
+"cv" => "ì¹´ë³´ë² ë¥´ë°",
+"cx" => "í¬ë¦¬ìŠ¤ë§ˆìŠ¤ì„¬",
+"cy" => "í‚¤í”„ë¡œìŠ¤",
+"cz" => "ì²´ì½” ê³µí™”êµ­",
+"de" => "ë…ì¼",
+"dj" => "ì§€ë¶€í‹°",
+"dk" => "ë´ë§ˆí¬",
+"dm" => "ë„ë¯¸ë‹ˆì¹´",
+"do" => "ë„ë¯¸ë‹ˆì¹´ ê³µí™”êµ­",
+"dz" => "ì•Œì œë¦¬",
+"ec" => "ì—ì½°ë„ë¥´",
+"edu" => "êµìœ¡ê¸°ê´€",
+"ee" => "ì—ìŠ¤í† ë‹ˆì•„",
+"eg" => "ì´ì§‘íŠ¸",
+"eh" => "ì„œì‚¬í•˜ë¼",
+"er" => "ì—ë¦¬íŠ¸ë ˆì•„",
+"es" => "ìŠ¤íŽ˜ì¸",
+"et" => "ì—í‹°ì˜¤í”¼ì•„",
+"eu" => "ìœ ëŸ½ ì—°í•©",
+"fi" => "í•€ëž€ë“œ",
+"fj" => "í”¼ì§€",
+"fk" => "í¬í´ëžœë“œ ì œë„",
+"fm" => "ë¯¸í¬ë¡œë„¤ì‹œì•„",
+"fo" => "íŒŒë¡œì— ì œë„",
+"fr" => "í”„ëž‘ìŠ¤",
+"ga" => "ê°€ë´‰",
+"gb" => "ì—°í•© ì™•êµ­",
+"gd" => "ê·¸ë ˆë‚˜ë‹¤",
+"ge" => "ì¡°ì§€ì•„",
+"gf" => "í”„ëž‘ìŠ¤ë ¹ ê¸°ì•„ë‚˜",
+"gg" => "ê±´ì§€",
+"gh" => "ê°€ë‚˜",
+"gi" => "ì§€ë¸Œë¡¤í„°",
+"gl" => "ê·¸ë¦°ëž€ë“œ",
+"gm" => "ê°ë¹„ì•„",
+"gn" => "ê¸°ë‹ˆ",
+"gov" => "ë¯¸êµ­ ì •ë¶€",
+"gp" => "ê·¸ì•„ë“œë¥´í”„ì„¬",
+"gq" => "ì ë„ ê¸°ë‹ˆ",
+"gr" => "ê·¸ë¦¬ìŠ¤",
+"gs" => "ë‚¨ ì¡°ì§€ì•„Â·ë‚¨ ìƒŒë“œìœ„ì¹˜ ì œë„",
+"gt" => "ê³¼í…Œë§ë¼",
+"gu" => "ê´Œ",
+"gw" => "í‚¤ë‹ˆë¹„ì‚¬ìš°",
+"gy" => "ê°€ì´ì•„ë‚˜",
+"hk" => "í™ì½©",
+"hm" => "í•˜ë“œÂ·ë§¥ë„ë„ë“œ ì œë„",
+"hn" => "ì˜¨ë‘ë¼ìŠ¤",
+"hr" => "í¬ë¡œì•„í‹°ì•„",
+"ht" => "ì•„ì´í‹°",
+"hu" => "í—ê°€ë¦¬",
+"id" => "ì¸ë„ë„¤ì‹œì•„",
+"ie" => "ì•„ì¼ëžœë“œ",
+"il" => "ì´ìŠ¤ë¼ì—˜",
+"im" => "ë§¨ì„¬",
+"in" => "ì¸ë„",
+"info" => "ì¸í¬ë©”ì´ì…˜",
+"int" => "êµ­ì œê¸°ê´€",
+"io" => "ì´í…Œë¦¬ìŠ¤ë ¹ ì¸ë„ì–‘ ì§€ì—­",
+"iq" => "ì´ë¼í¬",
+"ir" => "ì´ëž€",
+"is" => "ì•„ì´ìŠ¬ëž€ë“œ",
+"it" => "ì´íƒˆë¦¬ì•„",
+"je" => "ì €ì§€",
+"jm" => "ìžë©”ì´ì¹´",
+"jo" => "ìš”ë¥´ë‹¨",
+"jp" => "ì¼ë³¸",
+"ke" => "ì¼€ëƒ",
+"kg" => "í‚¤ë¥´ê¸°ìŠ¤ìŠ¤íƒ„",
+"kh" => "ìº„ë³´ë””ì•„",
+"ki" => "í‚¤ë¦¬ë°”ì‹œ",
+"km" => "ì½”ëª¨ë¡œ",
+"kn" => "Saint Kitts and Nevis",
+"kp" => "ë¶í•œ",
+"kr" => "í•œêµ­",
+"kw" => "ì¿ ì›¨ì´íŠ¸",
+"ky" => "ì¼€ì´ë©˜ ì œë„",
+"kz" => "ì¹´ìžíìŠ¤íƒ„",
+"la" => "ë¼ì˜¤ìŠ¤",
+"lb" => "ë ˆë°”ë…¼",
+"lc" => "ì„¸ì¸íŠ¸ë¥´ì‹œì•„",
+"li" => "ë¦¬ížˆí…ìŠˆíƒ€ì¸",
+"lk" => "ìŠ¤ë¦¬ëž€ì¹´",
+"lr" => "ë¼ì´ë² ë¦¬ì•„",
+"ls" => "ë ˆì†Œí† ",
+"lt" => "ë¦¬íˆ¬ì•„ë‹ˆì•„",
+"lu" => "ë£©ì…ˆë¸Œë¥´í¬",
+"lv" => "ë¼íŠ¸ë¹„ì•„",
+"ly" => "ë¦¬ë¹„ì•„",
+"ma" => "ëª¨ë¡œì½”",
+"mc" => "ëª¨ë‚˜ì½”",
+"md" => "ëª°ë„ë°”",
+"me" => "ëª¬í…Œë„¤ê·¸ë¡œ",
+"mf" => "ìƒë§ˆë¥´íƒ±",
+"mg" => "ë§ˆë‹¤ê°€ìŠ¤ì¹´ë¥´",
+"mh" => "ë§ˆì…œì œë„",
+"mil" => "ë¯¸êµ°",
+"mk" => "ë§ˆì¼€ë„ë‹ˆì•„",
+"ml" => "ë§ë¦¬",
+"mm" => "ë¯¸ì–€ë§ˆ",
+"mn" => "ëª½ê³¨",
+"mo" => "ë§ˆì¹´ì˜¤",
+"mp" => "ë§ˆë¦¬ì•„ë‚˜ ì œë„",
+"mq" => "ë§ˆë¥´ì¹˜ë‹ˆíì„¬",
+"mr" => "ëª¨ë¦¬íƒ€ë‹ˆ",
+"ms" => "ëª¬íŠ¸ì„¸ëž˜íŠ¸",
+"mt" => "ëª°íƒ€",
+"museum" => "ë°•ë¬¼ê´€",
+"mu" => "ëª¨ë¦¬ì…”ìŠ¤",
+"mv" => "ëª°ë””ë¸Œ",
+"mw" => "ë§ë¼ìœ„",
+"mx" => "ë©•ì‹œì½”",
+"my" => "ë§ë ˆì´ì‹œì•„",
+"mz" => "ëª¨ìž ë¹„í¬",
+"na" => "ë‚˜ë¯¸ë¹„ì•„",
+"name" => "ê°œì¸",
+"nc" => "ë‰´ì¹¼ë ˆë„ë‹ˆì•„",
+"ne" => "ë‹ˆì œë¥´",
+"net" => "ë„¤íŠ¸ì›Œí¬",
+"nf" => "ë…¸í½",
+"ng" => "ë‚˜ì´ì§€ë¦¬ì•„",
+"ni" => "ë‹ˆì¹´ë¼ê³¼",
+"nl" => "ë„¤ëœëž€ë“œ",
+"no" => "ë…¸ë¥´ì›¨ì´",
+"np" => "ë„¤íŒ”",
+"nr" => "ë‚˜ìš°ë£¨",
+"nu" => "ë‹ˆì›¨",
+"numeric" => "numeric",
+"nz" => "ë‰´ì§ˆë Œë“œ",
+"om" => "ì˜¤ë§Œ",
+"org" => "ë¹„ì˜ë¦¬ ë‹¨ì²´",
+"pa" => "ë§ˆë‚˜ë§ˆ",
+"pe" => "íŽ˜ë£¨",
+"pf" => "í´ë¦¬ë„¤ì‹œì•„",
+"pg" => "íŒŒí‘¸ì•„ë‰´ê¸°ë‹ˆ",
+"ph" => "í•„ë¦¬í•€",
+"pk" => "íŒŒí‚¤ìŠ¤íƒ„",
+"pl" => "í´ëž€ë“œ",
+"pm" => "ì‚°í”¼ì—ë¥´ì„¬Â·ë¯¸ì¿ ë¡ ì„¬",
+"pn" => "í”¼íŠ¸ ì¼€ë¦°ì„¬",
+"pr" => "ë£¨ì—ë¥´í† ë¦¬ì½”",
+"pro" => "ì „ë¬¸ê°€",
+"ps" => "íŒ”ë ˆìŠ¤íƒ€ì¸",
+"pt" => "í¬ë¥´íˆ¬ê°ˆ",
+"pw" => "íŒ”ë¼ìš°",
+"py" => "íŒŒë¼ê³¼ì´",
+"qa" => "ì¹´íƒ€ë¥´",
+"re" => "ë ˆìœ ë‹ˆì˜¨",
+"ro" => "ë£¨ë§ˆë‹ˆì•„",
+"rs" => "ì„¸ë¥´ë¹„ì•„",
+"ru" => "ëŸ¬ì‹œì•„",
+"rw" => "ë¥´ì™„ë‹¤",
+"sa" => "ì‚¬ìš°ë””ì•„ë¼ë¹„ì•„",
+"sb" => "ì†”ë¡œëª¬ ì œë„",
+"sc" => "ì„¸ì´ì…¸",
+"sd" => "ìˆ˜ë‹¨",
+"se" => "ìŠ¤ì›¨ë´",
+"sg" => "ì‹±ê°€í¬ë¥´",
+"sh" => "?íŠ¸í—¤ë ˆë‚˜ì„¬",
+"si" => "ìŠ¬ë¡œë² ë‹ˆì•„",
+"sj" => "ìŠ¤ë°”ë¥´ë°”ë¥´ë“œÂ·ì–€ë§ˆì˜Œ ì œë„",
+"sk" => "ìŠ¬ë¡œë°”í‚¤ì•„",
+"sl" => "ì‹œì—ë¼ë¦¬ì˜¨",
+"sm" => "ì‚°ë§ˆë¦¬ë…¸",
+"sn" => "ì„¸ë„¤ê°ˆ",
+"so" => "ì†Œë§ë¦¬ì•„",
+"sr" => "ìˆ˜ë¦¬ë‚¨",
+"st" => "ì‚°íŠ¸ë©”Â·í”„ë¦°ì‹œí”¼",
+"su" => "ì†Œë¹„ì—£ ì—°ë°©",
+"sv" => "ì—˜ì‚¬ë°”ë„ë¥´",
+"sy" => "ì‹œë¦¬ì•„",
+"sz" => "ìŠ¤ì™€ì§ˆëž€ë“œ",
+"tc" => "íŠ¸ëŸ­-ì¹´ì´ì½”ìŠ¤ ì œë„",
+"td" => "ì°¨ë“œ",
+"tf" => "í”„ëž‘ìŠ¤ë ¹ ë‚¨ë°© ì œë„",
+"tg" => "í† ê³ ",
+"th" => "íƒœêµ­",
+"tj" => "íƒ€ì§€í‚¤ìŠ¤íƒ„",
+"tk" => "íŠ¸ì¼€ë¼ìš° ì œë„",
+"tl" => "ë™í‹°ëª¨ë¥´",
+"tm" => "íˆ¬ë¥´í¬ë©”ë‹ˆìŠ¤íƒ„",
+"tn" => "íŠ€ë‹ˆì§€",
+"to" => "í†µê°€",
+"tp" => "ë™í‹°ëª¨ë¥´",
+"tr" => "í„°í‚¤",
+"tt" => "íŠ¸ë¦¬ë‹ˆë‹¤ë“œí† ë°”ê³ ",
+"tv" => "íˆ¬ë°œë£¨",
+"tw" => "íƒ€ì´ì™„",
+"tz" => "íƒ„ìžë‹ˆì•„",
+"ua" => "ìš°í¬ë¼ì´ë‚˜",
+"ug" => "ìš°ê°„ë‹¤",
+"uk" => "ì˜êµ­",
+"um" => "ì•„ë©”ë¦¬ì¹´ ë³€ê²½ ì œë„",
+"unknown" => "ë¯¸ì§€",
+"us" => "ë¯¸êµ­",
+"uy" => "ìš°ë£¨ê³¼ì´",
+"uz" => "ìš°ì¦ˆë² í‚¤ìŠ¤íƒ„",
+"va" => "ë°”í‹°ì¹¸êµ­",
+"vc" => "?íŠ¸ ë¹ˆì„¼íŠ¸ ë° ê·¸ë ˆë‚˜ë”” ì œë„",
+"ve" => "ë² ë„¤ìˆ˜ì—˜ë¼",
+"vg" => "ë²„ì§„ì•„ì¼ëžœë“œ (UK)",
+"vi" => "ë²„ì§„ì•„ì¼ëžœë“œ (US)",
+"vn" => "ë² íŠ¸ë‚¨",
+"vu" => "ë°”ëˆ„ì•„íˆ¬",
+"wf" => "ì™€ë¦¬ìŠ¤ ë° í›„íŠ¸ë‚˜ ì œë„",
+"ws" => "ì‚¬ëª¨ì•„",
+"ye" => "ì˜ˆë©˜",
+"yt" => "ë§ˆìš”í…Œì„¬",
+"yu" => "ì„¸ë¥´ë¹„ì•„ ëª¬í…Œë„¤ê·¸ë¡œ",
+"za" => "ë‚¨ì•„í”„ë¦¬ì¹´",
+"zm" => "ìž ë¹„ì•„",
+"zr" => "ìžì´ë¥´",
+"zw" => "ì§ë°”ë¸Œì›¨",
+);
+
+// The main Translation array
+$translation = array(
+// Specific charset
+"global_charset" => "utf-8",
+
+// Date format (used with date())
+"global_time_format" => "M jS, H:i:s",
+"global_day_format" => "l F jS, Y",
+"global_hours_format" => "l F jS, G:00",
+"global_month_format" => "F Y",
 
 // Global translation
+"global_titlebar"=> "Statistics for %SERVER generated on %DATE",
 "global_bbclone_copyright" => "The BBClone team - Licensed under the",
 "global_last_reset" => "Statistics last reset on",
 "global_yes" => "yes",
@@ -32,476 +322,236 @@ $_ = array(
 
 // The error messages
 "error_cannot_see_config" =>
-"BBCloneÀÇ ¼³Á¤ÀÌ Àß¸øµÇ¾ú½À´Ï´Ù.",
-
-// Address Extensions
-"ac" => "¾Æ¼¾¼Ç¼¶",
-"ad" => "¾Èµµ¶ó",
-"ae" => "¾Æ¶ø ¿¡¹Ì¸®Æ® ¿¬¹æ",
-"aero" => "Aero",
-"af" => "¾ÆÇÁ°¡´Ï½ºÅº",
-"ag" => "¾ØÆ¼°¡ ¹ÙºÎ´Ù",
-"ai" => "¾È±Ö¶ó",
-"al" => "¾Ë¹Ù´Ï¾Æ",
-"am" => "¾Æ¸£¸Þ´Ï¾Æ",
-"an" => "³×´ú¶õµå·É ¾ÈÆ¼¸£",
-"ao" => "¾Ó°ñ¶ó",
-"aq" => "³²±Ø ´ë·ú",
-"ar" => "¾Æ¸£ÇîÆ¼³ª",
-"arpa" => "¹Ì±¹¹æ Ã·´Ü»ç¾÷ ¿¬±¸±¹",
-"as" => "¾Æ¸Þ¸®Ä«·É »ç¸ð¾Æ",
-"at" => "¿À½ºÆ®¸®¾Æ",
-"au" => "¿À½ºÆ®·¹ÀÏ¸®¾Æ",
-"aw" => "¾Æ¸£¹Ù",
-"az" => "¾ÆÁ¦¸£¹ÙÀÌÀÜ",
-"ba" => "º¸½º´Ï¾Æ Çì¸£Ã¼°íºñ³ª",
-"bb" => "¹Ùº£ÀÌµµ½º",
-"bd" => "¹æ±Û¶óµ¥½Ã",
-"be" => "º§±â¿¡",
-"bf" => "ºÎ¸£Å°³ª ÆÄ¼Ò",
-"bg" => "ºÒ°¡¸®¾Æ",
-"bh" => "¹Ù·¹ÀÎ",
-"bi" => "¹Ù·éµð",
-"biz" => "ºñÁö´Ï½º",
-"bj" => "º£³Ã",
-"bm" => "¹ö¹Â´Ù",
-"bn" => "ºê·ç³ªÀÌ",
-"bo" => "º¼¸®ºñ¾Æ",
-"br" => "ºê¶óÁú",
-"bs" => "¹ÙÇÏ¸¶",
-"bt" => "ºÎÅº",
-"bv" => "ºêº£¼¶",
-"bw" => "º¸Ã÷¿Í³ª",
-"by" => "º§·Î·ç½Ã",
-"bz" => "º§¸®Áî",
-"ca" => "Ä³³ª´Ù",
-"cc" => "ÄÚÄÚ½º Á¦µµ",
-"cd" => "Äá°í",
-"cf" => "Áß¾Ó¾ÆÇÁ¸®Ä« °øÈ­±¹",
-"cg" => "Äá°í",
-"ch" => "½ºÀ§½º",
-"ci" => "ÄÚÆ®µðºÎ¾Æ¸£",
-"ck" => "Cook Islands",
-"cl" => "Ä¥·¹",
-"cm" => "Ä«¸Þ·Ð",
-"cn" => "Áß±¹",
-"co" => "ÄÝ·Òºñ¾Æ",
-"com" => "±â¾÷",
-"coop" => "Coop",
-"cr" => "ÄÚ½ºÅ¸¸®Ä«",
-"cs" => "¼¼¸£ºñ¾Æ¡¤¸óÅ×³×±×·Î",
-"cu" => "Äí¹Ù",
-"cv" => "Ä«º¸º£¸£µ¥",
-"cx" => "Å©¸®½º¸¶½º¼¶",
-"cy" => "Å°ÇÁ·Î½º",
-"cz" => "Ã¼ÄÚ °øÈ­±¹",
-"de" => "µ¶ÀÏ",
-"dj" => "ÁöºÎÆ¼",
-"dk" => "µ§¸¶Å©",
-"dm" => "µµ¹Ì´ÏÄ«",
-"do" => "µµ¹Ì´ÏÄ« °øÈ­±¹",
-"dz" => "¾ËÁ¦¸®",
-"ec" => "¿¡Äâµµ¸£",
-"edu" => "±³À°±â°ü",
-"ee" => "¿¡½ºÅä´Ï¾Æ",
-"eg" => "ÀÌÁýÆ®",
-"eh" => "¼­»çÇÏ¶ó",
-"er" => "¿¡¸®Æ®·¹¾Æ",
-"es" => "½ºÆäÀÎ",
-"et" => "¿¡Æ¼¿ÀÇÇ¾Æ",
-"eu" => "À¯·´ ¿¬ÇÕ",
-"fi" => "ÇÉ¶õµå",
-"fj" => "ÇÇÁö",
-"fk" => "Æ÷Å¬·£µå Á¦µµ",
-"fm" => "¹ÌÅ©·Î³×½Ã¾Æ",
-"fo" => "ÆÄ·Î¿¡ Á¦µµ",
-"fr" => "ÇÁ¶û½º",
-"ga" => "°¡ºÀ",
-"gb" => "¿¬ÇÕ ¿Õ±¹",
-"gd" => "±×·¹³ª´Ù",
-"ge" => "Á¶Áö¾Æ",
-"gf" => "ÇÁ¶û½º·É ±â¾Æ³ª",
-"gg" => "°ÇÁö",
-"gh" => "°¡³ª",
-"gi" => "Áöºê·ÑÅÍ",
-"gl" => "±×¸°¶õµå",
-"gm" => "°¨ºñ¾Æ",
-"gn" => "±â´Ï",
-"gov" => "¹Ì±¹ Á¤ºÎ",
-"gp" => "±×¾Æµå¸£ÇÁ¼¶",
-"gq" => "Àûµµ ±â´Ï",
-"gr" => "±×¸®½º",
-"gs" => "³² Á¶Áö¾Æ¡¤³² »÷µåÀ§Ä¡ Á¦µµ",
-"gt" => "°úÅ×¸»¶ó",
-"gu" => "±¡",
-"gw" => "Å°´Ïºñ»ç¿ì",
-"gy" => "°¡ÀÌ¾Æ³ª",
-"hk" => "È«Äá",
-"hm" => "ÇÏµå¡¤¸Æµµ³Îµå Á¦µµ",
-"hn" => "¿ÂµÎ¶ó½º",
-"hr" => "Å©·Î¾ÆÆ¼¾Æ",
-"ht" => "¾ÆÀÌÆ¼",
-"hu" => "Çë°¡¸®",
-"id" => "ÀÎµµ³×½Ã¾Æ",
-"ie" => "¾ÆÀÏ·£µå",
-"il" => "ÀÌ½º¶ó¿¤",
-"im" => "¸Ç¼¶",
-"in" => "ÀÎµµ",
-"info" => "ÀÎÆ÷¸ÞÀÌ¼Ç",
-"int" => "±¹Á¦±â°ü",
-"io" => "ÀÌÅ×¸®½º·É ÀÎµµ¾ç Áö¿ª",
-"iq" => "ÀÌ¶óÅ©",
-"ir" => "ÀÌ¶õ",
-"is" => "¾ÆÀÌ½½¶õµå",
-"it" => "ÀÌÅ»¸®¾Æ",
-"je" => "ÀúÁö",
-"jm" => "ÀÚ¸ÞÀÌÄ«",
-"jo" => "¿ä¸£´Ü",
-"jp" => "ÀÏº»",
-"ke" => "ÄÉ³Ä",
-"kg" => "Å°¸£±â½º½ºÅº",
-"kh" => "Ä¯º¸µð¾Æ",
-"ki" => "Å°¸®¹Ù½Ã",
-"km" => "ÄÚ¸ð·Î",
-"kn" => "Saint Kitts and Nevis",
-"kp" => "ºÏÇÑ",
-"kr" => "ÇÑ±¹",
-"kw" => "Äí¿þÀÌÆ®",
-"ky" => "ÄÉÀÌ¸à Á¦µµ",
-"kz" => "Ä«ÀÚÈå½ºÅº",
-"la" => "¶ó¿À½º",
-"lb" => "·¹¹Ù³í",
-"lc" => "¼¼ÀÎÆ®¸£½Ã¾Æ",
-"li" => "¸®È÷ÅÙ½´Å¸ÀÎ",
-"lk" => "½º¸®¶õÄ«",
-"lr" => "¶óÀÌº£¸®¾Æ",
-"ls" => "·¹¼ÒÅä",
-"lt" => "¸®Åõ¾Æ´Ï¾Æ",
-"lu" => "·è¼Àºê¸£Å©",
-"lv" => "¶óÆ®ºñ¾Æ",
-"ly" => "¸®ºñ¾Æ",
-"ma" => "¸ð·ÎÄÚ",
-"mc" => "¸ð³ªÄÚ",
-"md" => "¸ôµµ¹Ù",
-"mg" => "¸¶´Ù°¡½ºÄ«¸£",
-"mh" => "¸¶¼ÈÁ¦µµ",
-"mil" => "¹Ì±º",
-"mk" => "¸¶ÄÉµµ´Ï¾Æ",
-"ml" => "¸»¸®",
-"mm" => "¹Ì¾á¸¶",
-"mn" => "¸ù°ñ",
-"mo" => "¸¶Ä«¿À",
-"mp" => "¸¶¸®¾Æ³ª Á¦µµ",
-"mq" => "¸¶¸£Ä¡´ÏÅ¥¼¶",
-"mr" => "¸ð¸®Å¸´Ï",
-"ms" => "¸óÆ®¼¼·¡Æ®",
-"mt" => "¸ôÅ¸",
-"museum" => "¹Ú¹°°ü",
-"mu" => "¸ð¸®¼Å½º",
-"mv" => "¸ôµðºê",
-"mw" => "¸»¶óÀ§",
-"mx" => "¸ß½ÃÄÚ",
-"my" => "¸»·¹ÀÌ½Ã¾Æ",
-"mz" => "¸ðÀáºñÅ©",
-"na" => "³ª¹Ìºñ¾Æ",
-"name" => "°³ÀÎ",
-"nc" => "´ºÄ®·¹µµ´Ï¾Æ",
-"ne" => "´ÏÁ¦¸£",
-"net" => "³×Æ®¿öÅ©",
-"nf" => "³ëÆÜ",
-"ng" => "³ªÀÌÁö¸®¾Æ",
-"ni" => "´ÏÄ«¶ó°ú",
-"nl" => "³×´ú¶õµå",
-"no" => "³ë¸£¿þÀÌ",
-"np" => "³×ÆÈ",
-"nr" => "³ª¿ì·ç",
-"nu" => "´Ï¿þ",
-"numeric" => "numeric",
-"nz" => "´ºÁú·»µå",
-"om" => "¿À¸¸",
-"org" => "ºñ¿µ¸® ´ÜÃ¼",
-"pa" => "¸¶³ª¸¶",
-"pe" => "Æä·ç",
-"pf" => "Æú¸®³×½Ã¾Æ",
-"pg" => "ÆÄÇª¾Æ´º±â´Ï",
-"ph" => "ÇÊ¸®ÇÉ",
-"pk" => "ÆÄÅ°½ºÅº",
-"pl" => "Æú¶õµå",
-"pm" => "»êÇÇ¿¡¸£¼¶¡¤¹ÌÄí·Ð¼¶",
-"pn" => "ÇÇÆ® ÄÉ¸°¼¶",
-"pr" => "·ç¿¡¸£Åä¸®ÄÚ",
-"pro" => "Àü¹®°¡",
-"ps" => "ÆÈ·¹½ºÅ¸ÀÎ",
-"pt" => "Æ÷¸£Åõ°¥",
-"pw" => "ÆÈ¶ó¿ì",
-"py" => "ÆÄ¶ó°úÀÌ",
-"qa" => "Ä«Å¸¸£",
-"re" => "·¹À¯´Ï¿Â",
-"ro" => "·ç¸¶´Ï¾Æ",
-"ru" => "·¯½Ã¾Æ",
-"rw" => "¸£¿Ï´Ù",
-"sa" => "»ç¿ìµð¾Æ¶óºñ¾Æ",
-"sb" => "¼Ö·Î¸ó Á¦µµ",
-"sc" => "¼¼ÀÌ¼Ð",
-"sd" => "¼ö´Ü",
-"se" => "½º¿þµ§",
-"sg" => "½Ì°¡Æ÷¸£",
-"sh" => "?Æ®Çì·¹³ª¼¶",
-"si" => "½½·Îº£´Ï¾Æ",
-"sj" => "½º¹Ù¸£¹Ù¸£µå¡¤¾á¸¶¿º Á¦µµ",
-"sk" => "½½·Î¹ÙÅ°¾Æ",
-"sl" => "½Ã¿¡¶ó¸®¿Â",
-"sm" => "»ê¸¶¸®³ë",
-"sn" => "¼¼³×°¥",
-"so" => "¼Ò¸»¸®¾Æ",
-"sr" => "¼ö¸®³²",
-"st" => "»êÆ®¸Þ¡¤ÇÁ¸°½ÃÇÇ",
-"su" => "¼Òºñ¿§ ¿¬¹æ",
-"sv" => "¿¤»ç¹Ùµµ¸£",
-"sy" => "½Ã¸®¾Æ",
-"sz" => "½º¿ÍÁú¶õµå",
-"tc" => "Æ®·°-Ä«ÀÌÄÚ½º Á¦µµ",
-"td" => "Â÷µå",
-"tf" => "ÇÁ¶û½º·É ³²¹æ Á¦µµ",
-"tg" => "Åä°í",
-"th" => "ÅÂ±¹",
-"tj" => "Å¸ÁöÅ°½ºÅº",
-"tk" => "Æ®ÄÉ¶ó¿ì Á¦µµ",
-"tl" => "µ¿Æ¼¸ð¸£",
-"tm" => "Åõ¸£Å©¸Þ´Ï½ºÅº",
-"tn" => "Æ¢´ÏÁö",
-"to" => "Åë°¡",
-"tp" => "µ¿Æ¼¸ð¸£",
-"tr" => "ÅÍÅ°",
-"tt" => "Æ®¸®´Ï´ÙµåÅä¹Ù°í",
-"tv" => "Åõ¹ß·ç",
-"tw" => "Å¸ÀÌ¿Ï",
-"tz" => "ÅºÀÚ´Ï¾Æ",
-"ua" => "¿ìÅ©¶óÀÌ³ª",
-"ug" => "¿ì°£´Ù",
-"uk" => "¿µ±¹",
-"um" => "¾Æ¸Þ¸®Ä« º¯°æ Á¦µµ",
-"unknown" => "¹ÌÁö",
-"us" => "¹Ì±¹",
-"uy" => "¿ì·ç°úÀÌ",
-"uz" => "¿ìÁîº£Å°½ºÅº",
-"va" => "¹ÙÆ¼Ä­±¹",
-"vc" => "?Æ® ºó¼¾Æ® ¹× ±×·¹³ªµð Á¦µµ",
-"ve" => "º£³×¼ö¿¤¶ó",
-"vg" => "¹öÁø¾ÆÀÏ·£µå (UK)",
-"vi" => "¹öÁø¾ÆÀÏ·£µå (US)",
-"vn" => "º£Æ®³²",
-"vu" => "¹Ù´©¾ÆÅõ",
-"wf" => "¿Í¸®½º ¹× ÈÄÆ®³ª Á¦µµ",
-"ws" => "»ç¸ð¾Æ",
-"ye" => "¿¹¸à",
-"yt" => "¸¶¿äÅ×¼¶",
-"yu" => "¼¼¸£ºñ¾Æ ¸óÅ×³×±×·Î",
-"za" => "³²¾ÆÇÁ¸®Ä«",
-"zm" => "Àáºñ¾Æ",
-"zr" => "ÀÚÀÌ¸£",
-"zw" => "Áü¹Ùºê¿þ",
+"BBCloneì˜ ì„¤ì •ì´ ìž˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.",
 
 // Miscellaneous translations
-"misc_other" => "±× ¿Ü",
-"misc_unknown" => "¸ð¸§",
-"misc_second_unit" => "ÃÊ",
-"misc_ignored" => "¹«½ÃµÊ",
+"misc_other" => "ê·¸ ì™¸",
+"misc_unknown" => "ëª¨ë¦„",
+"misc_second_unit" => "ì´ˆ",
+"misc_ignored" => "ë¬´ì‹œë¨",
 
 // The Navigation Bar
-"navbar_Main_Site" => "È¨ÆäÀÌÁö·Î",
-"navbar_Configuration" => "È¯°æ¼³Á¤",
-"navbar_Global_Stats" => "ÀüÃ¼Åë°è",
-"navbar_Detailed_Stats" => "»ó¼¼Åë°è",
-"navbar_Time_Stats" => "½Ã°£º°Åë°è",
+"navbar_main_site" => "í™ˆíŽ˜ì´ì§€ë¡œ",
+"navbar_configuration" => "í™˜ê²½ì„¤ì •",
+"navbar_global_stats" => "ì „ì²´í†µê³„",
+"navbar_detailed_stats" => "ìƒì„¸í†µê³„",
+"navbar_time_stats" => "ì‹œê°„ë³„í†µê³„",
+"navbar_language" => "Language",
+"navbar_go" => "Go",
 
 // Detailed stats words
 "dstat_id" => "ID",
-"dstat_time" => "½Ã°£",
-"dstat_visits" => "¹æ¹®",
-"dstat_extension" => "È®Àå",
-"dstat_dns" => "È£½ºÆ®ÀÌ¸§",
+"dstat_time" => "ì‹œê°„",
+"dstat_visits" => "ë°©ë¬¸",
+"dstat_extension" => "í™•ìž¥",
+"dstat_dns" => "í˜¸ìŠ¤íŠ¸ì´ë¦„",
 "dstat_from" => "From",
 "dstat_os" => "OS",
-"dstat_browser" => "ºê¶ó¿ìÀú",
-"dstat_visible_rows" => "¾×¼¼½º¼ö",
-"dstat_green_rows" => "³ì»ö",
-"dstat_blue_rows" => "ÆÄ¶û",
-"dstat_red_rows" => "»¡°­",
-"dstat_search" => "°Ë»ö",
-"dstat_last_page" => "¸¶Áö¸· ÆäÀÌÁö",
-"dstat_last_visit" => "ÃÖÁ¾ ¹æ¹®",
-"dstat_robots" => "°Ë»ö·Îº¿",
-"dstat_no_data" => "µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù.",
-"dstat_prx" => "ÇÁ¶ô½Ã ¼­¹ö",
-"dstat_ip" => "IP ÁÖ¼Ò",
+"dstat_browser" => "ë¸Œë¼ìš°ì €",
+"dstat_visible_rows" => "ì•¡ì„¸ìŠ¤ìˆ˜",
+"dstat_green_rows" => "ë…¹ìƒ‰",
+"dstat_blue_rows" => "íŒŒëž‘",
+"dstat_red_rows" => "ë¹¨ê°•",
+"dstat_search" => "ê²€ìƒ‰",
+"dstat_last_page" => "ë§ˆì§€ë§‰ íŽ˜ì´ì§€",
+"dstat_last_visit" => "ìµœì¢… ë°©ë¬¸",
+"dstat_robots" => "ê²€ìƒ‰ë¡œë´‡",
+"dstat_my_visit" => "Visits from your IP",
+"dstat_no_data" => "ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.",
+"dstat_prx" => "í”„ë½ì‹œ ì„œë²„",
+"dstat_ip" => "IP ì£¼ì†Œ",
 "dstat_user_agent" => "User Agent",
 "dstat_nr" => "Nr",
-"dstat_pages" => "ÆäÀÌÁö",
+"dstat_pages" => "íŽ˜ì´ì§€",
 "dstat_visit_length" => "Visit Length",
 "dstat_reloads" => "Reloads",
+"dstat_whois_information" => "Look up information on this IP Adress",
 
 // Global stats words
-"gstat_Accesses" => "ÀüÃ¼ Á¢±Ù Ä«¿îÅÍ",
-"gstat_Total_visits" => "ÀüÃ¼ ÆäÀÌÁö ºä",
-"gstat_Total_unique" => "ÀüÃ¼ ¹æ¹®ÀÚ",
-"gstat_Operating_systems" => "¿î¿µÃ¼°è ¼øÀ§ %d",
-"gstat_Browsers" => "ºê¶ó¿ìÀú ¼øÀ§ %d",
-"gstat_extensions" => "±¹°¡º° ¼øÀ§ %d",
-"gstat_Robots" => "°Ë»ö·Îº¿ ¼øÀ§ %d",
-"gstat_pages" => "¹æ¹®ÇÑ ÆäÀÌÁö ¼øÀ§ %d",
-"gstat_origins" => "¸®ÆÛ·¯ ¼øÀ§ %d ",
-"gstat_hosts" => "È£½ºÆ® ¼øÀ§ %d",
-"gstat_keys" => "Å°¿öµå ¼øÀ§ %d",
-"gstat_Total" => "ÀüÃ¼",
-"gstat_Not_specified" => "Not specified",
+"gstat_accesses" => "ì „ì²´ ì ‘ê·¼ ì¹´ìš´í„°",
+"gstat_total_visits" => "ì „ì²´ íŽ˜ì´ì§€ ë·°",
+"gstat_total_unique" => "ì „ì²´ ë°©ë¬¸ìž",
+"gstat_operating_systems" => "ìš´ì˜ì²´ê³„ ìˆœìœ„ %d",
+"gstat_browsers" => "ë¸Œë¼ìš°ì € ìˆœìœ„ %d",
+"gstat_extensions" => "êµ­ê°€ë³„ ìˆœìœ„ %d",
+"gstat_robots" => "ê²€ìƒ‰ë¡œë´‡ ìˆœìœ„ %d",
+"gstat_pages" => "ë°©ë¬¸í•œ íŽ˜ì´ì§€ ìˆœìœ„ %d",
+"gstat_origins" => "ë¦¬í¼ëŸ¬ ìˆœìœ„ %d ",
+"gstat_hosts" => "í˜¸ìŠ¤íŠ¸ ìˆœìœ„ %d",
+"gstat_keys" => "í‚¤ì›Œë“œ ìˆœìœ„ %d",
+"gstat_total" => "ì „ì²´",
+"gstat_not_specified" => "Not specified",
 
 // Time stats words
-"tstat_Su" => "ÀÏ",
-"tstat_Mo" => "¿ù",
-"tstat_Tu" => "È­",
-"tstat_We" => "¼ö",
-"tstat_Th" => "¸ñ",
-"tstat_Fr" => "±Ý",
-"tstat_Sa" => "Åä",
+"tstat_su" => "ì¼",
+"tstat_mo" => "ì›”",
+"tstat_tu" => "í™”",
+"tstat_we" => "ìˆ˜",
+"tstat_th" => "ëª©",
+"tstat_fr" => "ê¸ˆ",
+"tstat_sa" => "í† ",
+"tstat_full_su" => "Sunday",
+"tstat_full_mo" => "Monday",
+"tstat_full_tu" => "Tuesday",
+"tstat_full_we" => "Wednesday",
+"tstat_full_th" => "Thursday",
+"tstat_full_fr" => "Friday",
+"tstat_full_sa" => "Saturday",
 
-"tstat_Jan" => "1¿ù",
-"tstat_Feb" => "2¿ù",
-"tstat_Mar" => "3¿ù",
-"tstat_Apr" => "4¿ù",
-"tstat_May" => "5¿ù",
-"tstat_Jun" => "6¿ù",
-"tstat_Jul" => "7¿ù",
-"tstat_Aug" => "8¿ù",
-"tstat_Sep" => "9¿ù",
-"tstat_Oct" => "10¿ù",
-"tstat_Nov" => "11¿ù",
-"tstat_Dec" => "12¿ù",
+"tstat_jan" => "1ì›”",
+"tstat_feb" => "2ì›”",
+"tstat_mar" => "3ì›”",
+"tstat_apr" => "4ì›”",
+"tstat_may" => "5ì›”",
+"tstat_jun" => "6ì›”",
+"tstat_jul" => "7ì›”",
+"tstat_aug" => "8ì›”",
+"tstat_sep" => "9ì›”",
+"tstat_oct" => "10ì›”",
+"tstat_nov" => "11ì›”",
+"tstat_dec" => "12ì›”",
+"tstat_full_jan" => "January",
+"tstat_full_feb" => "February",
+"tstat_full_mar" => "March",
+"tstat_full_apr" => "April",
+"tstat_full_may" => "May",
+"tstat_full_jun" => "June",
+"tstat_full_jul" => "July",
+"tstat_full_aug" => "August",
+"tstat_full_sep" => "September",
+"tstat_full_oct" => "October",
+"tstat_full_nov" => "November",
+"tstat_full_dec" => "December",
 
-"tstat_last_day" => "ÀÏ°£",
-"tstat_last_week" => "ÁÖ°£",
-"tstat_last_month" => "¿ù°£",
-"tstat_last_year" => "³â°£",
+"tstat_last_day" => "ì¼ê°„",
+"tstat_last_week" => "ì£¼ê°„",
+"tstat_last_month" => "ì›”ê°„",
+"tstat_last_year" => "ë…„ê°„",
+"tstat_average" => "Average",
+
+// Loadtime notice
+"generated" => "page generated in ",
+"seconds" => " seconds",
 
 // Configuration page words and sentences
-"config_Variable_name" => "º¯¼ö¸í",
-"config_Variable_value" => "º¯¼ö°ª",
-"config_Explanations" => "¼³¸í",
+"config_variable_name" => "ë³€ìˆ˜ëª…",
+"config_variable_value" => "ë³€ìˆ˜ê°’",
+"config_explanations" => "ì„¤ëª…",
 
-"config_bbc_mainsite" =>
-"ÀÌ º¯¼ö°¡ ¼¼Æ® µÇ¾úÀ» °æ¿ì, ÁöÁ¤ÀÇ À§Ä¡¿¡ ¸µÅ©°¡ »ý¼ºµË´Ï´Ù.µðÆúÆ®´Â Ä£µð·ºÅä¸®ÀÔ´Ï´Ù.´ç½ÅÀÇ ÁÖ»çÀÌÆ®°¡ ´Ù¸¥ Àå¼Ò¿¡ À§Ä¡ÇÏ´Â °æ¿ì, °Å±â¿¡ ¸ÂÃß¾î °ªÀ» º¯°æÇØ ÁÖ¼¼¿ä<br />
-¿¹:<br />
+"config_BBC_MAINSITE" =>
+"ì´ ë³€ìˆ˜ê°€ ì„¸íŠ¸ ë˜ì—ˆì„ ê²½ìš°, ì§€ì •ì˜ ìœ„ì¹˜ì— ë§í¬ê°€ ìƒì„±ë©ë‹ˆë‹¤.ë””í´íŠ¸ëŠ” ì¹œë””ë ‰í† ë¦¬ìž…ë‹ˆë‹¤.ë‹¹ì‹ ì˜ ì£¼ì‚¬ì´íŠ¸ê°€ ë‹¤ë¥¸ ìž¥ì†Œì— ìœ„ì¹˜í•˜ëŠ” ê²½ìš°, ê±°ê¸°ì— ë§žì¶”ì–´ ê°’ì„ ë³€ê²½í•´ ì£¼ì„¸ìš”<br />
+ì˜ˆ:<br />
 \$BBC_MAINSITE = &quot;http://www.myserver.com/&quot;<br />
 \$BBC_MAINSITE = &quot;..&quot;<br />
 \$BBC_MAINSITE = &quot;&quot;;",
 
-"config_bbc_show_config" =>
-"Åë°èÀÇ ¼³Á¤À» Ç¥½ÃÇÏ´Â °ÍÀÌ BBCloneÀÇ µðÆúÆ®ÀÔ´Ï´Ù.Ç¥½Ã½ÃÅ°°í ½ÍÁö ¾ÊÀº °æ¿ì´Â °ø¹éÀ¸·Î ÇØ ÁÖ¼¼¿ä<br />
-¿¹:<br />
+"config_BBC_SHOW_CONFIG" =>
+"í†µê³„ì˜ ì„¤ì •ì„ í‘œì‹œí•˜ëŠ” ê²ƒì´ BBCloneì˜ ë””í´íŠ¸ìž…ë‹ˆë‹¤.í‘œì‹œì‹œí‚¤ê³  ì‹¶ì§€ ì•Šì€ ê²½ìš°ëŠ” ê³µë°±ìœ¼ë¡œ í•´ ì£¼ì„¸ìš”<br />
+ì˜ˆ:<br />
 \$BBC_SHOW_CONFIG = 1;<br />
 \$BBC_SHOW_CONFIG = &quot;&quot;;",
 
-"config_bbc_titlebar" =>
-"¸ðµç BBClone ÆäÀÌÁöÀÇ ³×ºñ°ÔÀÌ¼Ç ¹Ù¿¡ Ç¥½ÃµÇ°í ÀÖ´Â Å¸ÀÌÆ²
-´ÙÀ½ÀÇ ¸ÅÅ©·Î¸¦ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù:<br />
+"config_BBC_TITLEBAR" =>
+"ëª¨ë“  BBClone íŽ˜ì´ì§€ì˜ ë„¤ë¹„ê²Œì´ì…˜ ë°”ì— í‘œì‹œë˜ê³  ìžˆëŠ” íƒ€ì´í‹€
+ë‹¤ìŒì˜ ë§¤í¬ë¡œë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤:<br />
 <ul>
-<li>%SERVER: ¼­¹ö¸í,</li>
-<li>%DATE: ÀÏÀÚ.</li>
+<li>%SERVER: ì„œë²„ëª…,</li>
+<li>%DATE: ì¼ìž.</li>
 </ul>
-HTML ÅÂ±×µµ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.<br />
-¿¹:<br />
+HTML íƒœê·¸ë„ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.<br />
+ì˜ˆ:<br />
 \$BBC_TITLEBAR = &quot;Statistics for %SERVER generated the %DATE&quot;;<br />
 \$BBC_TITLEBAR = &quot;My stats from %DATE look like this:&quot;;
 <br />",
 
-"config_bbc_language" =>
-"BBCloneÀÇ µðÆúÆ® ¾ð¾î ÁöÁ¤ÀÔ´Ï´Ù.ºê¶ó¿ìÀú¿¡ ÀÇÇØ ¸í½ÃÀûÀ¸·Î ÁöÁ¤ÀÌ ¾ø´Â °æ¿ì, ´ÙÀ½ÀÇ ¾ð¾î¸¦ ¼­Æ÷Æ®ÇÕ´Ï´Ù.
+"config_BBC_LANGUAGE" =>
+"BBCloneì˜ ë””í´íŠ¸ ì–¸ì–´ ì§€ì •ìž…ë‹ˆë‹¤.ë¸Œë¼ìš°ì €ì— ì˜í•´ ëª…ì‹œì ìœ¼ë¡œ ì§€ì •ì´ ì—†ëŠ” ê²½ìš°, ë‹¤ìŒì˜ ì–¸ì–´ë¥¼ ì„œí¬íŠ¸í•©ë‹ˆë‹¤.
 <p>ar, bg, bs, ca, cs, da, de, el, en, es, fi, fr, hu, id, it, ja, ko, lt, mk, nb, nl, pl, pt, pt-br, ro, ru,
 sk, sl, sv, th, tr, ua, zh-cn and zh-tw</p>",
 
-"config_bbc_maxtime" =>
-"ÀÌ º¯¼ö´Â, µ¿ÀÏ ¾×¼¼½º¶ó°í º¸´Â ±æÀÌ¸¦ ÃÊ¿¡ Á¤ÀÇÇÕ´Ï´Ù.2È¸ÀÇ ¾×¼¼½ºÀÇ °£°ÝÀÌ ÁöÁ¤µÈ ÇÑ°è¸¦ ³ÑÁö ¾Ê´Â ÀÌ»ó ÀÌ ½Ã°£³»¿¡¼­ÀÇ µ¿ÀÏ ¾×¼¼½º´Â 1°³ÀÇ ¾×¼¼½º¶ó°í º¸¿©Áý´Ï´Ù.µðÆúÆ®´Â 30ºÐ (1800ÃÊ)ÀÔ´Ï´Ù.´Ù¸¥ °ªÀ» ÇÒ´çÇÒ ¼öµµ ÀÖ½À´Ï´Ù.<br />
-¿¹:<br />
+"config_BBC_MAXTIME" =>
+"ì´ ë³€ìˆ˜ëŠ”, ë™ì¼ ì•¡ì„¸ìŠ¤ë¼ê³  ë³´ëŠ” ê¸¸ì´ë¥¼ ì´ˆì— ì •ì˜í•©ë‹ˆë‹¤.2íšŒì˜ ì•¡ì„¸ìŠ¤ì˜ ê°„ê²©ì´ ì§€ì •ëœ í•œê³„ë¥¼ ë„˜ì§€ ì•ŠëŠ” ì´ìƒ ì´ ì‹œê°„ë‚´ì—ì„œì˜ ë™ì¼ ì•¡ì„¸ìŠ¤ëŠ” 1ê°œì˜ ì•¡ì„¸ìŠ¤ë¼ê³  ë³´ì—¬ì§‘ë‹ˆë‹¤.ë””í´íŠ¸ëŠ” 30ë¶„ (1800ì´ˆ)ìž…ë‹ˆë‹¤.ë‹¤ë¥¸ ê°’ì„ í• ë‹¹í•  ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤.<br />
+ì˜ˆ:<br />
 \$BBC_MAXTIME = 0;<br />
 \$BBC_MAXTIME = 1800;",
 
-"config_bbc_maxvisible" =>
-"»ó¼¼ÇÑ Åë°è·Î Ç¥½ÃÇÏ´Â ¿£Æ®¸®¼ö.µðÆúÆ®´Â 100ÀÔ´Ï´Ù. 500(µµ¿òÀÌ µÇÁö ¾Ê´Â´Ù)À» ³ÑÀº ¼³Á¤ÀºÇÏÁö ¸¶¼¼¿ä.",
+"config_BBC_MAXVISIBLE" =>
+"ìƒì„¸í•œ í†µê³„ë¡œ í‘œì‹œí•˜ëŠ” ì—”íŠ¸ë¦¬ìˆ˜.ë””í´íŠ¸ëŠ” 100ìž…ë‹ˆë‹¤. 500(ë„ì›€ì´ ë˜ì§€ ì•ŠëŠ”ë‹¤)ì„ ë„˜ì€ ì„¤ì •ì€í•˜ì§€ ë§ˆì„¸ìš”.",
 
-"config_bbc_detailed_stat_fields" =>
-"º¯¼ö $BBC_DETAILED_STAT_FIELDS ´Â »ó¼¼ Åë°è¿¡ Ç¥½ÃÇÏ±â À§ÇÑ ÄÃ·³À» °áÁ¤ÇÕ´Ï´Ù. ÀÌ¿ë °¡´ÉÇÑ ÄÃ·³¸í:
+"config_BBC_DETAILED_STAT_FIELDS" =>
+"ë³€ìˆ˜ $BBC_DETAILED_STAT_FIELDS ëŠ” ìƒì„¸ í†µê³„ì— í‘œì‹œí•˜ê¸° ìœ„í•œ ì»¬ëŸ¼ì„ ê²°ì •í•©ë‹ˆë‹¤. ì´ìš© ê°€ëŠ¥í•œ ì»¬ëŸ¼ëª…:
 <ul>
-<li>id&nbsp;=&gt;&nbsp;Ä«¿îÆ® °³½ÃºÎÅÍ ¸î¹øÂ°ÀÇ ¹æ¹®ÀÚÀÎ°¡</li>
-<li>time&nbsp;=&gt;&nbsp;ÃÖÁ¾ ¹æ¹®½Ã°£</li>
-<li>visits&nbsp;=&gt;&nbsp;µ¿ÀÏ ¹æ¹®ÀÚÀÇ ¾×¼¼½º¼ö</li>
-<li>dns&nbsp;=&gt;&nbsp;¹æ¹®ÀÚÀÇ È£½ºÆ®¸í</li>
-<li>ip&nbsp;=&gt;&nbsp;¹æ¹®ÀÚÀÇ IPÁÖ¼Ò</li>
-<li>os&nbsp;=&gt;&nbsp;OSÁ¾º°(°¡´ÉÇÏ¸é °Ë»ö ·Îº¸Æ® µîµµ)</li>
-<li>browser&nbsp;=&gt;&nbsp;Á¢¼Ó¿¡ ÀÌ¿ëµÈ ¼ÒÇÁÆ®¿þ¾î</li>
-<li>ext&nbsp;=&gt;&nbsp; ¹æ¹®ÀÚÀÇ ±¹º° ÄÚµå</li>
-<li>referer&nbsp;=&gt;&nbsp;¹æ¹®ÀÚ´Â ¾îµð¿¡¼­ ¿Ô´ÂÁö (°¡´ÉÇÑ °æ¿ì)</li>
-<li>page&nbsp;=&gt;&nbsp;ÃÖÁ¾ ¹æ¹® ÆäÀÌÁö</li>
-<li>search&nbsp;=&gt;&nbsp;¹æ¹®ÀÚ°¡ »ç¿ëÇÑ Äõ¸®(°¡´ÉÇÑ °æ¿ì)</li>
+<li>id&nbsp;=&gt;&nbsp;ì¹´ìš´íŠ¸ ê°œì‹œë¶€í„° ëª‡ë²ˆì§¸ì˜ ë°©ë¬¸ìžì¸ê°€</li>
+<li>time&nbsp;=&gt;&nbsp;ìµœì¢… ë°©ë¬¸ì‹œê°„</li>
+<li>visits&nbsp;=&gt;&nbsp;ë™ì¼ ë°©ë¬¸ìžì˜ ì•¡ì„¸ìŠ¤ìˆ˜</li>
+<li>dns&nbsp;=&gt;&nbsp;ë°©ë¬¸ìžì˜ í˜¸ìŠ¤íŠ¸ëª…</li>
+<li>ip&nbsp;=&gt;&nbsp;ë°©ë¬¸ìžì˜ IPì£¼ì†Œ</li>
+<li>os&nbsp;=&gt;&nbsp;OSì¢…ë³„(ê°€ëŠ¥í•˜ë©´ ê²€ìƒ‰ ë¡œë³´íŠ¸ ë“±ë„)</li>
+<li>browser&nbsp;=&gt;&nbsp;ì ‘ì†ì— ì´ìš©ëœ ì†Œí”„íŠ¸ì›¨ì–´</li>
+<li>ext&nbsp;=&gt;&nbsp; ë°©ë¬¸ìžì˜ êµ­ë³„ ì½”ë“œ</li>
+<li>referer&nbsp;=&gt;&nbsp;ë°©ë¬¸ìžëŠ” ì–´ë””ì—ì„œ ì™”ëŠ”ì§€ (ê°€ëŠ¥í•œ ê²½ìš°)</li>
+<li>page&nbsp;=&gt;&nbsp;ìµœì¢… ë°©ë¬¸ íŽ˜ì´ì§€</li>
+<li>search&nbsp;=&gt;&nbsp;ë°©ë¬¸ìžê°€ ì‚¬ìš©í•œ ì¿¼ë¦¬(ê°€ëŠ¥í•œ ê²½ìš°)</li>
 </ul>
-ÄÃ·³À» ¾î·¹ÀÎÁö ÇÑ ¸í·ÉÀº Ç¥½Ã¸¦ À§ÇØ¼­µµ »ç¿ëµË´Ï´Ù.<br />
-¿¹:<br />
+ì»¬ëŸ¼ì„ ì–´ë ˆì¸ì§€ í•œ ëª…ë ¹ì€ í‘œì‹œë¥¼ ìœ„í•´ì„œë„ ì‚¬ìš©ë©ë‹ˆë‹¤.<br />
+ì˜ˆ:<br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;id, time, visits, ip, ext, os, browser&quot;;
 <br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;date, ext, browser, os, ip&quot;;<br />",
 
-"config_bbc_time_offset" =>
-"¼­¹öÀÇ ½Ã°è°¡ ´ç½ÅÀÇ Áö¿ªÀÇ Å¸ÀÓ Á¸°ú ÀÏÄ¡ÇÏÁö ¾Ê´Â °æ¿ì, ÀÌ ½ºÀ­Ä¡ÀÇ »ç¿ë¿¡ ÀÇÇØ ¼ö´ÜÀ§·Î ½Ã°£À» Á¶ÀýÇÒ ¼ö°¡ ÀÖ½À´Ï´Ù.¸¶ÀÌ³Ê½ºÀÇ °ªÀº ½Ã°£À» µÇµ¹·Á, ÇÃ·¯½º´Â ÁøÇàÇÕ´Ï´Ù.<br />
-¿¹:<br />
+"config_BBC_TIME_OFFSET" =>
+"ì„œë²„ì˜ ì‹œê³„ê°€ ë‹¹ì‹ ì˜ ì§€ì—­ì˜ íƒ€ìž„ ì¡´ê³¼ ì¼ì¹˜í•˜ì§€ ì•ŠëŠ” ê²½ìš°, ì´ ìŠ¤ìœ—ì¹˜ì˜ ì‚¬ìš©ì— ì˜í•´ ìˆ˜ë‹¨ìœ„ë¡œ ì‹œê°„ì„ ì¡°ì ˆí•  ìˆ˜ê°€ ìžˆìŠµë‹ˆë‹¤.ë§ˆì´ë„ˆìŠ¤ì˜ ê°’ì€ ì‹œê°„ì„ ë˜ëŒë ¤, í”ŒëŸ¬ìŠ¤ëŠ” ì§„í–‰í•©ë‹ˆë‹¤.<br />
+ì˜ˆ:<br />
 \$BBC_TIME_OFFSET = 300;<br />
 \$BBC_TIME_OFFSET = -300;<br />
 \$BBC_TIME_OFFSET = 0;",
 
-"config_bbc_no_dns" =>
-"IPÁÖ¼Ò¸¦ È£½ºÆ®¸íÀ¸·Î º¯È¯ÇÏ´ÂÁö ¾î¶²ÁöÀÇ ¿É¼Ç.»ç¿ëÇÏ°í ÀÖ´Â DNS ¼­¹ö°¡ ´ÊÀº, ºÎÇÏ Á¦ÇÑÀ» ÇÏ°í ÀÖ´Ù, ¶Ç´Â ½Å·Ú¼ºÀÇ ³·Àº °æ¿ì, ÀÌ¸§ÀÇ ÇØ°áÀº ´ç½ÅÀÇ ÀÌ¿ëÇÏ°í ÀÖ´Â ¼­¹ö¿¡¿¡ ºÎ´ãÀ» ÁÙÁöµµ ¸ð¸¨´Ï´Ù.ÀÌ º¯¼ö¼¼Æ®´Â ±× ¹®Á¦¸¦ ÇØ°áÇÏ±â À§ÇÑÀÇ °ÍÀÔ´Ï´Ù.<br />
-¿¹:<br />
+"config_BBC_NO_DNS" =>
+"IPì£¼ì†Œë¥¼ í˜¸ìŠ¤íŠ¸ëª…ìœ¼ë¡œ ë³€í™˜í•˜ëŠ”ì§€ ì–´ë–¤ì§€ì˜ ì˜µì…˜.ì‚¬ìš©í•˜ê³  ìžˆëŠ” DNS ì„œë²„ê°€ ëŠ¦ì€, ë¶€í•˜ ì œí•œì„ í•˜ê³  ìžˆë‹¤, ë˜ëŠ” ì‹ ë¢°ì„±ì˜ ë‚®ì€ ê²½ìš°, ì´ë¦„ì˜ í•´ê²°ì€ ë‹¹ì‹ ì˜ ì´ìš©í•˜ê³  ìžˆëŠ” ì„œë²„ì—ì— ë¶€ë‹´ì„ ì¤„ì§€ë„ ëª¨ë¦…ë‹ˆë‹¤.ì´ ë³€ìˆ˜ì„¸íŠ¸ëŠ” ê·¸ ë¬¸ì œë¥¼ í•´ê²°í•˜ê¸° ìœ„í•œì˜ ê²ƒìž…ë‹ˆë‹¤.<br />
+ì˜ˆ:<br />
 \$BBC_NO_DNS = 1;<br />
 \$BBC_NO_DNS = &quot;&quot;;",
 
-"config_bbc_no_hits" =>
-"½ÇÁ¦ÀÇ ¼­¹ö ¿î¿ë¿¡ ÀÖ¾î À¯ÀÍÇÏ´Ù¶ó°í »ý°¢µÇ±â (À§ÇØ)¶§¹®¿¡, BBCloneÀÇ µðÆúÆ®´Â ½Ã°£º° Åë°è Áß(¾È)¿¡¼­ È÷Æ®¼ö¸¦ ³ªÅ¸³»°Ô µÇ¾î ÀÖ½À´Ï´Ù.±×·¯³ª, ´ç½ÅÀÇ ½Ã°£ Åë°è¿ëÀ¸·Î µ¶Æ¯ÇÑ ¹æ¹®À» »ç¿ëÇÏ´Â ÆíÀÌ ÁÁ´Ù¸é, ÀÌ º¯¼ö¼¼Æ®¿¡ ÀÇÇØ ¼¼´Â ¹æ¹ýÀ» º¯°æÇÒ ¼ö°¡ ÀÖ½À´Ï´Ù.<br />
-¿¹:<br />
+"config_BBC_NO_HITS" =>
+"ì‹¤ì œì˜ ì„œë²„ ìš´ìš©ì— ìžˆì–´ ìœ ìµí•˜ë‹¤ë¼ê³  ìƒê°ë˜ê¸° (ìœ„í•´)ë•Œë¬¸ì—, BBCloneì˜ ë””í´íŠ¸ëŠ” ì‹œê°„ë³„ í†µê³„ ì¤‘(ì•ˆ)ì—ì„œ ížˆíŠ¸ìˆ˜ë¥¼ ë‚˜íƒ€ë‚´ê²Œ ë˜ì–´ ìžˆìŠµë‹ˆë‹¤.ê·¸ëŸ¬ë‚˜, ë‹¹ì‹ ì˜ ì‹œê°„ í†µê³„ìš©ìœ¼ë¡œ ë…íŠ¹í•œ ë°©ë¬¸ì„ ì‚¬ìš©í•˜ëŠ” íŽ¸ì´ ì¢‹ë‹¤ë©´, ì´ ë³€ìˆ˜ì„¸íŠ¸ì— ì˜í•´ ì„¸ëŠ” ë°©ë²•ì„ ë³€ê²½í•  ìˆ˜ê°€ ìžˆìŠµë‹ˆë‹¤.<br />
+ì˜ˆ:<br />
 \$BBC_NO_HITS = 1;<br />
 \$BBC_NO_HITS = &quot;&quot;;",
 
-"config_bbc_ignore_ip" =>
-"ÀÌ ¿É¼ÇÀº Æ¯º°ÇÑ IPÁÖ¼Ò È¤Àº ÁÖ¼ÒÀÇ ¹üÀ§¸¦ Åë°è·ÎºÎÅÍ Á¦¿ÜÇÏ±â À§ÇØ¼­ »ç¿ëÇÒ ¼ö°¡ ÀÖ½À´Ï´Ù.¼¼ÆÛ·¹ÀÌÅÍ·Î¼­ ÄÞ¸¶¸¦ »ç¿ë ÇÒ ¼ö ÀÖ½À´Ï´Ù.<br />
-¿¹:<br />
+"config_BBC_IGNORE_IP" =>
+"ì´ ì˜µì…˜ì€ íŠ¹ë³„í•œ IPì£¼ì†Œ í˜¹ì€ ì£¼ì†Œì˜ ë²”ìœ„ë¥¼ í†µê³„ë¡œë¶€í„° ì œì™¸í•˜ê¸° ìœ„í•´ì„œ ì‚¬ìš©í•  ìˆ˜ê°€ ìžˆìŠµë‹ˆë‹¤.ì„¸í¼ë ˆì´í„°ë¡œì„œ ì½¤ë§ˆë¥¼ ì‚¬ìš© í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.<br />
+ì˜ˆ:<br />
 \$BBC_IGNORE_IP = &quot;127., 192.168.&quot;;<br />
 \$BBC_IGNORE_IP = &quot;&quot;;",
 
-"config_bbc_ignore_refer" =>
-"´ç½ÅÀÇ Åë°è¿¡ Æ¯Á¤ÀÇ »çÀÌÆ®·ÎºÎÅÍ ¿Â ¾×¼¼½º(¸®ÆÄ¶ó)¸¦ Á¦¿ÜÇÒ ¼ö°¡ ÀÖ½À´Ï´Ù.º¹¼öÀÇ Å°¿öµå¸¦ »ç¿ëÇÏ´Â °æ¿ì´Â, ¼¼ÆÛ·¹ÀÌÅÍ·Î¼­ ÄÞ¸¶¸¦ »ç¿ëÇØ ÁÖ¼¼¿ä.<br />
-¿¹:<br />
+"config_BBC_IGNORE_REFER" =>
+"ë‹¹ì‹ ì˜ í†µê³„ì— íŠ¹ì •ì˜ ì‚¬ì´íŠ¸ë¡œë¶€í„° ì˜¨ ì•¡ì„¸ìŠ¤(ë¦¬íŒŒë¼)ë¥¼ ì œì™¸í•  ìˆ˜ê°€ ìžˆìŠµë‹ˆë‹¤.ë³µìˆ˜ì˜ í‚¤ì›Œë“œë¥¼ ì‚¬ìš©í•˜ëŠ” ê²½ìš°ëŠ”, ì„¸í¼ë ˆì´í„°ë¡œì„œ ì½¤ë§ˆë¥¼ ì‚¬ìš©í•´ ì£¼ì„¸ìš”.<br />
+ì˜ˆ:<br />
 \$BBC_IGNORE_REFER = &quot;spambot.org, .escort.&quot;;<br />
 \$BBC_IGNORE_REFER = &quot;&quot;;",
 
-"config_bbc_ignore_bots" =>
-"°Ë»ö ·Îº¸Æ®¸¦ ¾î¶»°Ô Ã³¸®ÇÒ±îÀÇ ¿É¼Ç.µðÆúÆ®´Â, ¡¸Å¾ÀÇ È£½ºÆ® ¼øÀ§Áß¿¡¼­´Â ¹«½ÃÇØ, ±× ¿ÜÀÇ Åë°è Áß(¾È)¿¡¼­´Â ³²±ä´Ù¡¹ÀÔ´Ï´Ù.¾î¶² °Ë»ö ·Îº¸Æ®µµ º¸°í ½ÍÁö ¾ÊÀ¸¸é, &quot;2&quot;ÀÔ´Ï´Ù.»ç¶÷ÀÇ ¹æ¹®¸¸ÀÌ, Ä«¿îÆ® µÇ°ÚÁö¿ä.<br />
-¿¹:<br />
+"config_BBC_IGNORE_BOTS" =>
+"ê²€ìƒ‰ ë¡œë³´íŠ¸ë¥¼ ì–´ë–»ê²Œ ì²˜ë¦¬í• ê¹Œì˜ ì˜µì…˜.ë””í´íŠ¸ëŠ”, ã€Œíƒ‘ì˜ í˜¸ìŠ¤íŠ¸ ìˆœìœ„ì¤‘ì—ì„œëŠ” ë¬´ì‹œí•´, ê·¸ ì™¸ì˜ í†µê³„ ì¤‘(ì•ˆ)ì—ì„œëŠ” ë‚¨ê¸´ë‹¤ã€ìž…ë‹ˆë‹¤.ì–´ë–¤ ê²€ìƒ‰ ë¡œë³´íŠ¸ë„ ë³´ê³  ì‹¶ì§€ ì•Šìœ¼ë©´, &quot;2&quot;ìž…ë‹ˆë‹¤.ì‚¬ëžŒì˜ ë°©ë¬¸ë§Œì´, ì¹´ìš´íŠ¸ ë˜ê² ì§€ìš”.<br />
+ì˜ˆ:<br />
 \$BBC_IGNORE_BOTS = 2;<br />
 \$BBC_IGNORE_BOTS = 1;<br />
 \$BBC_IGNORE_BOTS = &quot;&quot;;",
 
-"config_bbc_ignore_agent" =>
-"ÀÌ ¿É¼ÇÀº, BBClone°¡ ¾î¶»°Ô 1¸íÀÇ ¹æ¹®°´À» ±¸º°ÇÒ±îÀÇ Á¤ÀÇ¸¦ ÇÕ´Ï´Ù.µðÆúÆ®´Â IPÁÖ¼Ò¸¸(±×°ÍÀº ´ëºÎºÐÀÇ °æ¿ì Çö½ÇÀû)À» »ç¿ëÇÏ´Â °ÍÀÔ´Ï´Ù.±×·¸Áö¸¸, ´ç½ÅÀÇ ¹æ¹®°´ÀÌ Proxy ¼­¹ö¸¦ »ç¿ëÇÏ°Å³ª ÇÏ°í ÀÖ´Â °æ¿ì, ÀÌ ¿É¼ÇÀ» ¿ÀÇÁ·Î ÇÏ´Â °Í¿¡ ÀÇÇØ º¸´Ù Çö½ÇÀûÀÎ Åë°è¸¦ Á¦°øÇÒ ¼ö°¡ ÀÖ½À´Ï´Ù.<br />
-¿¹:<br />
+"config_BBC_IGNORE_AGENT" =>
+"ì´ ì˜µì…˜ì€, BBCloneê°€ ì–´ë–»ê²Œ 1ëª…ì˜ ë°©ë¬¸ê°ì„ êµ¬ë³„í• ê¹Œì˜ ì •ì˜ë¥¼ í•©ë‹ˆë‹¤.ë””í´íŠ¸ëŠ” IPì£¼ì†Œë§Œ(ê·¸ê²ƒì€ ëŒ€ë¶€ë¶„ì˜ ê²½ìš° í˜„ì‹¤ì )ì„ ì‚¬ìš©í•˜ëŠ” ê²ƒìž…ë‹ˆë‹¤.ê·¸ë ‡ì§€ë§Œ, ë‹¹ì‹ ì˜ ë°©ë¬¸ê°ì´ Proxy ì„œë²„ë¥¼ ì‚¬ìš©í•˜ê±°ë‚˜ í•˜ê³  ìžˆëŠ” ê²½ìš°, ì´ ì˜µì…˜ì„ ì˜¤í”„ë¡œ í•˜ëŠ” ê²ƒì— ì˜í•´ ë³´ë‹¤ í˜„ì‹¤ì ì¸ í†µê³„ë¥¼ ì œê³µí•  ìˆ˜ê°€ ìžˆìŠµë‹ˆë‹¤.<br />
+ì˜ˆ:<br />
 \$BBC_IGNORE_AGENT = 1;<br />
 \$BBC_IGNORE_AGENT = &quot;&quot;;",
 
-"config_bbc_kill_stats" =>
-"Åë°è¸¦ ¸®¼ÂÆ® ÇÏ°í ½ÍÀº °æ¿ì´Â, ÀÌ ½ºÀ­Ä¡¸¦ ¿ÂÀ¸·Î ÇØ, ´ÙÀ½ÀÇ ¾×¼¼½º¿¡ ÀÇÇØ ±×°ÍµéÀ» »èÁ¦ÇÒ ¼ö°¡ ÀÖ½À´Ï´Ù.¹ÙÅÁÀ¸·Î µÇµ¹¸®´Â ÀÏÀ» ÀØÀ¸¸é(ÀÚ), ¾Æ¸¶ ºñÁ¤»óÀ¸·Î ³·Àº Æ®·¡ÇÈÀ» °æÇèÇÏ°ÚÁö¿ä;) <br />
-¿¹:<br />
+"config_BBC_KILL_STATS" =>
+"í†µê³„ë¥¼ ë¦¬ì…‹íŠ¸ í•˜ê³  ì‹¶ì€ ê²½ìš°ëŠ”, ì´ ìŠ¤ìœ—ì¹˜ë¥¼ ì˜¨ìœ¼ë¡œ í•´, ë‹¤ìŒì˜ ì•¡ì„¸ìŠ¤ì— ì˜í•´ ê·¸ê²ƒë“¤ì„ ì‚­ì œí•  ìˆ˜ê°€ ìžˆìŠµë‹ˆë‹¤.ë°”íƒ•ìœ¼ë¡œ ë˜ëŒë¦¬ëŠ” ì¼ì„ ìžŠìœ¼ë©´(ìž), ì•„ë§ˆ ë¹„ì •ìƒìœ¼ë¡œ ë‚®ì€ íŠ¸ëž˜í”½ì„ ê²½í—˜í•˜ê² ì§€ìš”;) <br />
+ì˜ˆ:<br />
 \$BBC_KILL_STATS = 1;<br />
 \$BBC_KILL_STATS = &quot;&quot;;",
 
-"config_bbc_purge_single" =>
-"È£½ºÆ®¿Í ¸®ÆÄ¶óÀÇ Åë°è´Â 1È¸ÀÇ ¹æ¹®°´ÀÇ ¹æ¹®¿¡ ÀÇÇØ ´ë·®ÀÇ µ¥ÀÌÅÍ¸¦ »ý¼ºÇÕ´Ï´Ù.ÀÌ ½ºÀ­Ä¡¸¦ ¿ÂÀ¸·Î ÇÏ´Â °Í¿¡ ÀÇÇØ, ÀÌ·¯ÇÑ ¿£Æ®¸®¸¦ Á¦°ÅÇØ, ´ç½ÅÀÇ ½ÇÁ¦ÀÇ È£½ºÆ® ¹× ¸®ÆÄ¶óÀÇ ·©Å·¿¡ ¿µÇâÀ» ÁÖÁö ¾Ê°í , access.phpÀÇ »çÀÌÁî¸¦ ÀÛ°Ô ÇÒ ¼ö°¡ ÀÖ½À´Ï´Ù.ÀÌ È÷Æ®·®Àº&quot;not_specified&quot;(Á¾ÇÕ ÆòÁ¡À» ¿ÏÀüÇÏ°Ô ÇØ µÎ´Â ¿£Æ®¸®)¿¡ ´õÇØÁö°ÚÁö¿ä.<br />
-¿¹:<br />
+"config_BBC_PURGE_SINGLE" =>
+"í˜¸ìŠ¤íŠ¸ì™€ ë¦¬íŒŒë¼ì˜ í†µê³„ëŠ” 1íšŒì˜ ë°©ë¬¸ê°ì˜ ë°©ë¬¸ì— ì˜í•´ ëŒ€ëŸ‰ì˜ ë°ì´í„°ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.ì´ ìŠ¤ìœ—ì¹˜ë¥¼ ì˜¨ìœ¼ë¡œ í•˜ëŠ” ê²ƒì— ì˜í•´, ì´ëŸ¬í•œ ì—”íŠ¸ë¦¬ë¥¼ ì œê±°í•´, ë‹¹ì‹ ì˜ ì‹¤ì œì˜ í˜¸ìŠ¤íŠ¸ ë° ë¦¬íŒŒë¼ì˜ ëž­í‚¹ì— ì˜í–¥ì„ ì£¼ì§€ ì•Šê³  , access.phpì˜ ì‚¬ì´ì¦ˆë¥¼ ìž‘ê²Œ í•  ìˆ˜ê°€ ìžˆìŠµë‹ˆë‹¤.ì´ ížˆíŠ¸ëŸ‰ì€&quot;not_specified&quot;(ì¢…í•© í‰ì ì„ ì™„ì „í•˜ê²Œ í•´ ë‘ëŠ” ì—”íŠ¸ë¦¬)ì— ë”í•´ì§€ê² ì§€ìš”.<br />
+ì˜ˆ:<br />
 \$BBC_PURGE_SINGLE = 1;<br />
 \$BBC_PURGE_SINGLE = &quot;&quot;;"
 

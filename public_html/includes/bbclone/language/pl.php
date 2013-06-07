@@ -1,40 +1,34 @@
 <?php
 /* This file is part of BBClone (The PHP web counter on steroids)
  *
- * $Header: /cvs/bbclone/language/pl.php,v 1.49 2009/06/21 07:33:09 joku Exp $
+ * CVS File $Id: pl.php,v 1.67 2011/12/30 23:03:24 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  *
  * Translated by: Dariusz Kramin, kramer@irc.pl
  */
 
-// The main array ($_ is for doing short in its call)
-$_ = array(
-// Specific charset
-"global_charset" => "iso-8859-2",
+// The DNS Extensions array
+$extensions = array(
+"travel" => "Travel",
+"asia" => "Asia-Pacific",
+"jobs" => "Employment",
+"mobi" => "Mobiles",
+"cat" => "Catalan",
+"tel" => "Contacts",
 
-// Date format (used with date() )
-"global_date_format" => "Y/m/d",
-
-// Global translation
-"global_bbclone_copyright" => "Grupa BBClone - Na licencji",
-"global_last_reset" => "Statistics last reset on",
-"global_yes" => "tak",
-"global_no" => "nie",
-
-// The error messages
-"error_cannot_see_config" =>
-"Nie posiadasz uprawnieñ do ogl±dania konfiguracji statystyk.",
-
-// Address Extensions
 "ac" => "Wyspa Ascension",
 "ad" => "Andora",
 "ae" => "Zjednoczone Emiraty Arabskie",
@@ -48,22 +42,24 @@ $_ = array(
 "ao" => "Angola",
 "aq" => "Antarktyka",
 "ar" => "Argentyna",
-"arpa" => "B³±d DNS",
-"as" => "Samoa Amerykañska",
+"arpa" => "BÅ‚Ä…d DNS",
+"as" => "Samoa AmerykaÅ„ska",
 "at" => "Austria",
 "au" => "Australia",
 "aw" => "Aruba",
-"az" => "Azerbejd¿an",
-"ba" => "Bo¶nia i Hercegowina",
+"ax" => "Wyspy Alandzkie",
+"az" => "AzerbejdÅ¼an",
+"ba" => "BoÅ›nia i Hercegowina",
 "bb" => "Barbados",
 "bd" => "Bangladesz",
 "be" => "Belgia",
 "bf" => "Burkina Faso",
-"bg" => "Bu³garia",
+"bg" => "BuÅ‚garia",
 "bh" => "Bahrain",
 "bi" => "Burundi",
 "biz" => "Business",
 "bj" => "Benin",
+"bl" => "Saint-BarthÃ©lemy",
 "bm" => "Bermudy",
 "bn" => "Brunea",
 "bo" => "Boliwia",
@@ -72,7 +68,7 @@ $_ = array(
 "bt" => "Bhutan",
 "bv" => "Bouvet Island",
 "bw" => "Botswana",
-"by" => "Bia³oru¶",
+"by" => "BiaÅ‚oruÅ›",
 "bz" => "Belize",
 "ca" => "Kanada",
 "cc" => "Wyspy Kokosowe",
@@ -80,7 +76,7 @@ $_ = array(
 "cf" => "Republika Afyki",
 "cg" => "Kongo",
 "ch" => "Szwajcaria",
-"ci" => "Wybrze¿e Ko¶ci S³oniowej",
+"ci" => "WybrzeÅ¼e KoÅ›ci SÅ‚oniowej",
 "ck" => "Wyspy Cooka",
 "cl" => "Czile",
 "cm" => "Kamerun",
@@ -117,7 +113,7 @@ $_ = array(
 "fo" => "Wyspy Faroe",
 "fr" => "Francja",
 "ga" => "Gabon",
-"gb" => "Zjednoczone Królestwo Brytyjskie",
+"gb" => "Zjednoczone KrÃ³lestwo Brytyjskie",
 "gd" => "Grenada",
 "ge" => "Georgia",
 "gf" => "Gujana Francuska",
@@ -127,11 +123,11 @@ $_ = array(
 "gl" => "Grenlandia",
 "gm" => "Gambia",
 "gn" => "Gwinea",
-"gov" => "Rz±dy",
+"gov" => "RzÄ…dy",
 "gp" => "Gwadelupa",
-"gq" => "Gwinea Równikowa",
+"gq" => "Gwinea RÃ³wnikowa",
 "gr" => "Grecja",
-"gs" => "Po³udniowa Georgia i Wyspy Sandwitch",
+"gs" => "PoÅ‚udniowa Georgia i Wyspy Sandwitch",
 "gt" => "Gwatemala",
 "gu" => "Guam",
 "gw" => "Gwinea-Bissau",
@@ -141,7 +137,7 @@ $_ = array(
 "hn" => "Honduras",
 "hr" => "Chorwacja",
 "ht" => "Haiti",
-"hu" => "Wêgry",
+"hu" => "WÄ™gry",
 "id" => "Indonezja",
 "ie" => "Irlandia",
 "il" => "Izrael",
@@ -153,7 +149,7 @@ $_ = array(
 "iq" => "Irak",
 "ir" => "Iran",
 "is" => "Islandia",
-"it" => "W³ochy",
+"it" => "WÅ‚ochy",
 "je" => "Jersey",
 "jm" => "Jamajka",
 "jo" => "Jordania",
@@ -171,18 +167,20 @@ $_ = array(
 "kz" => "Kazahstan",
 "la" => "Laos",
 "lb" => "Lebanon",
-"lc" => "¦wiêta ucja",
+"lc" => "ÅšwiÄ™ta ucja",
 "li" => "Lichtenstein",
 "lk" => "Sri Lanka",
 "lr" => "Liberia",
 "ls" => "Lesotho",
 "lt" => "Litwa",
 "lu" => "Luxemburg",
-"lv" => "£otwa",
+"lv" => "Åotwa",
 "ly" => "Libia",
 "ma" => "Maroko",
 "mc" => "Monako",
-"md" => "Mo³dawia",
+"md" => "MoÅ‚dawia",
+"me" => "CzarnogÃ³ra",
+"mf" => "Saint-Martin",
 "mg" => "Madagaskar",
 "mh" => "Wyspy Marshalla",
 "mil" => "Wojsko USA",
@@ -191,7 +189,7 @@ $_ = array(
 "mm" => "Myanmar",
 "mn" => "Mongolia",
 "mo" => "Macau",
-"mp" => "Pó³nocne Wyspy Mariana",
+"mp" => "PÃ³Å‚nocne Wyspy Mariana",
 "mq" => "Martinika",
 "mr" => "Mauretania",
 "ms" => "Montserrat",
@@ -238,6 +236,7 @@ $_ = array(
 "qa" => "Katar",
 "re" => "Reunion",
 "ro" => "Rumunia",
+"rs" => "Serbia",
 "ru" => "Federacja Rosyjska",
 "rw" => "Rwanda",
 "sa" => "Arabia Saudyjska",
@@ -246,23 +245,23 @@ $_ = array(
 "sd" => "Sudan",
 "se" => "Szwecja",
 "sg" => "Singapur",
-"sh" => "Wyspa ¦wiêtej Heleny",
-"si" => "S³owenia",
+"sh" => "Wyspa ÅšwiÄ™tej Heleny",
+"si" => "SÅ‚owenia",
 "sj" => "Svalbard i wyspy Jan Mayen",
-"sk" => "S³owacja",
+"sk" => "SÅ‚owacja",
 "sl" => "Sierra Leone",
 "sm" => "San Marino",
 "sn" => "Senegal",
 "so" => "Somalia",
 "sr" => "Surinam",
 "st" => "Sao Tome",
-"su" => "Zwi±zek Radziecki",
+"su" => "ZwiÄ…zek Radziecki",
 "sv" => "Salwador",
 "sy" => "Syria",
 "sz" => "Swaziland",
 "tc" => "Wyspy Kaiko",
 "td" => "Czad",
-"tf" => "Francuskie Terytorium Po³udniowe",
+"tf" => "Francuskie Terytorium PoÅ‚udniowe",
 "tg" => "Togo",
 "th" => "Tailandia",
 "tj" => "Tajikistan",
@@ -279,7 +278,7 @@ $_ = array(
 "tz" => "Tanzania",
 "ua" => "Ukraina",
 "ug" => "Uganda",
-"uk" => "Zjednoczone Królestwo",
+"uk" => "Zjednoczone KrÃ³lestwo",
 "um" => "Pozaterytorialne wyspy USA",
 "unknown" => "Nieznany",
 "us" => "Stany Zjednoczone",
@@ -297,10 +296,33 @@ $_ = array(
 "ye" => "Jemen",
 "yt" => "Majott",
 "yu" => "Serbia and Montenegro",
-"za" => "Po³udniowa Afryka",
+"za" => "PoÅ‚udniowa Afryka",
 "zm" => "Zambia",
 "zr" => "Zair",
 "zw" => "Zimbabwe",
+);
+
+// The main Translation array
+$translation = array(
+// Specific charset
+"global_charset" => "utf-8",
+
+// Date format (used with date())
+"global_time_format" => "j M, H:i:s",
+"global_day_format" => "l j F Y",
+"global_hours_format" => "l j F Y G:00",
+"global_month_format" => "F Y",
+
+// Global translation
+"global_titlebar" => "Statystyki dla %SERVER generowane %DATE",
+"global_bbclone_copyright" => "Grupa BBClone - Na licencji",
+"global_last_reset" => "Statystyki ostatnich wyzerowanie",
+"global_yes" => "tak",
+"global_no" => "nie",
+
+// The error messages
+"error_cannot_see_config" =>
+"Nie posiadasz uprawnieÅ„ do oglÄ…dania konfiguracji statystyk.",
 
 // Miscellaneous translations
 "misc_other" => "Inne",
@@ -309,11 +331,13 @@ $_ = array(
 "misc_ignored" => "Ignored",
 
 // The Navigation Bar
-"navbar_Main_Site" => "Strona G³ówna",
-"navbar_Configuration" => "Konfiguracja",
-"navbar_Global_Stats" => "G³ówna statystyka",
-"navbar_Detailed_Stats" => "Statystyka szczegó³owa",
-"navbar_Time_Stats" => "Statystyka czasowa",
+"navbar_main_site" => "Strona GÅ‚Ã³wna",
+"navbar_configuration" => "Konfiguracja",
+"navbar_global_stats" => "GÅ‚Ã³wna statystyka",
+"navbar_detailed_stats" => "Statystyka szczegÃ³Å‚owa",
+"navbar_time_stats" => "Statystyka czasowa",
+"navbar_language" => "JÄ™zyk",
+"navbar_go" => "przejdÅº",
 
 // Detailed stats words
 "dstat_id" => "ID",
@@ -323,72 +347,100 @@ $_ = array(
 "dstat_dns" => "Hostname",
 "dstat_from" => "OD",
 "dstat_os" => "System",
-"dstat_browser" => "Przegl±darka",
+"dstat_browser" => "PrzeglÄ…darka",
 "dstat_visible_rows" => "Widoczne odwiedziny",
-"dstat_green_rows" => "zielone rzêdy",
-"dstat_blue_rows" => "niebieskie rzêdy",
-"dstat_red_rows" => "czerwone rzêdy",
-"dstat_search" => "Search",
-"dstat_last_page" => "Last Page",
+"dstat_green_rows" => "zielone rzÄ™dy",
+"dstat_blue_rows" => "niebieskie rzÄ™dy",
+"dstat_red_rows" => "czerwone rzÄ™dy",
+"dstat_search" => "szukaj",
+"dstat_last_page" => "ostatnia strona",
 "dstat_last_visit" => "ostatnie wizyty",
 "dstat_robots" => "roboty",
-"dstat_no_data" => "No data available",
+"dstat_my_visit" => "Visits from your IP",
+"dstat_no_data" => "Niema danych do dyspozycji",
 "dstat_prx" => "Proxy Server",
 "dstat_ip" => "IP Address",
 "dstat_user_agent" => "User Agent",
 "dstat_nr" => "Nr",
-"dstat_pages" => "Pages",
+"dstat_pages" => "Strony",
 "dstat_visit_length" => "Visit Length",
 "dstat_reloads" => "Reloads",
+"dstat_whois_information" => "Wyszukiwanie informacji na ten IP Address",
 
 // Global stats words
-"gstat_Accesses" => "Dostêpy",
-"gstat_Total_visits" => "Wszytkie wizyty",
-"gstat_Total_unique" => "Unikalne adresy",
-"gstat_Operating_systems" => "%d pierwszych Systemy operacyjne",
-"gstat_Browsers" => "%d pierwszych Przegl±darki",
-"gstat_extensions" => "%d pierwszych rozszerzeñ",
-"gstat_Robots" => "%d pierwszych Roboty",
+"gstat_accesses" => "DostÄ™py",
+"gstat_total_visits" => "Wszytkie wizyty",
+"gstat_total_unique" => "Unikalne adresy",
+"gstat_operating_systems" => "%d pierwszych Systemy operacyjne",
+"gstat_browsers" => "%d pierwszych PrzeglÄ…darki",
+"gstat_extensions" => "%d pierwszych rozszerzeÅ„",
+"gstat_robots" => "%d pierwszych Roboty",
 "gstat_pages" => "%d pierwszych stron",
-"gstat_origins" => "%d pierwszych ¼róde³",
+"gstat_origins" => "%d pierwszych ÅºrÃ³deÅ‚",
 "gstat_hosts" => "Top %d Hosts",
 "gstat_keys" => "Top %d Keywords",
-"gstat_Total" => "Razem",
-"gstat_Not_specified" => "Nie wyszczególnione",
+"gstat_total" => "Razem",
+"gstat_not_specified" => "Nie wyszczegÃ³lnione",
 
 // Time stats words
-"tstat_Su" => "Nie",
-"tstat_Mo" => "Pon",
-"tstat_Tu" => "Wto",
-"tstat_We" => "¦ro",
-"tstat_Th" => "Czw",
-"tstat_Fr" => "Pi±",
-"tstat_Sa" => "Sob",
+"tstat_su" => "Nie",
+"tstat_mo" => "Pon",
+"tstat_tu" => "Wto",
+"tstat_we" => "Åšro",
+"tstat_th" => "Czw",
+"tstat_fr" => "PiÄ…",
+"tstat_sa" => "Sob",
 
-"tstat_Jan" => "Sty",
-"tstat_Feb" => "Lut",
-"tstat_Mar" => "Mar",
-"tstat_Apr" => "Kwi",
-"tstat_May" => "Maj",
-"tstat_Jun" => "Cze",
-"tstat_Jul" => "Lip",
-"tstat_Aug" => "Sie",
-"tstat_Sep" => "Wrz",
-"tstat_Oct" => "Pa¼",
-"tstat_Nov" => "Lis",
-"tstat_Dec" => "Gru",
+"tstat_full_su" => "Niedziela",
+"tstat_full_mo" => "PoniedziaÅ‚ek",
+"tstat_full_tu" => "Wtorek",
+"tstat_full_we" => "Åšroda",
+"tstat_full_th" => "Thursday",
+"tstat_full_fr" => "PiÄ…tek",
+"tstat_full_sa" => "Sobota",
 
-"tstat_last_day" => "Ostani dzieñ",
-"tstat_last_week" => "Ostani tydzieñ",
-"tstat_last_month" => "Ostatni miesi±c",
+"tstat_jan" => "Sty",
+"tstat_feb" => "Lut",
+"tstat_mar" => "Mar",
+"tstat_apr" => "Kwi",
+"tstat_may" => "Maj",
+"tstat_jun" => "Cze",
+"tstat_jul" => "Lip",
+"tstat_aug" => "Sie",
+"tstat_sep" => "Wrz",
+"tstat_oct" => "PaÅº",
+"tstat_nov" => "Lis",
+"tstat_dec" => "Gru",
+
+"tstat_full_jan" => "January",
+"tstat_full_feb" => "Luty",
+"tstat_full_mar" => "Marca",
+"tstat_full_apr" => "April",
+"tstat_full_may" => "Maja",
+"tstat_full_jun" => "Czerwiec",
+"tstat_full_jul" => "Lipiec",
+"tstat_full_aug" => "SierpieÅ„",
+"tstat_full_sep" => "wrzeÅ›nia",
+"tstat_full_oct" => "October",
+"tstat_full_nov" => "Listopad",
+"tstat_full_dec" => "GrudzieÅ„",
+
+"tstat_last_day" => "Ostani dzieÅ„",
+"tstat_last_week" => "Ostani tydzieÅ„",
+"tstat_last_month" => "Ostatni miesiÄ…c",
 "tstat_last_year" => "Ostatni rok",
+"tstat_average" => "Åšrednia",
+
+// Loadtime notice
+"generated" => "strona zostaÅ‚a wygenerowana w ",
+"seconds" => " sekund",
 
 // Configuration page words and sentences
-"config_Variable_name" => "Nazwa zmiennej",
-"config_Variable_value" => "Warto¶æ zmiennej",
-"config_Explanations" => "Wyja¶nienie",
+"config_variable_name" => "Nazwa zmiennej",
+"config_variable_value" => "WartoÅ›Ä‡ zmiennej",
+"config_explanations" => "WyjaÅ›nienie",
 
-"config_bbc_mainsite" =>
+"config_BBC_MAINSITE" =>
 "If this variable has been set, a link to the specified location will be
 generated. The default value is pointing to the parent directory. In case your
 main site is located elsewhere, you probably want to adjust the value to suit
@@ -398,33 +450,33 @@ Examples:<br />
 \$BBC_MAINSITE = &quot;..&quot;<br />
 \$BBC_MAINSITE = &quot;&quot;;",
 
-"config_bbc_show_config" =>
+"config_BBC_SHOW_CONFIG" =>
 "BBClone defaults to revealing the stats' settings. In case this behavior isn't
 desired you can deny access to it by deactivating the option.<br />
 Examples:<br />
 \$BBC_SHOW_CONFIG = 1;<br />
 \$BBC_SHOW_CONFIG = &quot;&quot;;",
 
-"config_bbc_titlebar" =>
+"config_BBC_TITLEBAR" =>
 "Ta linijka jest widoczna we wszystkich stonach statystyki.<br />
 Znane makrodefinicje to:<br />
 <ul>
 <li>%SERVER: nazwa serwera,</li>
 <li>%DATE: obecja data.</li>
 </ul>
-Tagi HTML s± dozwolone.<br />
+Tagi HTML sÄ… dozwolone.<br />
 Examples:<br />
 \$BBC_TITLEBAR = &quot;Statistics for %SERVER generated the %DATE&quot;;<br />
 \$BBC_TITLEBAR = &quot;My stats from %DATE look like this:&quot;;
 <br />",
 
-"config_bbc_language" =>
+"config_BBC_LANGUAGE" =>
 "BBClone's default language, in case it hasn't been specified by the browser.
 The following languages are supported:
 <p>ar, bg, bs, ca, cs, da, de, el, en, es, fi, fr, hu, id, it, ja, ko, lt, mk, nb, nl, pl, pt, pt-br, ro, ru,
 sk, sl, sv, th, tr, ua, zh-cn and zh-tw</p>",
 
-"config_bbc_maxtime" =>
+"config_BBC_MAXTIME" =>
 "This variable defines the length of an unique visit in seconds. Each hit from
 the same visitor within this period will be considered as one visit, as long as
 two successive hits don't exceed the specified limit. Default is the de facto
@@ -434,12 +486,12 @@ Examples:<br />
 \$BBC_MAXTIME = 0;<br />
 \$BBC_MAXTIME = 1800;",
 
-"config_bbc_maxvisible" =>
+"config_BBC_MAXVISIBLE" =>
 "How many entries you want to have listed in the detailed stats? The default
 value is 100. It's recommended not to set it higher than 500 to avoid too heavy
 load.",
 
-"config_bbc_detailed_stat_fields" =>
+"config_BBC_DETAILED_STAT_FIELDS" =>
 "The variable \$BBC_DETAILED_STAT_FIELDS determines the columns to be displayed
 in the detailed statistics. Possible columns are:
 <ul>
@@ -463,7 +515,7 @@ Examples:<br />
 <br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;date, ext, browser, os, ip&quot;;<br />",
 
-"config_bbc_time_offset" =>
+"config_BBC_TIME_OFFSET" =>
 "In case the server time doesn't match your local timezone, you can adjust the
 time in minutes by using this switch. Negative values will set back the time,
 positive ones will set it forth.<br />
@@ -472,7 +524,7 @@ Examples:<br />
 \$BBC_TIME_OFFSET = -300;<br />
 \$BBC_TIME_OFFSET = 0;",
 
-"config_bbc_no_dns" =>
+"config_BBC_NO_DNS" =>
 "This options defines, whether IP addresses should be resolved to hostnames or
 not. While hostnames tell a lot more about the visitor, resolving them may
 considerably slow down your site, if the DNS servers used are slow, limited in
@@ -482,7 +534,7 @@ Examples:<br />
 \$BBC_NO_DNS = 1;<br />
 \$BBC_NO_DNS = &quot;&quot;;",
 
-"config_bbc_no_hits" =>
+"config_BBC_NO_HITS" =>
 "BBClone's default is to show hits in the time stats, because it gives a quite
 useful Impression from the actual server load. If, however, you prefer to use
 unique visits as base for your time stats, you can change the way of counting
@@ -491,7 +543,7 @@ Examples:<br />
 \$BBC_NO_HITS = 1;<br />
 \$BBC_NO_HITS = &quot;&quot;;",
 
-"config_bbc_ignore_ip" =>
+"config_BBC_IGNORE_IP" =>
 "This option can be used to exclude particular IP addresses or address ranges
 from counting. In case you want to add several expressions use a comma as
 separator.<br />
@@ -499,7 +551,7 @@ Examples:<br />
 \$BBC_IGNORE_IP = &quot;127., 192.168.&quot;;<br />
 \$BBC_IGNORE_IP = &quot;&quot;;",
 
-"config_bbc_ignore_refer" =>
+"config_BBC_IGNORE_REFER" =>
 "In case you don't want to have particular referrers from your visitors listed
 in your ranking or detailed stats, you can specify one or more keywords used
 for blocking if a referrer matches up against them. If you use more keywords,
@@ -508,7 +560,7 @@ Examples:<br />
 \$BBC_IGNORE_REFER = &quot;spambot.org, .escort.&quot;;<br />
 \$BBC_IGNORE_REFER = &quot;&quot;;",
 
-"config_bbc_ignore_bots" =>
+"config_BBC_IGNORE_BOTS" =>
 "You can use this option to determine the treatment of robots. The default is
 to ignore them in the top hosts ranking but leave them in the remaining
 stats. If you don't want to see any robots at all you can set this option to
@@ -518,7 +570,7 @@ Examples:<br />
 \$BBC_IGNORE_BOTS = 1;<br />
 \$BBC_IGNORE_BOTS = &quot;&quot;;",
 
-"config_bbc_ignore_agent" =>
+"config_BBC_IGNORE_AGENT" =>
 "This option defines how BBClone tells one visitor from another. Default is to
 use the IP address only, which provides realistic figures in most cases. If,
 however, your visitors often are hidden behind proxy servers, deactivation of
@@ -528,7 +580,7 @@ Examples:<br />
 \$BBC_IGNORE_AGENT = 1;<br />
 \$BBC_IGNORE_AGENT = &quot;&quot;;",
 
-"config_bbc_kill_stats" =>
+"config_BBC_KILL_STATS" =>
 "Whenever you wish to reset your stats you can activate this switch and have
 them deleted by the next visit. Don't forget to deactivate it afterwards, else
 you'll probably experience unusually low traffic ;).<br />
@@ -536,7 +588,7 @@ Examples:<br />
 \$BBC_KILL_STATS = 1;<br />
 \$BBC_KILL_STATS = &quot;&quot;;",
 
-"config_bbc_purge_single" =>
+"config_BBC_PURGE_SINGLE" =>
 "Host and referrer stats can generate a huge amount of data, however mostly
 caused by one time visitors. By enabling this switch you can purge these
 entries and considerably shrink access.php in its size without affecting your

@@ -1,20 +1,22 @@
 <?php
-/* This file is part of BBClone (The PHP web counter on steroids)
+/* This file is part of BBClone (A PHP based Web Counter on Steroids)
+ * 
+ * CVS FILE $Id: timecalc.php,v 1.19 2011/12/30 23:03:48 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * $Header: /cvs/bbclone/lib/timecalc.php,v 1.15 2009/06/21 07:33:11 joku Exp $
- *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  */
-
-// FIXME: One common class instead of two functions
 
 function bbc_time_offset() {
   global $BBC_TIMESTAMP, $BBC_TIME_OFFSET, $access, $last;
@@ -105,7 +107,8 @@ function bbc_update_time_stat($new_time, $last_time) {
 
   $nb_seconds_in_last_month = $last_lgmonth * $nb_seconds_in_day;
   $nb_seconds_in_last_year = (date("L", $last_time) ? 366 : 365) * $nb_seconds_in_day;
-  // Updating the last connection time to the new one
+
+  // Updating the last connection time to the new one 
   // for the next call of bbc_update_time_stat
   $access['time']['last'] = $new_time;
 
@@ -119,7 +122,6 @@ function bbc_update_time_stat($new_time, $last_time) {
   else {
     $elapsed = $new_hour - $last_hour;
     $elapsed = ($elapsed < 0) ? $elapsed + 24 : $elapsed;
-
     for ($k = 1; $k <= $elapsed; $k++) $access['time']['hour'][($last_hour + $k) % 24] = 0;
   }
   $access['time']['hour'][$new_hour]++;
@@ -132,7 +134,6 @@ function bbc_update_time_stat($new_time, $last_time) {
   else {
     $elapsed = $new_wday - $last_wday;
     $elapsed = ($elapsed < 0) ? $elapsed + 7 : $elapsed;
-
     for ($k = 1; $k <= $elapsed; $k++) $access['time']['wday'][($last_wday + $k) % 7] = 0;
   }
 
@@ -147,7 +148,6 @@ function bbc_update_time_stat($new_time, $last_time) {
   else {
     $elapsed = $new_day - $last_day;
     $elapsed = ($elapsed < 0) ? $elapsed + $last_lgmonth : $elapsed;
-
     for ($k = 1; $k <= $elapsed; $k++) $access['time']['day'][($last_day + $k) % $last_lgmonth] = 0;
   }
 
@@ -161,7 +161,6 @@ function bbc_update_time_stat($new_time, $last_time) {
   else {
     $elapsed = $new_month - $last_month;
     $elapsed = ($elapsed < 0) ? $elapsed + 12 : $elapsed;
-
     for ($k = 1; $k <= $elapsed; $k++) $access['time']['month'][($last_month + $k) % 12] = 0;
   }
   $access['time']['month'][$new_month]++;

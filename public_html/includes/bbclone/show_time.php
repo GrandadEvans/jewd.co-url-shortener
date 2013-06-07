@@ -1,32 +1,43 @@
 <?php
-/* This file is part of BBClone (The PHP web counter on steroids)
+/* This file is part of BBClone (A PHP based Web Counter on Steroids)
+ * 
+ * CVS FILE $Id: show_time.php,v 1.77 2011/12/30 23:02:10 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * $Header: /cvs/bbclone/show_time.php,v 1.68 2009/06/21 07:33:08 joku Exp $
- *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  */
+if(!defined("_BBC_PAGE_NAME")){define("_BBC_PAGE_NAME", "Show Time");}
+/////////////////////
+// Show Time Stats //
+/////////////////////
 
-// Check for PHP 4.0.3 or older
-if (!function_exists("array_sum")) exit("<hr /><b>Error:</b> PHP ".PHP_VERSION." is too old for BBClone.");
-elseif (is_readable("constants.php")) require_once("constants.php");
-else return;
+// START Time Measuring, load-time of the page (see config)
+$time = microtime();
+$time = explode(' ', $time);
+$time = $time[1] + $time[0];
+$start = $time;
 
-foreach (array($BBC_CONFIG_FILE, $BBC_LIB_PATH."html.php", $BBC_LIB_PATH."selectlang.php", $BBC_ACCESS_FILE) as $i) {
+// Read constants
+if (is_readable("constants.php")) require_once("constants.php");
+else exit("ERROR: Unable to open constants.php");
+
+foreach (array($BBC_CONFIG_FILE, $BBC_LIB_PATH."selectlang.php", $BBC_ACCESS_FILE) as $i) {
   if (is_readable($i)) require_once($i);
   else exit(bbc_msg($i));
 }
 
-// Functions
-
-// optical correction of the graphical output
+// Functions to calculate Stats
 function bbc_graph_spacer($last, $nr, $values) {
   if ($nr == $last) $str = "none";
   else $str = ($values[$nr] > $values[($nr + 1)]) ? "solid" : "none";
@@ -42,7 +53,7 @@ function bbc_graph_spacer($last, $nr, $values) {
 // Plot a positive sequence of integers $y in function of a sequence $x
 // (whatever it is) in a box of size [$width * $height] in pixels
 function bbc_plot($x, $y, $width, $height) {
-  global $BBC_IMAGES_PATH;
+  global $BBC_IMAGES_PATH, $translation;
 
   // Various sizes
   $nb_x = count($x);
@@ -50,8 +61,7 @@ function bbc_plot($x, $y, $width, $height) {
   $nb = !empty($x) ? min($nb_x, $nb_y) : $nb_y;
   $bar_width = round($width / $nb);
 
-  // Borik's Average Line Hack, part 1 of 3
-  $s = array_sum($y);
+  $sum_y = array_sum($y);
   $nb_e = $nb;
   if ($nb_e == 12) {
   	for ($i = 0; $i < 12; $i++) {
@@ -61,34 +71,33 @@ function bbc_plot($x, $y, $width, $height) {
       }
     }
   }
-  $a=round($s/$nb_e);
+  $avarage=round($sum_y/$nb_e);
 
-  // Finding the maxima
+  // Finding the max
   for ($k = 0, $max_y = 0; $k < $nb; $max_y = max($y[$k],$max_y), $k++);
   // The height of one unit
   $unit_height = !empty($max_y) ? (0.92 * ($height / $max_y)) : 0;
 
-  // Borik's Average Line Hack, part 2 of 3
-  $ah= round($max_y*$unit_height) - round($a*$unit_height)+17;
-  $str = "<div><div style=\"position: relative; top:".$ah."px; left:2px; border-bottom:1px dashed #f08c8c; margin:0px; padding:0px; width:96%; background:none; \"><p align=\"left\" style=\"color:#df5959; padding:0px;margin:0px;\"><em>Average: ".$a."</em></p></div>";
-  $str  .= "<table class=\"cntbox\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\">\n"
-         ."<tr style=\"background-color: #e5f2f7\">\n";
+  $avarage_height = round($max_y*$unit_height) - round($avarage*$unit_height)+17;
+  $str = "<div><div class=\"graph-line\" style=\"top:".$avarage_height."px; \"><p align=\"left\" style=\"color:#df5959; padding:0px;margin:0px;\"><em>".$translation['tstat_average'].": ".$avarage."</em></p></div>";
+  $str  .= "<table class=\"centerbox\">\n"
+         ."<tr class=\"graph-background\">\n";
 
   for ($k = 0; $k < $nb; $k++) {
     $bar_height = round($y[$k] * $unit_height);
 
-    $str .= "<td valign=\"bottom\" align=\"center\" width=\"$bar_width\" height=\"$height\">\n"
-           ."<table align=\"center\" border=\"0\"  cellspacing=\"0\" cellpadding=\"0\" width=\"100%\">\n"
+    $str .= "<td class=\"nopadding\" width=\"$bar_width\" height=\"$height\">\n"
+           ."<table class=\"centerdata\">\n"
            ."<tr>\n";
 
     if ($y[$k]) {
       $numb = ($y[$k] >= 1000) ? substr(($tmp = $y[$k] / 1000) ,0 , (strpos($tmp, ".") + 2))."k" : $y[$k];
 
-      $bbc_column_color = "c0cbeb";  // original column color
-      if ($nb > 27 || $nb == 7) {  // make sure it's a month and not a week, hour, et cetera
+      $bbc_column_color = "column";  // default column color
+      if ($nb > 27 || $nb == 7) {  // make sure it's a month and not a week, hour, etc.
         $bbc_weekend = mktime(0, 0, 0, date("m"), date("d") - ($nb - $k - 1), date("Y"));
         if (date("w", $bbc_weekend) == 0 || date("w", $bbc_weekend) == 6) {  // 0 is Sunday and 6 is Saturday
-          $bbc_column_color = "9EAACE";  // Hex color to display for weekends
+          $bbc_column_color = "weekend-column";  // column color for weekends
         }
       } else if ($nb == 24) {
         $bbc_weekend = mktime(date("G") - ($nb - $k - 1), 0, 0, date("m"), date("d"), date("Y"));
@@ -96,22 +105,25 @@ function bbc_plot($x, $y, $width, $height) {
         $bbc_weekend = mktime(0, 0, 0, date("m") - ($nb - $k - 1), date("d"), date("Y"));
       }
 
-      $str .= "<td align=\"center\" valign=\"bottom\" class=\"sky\" height=\"".($height - $bar_height)."\" "
-           ."style=\"white-space: nowrap; border-style: none ".bbc_graph_spacer(($nb - 1), $k, $y)."\">"
-           ."<span class=\"graph\">$numb</span>"
+      $str .= "<td class=\"sky\" height=\"".($height - $bar_height)."\" "
+           ."style=\"border-style: none ".bbc_graph_spacer(($nb - 1), $k, $y)."\">"
+           ."<span class=\"label-graph-ydata\">$numb</span>"
            ."</td>\n"
            ."</tr>\n"
-           ."<tr style=\"background-color:#" . $bbc_column_color . "\">\n";
-      if ($nb > 27 || $nb == 7) {  // make sure it's a month and not a week, hour, et cetera
-        $str .= "<td title=\"".date("l M jS, Y", $bbc_weekend)."  &laquo;".$y[$k]."&raquo; \" height=\"$bar_height\" class=\"brd\" ";
+           ."<tr class=\"".$bbc_column_color."\">\n";
+      if ($nb > 27 || $nb == 7) {  // make sure it's a month and not a week, hour, etc.
+      	// week (7 days), and full month (>27 days)
+        $str .= "<td title=\"".date_format_translated($translation['global_day_format'], $bbc_weekend)."&nbsp;&laquo;".$y[$k]."&raquo;\" height=\"$bar_height\" class=\"brd\" ";
       } else if ($nb == 24) {
-        $str .= "<td title=\"".date("l M jS, Y g:00 A", $bbc_weekend)."  &laquo;".$y[$k]."&raquo; \" height=\"$bar_height\" class=\"brd\" ";  
+      	// hours (24)
+        $str .= "<td title=\"".date_format_translated($translation['global_hours_format'], $bbc_weekend)."&nbsp;&laquo;".$y[$k]."&raquo;\" height=\"$bar_height\" class=\"brd\" ";  
       } else {
-        $str .= "<td title=\"".date("F Y", $bbc_weekend)."  &laquo;".$y[$k]."&raquo; \" height=\"$bar_height\" class=\"brd\" ";  
+      	// months (12)
+        $str .= "<td title=\"".date_format_translated($translation['global_month_format'], $bbc_weekend)."&nbsp;&laquo;".$y[$k]."&raquo;\" height=\"$bar_height\" class=\"brd\" ";  
       }
-      $str .= "style=\"white-space: nowrap; border-style: solid ".bbc_graph_spacer(($nb - 1), $k, $y)."\"></td>\n";
+      $str .= "style=\"border-style: solid ".bbc_graph_spacer(($nb - 1), $k, $y)."\"></td>\n";
     }
-    else $str .= "<td style=\"white-space: nowrap;\" height=\"$height\"></td>\n";
+    else $str .= "<td height=\"$height\"></td>\n";
 
     $str .= "</tr>\n"
            ."</table>\n"
@@ -119,14 +131,14 @@ function bbc_plot($x, $y, $width, $height) {
   }
 
   $str .= "</tr>\n"
-         ."<tr style=\"background-color: #808ebf\">\n";
+         ."<tr class=\"bottombox\">\n";
 
   for ($k = 0; $k < $nb; $k++) {
-    $str .= "<td valign=\"bottom\" align=\"center\" width=\"$bar_width\" height=\"15\">\n"
+    $str .= "<td class=\"center\" width=\"$bar_width\" height=\"15\">\n"
            ."<table class=\"brd\" style=\"border-style: solid none none\" align=\"center\" border=\"0\" "
            ."cellspacing=\"0\" cellpadding=\"0\" width=\"100%\">\n"
            ."<tr>\n"
-           ."<td align=\"center\" height=\"15\" class=\"capt\">".$x[$k]."</td>\n"
+           ."<td class=\"label-graph-xdata\">".$x[$k]."</td>\n"
            ."</tr>\n"
            ."</table>\n"
            ."</td>\n";
@@ -135,13 +147,12 @@ function bbc_plot($x, $y, $width, $height) {
   $str .= "</tr>\n"
          ."</table>\n";
 
-  // Borik's Average Line Hack, part 3 of 3
   $str .= "</div>";
   return $str;
 }
 
 function bbc_show_plot_time_type($time_type, $width, $height) {
-  global $BBC_TIMESTAMP, $BBC_TIME_OFFSET, $access, $_;
+  global $BBC_TIMESTAMP, $BBC_TIME_OFFSET, $translation, $access;
 
   $last_time = isset($access['time']['last']) ? $access['time']['last'] : 0;
   $current_time = $BBC_TIMESTAMP + ($BBC_TIME_OFFSET * 60);
@@ -168,9 +179,7 @@ function bbc_show_plot_time_type($time_type, $width, $height) {
       break;
 
     case "wday":
-      $day_name = array($_['tstat_Su'], $_['tstat_Mo'], $_['tstat_Tu'],
-                        $_['tstat_We'], $_['tstat_Th'], $_['tstat_Fr'],
-                        $_['tstat_Sa']);
+      $day_name = array($translation['tstat_su'], $translation['tstat_mo'], $translation['tstat_tu'], $translation['tstat_we'], $translation['tstat_th'], $translation['tstat_fr'], $translation['tstat_sa']);
 
       $current_wday = date("w", $current_time);
       $last_wday    = date("w", $last_time);
@@ -214,9 +223,8 @@ function bbc_show_plot_time_type($time_type, $width, $height) {
       break;
 
     case "month":
-      $month_name = array($_['tstat_Jan'], $_['tstat_Feb'], $_['tstat_Mar'], $_['tstat_Apr'], $_['tstat_May'],
-                          $_['tstat_Jun'], $_['tstat_Jul'], $_['tstat_Aug'], $_['tstat_Sep'], $_['tstat_Oct'],
-                          $_['tstat_Nov'], $_['tstat_Dec']);
+      $month_name = array($translation['tstat_jan'], $translation['tstat_feb'], $translation['tstat_mar'], $translation['tstat_apr'], $translation['tstat_may'], $translation['tstat_jun'],
+      					  $translation['tstat_jul'], $translation['tstat_aug'], $translation['tstat_sep'], $translation['tstat_oct'], $translation['tstat_nov'], $translation['tstat_dec']);
 
       $current_month = date("n", $current_time) - 1;
       $last_month    = date("n", $last_time) - 1;
@@ -234,46 +242,58 @@ function bbc_show_plot_time_type($time_type, $width, $height) {
       }
       break;
   }
-
   return bbc_plot($x, $y, $width, $height);
 }
 
-// MAIN
-
-echo $bbc_html->html_begin()
-    .$bbc_html->topbar()
-    .(isset($access['time']['reset']) ? $bbc_html->last_reset($access['time']['reset']) : "")
-    ."<table align=\"center\" border=\"0\" width=\"640\" class=\"cntbox\" cellpadding=\"15\" cellspacing=\"0\">\n"
+// Generate page (with use of the functions above)
+echo $BBC_HTML->html_begin()
+    .$BBC_HTML->topbar()
+//  .$BBC_HTML->last_reset()
+    ."<table class=\"center\">\n"
+    ."<tr><td class=\"padding\">\n"
+    ."<table class=\"centerbox\">\n"
     ."<tr>\n"
-    ."<td class=\"head\" colspan=\"2\"><br />".$_['tstat_last_day']."</td>\n"
+    ."<td class=\"label\" colspan=\"2\"><br />".$translation['tstat_last_day']."</td>\n"
     ."</tr>\n"
     ."<tr>\n"
-    ."<td align=\"center\" colspan=\"2\">\n"
+    ."<td class=\"padding\" align=\"center\" colspan=\"2\">\n"
     .bbc_show_plot_time_type("hour", 640, 200)
     ."</td>\n"
     ."</tr>\n"
     ."<tr>\n"
-    ."<td class=\"head\">".$_['tstat_last_week']."</td>\n"
-    ."<td class=\"head\">".$_['tstat_last_year']."</td>\n"
+    ."<td class=\"label\">".$translation['tstat_last_week']."</td>\n"
+    ."<td class=\"label\">".$translation['tstat_last_year']."</td>\n"
     ."</tr>\n"
     ."<tr>\n"
-    ."<td align=\"center\">\n"
+    ."<td class=\"padding\" align=\"center\">\n"
     .bbc_show_plot_time_type("wday", 203, 200)
     ."</td>\n"
-    ."<td align=\"center\">\n"
+    ."<td class=\"padding\" align=\"center\">\n"
     .bbc_show_plot_time_type("month", 407, 200)
     ."</td>\n"
     ."</tr>\n"
     ."<tr>\n"
-    ."<td class=\"head\" colspan=\"2\">".$_['tstat_last_month']."</td>\n"
+    ."<td class=\"label\" colspan=\"2\">".$translation['tstat_last_month']."</td>\n"
     ."</tr>\n"
     ."<tr>\n"
-    ."<td align=\"center\" colspan=\"2\">\n"
+    ."<td class=\"padding\" align=\"center\" colspan=\"2\">\n"
     .bbc_show_plot_time_type("day", 640, 200)
-    ."</td>\n"
-    ."</tr>\n"
-    ."</table>\n"
-    .$bbc_html->copyright()
-    .$bbc_html->topbar(0, 1)
-    .$bbc_html->html_end();
+    ."</td></tr></table></td></tr></table>\n"
+    .$BBC_HTML->copyright()
+    .$BBC_HTML->topbar(0, 1);
+
+// END + DISPLAY Time Measuring, load-time of the page (see config)
+global $BBC_LOADTIME;
+
+if (!empty($BBC_LOADTIME)) {
+	$time = microtime();
+	$time = explode(' ', $time);
+	$time = $time[1] + $time[0];
+	$finish = $time;
+	$total_time = round(($finish - $start), 4);
+	echo "<div class=\"loadtime\">".$translation['generated'].$total_time.$translation['seconds']."</div>\n";
+}
+
+// End of HTML
+echo $BBC_HTML->html_end()
 ?>

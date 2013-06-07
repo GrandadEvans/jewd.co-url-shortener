@@ -1,555 +1,606 @@
 <?php
 /* This file is part of BBClone (The PHP web counter on steroids)
  *
- * $Header: /cvs/bbclone/language/hu.php,v 1.34 2009/06/21 07:33:08 joku Exp $
+ * CVS File $Id: hu.php,v 1.51 2011/12/30 23:03:24 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  *
  * Last updated: 01/01/2007
- * Translated by: Dibuz Sándor, <ha3pg@dwatt.com>
+ * Translated by: Dibuz SÃ¡ndor, <ha3pg@dwatt.com>
  */
 
-// The main array ($_ is for doing short in its call)
-$_ = array(
-// Specific charset
-"global_charset" => "iso-8859-2",
+// The DNS Extensions array
+$extensions = array(
+"travel" => "Travel",
+"asia" => "Asia-Pacific",
+"jobs" => "Employment",
+"mobi" => "Mobiles",
+"cat" => "Catalan",
+"tel" => "Contacts",
 
-// Date format (used with date())
-"global_date_format" => "Y/m/d",
-
-// Global translation
-"global_bbclone_copyright" => "The BBClone team - Licensz:",
-"global_last_reset" => "Statisztika utoljára nullázva: ",
-"global_yes" => "igen",
-"global_no" => "nem",
-
-// The error messages
-"error_cannot_see_config" =>
-"Ezen a szerveren a BBClone konfigurációjának megtekintése nem engedélyezett.",
-"error_cannot_see_development" =>
-"Ezen a szerveren a BBClone regresszió megtekintése nem engedélyezett.",
-
-// Address Extensions
 "ac" => "Ascension-sziget",
 "ad" => "Andorra",
-"ae" => "Egyesült Arab Emírségek",
-"aero" => "légi",
-"af" => "Afganisztán",
-"ag" => "Antigua és Barbuda",
+"ae" => "EgyesÃ¼lt Arab EmÃ­rsÃ©gek",
+"aero" => "lÃ©gi",
+"af" => "AfganisztÃ¡n",
+"ag" => "Antigua Ã©s Barbuda",
 "ai" => "Anguilla",
-"al" => "Albánia",
-"am" => "Örményország",
-"an" => "Holland Antillák",
+"al" => "AlbÃ¡nia",
+"am" => "Ã–rmÃ©nyorszÃ¡g",
+"an" => "Holland AntillÃ¡k",
 "ao" => "Angola",
 "aq" => "Antarktisz",
-"ar" => "Argentína",
+"ar" => "ArgentÃ­na",
 "arpa" => "arpa",
 "as" => "Amerikai Szamoa",
 "at" => "Ausztria",
-"au" => "Ausztrália",
+"au" => "AusztrÃ¡lia",
 "aw" => "Aruba",
-"az" => "Azerbajdzsán",
+"ax" => "Ã…land",
+"az" => "AzerbajdzsÃ¡n",
 "ba" => "Bosznia-Hercegovina",
 "bb" => "Barbadosz",
 "bd" => "Banglades",
 "be" => "Belgium",
 "bf" => "Burkina Faso",
-"bg" => "Bulgária",
+"bg" => "BulgÃ¡ria",
 "bh" => "Bahrein",
 "bi" => "Burundi",
-"biz" => "üzleti",
+"biz" => "Ã¼zleti",
 "bj" => "Benin",
+"bl" => "Saint-BarthÃ©lemy",
 "bm" => "Bermuda",
 "bn" => "Brunei",
-"bo" => "Bolívia",
-"br" => "Brazília",
+"bo" => "BolÃ­via",
+"br" => "BrazÃ­lia",
 "bs" => "Bahama-szigetek",
-"bt" => "Bhután",
+"bt" => "BhutÃ¡n",
 "bv" => "Bouvet-sziget",
 "bw" => "Botswana",
 "by" => "Belorusszia",
 "bz" => "Belize",
 "ca" => "Kanada",
-"cc" => "Kókusz-Szigetek",
-"cd" => "Kongó",
-"cf" => "Közép-Afrikai Köztársaság",
-"cg" => "Kongó",
-"ch" => "Svájc",
-"ci" => "Elefántcsontpart",
+"cc" => "KÃ³kusz-Szigetek",
+"cd" => "KongÃ³",
+"cf" => "KÃ¶zÃ©p-Afrikai KÃ¶ztÃ¡rsasÃ¡g",
+"cg" => "KongÃ³",
+"ch" => "SvÃ¡jc",
+"ci" => "ElefÃ¡ntcsontpart",
 "ck" => "Cook-szigetek",
 "cl" => "Chile",
 "cm" => "Kamerun",
-"cn" => "Kína",
+"cn" => "KÃ­na",
 "co" => "Kolumbia",
 "com" => "kereskedelmi",
-"coop" => "szövetkezeti",
+"coop" => "szÃ¶vetkezeti",
 "cr" => "Costa Rica",
-"cs" => "Szerbia és Montenegro",
+"cs" => "Szerbia Ã©s Montenegro",
 "cu" => "Kuba",
-"cv" => "Zöld-foki-szigetek",
-"cx" => "Karácsony-sziget",
+"cv" => "ZÃ¶ld-foki-szigetek",
+"cx" => "KarÃ¡csony-sziget",
 "cy" => "Ciprus",
-"cz" => "Csehország",
-"de" => "Németország",
+"cz" => "CsehorszÃ¡g",
+"de" => "NÃ©metorszÃ¡g",
 "dj" => "Dzsibuti",
-"dk" => "Dánia",
+"dk" => "DÃ¡nia",
 "dm" => "Dominika",
 "do" => "Dominika",
-"dz" => "Algéria",
+"dz" => "AlgÃ©ria",
 "ec" => "Ecuador",
 "edu" => "egyetemi",
-"ee" => "Észtország",
+"ee" => "Ã‰sztorszÃ¡g",
 "eg" => "Egyiptom",
 "eh" => "Nyugat Szahara",
 "er" => "Eritrea",
-"es" => "Spanyolország",
-"et" => "Etiópia",
-"eu" => "Európai Közösség",
-"fi" => "Finnország",
+"es" => "SpanyolorszÃ¡g",
+"et" => "EtiÃ³pia",
+"eu" => "EurÃ³pai KÃ¶zÃ¶ssÃ©g",
+"fi" => "FinnorszÃ¡g",
 "fj" => "Fidzsi",
 "fk" => "Falkland-szigetek",
-"fm" => "Mikronézia",
-"fo" => "Feröer-Szigetek",
-"fr" => "Franciaország",
+"fm" => "MikronÃ©zia",
+"fo" => "FerÃ¶er-Szigetek",
+"fr" => "FranciaorszÃ¡g",
 "ga" => "Gabon",
 "gb" => "Nagy-Britannia",
 "gd" => "Grenada",
-"ge" => "Grúzia",
+"ge" => "GrÃºzia",
 "gf" => "Francia Guyana",
 "gg" => "Guernsey",
-"gh" => "Ghána",
-"gi" => "Gibraltár",
-"gl" => "Grönland",
+"gh" => "GhÃ¡na",
+"gi" => "GibraltÃ¡r",
+"gl" => "GrÃ¶nland",
 "gm" => "Gambia",
 "gn" => "Guinea",
-"gov" => "USA állami",
+"gov" => "USA Ã¡llami",
 "gp" => "Guadeloupe",
-"gq" => "Egyenlítõi Guinea",
-"gr" => "Görögország",
-"gs" => "Dél-Georgia és a Dél-Sandwich-szigetek",
+"gq" => "EgyenlÃ­tÅ‘i Guinea",
+"gr" => "GÃ¶rÃ¶gorszÃ¡g",
+"gs" => "DÃ©l-Georgia Ã©s a DÃ©l-Sandwich-szigetek",
 "gt" => "Guatemala",
 "gu" => "Guam",
 "gw" => "Bissau-Guinea",
 "gy" => "Guyana",
 "hk" => "Hong Kong",
-"hm" => "Heard- és McDonald-szigetek",
+"hm" => "Heard- Ã©s McDonald-szigetek",
 "hn" => "Hondurasz",
-"hr" => "Horvátország",
+"hr" => "HorvÃ¡torszÃ¡g",
 "ht" => "Haiti",
-"hu" => "Magyarország",
-"id" => "Indonézia",
-"ie" => "Írország",
+"hu" => "MagyarorszÃ¡g",
+"id" => "IndonÃ©zia",
+"ie" => "ÃrorszÃ¡g",
 "il" => "Izrael",
 "im" => "Man-sziget",
 "in" => "India",
-"info" => "információs",
-"int" => "nemzetközi szervezetek",
-"io" => "Egyesült Királyság indiai-óceáni tartománya",
+"info" => "informÃ¡ciÃ³s",
+"int" => "nemzetkÃ¶zi szervezetek",
+"io" => "EgyesÃ¼lt KirÃ¡lysÃ¡g indiai-Ã³ceÃ¡ni tartomÃ¡nya",
 "iq" => "Irak",
-"ir" => "Irán",
+"ir" => "IrÃ¡n",
 "is" => "Izland",
-"it" => "Olaszország",
+"it" => "OlaszorszÃ¡g",
 "je" => "Jersey",
 "jm" => "Jamaica",
-"jo" => "Jordánia",
-"jp" => "Japán",
+"jo" => "JordÃ¡nia",
+"jp" => "JapÃ¡n",
 "ke" => "Kenya",
-"kg" => "Kirgizisztán",
+"kg" => "KirgizisztÃ¡n",
 "kh" => "Kambodzsa",
 "ki" => "Kiribati",
 "km" => "Comore-szigetek",
-"kn" => "Saint Kitts és Nevis",
-"kp" => "Észak-Korea",
+"kn" => "Saint Kitts Ã©s Nevis",
+"kp" => "Ã‰szak-Korea",
 "kr" => "Korea",
 "kw" => "Kuvait",
-"ky" => "Kajmán-szigetek",
-"kz" => "Kazahsztán",
+"ky" => "KajmÃ¡n-szigetek",
+"kz" => "KazahsztÃ¡n",
 "la" => "Laosz",
 "lb" => "Libanon",
 "lc" => "Szent Lucia",
 "li" => "Liechtenstein",
-"lk" => "Srí Lanka",
-"lr" => "Libéria",
+"lk" => "SrÃ­ Lanka",
+"lr" => "LibÃ©ria",
 "ls" => "Lesotho",
-"lt" => "Litvánia",
+"lt" => "LitvÃ¡nia",
 "lu" => "Luxemburg",
-"lv" => "Lettország",
-"ly" => "Líbia",
-"ma" => "Marokkó",
+"lv" => "LettorszÃ¡g",
+"ly" => "LÃ­bia",
+"ma" => "MarokkÃ³",
 "mc" => "Monaco",
 "md" => "Moldova",
-"mg" => "Madagaszkár",
+"me" => "MontenegrÃ³",
+"mf" => "Saint-Martin",
+"mg" => "MadagaszkÃ¡r",
 "mh" => "Marshall-szigetek",
 "mil" => "USA katonai",
-"mk" => "Macedónia",
+"mk" => "MacedÃ³nia",
 "ml" => "Mali",
 "mm" => "Myanmar",
-"mn" => "Mongólia",
-"mo" => "Makaó",
-"mp" => "Észak-Mariana-szigetek",
+"mn" => "MongÃ³lia",
+"mo" => "MakaÃ³",
+"mp" => "Ã‰szak-Mariana-szigetek",
 "mq" => "Martinique",
-"mr" => "Mauritánia",
+"mr" => "MauritÃ¡nia",
 "ms" => "Montserrat",
-"mt" => "Málta",
+"mt" => "MÃ¡lta",
 "mu" => "Mauritius",
-"museum" => "múzeum",
-"mv" => "Maldív-szigetek",
+"museum" => "mÃºzeum",
+"mv" => "MaldÃ­v-szigetek",
 "mw" => "Malawi",
-"mx" => "Mexikó",
+"mx" => "MexikÃ³",
 "my" => "Malajzia",
 "mz" => "Mozambik",
-"na" => "Namíbia",
-"name" => "személyes",
-"nc" => "Új-Kaledónia",
-"ne" => "Nigéria",
-"net" => "hálózatok",
+"na" => "NamÃ­bia",
+"name" => "szemÃ©lyes",
+"nc" => "Ãšj-KaledÃ³nia",
+"ne" => "NigÃ©ria",
+"net" => "hÃ¡lÃ³zatok",
 "nf" => "Norfolk-sziget",
-"ng" => "Nigéria",
+"ng" => "NigÃ©ria",
 "ni" => "Nicaragua",
 "nl" => "Hollandia",
-"no" => "Norvégia",
-"np" => "Nepál",
+"no" => "NorvÃ©gia",
+"np" => "NepÃ¡l",
 "nr" => "Nauru",
 "nu" => "Niue",
 "numeric" => "numerikus",
-"nz" => "Új-Zéland",
-"om" => "Omán",
+"nz" => "Ãšj-ZÃ©land",
+"om" => "OmÃ¡n",
 "org" => "szervezetek",
 "pa" => "Panama",
 "pe" => "Peru",
-"pf" => "Francia Polinézia",
-"pg" => "Pápua Új-Guinea",
-"ph" => "Fülöp-szigetek",
-"pk" => "Pakisztán",
-"pl" => "Lengyelország",
-"pm" => "St. Pierre és Miquelon",
+"pf" => "Francia PolinÃ©zia",
+"pg" => "PÃ¡pua Ãšj-Guinea",
+"ph" => "FÃ¼lÃ¶p-szigetek",
+"pk" => "PakisztÃ¡n",
+"pl" => "LengyelorszÃ¡g",
+"pm" => "St. Pierre Ã©s Miquelon",
 "pn" => "Pitcairn",
 "pr" => "Puerto Rico",
-"pro" => "professzionális",
+"pro" => "professzionÃ¡lis",
 "ps" => "Palesztina",
-"pt" => "Portugália",
+"pt" => "PortugÃ¡lia",
 "pw" => "Palau",
 "py" => "Paraguay",
 "qa" => "Katar",
 "re" => "Reunion",
-"ro" => "Románia",
-"ru" => "Oroszország",
+"ro" => "RomÃ¡nia",
+"rs" => "Szerbia",
+"ru" => "OroszorszÃ¡g",
 "rw" => "Ruanda",
-"sa" => "Szaúd-Arábia",
+"sa" => "SzaÃºd-ArÃ¡bia",
 "sb" => "Salamon-szigetek",
 "sc" => "Seychelle-szigetek",
-"sd" => "Szudán",
-"se" => "Svédország",
-"sg" => "Szingapúr",
+"sd" => "SzudÃ¡n",
+"se" => "SvÃ©dorszÃ¡g",
+"sg" => "SzingapÃºr",
 "sh" => "Szent Ilona",
-"si" => "Szlovénia",
-"sj" => "Svalbard- és Jan Mayen-szigetek",
-"sk" => "Szlovákia",
+"si" => "SzlovÃ©nia",
+"sj" => "Svalbard- Ã©s Jan Mayen-szigetek",
+"sk" => "SzlovÃ¡kia",
 "sl" => "Sierra Leone",
 "sm" => "San Marino",
-"sn" => "Szenegál",
-"so" => "Szomália",
+"sn" => "SzenegÃ¡l",
+"so" => "SzomÃ¡lia",
 "sr" => "Suriname",
-"st" => "Sao Tome és Principe",
-"su" => "Szovjetúnió",
+"st" => "Sao Tome Ã©s Principe",
+"su" => "SzovjetÃºniÃ³",
 "sv" => "El Salvador",
-"sy" => "Szíria",
-"sz" => "Szváziföld",
-"tc" => "Turks- és Caicos-szigetek",
-"td" => "Csád",
-"tf" => "Francia Déli Területek",
+"sy" => "SzÃ­ria",
+"sz" => "SzvÃ¡zifÃ¶ld",
+"tc" => "Turks- Ã©s Caicos-szigetek",
+"td" => "CsÃ¡d",
+"tf" => "Francia DÃ©li TerÃ¼letek",
 "tg" => "Togo",
-"th" => "Thaiföld",
-"tj" => "Tádzsikisztán",
+"th" => "ThaifÃ¶ld",
+"tj" => "TÃ¡dzsikisztÃ¡n",
 "tk" => "Tokelau",
 "tl" => "Kelet-Timor",
-"tm" => "Türkmenisztán",
-"tn" => "Tunézia",
+"tm" => "TÃ¼rkmenisztÃ¡n",
+"tn" => "TunÃ©zia",
 "to" => "Tonga",
 "tp" => "Kelet-Timor",
-"tr" => "Törökország",
-"tt" => "Trinidad és Tobago",
+"tr" => "TÃ¶rÃ¶korszÃ¡g",
+"tt" => "Trinidad Ã©s Tobago",
 "tv" => "Tuvalu",
 "tw" => "Tajvan",
-"tz" => "Tanzánia",
+"tz" => "TanzÃ¡nia",
 "ua" => "Ukrajna",
 "ug" => "Uganda",
-"uk" => "Egyesült Királyság",
-"um" => "USA kisebb távoli szigetek",
+"uk" => "EgyesÃ¼lt KirÃ¡lysÃ¡g",
+"um" => "USA kisebb tÃ¡voli szigetek",
 "unknown" => "ismeretlen",
 "us" => "USA",
 "uy" => "Uruguay",
-"uz" => "Üzbegisztán",
-"va" => "Vatikán",
-"vc" => "St. Vincent és Grenadines",
+"uz" => "ÃœzbegisztÃ¡n",
+"va" => "VatikÃ¡n",
+"vc" => "St. Vincent Ã©s Grenadines",
 "ve" => "Venezuela",
-"vg" => "Virgin-szigetek (Egyesült Királyság)",
+"vg" => "Virgin-szigetek (EgyesÃ¼lt KirÃ¡lysÃ¡g)",
 "vi" => "Virgin-szigetek (USA)",
-"vn" => "Vietnám",
+"vn" => "VietnÃ¡m",
 "vu" => "Vanuatu",
-"wf" => "Wallis és Futuna",
+"wf" => "Wallis Ã©s Futuna",
 "ws" => "Szamoa",
 "ye" => "Jemen",
 "yt" => "Mayotte",
-"yu" => "Szerbia és Montenegro",
-"za" => "Dél-Afrika",
+"yu" => "Szerbia Ã©s Montenegro",
+"za" => "DÃ©l-Afrika",
 "zm" => "Zambia",
 "zr" => "Zaire",
 "zw" => "Zimbabwe",
+);
+
+// The main Translation array
+$translation = array(
+// Specific charset
+"global_charset" => "utf-8",
+
+// Date format (used with date())
+"global_time_format" => "M jS, H:i:s",
+"global_day_format" => "l F jS, Y",
+"global_hours_format" => "l F jS, G:00",
+"global_month_format" => "F Y",
+
+// Global translation
+"global_titlebar"=> "Statisztika %SERVER generÃ¡lt %DATE",
+"global_bbclone_copyright" => "The BBClone team - Licensz:",
+"global_last_reset" => "Statisztika utoljÃ¡ra nullÃ¡zva: ",
+"global_yes" => "igen",
+"global_no" => "nem",
+
+// The error messages
+"error_cannot_see_config" =>
+"Ezen a szerveren a BBClone konfigurÃ¡ciÃ³jÃ¡nak megtekintÃ©se nem engedÃ©lyezett.",
+"error_cannot_see_development" =>
+"Ezen a szerveren a BBClone regressziÃ³ megtekintÃ©se nem engedÃ©lyezett.",
 
 // Miscellaneous translations
-"misc_other" => "egyéb",
+"misc_other" => "egyÃ©b",
 "misc_unknown" => "ismeretlen",
 "misc_second_unit" => "s",
-"misc_ignored" => "figyelmen kívül",
+"misc_ignored" => "figyelmen kÃ­vÃ¼l",
 
 // The Navigation Bar
-"navbar_Main_Site" => "Fõoldal",
-"navbar_Configuration" => "Beállítások",
-"navbar_Global_Stats" => "Általános statisztika",
-"navbar_Detailed_Stats" => "Részletes statisztika",
-"navbar_Time_Stats" => "Idõ statisztika",
+"navbar_main_site" => "FÅ‘oldal",
+"navbar_configuration" => "BeÃ¡llÃ­tÃ¡sok",
+"navbar_global_stats" => "ÃltalÃ¡nos statisztika",
+"navbar_detailed_stats" => "RÃ©szletes statisztika",
+"navbar_time_stats" => "IdÅ‘ statisztika",
+"navbar_language" => "Nyelv",
+"navbar_go" => "Go",
 
 // Detailed stats words
 "dstat_id" => "ID",
-"dstat_time" => "Idõpont",
-"dstat_visits" => "Találat",
-"dstat_extension" => "Névvégzõdés szerint",
-"dstat_dns" => "Hosztnév vagy IP",
+"dstat_time" => "IdÅ‘pont",
+"dstat_visits" => "TalÃ¡lat",
+"dstat_extension" => "NÃ©vvÃ©gzÅ‘dÃ©s szerint",
+"dstat_dns" => "HosztnÃ©v vagy IP",
 "dstat_from" => "Honnan",
 "dstat_os" => "Op. rendszer",
-"dstat_browser" => "Böngészõ",
-"dstat_visible_rows" => "Felsorolva az utolsó",
-"dstat_green_rows" => "zöld sorok",
-"dstat_blue_rows" => "kék sorok",
+"dstat_browser" => "BÃ¶ngÃ©szÅ‘",
+"dstat_visible_rows" => "Felsorolva az utolsÃ³",
+"dstat_green_rows" => "zÃ¶ld sorok",
+"dstat_blue_rows" => "kÃ©k sorok",
 "dstat_red_rows" => "piros sorok",
 "dstat_orange_rows" => "narancs sorok",
-"dstat_search" => "Kulcsszó",
-"dstat_last_page" => "Utolsó oldal",
-"dstat_last_visit" => "utolsó találat",
+"dstat_search" => "KulcsszÃ³",
+"dstat_last_page" => "UtolsÃ³ oldal",
+"dstat_last_visit" => "utolsÃ³ talÃ¡lat",
 "dstat_robots" => "robotok",
-"dstat_my_visit" => "A te IP-drõl",
+"dstat_my_visit" => "A te IP-drÅ‘l",
 "dstat_no_data" => "nincs adat",
 "dstat_prx" => "Proxy szerver",
-"dstat_ip" => "IP cím",
-"dstat_user_agent" => "Böngészõ",
+"dstat_ip" => "IP cÃ­m",
+"dstat_user_agent" => "BÃ¶ngÃ©szÅ‘",
 "dstat_nr" => "#",
 "dstat_pages" => "Oldalak",
-"dstat_visit_length" => "Idõtartam",
-"dstat_reloads" => "Újratöltés",
+"dstat_visit_length" => "IdÅ‘tartam",
+"dstat_reloads" => "ÃšjratÃ¶ltÃ©s",
+"dstat_whois_information" => "NÃ©zz fel informÃ¡ciÃ³ az IP-cÃ­m",
 
 // Global stats words
-"gstat_Accesses" => "Találatok száma",
-"gstat_Total_visits" => "Összes találat",
-"gstat_Total_unique" => "Összes egyedi",
-"gstat_Operating_systems" => "Elsõ %d op. rendszer",
-"gstat_Browsers" => "Elsõ %d böngészõ",
-"gstat_extensions" => "Elsõ %d névvégzõdés",
-"gstat_Robots" => "Elsõ %d robot",
-"gstat_pages" => "Elsõ %d látogatott oldal",
-"gstat_origins" => "Elsõ %d hivatkozás",
-"gstat_hosts" => "Elsõ %d hosztnév",
-"gstat_keys" => "Elsõ %d kulcsszó",
-"gstat_Total" => "Összesen",
-"gstat_Not_specified" => "meghatározatlan",
+"gstat_accesses" => "TalÃ¡latok szÃ¡ma",
+"gstat_total_visits" => "Ã–sszes talÃ¡lat",
+"gstat_total_unique" => "Ã–sszes egyedi",
+"gstat_operating_systems" => "ElsÅ‘ %d op. rendszer",
+"gstat_browsers" => "ElsÅ‘ %d bÃ¶ngÃ©szÅ‘",
+"gstat_extensions" => "ElsÅ‘ %d nÃ©vvÃ©gzÅ‘dÃ©s",
+"gstat_robots" => "ElsÅ‘ %d robot",
+"gstat_pages" => "ElsÅ‘ %d lÃ¡togatott oldal",
+"gstat_origins" => "ElsÅ‘ %d hivatkozÃ¡s",
+"gstat_hosts" => "ElsÅ‘ %d hosztnÃ©v",
+"gstat_keys" => "ElsÅ‘ %d kulcsszÃ³",
+"gstat_total" => "Ã–sszesen",
+"gstat_not_specified" => "meghatÃ¡rozatlan",
 
 // Time stats words
-"tstat_Su" => "Vas",
-"tstat_Mo" => "Hét",
-"tstat_Tu" => "Ked",
-"tstat_We" => "Sze",
-"tstat_Th" => "Csü",
-"tstat_Fr" => "Pén",
-"tstat_Sa" => "Szo",
+"tstat_su" => "Vas",
+"tstat_mo" => "HÃ©t",
+"tstat_tu" => "Ked",
+"tstat_we" => "Sze",
+"tstat_th" => "CsÃ¼",
+"tstat_fr" => "PÃ©n",
+"tstat_sa" => "Szo",
 
-"tstat_Jan" => "Jan",
-"tstat_Feb" => "Feb",
-"tstat_Mar" => "Már",
-"tstat_Apr" => "Ápr",
-"tstat_May" => "Máj",
-"tstat_Jun" => "Jún",
-"tstat_Jul" => "Júl",
-"tstat_Aug" => "Aug",
-"tstat_Sep" => "Sze",
-"tstat_Oct" => "Okt",
-"tstat_Nov" => "Nov",
-"tstat_Dec" => "Dec",
+"tstat_full_su" => "vasÃ¡rnapi",
+"tstat_full_mo" => "HÃ©tfÅ‘",
+"tstat_full_tu" => "kedd",
+"tstat_full_we" => "Szerda",
+"tstat_full_th" => "CsÃ¼tÃ¶rtÃ¶k",
+"tstat_full_fr" => "PÃ©ntek",
+"tstat_full_sa" => "Szombat",
 
-"tstat_last_day" => "Múlt nap",
-"tstat_last_week" => "Múlt hét",
-"tstat_last_month" => "Múlt hónap",
-"tstat_last_year" => "Múlt év",
+"tstat_jan" => "Jan",
+"tstat_feb" => "Feb",
+"tstat_mar" => "MÃ¡r",
+"tstat_apr" => "Ãpr",
+"tstat_may" => "MÃ¡j",
+"tstat_jun" => "JÃºn",
+"tstat_jul" => "JÃºl",
+"tstat_aug" => "Aug",
+"tstat_sep" => "Sze",
+"tstat_oct" => "Okt",
+"tstat_nov" => "Nov",
+"tstat_dec" => "Dec",
+
+"tstat_full_jan" => "januÃ¡r",
+"tstat_full_feb" => "februÃ¡r",
+"tstat_full_mar" => "MÃ¡rcius",
+"tstat_full_apr" => "Ãprilis",
+"tstat_full_may" => "mÃ¡jus",
+"tstat_full_jun" => "jÃºnius",
+"tstat_full_jul" => "jÃºlius",
+"tstat_full_aug" => "augusztus",
+"tstat_full_sep" => "Szeptember",
+"tstat_full_oct" => "oktÃ³ber",
+"tstat_full_nov" => "November",
+"tstat_full_dec" => "December",
+
+"tstat_last_day" => "MÃºlt nap",
+"tstat_last_week" => "MÃºlt hÃ©t",
+"tstat_last_month" => "MÃºlt hÃ³nap",
+"tstat_last_year" => "MÃºlt Ã©v",
+"tstat_average" => "Ãtlagos",
+
+// Loadtime notice
+"generated" => "oldalon keletkezÅ‘ ",
+"seconds" => " mÃ¡sodperc",
 
 // Configuration page words and sentences
-"config_Variable_name" => "Változó neve",
-"config_Variable_value" => "Változó értéke",
-"config_Explanations" => "Magyarázat",
+"config_variable_name" => "VÃ¡ltozÃ³ neve",
+"config_variable_value" => "VÃ¡ltozÃ³ Ã©rtÃ©ke",
+"config_explanations" => "MagyarÃ¡zat",
 
-"config_bbc_mainsite" =>
-"Ennek a változónak a beállításával egy linket határozhatsz meg, amely a
-megadott helyre mutat. Alapértelmezésben ez a szülõ könyvtár. Abban az
-esetben, ha honlapod fõoldala valahol máshol található, akkor valószínûleg
-annak címét fogod ide beírni.<br />
-Például:<br />
+"config_BBC_MAINSITE" =>
+"Ennek a vÃ¡ltozÃ³nak a beÃ¡llÃ­tÃ¡sÃ¡val egy linket hatÃ¡rozhatsz meg, amely a
+megadott helyre mutat. AlapÃ©rtelmezÃ©sben ez a szÃ¼lÅ‘ kÃ¶nyvtÃ¡r. Abban az
+esetben, ha honlapod fÅ‘oldala valahol mÃ¡shol talÃ¡lhatÃ³, akkor valÃ³szÃ­nÅ±leg
+annak cÃ­mÃ©t fogod ide beÃ­rni.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_MAINSITE = &quot;http://www.myserver.com/&quot;<br />
 \$BBC_MAINSITE = &quot;..&quot;<br />
 \$BBC_MAINSITE = &quot;&quot;;",
 
-"config_bbc_show_config" =>
-"Alapértelmezésben a BBClone konfigurációs beállításai szabadon olvashatók.
-Ha ezt nemkívánatosnak tartod, letilthatod az elérését.<br />
-Például:<br />
+"config_BBC_SHOW_CONFIG" =>
+"AlapÃ©rtelmezÃ©sben a BBClone konfigurÃ¡ciÃ³s beÃ¡llÃ­tÃ¡sai szabadon olvashatÃ³k.
+Ha ezt nemkÃ­vÃ¡natosnak tartod, letilthatod az elÃ©rÃ©sÃ©t.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_SHOW_CONFIG = 1;<br />
 \$BBC_SHOW_CONFIG = &quot;&quot;;",
 
-"config_bbc_titlebar" =>
-"A BBClone címsora. Minden oldalon a navigációs sor alatt jelenik meg.
-A következõ makrókat ismeri:<br /><br />
+"config_BBC_TITLEBAR" =>
+"A BBClone cÃ­msora. Minden oldalon a navigÃ¡ciÃ³s sor alatt jelenik meg.
+A kÃ¶vetkezÅ‘ makrÃ³kat ismeri:<br /><br />
 %SERVER: szerver neve<br />
-%DATE: jelen dátum<br /><br />
+%DATE: jelen dÃ¡tum<br /><br />
 
-A HTML cimkék használata megengedett.<br />
-Például:<br />
+A HTML cimkÃ©k hasznÃ¡lata megengedett.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_TITLEBAR = &quot;%SERVER szerver statisztika (%DATE)&quot;;<br />
-\$BBC_TITLEBAR = &quot;A mai (%DATE) statisztika így néz ki:&quot;;
+\$BBC_TITLEBAR = &quot;A mai (%DATE) statisztika Ã­gy nÃ©z ki:&quot;;
 <br />",
 
-"config_bbc_language" =>
-"A BBClone alapértelmezett nyelve, amennyiben a böngészõ másként nem
-definiálja. Jelenleg a következõ nyelvek választhatók:
+"config_BBC_LANGUAGE" =>
+"A BBClone alapÃ©rtelmezett nyelve, amennyiben a bÃ¶ngÃ©szÅ‘ mÃ¡skÃ©nt nem
+definiÃ¡lja. Jelenleg a kÃ¶vetkezÅ‘ nyelvek vÃ¡laszthatÃ³k:
 <p>ar, bg, bs, ca, cs, da, de, el, en, es, fi, fr, hu, id, it, ja, ko, lt, mk, nb, nl, pl, pt, pt-br, ro, ru,
 sk, sl, sv, th, tr, ua, zh-cn and zh-tw</p>",
 
-"config_bbc_maxtime" =>
-"Ez a változó határozza meg az egyedinek tekintett látogatás hosszát
-(másodpercben). Egy látogatásnak számít (egyazon látogatótól) minden találat
-egészen addig, amíg a két egymást követõ találat között eltelt idõ túl nem
-lépi az itt meghatározott értéket. Alapértelmezett a de facto web szabványnak
-tekinthetõ 30 perc (1800 másodperc), de szükség szerint más érték is
-beállítható.<br />
-Például:<br />
+"config_BBC_MAXTIME" =>
+"Ez a vÃ¡ltozÃ³ hatÃ¡rozza meg az egyedinek tekintett lÃ¡togatÃ¡s hosszÃ¡t
+(mÃ¡sodpercben). Egy lÃ¡togatÃ¡snak szÃ¡mÃ­t (egyazon lÃ¡togatÃ³tÃ³l) minden talÃ¡lat
+egÃ©szen addig, amÃ­g a kÃ©t egymÃ¡st kÃ¶vetÅ‘ talÃ¡lat kÃ¶zÃ¶tt eltelt idÅ‘ tÃºl nem
+lÃ©pi az itt meghatÃ¡rozott Ã©rtÃ©ket. AlapÃ©rtelmezett a de facto web szabvÃ¡nynak
+tekinthetÅ‘ 30 perc (1800 mÃ¡sodperc), de szÃ¼ksÃ©g szerint mÃ¡s Ã©rtÃ©k is
+beÃ¡llÃ­thatÃ³.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_MAXTIME = 0;<br />
 \$BBC_MAXTIME = 1800;",
 
-"config_bbc_maxvisible" =>
-"Mennyi sor jelenjen meg a részletes statisztikában? Az alapértelmezett érték
-100. A jelentõs mértékû terhelésnövekedés elkerülésének érdekében 500-nál
-nagyobbat nem ajánlott beállítani.",
+"config_BBC_MAXVISIBLE" =>
+"Mennyi sor jelenjen meg a rÃ©szletes statisztikÃ¡ban? Az alapÃ©rtelmezett Ã©rtÃ©k
+100. A jelentÅ‘s mÃ©rtÃ©kÅ± terhelÃ©snÃ¶vekedÃ©s elkerÃ¼lÃ©sÃ©nek Ã©rdekÃ©ben 500-nÃ¡l
+nagyobbat nem ajÃ¡nlott beÃ¡llÃ­tani.",
 
-"config_bbc_detailed_stat_fields" =>
-"Ez a változó a részletes statisztika oszlopait határozza meg. Lehetséges
-értékei:
+"config_BBC_DETAILED_STAT_FIELDS" =>
+"Ez a vÃ¡ltozÃ³ a rÃ©szletes statisztika oszlopait hatÃ¡rozza meg. LehetsÃ©ges
+Ã©rtÃ©kei:
 <ul>
-<li>id&nbsp;=&gt;&nbsp;hányadik látogató a számláló indítása óta</li>
-<li>time&nbsp;=&gt;&nbsp;az utolsó találat rögzítésének idõpontja</li>
-<li>visits&nbsp;=&gt;&nbsp;találatok száma az adott látogatás alatt</li>
-<li>dns&nbsp;=&gt;&nbsp;a látogató gépének hosztneve</li>
-<li>ip&nbsp;=&gt;&nbsp;a látogató gépének IP címe</li>
-<li>os&nbsp;=&gt;&nbsp;az operációs rendszer (ha azonosítható és/vagy nem robot)</li>
-<li>browser&nbsp;=&gt;&nbsp;a kapcsolat létrehozásakor használt böngészõ (ha azonosítható)</li>
-<li>ext&nbsp;=&gt;&nbsp;a látogató országa a hosztnév végzõdése alapján</li>
-<li>referer&nbsp;=&gt;&nbsp;URL, ahonnan a látogató érkezett (referrer)</li>
-<li>page&nbsp;=&gt;&nbsp;az utoljára meglátogatott oldal</li>
-<li>search&nbsp;=&gt;&nbsp;a keresett szó/kifejezés (ha a látogató egy adott kulcsszóra keresve talált ide)</li>
+<li>id&nbsp;=&gt;&nbsp;hÃ¡nyadik lÃ¡togatÃ³ a szÃ¡mlÃ¡lÃ³ indÃ­tÃ¡sa Ã³ta</li>
+<li>time&nbsp;=&gt;&nbsp;az utolsÃ³ talÃ¡lat rÃ¶gzÃ­tÃ©sÃ©nek idÅ‘pontja</li>
+<li>visits&nbsp;=&gt;&nbsp;talÃ¡latok szÃ¡ma az adott lÃ¡togatÃ¡s alatt</li>
+<li>dns&nbsp;=&gt;&nbsp;a lÃ¡togatÃ³ gÃ©pÃ©nek hosztneve</li>
+<li>ip&nbsp;=&gt;&nbsp;a lÃ¡togatÃ³ gÃ©pÃ©nek IP cÃ­me</li>
+<li>os&nbsp;=&gt;&nbsp;az operÃ¡ciÃ³s rendszer (ha azonosÃ­thatÃ³ Ã©s/vagy nem robot)</li>
+<li>browser&nbsp;=&gt;&nbsp;a kapcsolat lÃ©trehozÃ¡sakor hasznÃ¡lt bÃ¶ngÃ©szÅ‘ (ha azonosÃ­thatÃ³)</li>
+<li>ext&nbsp;=&gt;&nbsp;a lÃ¡togatÃ³ orszÃ¡ga a hosztnÃ©v vÃ©gzÅ‘dÃ©se alapjÃ¡n</li>
+<li>referer&nbsp;=&gt;&nbsp;URL, ahonnan a lÃ¡togatÃ³ Ã©rkezett (referrer)</li>
+<li>page&nbsp;=&gt;&nbsp;az utoljÃ¡ra meglÃ¡togatott oldal</li>
+<li>search&nbsp;=&gt;&nbsp;a keresett szÃ³/kifejezÃ©s (ha a lÃ¡togatÃ³ egy adott kulcsszÃ³ra keresve talÃ¡lt ide)</li>
 </ul>
-A megjelenítés a változó értékeinek itt megadott sorrendje szerint történik.<br />
-Például:<br />
+A megjelenÃ­tÃ©s a vÃ¡ltozÃ³ Ã©rtÃ©keinek itt megadott sorrendje szerint tÃ¶rtÃ©nik.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;id, time, visits, ip, ext, os, browser&quot;;
 <br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;date, ext, browser, os, ip&quot;;<br />",
 
-"config_bbc_time_offset" =>
-"Amennyiben a szerver órája nem a helyi idõzónád szerint jár, akkor ezzel a
-változóval beállíthatod a pontos idõt (percekben). Negatív érték visszafele,
-pozitív pedig értelemszerûen elõre állítja azt.<br />
-Például:<br />
+"config_BBC_TIME_OFFSET" =>
+"Amennyiben a szerver Ã³rÃ¡ja nem a helyi idÅ‘zÃ³nÃ¡d szerint jÃ¡r, akkor ezzel a
+vÃ¡ltozÃ³val beÃ¡llÃ­thatod a pontos idÅ‘t (percekben). NegatÃ­v Ã©rtÃ©k visszafele,
+pozitÃ­v pedig Ã©rtelemszerÅ±en elÅ‘re Ã¡llÃ­tja azt.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_TIME_OFFSET = 300;<br />
 \$BBC_TIME_OFFSET = -300;<br />
 \$BBC_TIME_OFFSET = 0;",
 
-"config_bbc_no_dns" =>
-"Ezzel az opcióval meghatározhatod, hogy az IP címeket feloldja-e a program
-hosztnevekre vagy sem. Jóllehet a hosztnevek többet elárulnak a látogatóról,
-feloldásuk jelentõsen lelassíthatja a gépet, ha a használt DNS szerver lassú,
-korlátozott teljesítõképességû vagy megbízhatatlan. Ilyenkor ennek a
-változónak a beállítása segíthet megoldani a problémát.<br />
-Például:<br />
+"config_BBC_NO_DNS" =>
+"Ezzel az opciÃ³val meghatÃ¡rozhatod, hogy az IP cÃ­meket feloldja-e a program
+hosztnevekre vagy sem. JÃ³llehet a hosztnevek tÃ¶bbet elÃ¡rulnak a lÃ¡togatÃ³rÃ³l,
+feloldÃ¡suk jelentÅ‘sen lelassÃ­thatja a gÃ©pet, ha a hasznÃ¡lt DNS szerver lassÃº,
+korlÃ¡tozott teljesÃ­tÅ‘kÃ©pessÃ©gÅ± vagy megbÃ­zhatatlan. Ilyenkor ennek a
+vÃ¡ltozÃ³nak a beÃ¡llÃ­tÃ¡sa segÃ­thet megoldani a problÃ©mÃ¡t.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_NO_DNS = 1;<br />
 \$BBC_NO_DNS = &quot;&quot;;",
 
-"config_bbc_no_hits" =>
-"Alapértelmezésben a BBClone a találatok számát mutatja az idõ statisztikában,
-mert ez hasznos tájékoztatást nyújt a szerver leterheltségérõl. Ha mégis
-inkább az egyedi látogatások számát szeretnéd az idõ statisztika alapjául
-használni, akkor ennek a változónak az 1-re állításával ezt megteheted.<br />
-Például:<br />
+"config_BBC_NO_HITS" =>
+"AlapÃ©rtelmezÃ©sben a BBClone a talÃ¡latok szÃ¡mÃ¡t mutatja az idÅ‘ statisztikÃ¡ban,
+mert ez hasznos tÃ¡jÃ©koztatÃ¡st nyÃºjt a szerver leterheltsÃ©gÃ©rÅ‘l. Ha mÃ©gis
+inkÃ¡bb az egyedi lÃ¡togatÃ¡sok szÃ¡mÃ¡t szeretnÃ©d az idÅ‘ statisztika alapjÃ¡ul
+hasznÃ¡lni, akkor ennek a vÃ¡ltozÃ³nak az 1-re Ã¡llÃ­tÃ¡sÃ¡val ezt megteheted.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_NO_HITS = 1;<br />
 \$BBC_NO_HITS = &quot;&quot;;",
 
-"config_bbc_ignore_ip" =>
-"Ez az opció a megadott IP címeknek vagy címtartományoknak a számolásból
-történõ kizárására szolgál. Ha több kifejezést is meg akarsz adni, használd
-a vesszõt elválasztásként.<br />
-Például:<br />
+"config_BBC_IGNORE_IP" =>
+"Ez az opciÃ³ a megadott IP cÃ­meknek vagy cÃ­mtartomÃ¡nyoknak a szÃ¡molÃ¡sbÃ³l
+tÃ¶rtÃ©nÅ‘ kizÃ¡rÃ¡sÃ¡ra szolgÃ¡l. Ha tÃ¶bb kifejezÃ©st is meg akarsz adni, hasznÃ¡ld
+a vesszÅ‘t elvÃ¡lasztÃ¡skÃ©nt.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_IGNORE_IP = &quot;127., 192.168.&quot;;<br />
 \$BBC_IGNORE_IP = &quot;&quot;;",
 
-"config_bbc_ignore_refer" =>
-"Ha azt szeretnéd, hogy bizonyos referrerek (ahonnan a látogató pl. egy linkre
-kattintva érkezett) ne jelenjenek meg a listában, akkor itt megadhatsz egy
-vagy több kulcsszót. Illeszkedés esetén a pgm. az adott referrert blokkolja,
-vagyis nem jelenítni meg.<br />
-Például:<br />
+"config_BBC_IGNORE_REFER" =>
+"Ha azt szeretnÃ©d, hogy bizonyos referrerek (ahonnan a lÃ¡togatÃ³ pl. egy linkre
+kattintva Ã©rkezett) ne jelenjenek meg a listÃ¡ban, akkor itt megadhatsz egy
+vagy tÃ¶bb kulcsszÃ³t. IlleszkedÃ©s esetÃ©n a pgm. az adott referrert blokkolja,
+vagyis nem jelenÃ­tni meg.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_IGNORE_REFER = &quot;spambot.org, .escort.&quot;;<br />
 \$BBC_IGNORE_REFER = &quot;&quot;;",
 
-"config_bbc_ignore_bots" =>
-"Ezzel az opcióval meghatározhatod, hogy a program miként kezelje a
-robotokat. Alapértelmezésben a hoszt rangsor kivételével mindenhol figyelembe
-veszi õket. Ha egyáltalán nem akarod, hogy a robotokkal is foglalkozzon, akkor
-állítsad 2-re és így csak a humán látogatókat jegyzi majd a pgm.<br />
-Például:<br />
+"config_BBC_IGNORE_BOTS" =>
+"Ezzel az opciÃ³val meghatÃ¡rozhatod, hogy a program mikÃ©nt kezelje a
+robotokat. AlapÃ©rtelmezÃ©sben a hoszt rangsor kivÃ©telÃ©vel mindenhol figyelembe
+veszi Å‘ket. Ha egyÃ¡ltalÃ¡n nem akarod, hogy a robotokkal is foglalkozzon, akkor
+Ã¡llÃ­tsad 2-re Ã©s Ã­gy csak a humÃ¡n lÃ¡togatÃ³kat jegyzi majd a pgm.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_IGNORE_BOTS = 2;<br />
 \$BBC_IGNORE_BOTS = 1;<br />
 \$BBC_IGNORE_BOTS = &quot;&quot;;",
 
-"config_bbc_ignore_agent" =>
-"Ezzel az opcióval meghatározhatod, hogy miként különböztesse meg a BBClone
-az egyes látogatókat. Alapértelmezésben csak az IP címet veszi figyelembe,
-ez a legtöbb esetben valós számokat biztosít. Abban az esetben, ha a
-látogatók gyakran proxy szerverrõl érkeznek, ennek az opciónak az átállítása
-(&quot;ignore_agent&quot; jelentése: hagyja figyelmen kívül a böngészõt) reálisabb
-adatokat eredményezhet, mert pl. ha az adott IP számról más böngészõvel
-jön valaki, azt új látogatónak veszi.<br />
-Például:<br />
+"config_BBC_IGNORE_AGENT" =>
+"Ezzel az opciÃ³val meghatÃ¡rozhatod, hogy mikÃ©nt kÃ¼lÃ¶nbÃ¶ztesse meg a BBClone
+az egyes lÃ¡togatÃ³kat. AlapÃ©rtelmezÃ©sben csak az IP cÃ­met veszi figyelembe,
+ez a legtÃ¶bb esetben valÃ³s szÃ¡mokat biztosÃ­t. Abban az esetben, ha a
+lÃ¡togatÃ³k gyakran proxy szerverrÅ‘l Ã©rkeznek, ennek az opciÃ³nak az Ã¡tÃ¡llÃ­tÃ¡sa
+(&quot;ignore_agent&quot; jelentÃ©se: hagyja figyelmen kÃ­vÃ¼l a bÃ¶ngÃ©szÅ‘t) reÃ¡lisabb
+adatokat eredmÃ©nyezhet, mert pl. ha az adott IP szÃ¡mrÃ³l mÃ¡s bÃ¶ngÃ©szÅ‘vel
+jÃ¶n valaki, azt Ãºj lÃ¡togatÃ³nak veszi.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_IGNORE_AGENT = 1;<br />
 \$BBC_IGNORE_AGENT = &quot;&quot;;",
 
-"config_bbc_kill_stats" =>
-"Ha valaha is újra szeretnéd indítani a statisztikádat, ennek 1-re állításával
-a legközelebbi látogatás alkalmával az adatok törlõdnek. Ne felejtsd el aztán
-visszaállítani, különben csodálkozol majd, hogy milyen alacsony a forgalom! ;)<br />
-Például:<br />
+"config_BBC_KILL_STATS" =>
+"Ha valaha is Ãºjra szeretnÃ©d indÃ­tani a statisztikÃ¡dat, ennek 1-re Ã¡llÃ­tÃ¡sÃ¡val
+a legkÃ¶zelebbi lÃ¡togatÃ¡s alkalmÃ¡val az adatok tÃ¶rlÅ‘dnek. Ne felejtsd el aztÃ¡n
+visszaÃ¡llÃ­tani, kÃ¼lÃ¶nben csodÃ¡lkozol majd, hogy milyen alacsony a forgalom! ;)<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_KILL_STATS = 1;<br />
 \$BBC_KILL_STATS = &quot;&quot;;",
 
-"config_bbc_purge_single" =>
-"A hoszt és a hivatkozási (referrer) statisztikák igen nagy adatmennyiséget
-generálhatnak, jóllehet ezek legtöbbjét a csak egyszer (és általában
-tévedésbõl) felbukkanó látogatók adják. Ennek a változónak a beállításával
-törölheted ezeket a bejegyzéseket, így az access.php file mérete jelentõsen
-csökken anélkül, hogy ez a látható hoszt és hivatkozási rangsort befolyásolná.
-Ezek a találatok a &quot;meghatározatlan&quot; bejegyzések számát növelik
-majd, így az összesítések nem változnak.<br />
-Például:<br />
+"config_BBC_PURGE_SINGLE" =>
+"A hoszt Ã©s a hivatkozÃ¡si (referrer) statisztikÃ¡k igen nagy adatmennyisÃ©get
+generÃ¡lhatnak, jÃ³llehet ezek legtÃ¶bbjÃ©t a csak egyszer (Ã©s Ã¡ltalÃ¡ban
+tÃ©vedÃ©sbÅ‘l) felbukkanÃ³ lÃ¡togatÃ³k adjÃ¡k. Ennek a vÃ¡ltozÃ³nak a beÃ¡llÃ­tÃ¡sÃ¡val
+tÃ¶rÃ¶lheted ezeket a bejegyzÃ©seket, Ã­gy az access.php file mÃ©rete jelentÅ‘sen
+csÃ¶kken anÃ©lkÃ¼l, hogy ez a lÃ¡thatÃ³ hoszt Ã©s hivatkozÃ¡si rangsort befolyÃ¡solnÃ¡.
+Ezek a talÃ¡latok a &quot;meghatÃ¡rozatlan&quot; bejegyzÃ©sek szÃ¡mÃ¡t nÃ¶velik
+majd, Ã­gy az Ã¶sszesÃ­tÃ©sek nem vÃ¡ltoznak.<br />
+PÃ©ldÃ¡ul:<br />
 \$BBC_PURGE_SINGLE = 1;<br />
 \$BBC_PURGE_SINGLE = &quot;&quot;;"
 

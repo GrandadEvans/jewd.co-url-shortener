@@ -1,61 +1,75 @@
 <?php
-/* This file is part of BBClone (The PHP web counter on steroids)
+/* This file is part of BBClone (A PHP based Web Counter on Steroids)
+ * 
+ * CVS FILE $Id: show_detailed.php,v 1.108 2011/12/30 23:02:10 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * $Header: /cvs/bbclone/show_detailed.php,v 1.100 2009/06/21 07:33:07 joku Exp $
- *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  */
+if(!defined("_BBC_PAGE_NAME")){define("_BBC_PAGE_NAME", "Show Detailed");}
+/////////////////////////
+// Show Detailed Stats //
+/////////////////////////
 
-// Check for PHP 4.0.3 or older
-if (!function_exists("array_sum")) exit("<hr /><b>Error:</b> PHP ".PHP_VERSION." is too old for BBClone.");
-elseif (is_readable("constants.php")) require_once("constants.php");
-else return;
+// START Time Measuring, load-time of the page (see config)
+$time = microtime();
+$time = explode(' ', $time);
+$time = $time[1] + $time[0];
+$start = $time;
 
-foreach (array($BBC_CONFIG_FILE, $BBC_LIB_PATH."html.php", $BBC_LIB_PATH."selectlang.php", $BBC_LAST_FILE, $BBC_LIB_PATH."images_meta.php") as $i) {
+// Read constants
+if (is_readable("constants.php")) require_once("constants.php");
+else exit("ERROR: Unable to open constants.php");
+
+foreach (array($BBC_CONFIG_FILE, $BBC_LIB_PATH."selectlang.php", $BBC_LAST_FILE) as $i) {
   if (is_readable($i)) require_once($i);
   else exit(bbc_msg($i));
 }
 
-// Functions
-
-// generates the contents of each field in the detailed stats
+// Functions to generate Stats for each row
 function bbc_show_connect_field($connect, $field, $lng, $titles = false) {
-  global $BBC_IMAGES_PATH, $BBC_LIB_PATH, $_, $BBC_EXT_IMAGES, $ext_height, $ext_width;
+  global $BBC_WHOIS, $BBC_IMAGES_PATH, $BBC_LIB_PATH, $BBC_HTML, $extensions, $translation;
 
   $id = empty($connect['id']) ? 0 : $connect['id'];
 
   switch ($field) {
     case "id":
-      return "<div align=\"right\">".$connect[$field]."&nbsp;</div>\n";
+      return "<div align=\"center\">".$connect['id']."&nbsp;</div>\n";
 
     case "time":
-      return "<div align=\"right\">".str_replace(" ", "&nbsp;", date("j M, H:i:s", $connect[$field]))."&nbsp;</div>\n";
+      return "<div align=\"center\">".str_replace(" ", "&nbsp;", date_format_translated($translation["global_time_format"], $connect['time']))."&nbsp;</div>\n";
 
     case "visits":
-      return "<div align=\"right\"><a href=\"show_views.php?id=$id&amp;lng=$lng\" target=\"_blank\">".$connect[$field]
-            ."</a>&nbsp;</div>\n";
+      return "<div align=\"center\"><a href=\"show_views.php?id=$id&amp;lng=$lng\">".$connect['visits']."</a>&nbsp;</div>\n";
 
     case "ext":
-      return "<div align=\"left\">&nbsp;<img src=\"".$BBC_IMAGES_PATH.$BBC_EXT_IMAGES.$connect[$field].".png\" height=\"".$ext_height."\" "
-            ."width=\"".$ext_width."\" alt=\"".$_[$connect['ext']]."\" title=\"".$_[($connect[$field])]."\" />&nbsp;&nbsp;"
-            .$_[($connect[$field])]."</div>";
+      if (isset($extensions[$connect['ext']])) $label = $extensions[$connect['ext']];
+      else $label = $connect['ext'];
+      return "<div align=\"left\">&nbsp;<img src=\"".$BBC_IMAGES_PATH."ext/".$connect['ext'].".png\" class=\"icon\" alt=\"".$label."\" title=\"".$label."\" />&nbsp;&nbsp;".$label."</div>";
 
     case "dns":
-      if (strlen($connect[$field]) > 50) $connect[$field] = "...".substr($connect[$field], -47);
-      return "<div align=\"left\">&nbsp;".$connect[$field]."</div>";
+      if (strlen($connect['dns']) > 50) $connect['dns'] = "...".substr($connect['dns'], -47);
+      $dns_str = $connect['dns'];
+      $ip_str = $connect['ip'];
+      if (!strcasecmp ($dns_str, $ip_str))
+      	if ($BBC_WHOIS) return "<div align=\"left\">&nbsp;".$connect[$field]."&nbsp;<a href=\"".$BBC_WHOIS.$dns_str."\" target=\"blank\" title=\"".$translation['dstat_whois_information']."\">(?)</a></div>";
+      return "<div align=\"left\">&nbsp;".$connect['dns']."</div>";
 
     case "referer":
-      if (strpos($connect[$field], "://") === false) return "&nbsp;";
+      if (strpos($connect['referer'], "://") === false) return "&nbsp;";
 
-      $url = substr(strstr($connect[$field], "://"), 3);
+      $url = substr(strstr($connect['referer'], "://"), 3);
       $str = (($slash = strpos($url, "/")) !== false) ? substr($url, 0, $slash) : $url;
       $str = (strlen($str) > 50) ? "...".substr($str, -47) : $str;
 
@@ -75,10 +89,10 @@ function bbc_show_connect_field($connect, $field, $lng, $titles = false) {
 
       if (!$match = (!isset($browser[$connect[$field]]) ? false : $browser[$connect[$field]])) return "&nbsp;";
 
-      $title = str_replace("other", $_['misc_other'], $match['title']);
+      $title = str_replace("other", $translation['misc_other'], $match['title']);
 
-      return "<div align=\"left\">&nbsp;<img src=\"".$BBC_IMAGES_PATH."browser_".$match['icon'].".png\" height=\"14\" "
-            ."width=\"14\" alt=\"$title\" title=\"$title\" />&nbsp;&nbsp;".str_replace(" ", "&nbsp;", $title)
+      return "<div align=\"left\">&nbsp;<img src=\"".$BBC_IMAGES_PATH."browser/".$match['icon'].".png\" class=\"icon\" alt=\"$title\" title=\"$title\" />"
+      		."&nbsp;&nbsp;".str_replace(" ", "&nbsp;", $title)
             .(empty($connect['browser_note']) ? "" : "&nbsp;".$connect['browser_note'])."</div>";
 
     case "os":
@@ -88,12 +102,12 @@ function bbc_show_connect_field($connect, $field, $lng, $titles = false) {
 
       if (!$match = (!isset($os[$connect[$field]]) ? false : $os[$connect[$field]])) return "&nbsp;";
 
-      $title = str_replace("other", $_['misc_other'], $match['title']);
+      $title = str_replace("other", $translation['misc_other'], $match['title']);
       if (isset($connect['screen_res'])) $res_str = "(".$connect['screen_res'].")";
 
-      return "<div align=\"left\">&nbsp;<img src=\"".$BBC_IMAGES_PATH."os_".$match['icon'].".png\" height=\"14\" "
-            ."width=\"14\" alt=\"$title\" title=\"$title\" />&nbsp;&nbsp;".str_replace(" ", "&nbsp;", $title)
-            .(empty($connect['os_note']) ? "" : "&nbsp;".$connect['os_note']).(isset($res_str) ? "&nbsp;".$res_str : "")."</div>";
+      return "<div align=\"left\">&nbsp;<img src=\"".$BBC_IMAGES_PATH."os/".$match['icon'].".png\" class=\"icon\" alt=\"$title\" title=\"$title\" />"
+      		."&nbsp;&nbsp;".str_replace(" ", "&nbsp;", $title)
+      		.(empty($connect['os_note']) ? "" : "&nbsp;".$connect['os_note']).(isset($res_str) ? "&nbsp;".$res_str : "")."</div>";
 
     case "robot":
       if (is_readable($BBC_LIB_PATH."robot.php")) require($BBC_LIB_PATH."robot.php");
@@ -101,17 +115,17 @@ function bbc_show_connect_field($connect, $field, $lng, $titles = false) {
 
       if (!$match = (!isset($robot[$connect[$field]]) ? false : $robot[$connect[$field]])) return "&nbsp;";
 
-      $title = str_replace("other", $_['misc_other'], $match['title']);
+      $title = str_replace("other", $translation['misc_other'], $match['title']);
 
-      return "<div align=\"left\">&nbsp;<img src=\"".$BBC_IMAGES_PATH."robot_".$match['icon'].".png\" height=\"14\" "
-            ."width=\"14\" alt=\"$title\" title=\"$title\" />&nbsp;&nbsp;".str_replace(" ", "&nbsp;", $title)
+      return "<div align=\"left\">&nbsp;<img src=\"".$BBC_IMAGES_PATH."robot/".$match['icon'].".png\" class=\"icon\" alt=\"$title\" title=\"$title\" />"
+      		."&nbsp;&nbsp;".str_replace(" ", "&nbsp;", $title)
             .(empty($connect['robot_note']) ? "" : "&nbsp;".$connect['robot_note'])."</div>";
 
     case "page":
-      if (!isset($connect[$field])) return "&nbsp;";
+      if (!isset($connect['page'])) return "&nbsp;";
 
-      $last_page = $titles[($connect[$field])];
-      $last_page = ($last_page == "index") ? $_["navbar_Main_Site"] : $last_page;
+      $last_page = $titles[($connect['page'])];
+      $last_page = ($last_page == "index") ? $translation["navbar_main_site"] : $last_page;
 
       return "<div align=\"left\">&nbsp;$last_page</div>";
 
@@ -121,61 +135,71 @@ function bbc_show_connect_field($connect, $field, $lng, $titles = false) {
   }
 }
 
-// generates each row of the detailed stats
+// Main functions to generate Stats
 function bbc_rows_gen() {
-  global $_, $BBC_DETAILED_STAT_FIELDS, $BBC_MAXVISIBLE, $bbc_html, $last;
+  global $BBC_DETAILED_STAT_FIELDS, $BBC_MAXVISIBLE, $BBC_HTML, $translation, $last;
 
   $fields_title = array(
-    "browser" => $_['dstat_browser'],
-    "dns" => $_['dstat_dns'],
-    "ext" => $_['dstat_extension'],
-    "id" => $_['dstat_id'],
-    "ip" => $_['dstat_ip'],
-    "os" => $_['dstat_os'],
-    "page" => $_['dstat_last_page'],
-    "prx_ip" => $_['dstat_prx'],
-    "referer" => $_['dstat_from'],
-    "search" => $_['dstat_search'],
-    "time" => $_['dstat_time'],
-    "visits" => $_['dstat_visits'],
+    "browser" => $translation['dstat_browser'],
+    "dns" => $translation['dstat_dns'],
+    "ext" => $translation['dstat_extension'],
+    "id" => $translation['dstat_id'],
+    "ip" => $translation['dstat_ip'],
+    "os" => $translation['dstat_os'],
+    "page" => $translation['dstat_last_page'],
+    "prx_ip" => $translation['dstat_prx'],
+    "referer" => $translation['dstat_from'],
+    "search" => $translation['dstat_search'],
+    "time" => $translation['dstat_time'],
+    "visits" => $translation['dstat_visits'],
   );
 
-  // print the header
   $fields = explode(",", str_replace(" ", "", $BBC_DETAILED_STAT_FIELDS));
   $nb_access = isset($last['traffic']) ? count($last['traffic']) : 0;
   $str = "<tr>\n";
 
-  foreach ($fields as $val) $str .= "<td class=\"head\">".$fields_title[$val]."</td>\n";
+  foreach ($fields as $val) $str .= "<td class=\"label\">".$fields_title[$val]."</td>\n";
 
   $str .= "</tr>\n";
 
   for ($k = $nb_access - 1; $k >= max(0, $nb_access - $BBC_MAXVISIBLE); $k--) {
-    $hex = $bbc_html->connect_code_color($last['traffic'][$k]);
-
-    $str .= "<tr style=\"background-color: $hex\" onmouseover=\"this.style.backgroundColor='#ffffff'\" "
-           ."onmouseout=\"this.style.backgroundColor='$hex'\">\n";
-
+  	$style_class = $BBC_HTML->connect_color_class($last['traffic'][$k]);
+    $str .= "<tr class=\"$style_class hover_white\">\n";
     reset($fields);
-
     while (list(, $val) = each($fields)) {
-      $cell = bbc_show_connect_field($last['traffic'][$k], $val, $bbc_html->lng, $last['pages']);
-      $str .= "<td class=\"rows\">".(empty($cell) ? "&nbsp;" : $cell)."</td>\n";
+      $cell = bbc_show_connect_field($last['traffic'][$k], $val, $BBC_HTML->lng, $last['pages']);
+      $str .= "<td class=\"cell\">".(empty($cell) ? "&nbsp;" : $cell)."</td>\n";
     }
     $str .= "</tr>\n";
   }
   return $str;
 }
 
-echo $bbc_html->html_begin()
-    .$bbc_html->topbar()
-    .$bbc_html->color_explain()
-    ."<table border=\"0\" cellpadding=\"2\" cellspacing=\"0\" width=\"100%\">\n"
-    ."<tr>\n<td class=\"detbox\" align=\"center\" valign=\"middle\">\n"
-    ."<table class=\"collapse\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\" width=\"100%\">\n"
+// Generate page (with use of the functions above)
+echo $BBC_HTML->html_begin()
+    .$BBC_HTML->topbar()
+    .$BBC_HTML->color_explain()
+    ."<table class=\"centerdata\">\n"
+    ."<tr><td class=\"labelbox\">\n"
+    ."<table class=\"centerdata\">\n"
     .bbc_rows_gen()
     ."</table>\n"
-    ."</td>\n</tr>\n</table>\n"
-    .$bbc_html->copyright()
-    .$bbc_html->topbar(0, 1)
-    .$bbc_html->html_end();
+    ."</td></tr></table>\n"
+    .$BBC_HTML->copyright()
+    .$BBC_HTML->topbar(0, 1);
+
+// END + DISPLAY Time Measuring, load-time of the page (see config)
+global $BBC_LOADTIME;
+
+if (!empty($BBC_LOADTIME)) {
+	$time = microtime();
+	$time = explode(' ', $time);
+	$time = $time[1] + $time[0];
+	$finish = $time;
+	$total_time = round(($finish - $start), 4);
+	echo "<div class=\"loadtime\">".$translation['generated'].$total_time.$translation['seconds']."</div>\n";
+}
+
+// End of HTML
+echo $BBC_HTML->html_end()
 ?>

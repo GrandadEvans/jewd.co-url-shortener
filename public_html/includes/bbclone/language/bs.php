@@ -1,38 +1,32 @@
 <?php
 /* This file is part of BBClone (The PHP web counter on steroids)
  *
- * $Header: /cvs/bbclone/language/bs.php,v 1.4 2009/06/21 07:33:08 joku Exp $
+ * CVS File $Id: bs.php,v 1.20 2011/12/30 23:03:24 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  */
 
-// The main array ($_ is for doing short in its call)
-$_ = array(
-// Specific charset
-"global_charset" => "iso-8859-2",
+// The DNS Extensions array
+$extensions = array(
+"travel" => "Travel",
+"asia" => "Asia-Pacific",
+"jobs" => "Employment",
+"mobi" => "Mobiles",
+"cat" => "Catalan",
+"tel" => "Contacts",
 
-// Date format (used with date())
-"global_date_format" => "d.m.Y",
-
-// Global translation
-"global_bbclone_copyright" => "The BBClone team - Licenzirano pod",
-"global_last_reset" => "Zadnje resetovanje statistike",
-"global_yes" => "da",
-"global_no" => "ne",
-
-// The error messages
-"error_cannot_see_config" =>
-"Vama nije dozvoljeno vidjeti statistike.",
-
-// Address Extensions
 "ac" => "Ascension Island",
 "ad" => "Andora",
 "ae" => "Ujedinjeni Arapski Emirati",
@@ -51,10 +45,11 @@ $_ = array(
 "at" => "Austrija",
 "au" => "Australija",
 "aw" => "Aruba",
-"az" => "Azerbaid¾an",
+"ax" => "Ã…landska ostrva",
+"az" => "AzerbaidÅ¾an",
 "ba" => "Bosnia i Herzegovina",
 "bb" => "Barbados",
-"bd" => "Banglade¹",
+"bd" => "BangladeÅ¡",
 "be" => "Belgija",
 "bf" => "Burkina Faso",
 "bg" => "Bugarska",
@@ -62,6 +57,7 @@ $_ = array(
 "bi" => "Burundi",
 "biz" => "Biznis",
 "bj" => "Benin",
+"bl" => "Sveti Bartolomej",
 "bm" => "Bermuda",
 "bn" => "Brunei",
 "bo" => "Bolivija",
@@ -77,7 +73,7 @@ $_ = array(
 "cd" => "Kongo",
 "cf" => "Centralno Africka republika",
 "cg" => "Kongo",
-"ch" => "©vicerska",
+"ch" => "Å vicerska",
 "ci" => "Ivory Coast",
 "ck" => "Cook Islands",
 "cl" => "Cile",
@@ -92,9 +88,9 @@ $_ = array(
 "cv" => "Cape Verde",
 "cx" => "Christmas Island",
 "cy" => "Kipar",
-"cz" => "Ce¹ka Republika",
+"cz" => "CeÅ¡ka Republika",
 "de" => "Njemacka",
-"dj" => "D¾iboti",
+"dj" => "DÅ¾iboti",
 "dk" => "Danska",
 "dm" => "Dominika",
 "do" => "Dominikanska Republika",
@@ -105,11 +101,11 @@ $_ = array(
 "eg" => "Egipt",
 "eh" => "Western Sahara",
 "er" => "Eritrea",
-"es" => "©panija",
+"es" => "Å panija",
 "et" => "Etiopia",
 "eu" => "Evropska unija",
 "fi" => "Finska",
-"fj" => "Fid¾i",
+"fj" => "FidÅ¾i",
 "fk" => "Falkland Islands",
 "fm" => "Micronesia",
 "fo" => "Faroe Islands",
@@ -158,7 +154,7 @@ $_ = array(
 "jp" => "Japan",
 "ke" => "Kenija",
 "kg" => "Kirgizstan",
-"kh" => "CKambod¾a",
+"kh" => "CKambodÅ¾a",
 "ki" => "Kiribati",
 "km" => "Comoros",
 "kn" => "Saint Kitts and Nevis",
@@ -170,8 +166,8 @@ $_ = array(
 "la" => "Laos",
 "lb" => "Libanon",
 "lc" => "Saint Lucia",
-"li" => "Liehten¹tajn",
-"lk" => "©ri Lanka",
+"li" => "LiehtenÅ¡tajn",
+"lk" => "Å ri Lanka",
 "lr" => "Liberia",
 "ls" => "Lesotho",
 "lt" => "Litvanija",
@@ -181,6 +177,8 @@ $_ = array(
 "ma" => "Moroko",
 "mc" => "Monaco",
 "md" => "Moldova",
+"me" => "Montenegro",
+"mf" => "Saint Martin",
 "mg" => "Madagaskar",
 "mh" => "Marshall Islands",
 "mil" => "US armija",
@@ -214,7 +212,7 @@ $_ = array(
 "np" => "Nepal",
 "nr" => "Nauru",
 "nu" => "Niue",
-"numeric" => "Brojèano",
+"numeric" => "BrojÄano",
 "nz" => "Novi Zealand",
 "om" => "Oman",
 "org" => "Organizacije",
@@ -236,6 +234,7 @@ $_ = array(
 "qa" => "Katar",
 "re" => "Reunion",
 "ro" => "Rumunija",
+"rs" => "Srbija",
 "ru" => "Rusija",
 "rw" => "Rwanda",
 "sa" => "Saudijska Arabija",
@@ -257,7 +256,7 @@ $_ = array(
 "su" => "Soviet Union",
 "sv" => "El Salvador",
 "sy" => "Sirija",
-"sz" => "©vicerska",
+"sz" => "Å vicerska",
 "tc" => "Turks and Caicos Islands",
 "td" => "Chad",
 "tf" => "French Southern Territories",
@@ -280,7 +279,7 @@ $_ = array(
 "uk" => "United Kingdom",
 "um" => "US Minor Outlying Islands",
 "unknown" => "Nepoznato",
-"us" => "Sjedinjene dr¾ave",
+"us" => "Sjedinjene drÅ¾ave",
 "uy" => "Uruguaj",
 "uz" => "Uzbekistan",
 "va" => "Vatican State",
@@ -299,6 +298,29 @@ $_ = array(
 "zm" => "Zambia",
 "zr" => "Zaire",
 "zw" => "Zimbabwe",
+);
+
+// The main Translation array
+$translation = array(
+// Specific charset
+"global_charset" => "utf-8",
+
+// Date format (used with date())
+"global_time_format" => "M jS, H:i:s",
+"global_day_format" => "l F jS, Y",
+"global_hours_format" => "l F jS, G:00",
+"global_month_format" => "F Y",
+
+// Global translation
+"global_titlebar"=> "Statistics for %SERVER generated on %DATE",
+"global_bbclone_copyright" => "The BBClone team - Licenzirano pod",
+"global_last_reset" => "Zadnje resetovanje statistike",
+"global_yes" => "da",
+"global_no" => "ne",
+
+// The error messages
+"error_cannot_see_config" =>
+"Vama nije dozvoljeno vidjeti statistike.",
 
 // Miscellaneous translations
 "misc_other" => "Ostali",
@@ -307,11 +329,13 @@ $_ = array(
 "misc_ignored" => "Ignorisano",
 
 // The Navigation Bar
-"navbar_Main_Site" => "Glavna stranica",
-"navbar_Configuration" => "Konfiguracija",
-"navbar_Global_Stats" => "Globalne statistike",
-"navbar_Detailed_Stats" => "Detaljna statistika",
-"navbar_Time_Stats" => "Vremeska statistika",
+"navbar_main_site" => "Glavna stranica",
+"navbar_configuration" => "Konfiguracija",
+"navbar_global_stats" => "Globalne statistike",
+"navbar_detailed_stats" => "Detaljna statistika",
+"navbar_time_stats" => "Vremeska statistika",
+"navbar_language" => "Language",
+"navbar_go" => "Go",
 
 // Detailed stats words
 "dstat_id" => "ID",
@@ -330,6 +354,7 @@ $_ = array(
 "dstat_last_page" => "Predhodna stranica",
 "dstat_last_visit" => "zadnja posjeta",
 "dstat_robots" => "Roboti",
+"dstat_my_visit" => "Visits from your IP",
 "dstat_no_data" => "Bez podataka",
 "dstat_prx" => "Proxy Server",
 "dstat_ip" => "IP adresa",
@@ -337,75 +362,102 @@ $_ = array(
 "dstat_nr" => "Br",
 "dstat_pages" => "Stranica",
 "dstat_visit_length" => "Duzina posjete",
-"dstat_reloads" => "Osvje¾avanja",
+"dstat_reloads" => "OsvjeÅ¾avanja",
+"dstat_whois_information" => "Look up information on this IP Adress",
 
 // Global stats words
-"gstat_Accesses" => "Pristupi",
-"gstat_Total_visits" => "Ukupno posjeta",
-"gstat_Total_unique" => "Ukupno jedinstvenih",
-"gstat_Operating_systems" => "Prvih %d operativnih sistema",
-"gstat_Browsers" => "Prvih %d browsera",
+"gstat_accesses" => "Pristupi",
+"gstat_total_visits" => "Ukupno posjeta",
+"gstat_total_unique" => "Ukupno jedinstvenih",
+"gstat_operating_systems" => "Prvih %d operativnih sistema",
+"gstat_browsers" => "Prvih %d browsera",
 "gstat_extensions" => "Prvih %d ekstenzija",
-"gstat_Robots" => "Prvih %d robota",
+"gstat_robots" => "Prvih %d robota",
 "gstat_pages" => "Prvih %d posjecenih stranica",
 "gstat_origins" => "Prvih %d Origins",
 "gstat_hosts" => "Prvih %d hostova",
 "gstat_keys" => "Prvih %d Keywords",
-"gstat_Total" => "Ukupno",
-"gstat_Not_specified" => "Nije dato",
+"gstat_total" => "Ukupno",
+"gstat_not_specified" => "Nije dato",
 
 // Time stats words
-"tstat_Su" => "Nedj",
-"tstat_Mo" => "Pon",
-"tstat_Tu" => "Uto",
-"tstat_We" => "Sri",
-"tstat_Th" => "Cet",
-"tstat_Fr" => "Pet",
-"tstat_Sa" => "Sub",
+"tstat_su" => "Nedj",
+"tstat_mo" => "Pon",
+"tstat_tu" => "Uto",
+"tstat_we" => "Sri",
+"tstat_th" => "Cet",
+"tstat_fr" => "Pet",
+"tstat_sa" => "Sub",
 
-"tstat_Jan" => "Jan",
-"tstat_Feb" => "Feb",
-"tstat_Mar" => "Mar",
-"tstat_Apr" => "Apr",
-"tstat_May" => "Maj",
-"tstat_Jun" => "Jun",
-"tstat_Jul" => "Jul",
-"tstat_Aug" => "Aug",
-"tstat_Sep" => "Sep",
-"tstat_Oct" => "Okt",
-"tstat_Nov" => "Nov",
-"tstat_Dec" => "Dec",
+"tstat_full_su" => "Sunday",
+"tstat_full_mo" => "Monday",
+"tstat_full_tu" => "Tuesday",
+"tstat_full_we" => "Wednesday",
+"tstat_full_th" => "Thursday",
+"tstat_full_fr" => "Friday",
+"tstat_full_sa" => "Saturday",
 
-"tstat_last_day" => "Juèer",
-"tstat_last_week" => "Pro¹le sedmice",
-"tstat_last_month" => "Pro¹log mjeseca",
-"tstat_last_year" => "Pro¹le godine",
+"tstat_jan" => "Jan",
+"tstat_feb" => "Feb",
+"tstat_mar" => "Mar",
+"tstat_apr" => "Apr",
+"tstat_may" => "Maj",
+"tstat_jun" => "Jun",
+"tstat_jul" => "Jul",
+"tstat_aug" => "Aug",
+"tstat_sep" => "Sep",
+"tstat_oct" => "Okt",
+"tstat_nov" => "Nov",
+"tstat_dec" => "Dec",
+
+"tstat_full_jan" => "January",
+"tstat_full_feb" => "February",
+"tstat_full_mar" => "March",
+"tstat_full_apr" => "April",
+"tstat_full_may" => "May",
+"tstat_full_jun" => "June",
+"tstat_full_jul" => "July",
+"tstat_full_aug" => "August",
+"tstat_full_sep" => "September",
+"tstat_full_oct" => "October",
+"tstat_full_nov" => "November",
+"tstat_full_dec" => "December",
+
+"tstat_last_day" => "JuÄer",
+"tstat_last_week" => "ProÅ¡le sedmice",
+"tstat_last_month" => "ProÅ¡log mjeseca",
+"tstat_last_year" => "ProÅ¡le godine",
+"tstat_average" => "Average",
+
+// Loadtime notice
+"generated" => "page generated in ",
+"seconds" => " seconds",
 
 // Configuration page words and sentences
-"config_Variable_name" => "Ime varijable",
-"config_Variable_value" => "Vrijednost varijable",
-"config_Explanations" => "Obja¹njenje",
+"config_variable_name" => "Ime varijable",
+"config_variable_value" => "Vrijednost varijable",
+"config_explanations" => "ObjaÅ¡njenje",
 
-"config_bbc_mainsite" =>
-"Ako je ova variabla ukljuèena, bit ce generisan link do odreğene lokacije. 
-Defaultna variabla je pode¹ena za folder iznad foldera BBClone skripte. U sluèaju da se 
-va¹ sajt nalazi na drugom serveru, onda morate napisati dodatne izmjene.<br />
+"config_BBC_MAINSITE" =>
+"Ako je ova variabla ukljuÄena, bit ce generisan link do odreÄ‘ene lokacije. 
+Defaultna variabla je podeÅ¡ena za folder iznad foldera BBClone skripte. U sluÄaju da se 
+vaÅ¡ sajt nalazi na drugom serveru, onda morate napisati dodatne izmjene.<br />
 Primjeri:<br />
 \$BBC_MAINSITE = &quot;http://www.myserver.com/&quot;<br />
 \$BBC_MAINSITE = &quot;..&quot;<br />
 \$BBC_MAINSITE = &quot;&quot;;",
 
-"config_bbc_show_config" =>
-"BBClone je defaultno pode¹en da prikazuje Konfiguraciju. U sluèaju da to ne ¾elite
+"config_BBC_SHOW_CONFIG" =>
+"BBClone je defaultno podeÅ¡en da prikazuje Konfiguraciju. U sluÄaju da to ne Å¾elite
 onda jednostavno upotrebom ove varijable iskljucite tu opciju.<br />
 Primjeri:<br />
 \$BBC_SHOW_CONFIG = 1;<br />
 \$BBC_SHOW_CONFIG = &quot;&quot;;",
 
-"config_bbc_titlebar" =>
-"Naslov va¹e stranice za statistike.<br />
-Bit æe prikazano ispod navigacije svake BBClone stranice<br />
-Sljedeæi macrosi su validni:<br />
+"config_BBC_TITLEBAR" =>
+"Naslov vaÅ¡e stranice za statistike.<br />
+Bit Ä‡e prikazano ispod navigacije svake BBClone stranice<br />
+SljedeÄ‡i macrosi su validni:<br />
 <ul>
 <li>%SERVER: ime servera,</li>
 <li>%DATE: trenutno vrijeme.</li>
@@ -416,115 +468,115 @@ Primjeri:<br />
 \$BBC_TITLEBAR = &quot;Moja statistika %DATE je izgledala ovako:&quot;;
 <br />",
 
-"config_bbc_language" =>
-"BBCloneov defaultni jezik, u sluèaju da nije pode¹en od strane browsera.
+"config_BBC_LANGUAGE" =>
+"BBCloneov defaultni jezik, u sluÄaju da nije podeÅ¡en od strane browsera.
 Lista jezika:
 <p>ar, bg, bs, ca, cs, da, de, el, en, es, fi, fr, hu, id, it, ja, ko, lt, mk, nb, nl, pl, pt, pt-br, ro, ru,
 sk, sl, sv, th, tr, ua, zh-cn and zh-tw</p>",
 
-"config_bbc_maxtime" =>
-"Ova variabla defini¹e du¾inu jedinstvene posjete. Svaki hit istog posjetioca
-u odredenom vremenskom periodu æe biti tretiran kao jedinstvena posjeta. Defaultna vrijednost je de facto
-web standard odnosno 30 minuta ¹to odgovara 1800 sekundi,  ali u zavisnosti od va¹ih potreba variabla 
+"config_BBC_MAXTIME" =>
+"Ova variabla definiÅ¡e duÅ¾inu jedinstvene posjete. Svaki hit istog posjetioca
+u odredenom vremenskom periodu Ä‡e biti tretiran kao jedinstvena posjeta. Defaultna vrijednost je de facto
+web standard odnosno 30 minuta Å¡to odgovara 1800 sekundi,  ali u zavisnosti od vaÅ¡ih potreba variabla 
 je promjenjiva.<br />
 Primjeri:<br />
 \$BBC_MAXTIME = 0;<br />
 \$BBC_MAXTIME = 1800;",
 
-"config_bbc_maxvisible" =>
-"Odredivanje broja razlièitih browsera, operativnih sistema itd. koji æe biti prikazani u listi? 
-Defaultna vrijednost je 100. Preporuèuje se postaviti manje od 500 prikaza jer prevelik broj ote¾ava
-uèitavanje stranice.",
+"config_BBC_MAXVISIBLE" =>
+"Odredivanje broja razliÄitih browsera, operativnih sistema itd. koji Ä‡e biti prikazani u listi? 
+Defaultna vrijednost je 100. PreporuÄuje se postaviti manje od 500 prikaza jer prevelik broj oteÅ¾ava
+uÄitavanje stranice.",
 
-"config_bbc_detailed_stat_fields" =>
-"Variabla \$BBC_DETAILED_STAT_FIELDS pode¹ava boju celija u Detaljnoj statistici.
- Moguæe æelije su:
+"config_BBC_DETAILED_STAT_FIELDS" =>
+"Variabla \$BBC_DETAILED_STAT_FIELDS podeÅ¡ava boju celija u Detaljnoj statistici.
+ MoguÄ‡e Ä‡elije su:
 <ul>
-<li>id&nbsp;=&gt;&nbsp;x-ni posjetioc od poèetka brojanja</li>
+<li>id&nbsp;=&gt;&nbsp;x-ni posjetioc od poÄetka brojanja</li>
 <li>time&nbsp;=&gt;&nbsp;Vrijeme kada je posjetitelj registrovan</li>
-<li>visits&nbsp;=&gt;&nbsp;Broj osvje¾enja</li>
+<li>visits&nbsp;=&gt;&nbsp;Broj osvjeÅ¾enja</li>
 <li>dns&nbsp;=&gt;&nbsp;Hostname posjetioca</li>
 <li>ip&nbsp;=&gt;&nbsp;IP adresa</li>
 <li>os&nbsp;=&gt;&nbsp;Operativni sustav ili sistem posjetioca</li>
 <li>browser&nbsp;=&gt;&nbsp;Software koji je bio iskoristen za pristup stranici (Browser)</li>
-<li>ext&nbsp;=&gt;&nbsp;Dr¾ava ili oznaka posjetica</li>
+<li>ext&nbsp;=&gt;&nbsp;DrÅ¾ava ili oznaka posjetica</li>
 <li>referer&nbsp;=&gt;&nbsp;Link, kojim je posjetioc putovao</li>
-<li>page&nbsp;=&gt;&nbsp;Posljednja posjeæena stranica</li>
-<li>search&nbsp;=&gt;&nbsp;Kljuène rijeèi koje je koristio posjetioc</li>
+<li>page&nbsp;=&gt;&nbsp;Posljednja posjeÄ‡ena stranica</li>
+<li>search&nbsp;=&gt;&nbsp;KljuÄne rijeÄi koje je koristio posjetioc</li>
 </ul><br />
 Primjeri:<br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;id, time, visits, ip, ext, os, browser&quot;;
 <br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;date, ext, browser, os, ip&quot;;<br />",
 
-"config_bbc_time_offset" =>
-"Ako se serversko i va¹e vrijeme nepodudara, podesite ga putem ove variable 
-upisivanjem razlike vremena u minutama. Negativni broj vraæa vrijeme
+"config_BBC_TIME_OFFSET" =>
+"Ako se serversko i vaÅ¡e vrijeme nepodudara, podesite ga putem ove variable 
+upisivanjem razlike vremena u minutama. Negativni broj vraÄ‡a vrijeme
 unazad dok pozitivni pomjera unaprijed.<br />
 Primjeri:<br />
 \$BBC_TIME_OFFSET = 300;<br />
 \$BBC_TIME_OFFSET = -300;<br />
 \$BBC_TIME_OFFSET = 0;",
 
-"config_bbc_no_dns" =>
-"Opcija pode¹aje dali da se IP adresa razla¾e u hostname ili ne.<br />
+"config_BBC_NO_DNS" =>
+"Opcija podeÅ¡aje dali da se IP adresa razlaÅ¾e u hostname ili ne.<br />
 Primjeri:<br />
 \$BBC_NO_DNS = 1;<br />
 \$BBC_NO_DNS = &quot;&quot;;",
 
-"config_bbc_no_hits" =>
-"Standardno pona¹anje BBClonea je, prikazivanje hitsova u vremenskoj statistici jer to 
-pokazuje stvarnu optereæenost servera. Ali ako æete radije koristiti jedinstvene posjete 
-kao osnovicu vremenske statistike mo¾ete koristiti ovu varijablu.<br />
+"config_BBC_NO_HITS" =>
+"Standardno ponaÅ¡anje BBClonea je, prikazivanje hitsova u vremenskoj statistici jer to 
+pokazuje stvarnu optereÄ‡enost servera. Ali ako Ä‡ete radije koristiti jedinstvene posjete 
+kao osnovicu vremenske statistike moÅ¾ete koristiti ovu varijablu.<br />
 Primjeri:<br />
 \$BBC_NO_HITS = 1;<br />
 \$BBC_NO_HITS = &quot;&quot;;",
 
-"config_bbc_ignore_ip" =>
-"Ova opcija se mo¾e koristiti da bi se odreğene IP adrese iskljuèile
-iz odbrojavanja statistike. Ako ¾elite koristiti vi¹e
-razlièitih IP adresa onda ih morate razdvajati zarezom.<br />
+"config_BBC_IGNORE_IP" =>
+"Ova opcija se moÅ¾e koristiti da bi se odreÄ‘ene IP adrese iskljuÄile
+iz odbrojavanja statistike. Ako Å¾elite koristiti viÅ¡e
+razliÄitih IP adresa onda ih morate razdvajati zarezom.<br />
 Primjeri:<br />
 \$BBC_IGNORE_IP = &quot;127., 192.168.&quot;;<br />
 \$BBC_IGNORE_IP = &quot;&quot;;",
 
-"config_bbc_ignore_refer" =>
-"Ako ¾elite da se odreğeni Referreri ne prikazuju u statistici, jednostavno ih 
-upi¹ite u variablu i odvajajte ih sa zarezom..<br />
+"config_BBC_IGNORE_REFER" =>
+"Ako Å¾elite da se odreÄ‘eni Referreri ne prikazuju u statistici, jednostavno ih 
+upiÅ¡ite u variablu i odvajajte ih sa zarezom..<br />
 Primjeri:<br />
 \$BBC_IGNORE_REFER = &quot;spambot.org, .escort.&quot;;<br />
 \$BBC_IGNORE_REFER = &quot;&quot;;",
 
-"config_bbc_ignore_bots" =>
-"Koristite ovu opciju ako ¾elite brojati robote u va¹oj statistici.
+"config_BBC_IGNORE_BOTS" =>
+"Koristite ovu opciju ako Å¾elite brojati robote u vaÅ¡oj statistici.
 Standardno je da se botovi ignoriraju u listi Hostova, ali da se
-ubrojavaju u ostalim statistikama. Ako ¾elite da se robori uopæe ne 
-prikazuju onda morate variablu postaviti na &quot;2&quot;, tako æe
+ubrojavaju u ostalim statistikama. Ako Å¾elite da se robori uopÄ‡e ne 
+prikazuju onda morate variablu postaviti na &quot;2&quot;, tako Ä‡e
 se brojati samo posjete osoba a ne robota.<br />
 Primjeri:<br />
 \$BBC_IGNORE_BOTS = 2;<br />
 \$BBC_IGNORE_BOTS = 1;<br />
 \$BBC_IGNORE_BOTS = &quot;&quot;;",
 
-"config_bbc_ignore_agent" =>
-"Je opcija koja slu¾i za definisanje naèina na koji BBClone razlikuje posjetioce. 
-Standardno je razlikovanje samo po IP adresi, ¹to prikazuje najèe¹æe realnu posjeæenost.<br />
+"config_BBC_IGNORE_AGENT" =>
+"Je opcija koja sluÅ¾i za definisanje naÄina na koji BBClone razlikuje posjetioce. 
+Standardno je razlikovanje samo po IP adresi, Å¡to prikazuje najÄeÅ¡Ä‡e realnu posjeÄ‡enost.<br />
 Primjeri:<br />
 \$BBC_IGNORE_AGENT = 1;<br />
 \$BBC_IGNORE_AGENT = &quot;&quot;;",
 
-"config_bbc_kill_stats" =>
-"Svaki put kada resetujete va¹u statistiku mo¾ete koristiti ovu opciju koja automatski bri¹e
-statistiku nakon prve posjete nekog posjetioca. Nemojte zaboraviti iskljuèiti
+"config_BBC_KILL_STATS" =>
+"Svaki put kada resetujete vaÅ¡u statistiku moÅ¾ete koristiti ovu opciju koja automatski briÅ¡e
+statistiku nakon prve posjete nekog posjetioca. Nemojte zaboraviti iskljuÄiti
 ovu opciju nakon sto se statistika resetuje.<br />
 Primjeri:<br />
 \$BBC_KILL_STATS = 1;<br />
 \$BBC_KILL_STATS = &quot;&quot;;",
 
-"config_bbc_purge_single" =>
-"Host i Referrer statistika mo¾e prouzrokovati veliku kolièinu podataka koji
-najèe¹æe potièu od jedinstvenih posjetioca. Aktiviranjem ove opcije se bri¹u 
-takvi zapisi i velièina access.php datoteke se znatno smanjuje.<br />
+"config_BBC_PURGE_SINGLE" =>
+"Host i Referrer statistika moÅ¾e prouzrokovati veliku koliÄinu podataka koji
+najÄeÅ¡Ä‡e potiÄu od jedinstvenih posjetioca. Aktiviranjem ove opcije se briÅ¡u 
+takvi zapisi i veliÄina access.php datoteke se znatno smanjuje.<br />
 Primjeri:<br />
 \$BBC_PURGE_SINGLE = 1;<br />
 \$BBC_PURGE_SINGLE = &quot;&quot;;"

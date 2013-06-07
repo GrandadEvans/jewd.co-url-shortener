@@ -1,20 +1,24 @@
-/* This file is part of BBClone (The PHP web counter on steroids)
+/* This file is part of BBClone (A PHP based Web Counter on Steroids)
+ * 
+ * CVS FILE $Id: authors.txt,v 1.27 2011/12/30 23:03:06 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * $Header: /cvs/bbclone/doc/authors.txt,v 1.23 2009/09/09 16:23:07 joku Exp $
- *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  */
+
 The BBClone team are:
 ---------------------
-
 Joachim Kuwan:
 jo [ at ] bbclone [ dot ] de
 (developer, server and forum administration)
@@ -37,7 +41,6 @@ egore911 [ at ] egore911 [ dot ] de
 
 Retired team members:
 ---------------------
-
 Amaury Amblard-Ladurantie:
 amaury [ at ] mandrakesoft [ dot ] com
 (original author)

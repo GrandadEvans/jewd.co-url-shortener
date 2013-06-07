@@ -17,13 +17,13 @@ class email {
 
 	
 	function __construct() {
-	    $this->to_address = "john@jewd.co.uk";
+	    $this->to_address = "john@grandadevans.com";
 		$this->to_name = 'John Evans';
-		$this->from_address = 'john@jewd.co.uk';
-		$this->from_name = 'jewd Scripts';
-        $this->smtp_user = '';
-	    $this->smtp_pass = '';
-    	$this->smtp_host = '';
+		$this->from_address = 'john@grandadevans.com';
+		$this->from_name = 'gewd Scripts';
+        $this->smtp_user = 'john@gewd.co';
+	    $this->smtp_pass = '$zhjR4V4';
+    	$this->smtp_host = 'mail.gewd.co';
 	}
 	//Create the Transport
     function send() {

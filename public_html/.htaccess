@@ -10,14 +10,15 @@ RewriteEngine on
 
 RewriteBase /
 
-# remove www from url
-RewriteCond %{HTTP_HOST}	^www.jewd.co$	[NC]
-RewriteRule	^(.*)$			http://jewd.co/$1		[R=301,L]
-
 # show index.php if nothing passed
 RewriteCond	%{REQUEST_URI}	^$
 RewriteCond %{QUERY_STRING}	^$
-RewriteRule ^$				index.php [L]
+RewriteRule ^$				/page.php?p=index [L]
+
+RewriteCond %{REQUEST_URI}	^/(how|why|who|index)$
+RewriteRule ^(how|why|who|index)$				/page.php?p=$1 [L]
+
+# remove www from url
 
 # if there is a 4 char uri then send it as a short_url to view
 RewriteCond %{REQUEST_URI} ^/([a-z0-9]{4})$
@@ -27,4 +28,9 @@ RewriteRule ^([a-z0-9]{4})$ view.php?short=$1 [L]
 RewriteCond %{REQUEST_URI}	!view.php
 RewriteCond %{QUERY_STRING} ^.+$
 RewriteCond %{QUERY_STRING}	!^long=
+RewriteCond %{REQUEST_URI} !^(how|why|who|index)
+RewriteCond %{REQUEST_URI} !^/page.php$
+RewriteCond %{REQUEST_URI} !^/credits.php
+RewriteCond %{REQUEST_URI} !^/collab
 RewriteRule ^ api.php?long=%0 [L]
+

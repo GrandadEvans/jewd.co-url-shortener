@@ -1,38 +1,32 @@
 <?php
 /* This file is part of BBClone (The PHP web counter on steroids)
  *
- * $Header: /cvs/bbclone/language/es.php,v 1.54 2009/06/21 07:33:08 joku Exp $
+ * CVS File $Id: es.php,v 1.71 2011/12/30 23:03:24 joku Exp $
+ *  
+ * Copyright (C) 2001-2012, the BBClone Team (see doc/authors.txt for details)
  *
- * Copyright (C) 2001-2009, the BBClone Team (see file doc/authors.txt
- * distributed with this library)
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
  *
  * See doc/copying.txt for details
  */
 
-// The main array ($_ is for doing short in its call)
-$_ = array(
-// Specific charset
-"global_charset" => "iso-8859-15",
+// The DNS Extensions array
+$extensions = array(
+"travel" => "Travel",
+"asia" => "Asia-Pacific",
+"jobs" => "Employment",
+"mobi" => "Mobiles",
+"cat" => "Catalan",
+"tel" => "Contacts",
 
-// Date format (used with date() )
-"global_date_format" => "d/m/Y",
-
-// Global translation
-"global_bbclone_copyright" => "El equipo de BBClone - licenciado bajo la",
-"global_last_reset" => "&Uacute;ltimo puesto de las estad&iacute;sticas",
-"global_yes" => "si",
-"global_no" => "no",
-
-// The error messages
-"error_cannot_see_config" =>
-"No puedes ver la configuraci&oacute;n de BBClone en este servidor.",
-
-// Address Extensions
 "ac" => "Isla Ascensi&oacute;n",
 "ad" => "Andorra",
 "ae" => "Emiratos &Aacute;rabes",
@@ -51,6 +45,7 @@ $_ = array(
 "at" => "Austria",
 "au" => "Australia",
 "aw" => "Aruba",
+"ax" => "√Öland",
 "az" => "Azerbaiy&aacute;n",
 "ba" => "Bosnia Herzegovina",
 "bb" => "Barbados",
@@ -62,6 +57,7 @@ $_ = array(
 "bi" => "Burundi",
 "biz" => "Negocio",
 "bj" => "Benin",
+"bl" => "San Bartolom√© (Francia)",
 "bm" => "Bermudas",
 "bn" => "Brunei",
 "bo" => "Bolivia",
@@ -181,6 +177,8 @@ $_ = array(
 "ma" => "Marruecos",
 "mc" => "M&oacute;naco",
 "md" => "Moldavia",
+"me" => "Montenegro",
+"mf" => "San Mart√≠n",
 "mg" => "Madagascar",
 "mh" => "Islas Marshall",
 "mil" => "Ejercito Estados Unidos",
@@ -236,6 +234,7 @@ $_ = array(
 "qa" => "Qatar",
 "re" => "Reuni&oacute;n",
 "ro" => "Ruman&iacute;a",
+"rs" => "Serbia",
 "ru" => "Rusia",
 "rw" => "Ruanda",
 "sa" => "Arabia Saud&iacute;",
@@ -299,6 +298,29 @@ $_ = array(
 "zm" => "Zambia",
 "zr" => "Zaire",
 "zw" => "Zimbabwe",
+);
+
+// The main Translation array
+$translation = array(
+// Specific charset
+"global_charset" => "utf-8",
+
+// Date format (used with date())
+"global_time_format" => "M jS, H:i:s",
+"global_day_format" => "l F jS, Y",
+"global_hours_format" => "l F jS, G:00",
+"global_month_format" => "F Y",
+
+// Global translation
+"global_titlebar"=> "Statistics for %SERVER generated on %DATE",
+"global_bbclone_copyright" => "El equipo de BBClone - licenciado bajo la",
+"global_last_reset" => "&Uacute;ltimo puesto de las estad&iacute;sticas",
+"global_yes" => "si",
+"global_no" => "no",
+
+// The error messages
+"error_cannot_see_config" =>
+"No puedes ver la configuraci&oacute;n de BBClone en este servidor.",
 
 // Miscellaneous translations
 "misc_other" => "Otras",
@@ -307,11 +329,13 @@ $_ = array(
 "misc_ignored" => "No hecho caso",
 
 // The Navigation Bar
-"navbar_Main_Site" => "Sitio principal",
-"navbar_Configuration" => "Configuraci&oacute;n",
-"navbar_Global_Stats" => "Estad&iacute;sticas globales",
-"navbar_Detailed_Stats" => "Estad&iacute;sticas detalladas",
-"navbar_Time_Stats" => "Estad&iacute;sticas temporales",
+"navbar_main_site" => "Sitio principal",
+"navbar_configuration" => "Configuraci&oacute;n",
+"navbar_global_stats" => "Estad&iacute;sticas globales",
+"navbar_detailed_stats" => "Estad&iacute;sticas detalladas",
+"navbar_time_stats" => "Estad&iacute;sticas temporales",
+"navbar_language" => "Language",
+"navbar_go" => "Go",
 
 // Detailed stats words
 "dstat_id" => "ID",
@@ -340,70 +364,97 @@ $_ = array(
 "dstat_pages" => "P&aacute;ginas",
 "dstat_visit_length" => "Duraci&oacute;n",
 "dstat_reloads" => "Recargas",
+"dstat_whois_information" => "Look up information on this IP Adress",
 
 // Global stats words
-"gstat_Accesses" => "Accesos",
-"gstat_Total_visits" => "Visitas totales",
-"gstat_Total_unique" => "Totales &uacute;nicas",
-"gstat_Operating_systems" => "%d primeros sistemas operativos",
-"gstat_Browsers" => "%d primeros navegadores",
+"gstat_accesses" => "Accesos",
+"gstat_total_visits" => "Visitas totales",
+"gstat_total_unique" => "Totales &uacute;nicas",
+"gstat_operating_systems" => "%d primeros sistemas operativos",
+"gstat_browsers" => "%d primeros navegadores",
 "gstat_extensions" => "%d primeras extensiones",
-"gstat_Robots" => "%d primeros robots",
+"gstat_robots" => "%d primeros robots",
 "gstat_pages" => "%d primeras p&aacute;ginas",
 "gstat_origins" => "%d primeros or&iacute;genes",
 "gstat_hosts" => "%d primeros hosts",
 "gstat_keys" => "%d primeras palabras clave",
-"gstat_Total" => "Total",
-"gstat_Not_specified" => "Sin especificar",
+"gstat_total" => "Total",
+"gstat_not_specified" => "Sin especificar",
 
 // Time stats words
-"tstat_Su" => "Dom",
-"tstat_Mo" => "Lun",
-"tstat_Tu" => "Mar",
-"tstat_We" => "Mi&eacute;",
-"tstat_Th" => "Jue",
-"tstat_Fr" => "Vie",
-"tstat_Sa" => "S&aacute;b",
+"tstat_su" => "Dom",
+"tstat_mo" => "Lun",
+"tstat_tu" => "Mar",
+"tstat_we" => "Mi&eacute;",
+"tstat_th" => "Jue",
+"tstat_fr" => "Vie",
+"tstat_sa" => "S&aacute;b",
 
-"tstat_Jan" => "Ene",
-"tstat_Feb" => "Feb",
-"tstat_Mar" => "Mar",
-"tstat_Apr" => "Abr",
-"tstat_May" => "May",
-"tstat_Jun" => "Jun",
-"tstat_Jul" => "Jul",
-"tstat_Aug" => "Ago",
-"tstat_Sep" => "Sep",
-"tstat_Oct" => "Oct",
-"tstat_Nov" => "Nov",
-"tstat_Dec" => "Dic",
+"tstat_full_su" => "Sunday",
+"tstat_full_mo" => "Monday",
+"tstat_full_tu" => "Tuesday",
+"tstat_full_we" => "Wednesday",
+"tstat_full_th" => "Thursday",
+"tstat_full_fr" => "Friday",
+"tstat_full_sa" => "Saturday",
+
+"tstat_jan" => "Ene",
+"tstat_feb" => "Feb",
+"tstat_mar" => "Mar",
+"tstat_apr" => "Abr",
+"tstat_may" => "May",
+"tstat_jun" => "Jun",
+"tstat_jul" => "Jul",
+"tstat_aug" => "Ago",
+"tstat_sep" => "Sep",
+"tstat_oct" => "Oct",
+"tstat_nov" => "Nov",
+"tstat_dec" => "Dic",
+
+"tstat_full_jan" => "January",
+"tstat_full_feb" => "February",
+"tstat_full_mar" => "March",
+"tstat_full_apr" => "April",
+"tstat_full_may" => "May",
+"tstat_full_jun" => "June",
+"tstat_full_jul" => "July",
+"tstat_full_aug" => "August",
+"tstat_full_sep" => "September",
+"tstat_full_oct" => "October",
+"tstat_full_nov" => "November",
+"tstat_full_dec" => "December",
 
 "tstat_last_day" => "&Uacute;ltimo d&iacute;a",
 "tstat_last_week" => "&Uacute;ltima semana",
 "tstat_last_month" => "&Uacute;ltimo mes",
 "tstat_last_year" => "&Uacute;ltimo a&ntilde;o",
+"tstat_average" => "Average",
+
+// Loadtime notice
+"generated" => "page generated in ",
+"seconds" => " seconds",
 
 // Configuration page words and sentences
-"config_Variable_name" => "Nombre de la variable",
-"config_Variable_value" => "Valor de la variable",
-"config_Explanations" => "Explicaciones",
+"config_variable_name" => "Nombre de la variable",
+"config_variable_value" => "Valor de la variable",
+"config_explanations" => "Explicaciones",
 
-"config_bbc_mainsite" =>
-"Si esta variable est&aacute; establecida, se generar· un enlace al sitio especificado.
+"config_BBC_MAINSITE" =>
+"Si esta variable est&aacute; establecida, se generar√° un enlace al sitio especificado.
 El valor por defecto apunta al directorio pariente. En caso de que el sitio principal est&eacute; localizado en cualquier otra parte, probablemente querr&aacute;s ajustar este valor para satisfacer tus necesidades.<br />
 Ejemplos:<br />
 \$BBC_MAINSITE = &quot;http://www.miservidor.com/&quot;<br />
 \$BBC_MAINSITE = &quot;..&quot;<br />
 \$BBC_MAINSITE = &quot;&quot;;",
 
-"config_bbc_show_config" =>
+"config_BBC_SHOW_CONFIG" =>
 "Por defecto, la configuraci&oacute;n de BBClone aparece visible. En caso de que no deseas esta
 caracter&iacute;stica, puedes denegar el acceso desactivando esta opci&oacute;n.<br />
 Ejemplos:<br />
 \$BBC_SHOW_CONFIG = 1;<br />
 \$BBC_SHOW_CONFIG = &quot;&quot;;",
 
-"config_bbc_titlebar" =>
+"config_BBC_TITLEBAR" =>
 "T&iacute;tulo de tus p&aacute;ginas de estad&iacute;sticas.<br />
 Aparecer&aacute; en la barra de navegaci&oacute;n de todas las p&aacute;ginas de BBClone.<br />
 Las macros disponibles son:<br />
@@ -414,25 +465,25 @@ Las macros disponibles son:<br />
 Etiquetas HTML permitidas.<br />
 Ejemplos:<br />
 \$BBC_TITLEBAR = &quot;Estad&iacute;sticas para %SERVER generadas el %DATE&quot;;<br />
-\$BBC_TITLEBAR = &quot;Mi estadÌstica de %DATE se parece a esto:&quot;;
+\$BBC_TITLEBAR = &quot;Mi estad√≠stica de %DATE se parece a esto:&quot;;
 <br />",
 
-"config_bbc_language" =>
+"config_BBC_LANGUAGE" =>
 "Idioma por defecto de BBClone, en caso de que no sea especificado por el navegador.
-Los siguientes idiomas est·n soportados:
+Los siguientes idiomas est√°n soportados:
 <p>ar, bg, bs, ca, cs, da, de, el, en, es, fi, fr, hu, id, it, ja, ko, lt, mk, nb, nl, pl, pt, pt-br, ro, ru,
 sk, sl, sv, th, tr, ua, zh-cn and zh-tw</p>",
 
-"config_bbc_maxtime" =>
-"Esta variable define la duraciÛn de una &uacute;nica visita en segundos. Cada acceso del mismo visitante dentro de ese periodo de tiempo se considerar&aacute; la misma visita, mientras que dos accesos sucesivos no excedan el l&iacute;mite especificado. Por defecto se establecen 30 minutos (1800 segundos), considerado el standard de hecho en la web, pero dependiendo de tus necesidades puede que desees asignar un valor diferente.<br />
+"config_BBC_MAXTIME" =>
+"Esta variable define la duraci√≥n de una &uacute;nica visita en segundos. Cada acceso del mismo visitante dentro de ese periodo de tiempo se considerar&aacute; la misma visita, mientras que dos accesos sucesivos no excedan el l&iacute;mite especificado. Por defecto se establecen 30 minutos (1800 segundos), considerado el standard de hecho en la web, pero dependiendo de tus necesidades puede que desees asignar un valor diferente.<br />
 Ejemplos:<br />
 \$BBC_MAXTIME = 0;<br />
 \$BBC_MAXTIME = 1800;",
 
-"config_bbc_maxvisible" =>
-"øCu&aacute;ntas entradas quieres que aparezcan listadas en las estad&iacute;sticas detalladas? El valor por defecto es 100. Se recomienda no asignar m&aacute;s de 500 para evitar una carga pesada.",
+"config_BBC_MAXVISIBLE" =>
+"¬øCu&aacute;ntas entradas quieres que aparezcan listadas en las estad&iacute;sticas detalladas? El valor por defecto es 100. Se recomienda no asignar m&aacute;s de 500 para evitar una carga pesada.",
 
-"config_bbc_detailed_stat_fields" =>
+"config_BBC_DETAILED_STAT_FIELDS" =>
 "La variable \$BBC_DETAILED_STAT_FIELDS determina las columnas que se mostrar&aacute;n en las estad&iacute;sticas detalladas. Las columnas posibles son:
 <ul>
 <li>id&nbsp;=&gt;&nbsp;Visitante n&uacute;mero x de que se comenz&oacute; a contarlos</li>
@@ -452,57 +503,57 @@ Ejemplos:<br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;id, time, visits, ip, ext, os, browser&quot;;<br />
 \$BBC_DETAILED_STAT_FIELDS = &quot;date, ext, browser, os, ip&quot;;<br />",
 
-"config_bbc_time_offset" =>
+"config_BBC_TIME_OFFSET" =>
 "En caso de que la hora del servidor no coincida con tu hora local, puede ajustarse la hora en minutos usando esta variable. Los valores negativos retrasan la hora, los positivos la aumentan.<br />
 Ejemplos:<br />
 \$BBC_TIME_OFFSET = 300;<br />
 \$BBC_TIME_OFFSET = -300;<br />
 \$BBC_TIME_OFFSET = 0;",
 
-"config_bbc_no_dns" =>
+"config_BBC_NO_DNS" =>
 "Esta opci&oacute;n define si las direcciones IP deben ser resueltas para adquirir el nombre del servidor. Aunque los nombres de servidores nos proporcionan m&aacute;s datos sobre un visitante, este m&eacute;todo puede relentizar considerablemente nuestro sitio, si los servidores de DNS usados son lentos, limitados en su capacidad o no accesibles. Estableciendo esta variable puede resolver el problema.<br />
 Ejemplos:<br />
 \$BBC_NO_DNS = 1;<br />
 \$BBC_NO_DNS = &quot;&quot;;",
 
-"config_bbc_no_hits" =>
+"config_BBC_NO_HITS" =>
 "BBClone por defecto muestra los accesos en las estad&iacute;sticas por hora, por que nos da una imagen muy &uacute;til de la carga del servidor. Si, a pesar de ello, prefieres usar visitas &uacute;nicas como base de tus estad&iacute;sticas horarias, puedes cambiar la forma de contabilizaci&oacute;n estableciendo esta variable.<br />
 Ejemplos:<br />
 \$BBC_NO_HITS = 1;<br />
 \$BBC_NO_HITS = &quot;&quot;;",
 
-"config_bbc_ignore_ip" =>
+"config_BBC_IGNORE_IP" =>
 "Esta opci&oacute;n se usa para excluir una direcci&oacute;n IP particular o un rango de direcciones de las estad&iacute;sticas. En caso de que se quiere a&ntilde;adir varias expresiones usar una coma como separador.<br />
 Ejemplos:<br />
 \$BBC_IGNORE_IP = &quot;127., 192.168.&quot;;<br />
 \$BBC_IGNORE_IP = &quot;&quot;;",
 
-"config_bbc_ignore_refer" =>
+"config_BBC_IGNORE_REFER" =>
 "En caso de que no quieras tener referentes particulares de tus visitantes listados en tus estad&iacute;sticas detalladas usa esta variable. Si quieres utilizar m&aacute;s de una expresi&oacute;n sep&aacute;ralas con comas.<br />
 Ejemplos:<br />
 \$BBC_IGNORE_REFER = &quot;spambot.org, .escort.&quot;;<br />
 \$BBC_IGNORE_REFER = &quot;&quot;;",
 
-"config_bbc_ignore_bots" =>
+"config_BBC_IGNORE_BOTS" =>
 "Puedes usar esta opci&oacute;n para determinar el tratamiento de los robots. La configuraci&oacute;n por defecto es ignorarlos en las estad&iacute;sticas de servidores y mostrarlos en el resto de &eacute;stas. Si deseas que no aparezcan en ninguna, puedes configurar esta opci&oacute;n con un &quot;2&quot;, de manera que s&oacute;lo se contabilizar&aacute;n las visitas &quot;humanas&quot;.<br />
 Ejemplos:<br />
 \$BBC_IGNORE_BOTS = 2;<br />
 \$BBC_IGNORE_BOTS = 1;<br />
 \$BBC_IGNORE_BOTS = &quot;&quot;;",
 
-"config_bbc_ignore_agent" =>
-"Esta opci&oacute;n define como BBClone identifica a un visitante. Por defecto se usa s&oacute;lo la direcciÛn IP, que proporciona una imagen real en la mayor&iacute;a de los casos. Si tus visitantes accedieran frecuentemente ocultos detr&aacute;s de un proxy, la desactivaci&oacute;n de esta opci&oacute;n podrÌa proporcionar datos m&aacute;s reales.<br />
+"config_BBC_IGNORE_AGENT" =>
+"Esta opci&oacute;n define como BBClone identifica a un visitante. Por defecto se usa s&oacute;lo la direcci√≥n IP, que proporciona una imagen real en la mayor&iacute;a de los casos. Si tus visitantes accedieran frecuentemente ocultos detr&aacute;s de un proxy, la desactivaci&oacute;n de esta opci&oacute;n podr√≠a proporcionar datos m&aacute;s reales.<br />
 Ejemplos:<br />
 \$BBC_IGNORE_AGENT = 1;<br />
 \$BBC_IGNORE_AGENT = &quot;&quot;;",
 
-"config_bbc_kill_stats" =>
+"config_BBC_KILL_STATS" =>
 "Cada vez que desees resetear tus estad&iacute;sticas puedes activar esta variable, lo que borrar&aacute; las estad&iacute;sticas en la pr&oacute;xima visita. No olvides desactivarla inmediatamente despu&eacute;s, ya que podr&iacute;as experimentar probablemente una disminuci&oacute;n en el n&uacute;mero de visitas en tu sitio ;).<br />
 Ejemplos:<br />
 \$BBC_KILL_STATS = 1;<br />
 \$BBC_KILL_STATS = &quot;&quot;;",
 
-"config_bbc_purge_single" =>
+"config_BBC_PURGE_SINGLE" =>
 "Las estad&iacute;sticas de servidores y referentes pueden generar una gran cantidad de datos. Activando esta variable se eliminan los detalles de las visitas menos relevantes, reduci&eacute;ndose considerablemente el tama&ntilde;o del archivo access.php sin afectar al ranking de servidores y referentes. Las visitas eliminadas se agregar&aacute;n a las entradas &quot;no especificadas&quot; para mantener el n&uacute;mero de visitas intacto.<br />
 Ejemplos:<br />
 \$BBC_PURGE_SINGLE = 1;<br />
